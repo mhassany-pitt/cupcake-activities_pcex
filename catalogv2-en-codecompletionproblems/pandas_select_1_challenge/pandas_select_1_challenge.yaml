@@ -1,0 +1,72 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_pandas_select_1_0
+title: PANDAS Select 1 Challenge
+description: From a class of 200 students, first select only student ids and their letter grades. Then,
+  select students with grades 'A' or 'B' You're given a dataset as a .csv format, read dataframe using
+  pandas.
+authors:
+- first: Rully
+  last: Hendrawan
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: From a class of 200 students, first select only student ids and their letter grades. Then,
+  select students with grades 'A' or 'B' You're given a dataset as a .csv format, read dataframe using
+  pandas.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Traceback (most recent call last):
+      File "<string>", line 2, in <module>
+    ModuleNotFoundError: No module named 'pandas'
+  console: |-
+    Traceback (most recent call last):
+      File "<string>", line 2, in <module>
+    ModuleNotFoundError: No module named 'pandas'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: df_section1 = df[(df['section'] == 'A')|(df['section'] == 'B')]
+  choices:
+  - snippet: df_section1 = df[(df['section'] == 'A')|(df['section'] == 'B')]
+    role: solution
+  - snippet: df_section1 = df[df['section'] == 'A']
+    role: distractor
+    explanations:
+    - body: If you choose this line, you are only filtering for students in 'Section A' and completely
+        ignoring those in 'Section B'. This misconception arises from the belief that you can only check
+        for one condition at a time. In reality, when you want to include multiple conditions, you need
+        to use logical operators like 'or' (represented by '|') to combine them. By using this distractor,
+        your program would miss out on all students in 'Section B', leading to incomplete data. The correct
+        line combines both conditions, ensuring that you capture all relevant students from both sections.
+  - snippet: df_section1 = df[(df['section'] == 'A') & (df['section'] == 'B')]
+    role: distractor
+    explanations:
+    - body: This line incorrectly uses the 'and' operator, which would require a student to be in both
+        'Section A' and 'Section B' simultaneously. This is logically impossible, as a student can only
+        belong to one section at a time. This misconception often stems from misunderstanding how to combine
+        conditions. If you were to use this line, your resulting dataframe would be empty, as no student
+        can satisfy both conditions at once. The correct line uses 'or', which allows for students in
+        either section to be included.
+  - snippet: df_section1 = df[df['section'] != 'C']
+    role: distractor
+    explanations:
+    - body: By using this line, you are filtering out students who are in 'Section C', but this does not
+        specifically select students from 'Section A' or 'Section B'. This misconception arises from the
+        idea that excluding one option automatically includes the others, which is not the case. As a
+        result, you could end up with students from other sections that are not relevant to your query.
+        The correct line explicitly selects students from the desired sections, ensuring that your dataframe
+        contains only the students you want.

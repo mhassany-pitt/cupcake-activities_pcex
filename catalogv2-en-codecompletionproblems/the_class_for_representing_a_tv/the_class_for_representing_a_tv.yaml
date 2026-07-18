@@ -1,0 +1,91 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_objects_classes_tv_1
+title: The Class for Representing a TV
+description: Construct a class that represents a TV. The class should contain data that represents the
+  TV's state (power on or off, current volume level). The state of the TV could be accessed or changed
+  only through the getter and setter methods. The class should also include methods to change the state
+  of the TV (turn on/off, change volume level). Assume that the volume level is an integer and ranges
+  from 1 to 7 (both inclusive).
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Construct a class that represents a TV. The class should contain data that represents the TV's
+  state (power on or off, current volume level). The state of the TV could be accessed or changed only
+  through the getter and setter methods. The class should also include methods to change the state of
+  the TV (turn on/off, change volume level). Assume that the volume level is an integer and ranges from
+  1 to 7 (both inclusive).
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    tv1's volume level is 3
+    tv2's volume level is 2
+  console: |-
+    tv1's volume level is 3
+    tv2's volume level is 2
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'def set_volume(self, new_volume_level) :'
+  choices:
+  - snippet: 'def set_volume(self, new_volume_level) :'
+    role: solution
+    explanations:
+    - body: This method set the current volume level of the TV to the given volume level (new_volume_level)
+        that is specified as the method's parameter. The first argument (named self) is passed in automatically
+        by the interpreter when the method is invoked on an instance of the class.
+    - body: Note that Python automatically fills the first argument in with the instance object that is
+        the implied subject of the method call. Therefore, when this method is invoked on an instance
+        of the class, only the last parameter (new_volume_level) must be passed to the method.
+  - snippet: 'def set_volume() :'
+    role: distractor
+  - snippet: 'def set_volume(new_volume_level) :'
+    role: distractor
+- type: blank
+  location:
+    snippet: 'if self.__on and new_volume_level >= 1 and new_volume_level <= 7 :'
+  choices:
+  - snippet: 'if self.__on and new_volume_level >= 1 and new_volume_level <= 7 :'
+    role: solution
+    explanations:
+    - body: We need to perform a test to check whether the conditions for changing the current volume
+        level of the TV to the given volume level exist. The current volume level of the TV could be set
+        to the given volume level only when the TV is on and the given volume level is within the valid
+        volume level range. A valid range for the TV volume level is from 1 to 7 (both inclusive).
+    - body: The if statement tests whether the TV is on and the given volume level is greater than or
+        equal to 1 and less than or equal to 7. If the TV is on and the given volume level is greater
+        than or equal to 1 and less than or equal to 7, then the body of this if statement gets executed.
+        Otherwise, the body of this if statement is skipped.
+    - body: Note that the and operator yields the result True if both conditions are True.
+  - snippet: 'if self.__on and new_volume_level <= 1 and new_volume_level >= 7 :'
+    role: distractor
+  - snippet: 'if self.__on and new_volume_level <= 7 :'
+    role: distractor
+- type: blank
+  location:
+    snippet: self.__volume_level = new_volume_level
+  choices:
+  - snippet: self.__volume_level = new_volume_level
+    role: solution
+    explanations:
+    - body: This statement sets the current volume level of the TV to the given value (new_volume_level).<br>self
+        is the instance of the class and self.__volume_level is the current volume level of the TV. We
+        start the attribute name by two underscore (self.__volume_level) to prevent accessing the attribute
+        directly from outside of the class.
+  - snippet: new_volume_level = self.__volume_level
+    role: distractor

@@ -1,0 +1,60 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_linkedlist_searching_1
+title: Search in the linked list. Challenge
+description: When using a LinkedList, it is possible that you may want to search through the list to see
+  if a specific value is in it. To do so, each node must be checked individually. Construct a search function
+  within the LinkedList class that traverses through all nodes in the list and keeps track of all instances
+  of the target value (if any) are in the LinkedList, returning the final count at the end of the search.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: When using a LinkedList, it is possible that you may want to search through the list to see
+  if a specific value is in it. To do so, each node must be checked individually. Construct a search function
+  within the LinkedList class that traverses through all nodes in the list and keeps track of all instances
+  of the target value (if any) are in the LinkedList, returning the final count at the end of the search.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: There are 2 instances of 11 in the list
+  console: There are 2 instances of 11 in the list
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'while current is not None:'
+  choices:
+  - snippet: 'while current is not None:'
+    role: solution
+    explanations:
+    - body: We go through the whole linked list by using while loop. 'current' is not none unless it has
+        reached the end of the linked list.
+  - snippet: while current is None
+    role: distractor
+  - snippet: if current is not None
+    role: distractor
+- type: blank
+  location:
+    snippet: current = current.next
+  choices:
+  - snippet: current = current.next
+    role: solution
+    explanations:
+    - body: Move to the next node.
+  - snippet: current = self.head
+    role: distractor
+  - snippet: current = None
+    role: distractor

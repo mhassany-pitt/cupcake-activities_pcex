@@ -1,0 +1,112 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_temperature_1
+title: Processing a List of Temperature Values
+description: Construct a program that reads a series of temperatures and reports the days that are above
+  32 degrees Fahrenheit. Assume that the temperature values are in Fahrenheit. Also assume that input
+  values could have a decimal point.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that reads a series of temperatures and reports the days that are above 32
+  degrees Fahrenheit. Assume that the temperature values are in Fahrenheit. Also assume that input values
+  could have a decimal point.
+executions:
+- title: Sample Run
+  stdin:
+  - '10'
+  - '30.3'
+  - '39.1'
+  - '30'
+  - '33.6'
+  - '25.8'
+  - '38.2'
+  - '36.1'
+  - '20'
+  - '24.7'
+  - '29.5'
+  stdout: "Enter the number of temperature values that will be entered: \nEnter the temperature: \nEnter\
+    \ the temperature: \nEnter the temperature: \nEnter the temperature: \nEnter the temperature: \nEnter\
+    \ the temperature: \nEnter the temperature: \nEnter the temperature: \nEnter the temperature: \nEnter\
+    \ the temperature: \nDays above 32 degrees Fahrenheit: ['Day 2', 'Day 4', 'Day 6', 'Day 7']"
+  console: "Enter the number of temperature values that will be entered: \nEnter the temperature: \nEnter\
+    \ the temperature: \nEnter the temperature: \nEnter the temperature: \nEnter the temperature: \nEnter\
+    \ the temperature: \nEnter the temperature: \nEnter the temperature: \nEnter the temperature: \nEnter\
+    \ the temperature: \nDays above 32 degrees Fahrenheit: ['Day 2', 'Day 4', 'Day 6', 'Day 7']"
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: days_above_32 = []
+  choices:
+  - snippet: days_above_32 = []
+    role: solution
+    explanations:
+    - body: We first need to define a list referred by variable days_above_32 for storing the days that
+        are above 32 degrees Fahrenheit. We initialize it with an empty list and will later use the function
+        append to add days to it.
+- type: blank
+  location:
+    snippet: 'for i in range(len(temps)) :'
+  choices:
+  - snippet: 'for i in range(len(temps)) :'
+    role: solution
+    explanations:
+    - body: We want to iterate through the list of temperatures values and record the days that are above
+        32 degrees Fahrenheit. We need to iterate through the indexes in list of temperature values because
+        the indexes in list represent the order that days were entered by the user; and thus, we can map
+        each index to a day.
+    - body: We can iterate through the list indexes using for loop because for loop can step across any
+        kind of sequence object including lists. We need the list indexes to start at 0 with every integer
+        number up to but not including the list size. We get this sequence by calling the range(len(temps)
+        function.
+    - body: Note that the function len(temps) returns the number of the values in the list. Also, note
+        that all statements inside the loop need to be indented with respect to the loop header.
+  - snippet: 'for i in range(len(days_above_32)) :'
+    role: distractor
+- type: blank
+  location:
+    snippet: 'if temps[i] > 32:'
+  choices:
+  - snippet: 'if temps[i] > 32:'
+    role: solution
+    explanations:
+    - body: We need to compare the list value at index i with the threshold of 32 degrees Fahrenheit.
+        If that value is greater than 32, then we need to add its corresponding day to the list referred
+        by variable days_above_32.
+    - body: If the list value at index i is greater than 32, then the body of this if statement gets executed.
+        Otherwise, the body of this if statement is skipped.
+  - snippet: 'if days_above_32[i] > 32:'
+    role: distractor
+  - snippet: 'if i > 32:'
+    role: distractor
+- type: blank
+  location:
+    snippet: days_above_32.append("Day " + str(i+1))
+  choices:
+  - snippet: days_above_32.append("Day " + str(i+1))
+    role: solution
+    explanations:
+    - body: When the temperature value at index i is greater than 32 degrees, we have to add its corresponding
+        day to the list days_above_32. The value at index i corresponds to the temperature of (i+1)-th
+        day.
+    - body: We can concatenate the string "Day " and integer (i+1) by using the + operator. Note that
+        when we want to concatenate an integer value with a string value, we need to explicitly convert
+        the integer to a string value using the str function.
+    - body: We use i+1 instead of i as the day number because day numbers start at 1 while the indexes
+        of the list start at 0.
+  - snippet: days_above_32[i] = "Day " + str(i+1)
+    role: distractor

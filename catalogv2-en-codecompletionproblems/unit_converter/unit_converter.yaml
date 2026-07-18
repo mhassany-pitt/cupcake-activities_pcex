@@ -1,0 +1,65 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_f_to_c_conversion_1
+title: Unit Converter
+description: Construct a program that computes the Celsius equivalent of an input Fahrenheit value using
+  the formula C = (F - 32) (5/9). The input Fahrenheit value is an integer.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that computes the Celsius equivalent of an input Fahrenheit value using the
+  formula C = (F - 32) (5/9). The input Fahrenheit value is an integer.
+executions:
+- title: Sample Run
+  stdin:
+  - '59'
+  stdout: "Enter the Fahrenheit value: \nFahrenheit Temperature: 59\nCelsius Equivalent: 15.0"
+  console: "Enter the Fahrenheit value: \nFahrenheit Temperature: 59\nCelsius Equivalent: 15.0"
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: conversion_factor = 5 / 9
+  choices:
+  - snippet: conversion_factor = 5 / 9
+    role: solution
+    explanations:
+    - body: We need variable conversion_factor to store the conversion factor in the formula. We set it
+        to 5/9.
+  - snippet: 5 // 9 = conversion_factor
+    role: distractor
+  - snippet: 5 / 9 = conversion_factor
+    role: distractor
+  - snippet: conversion_factor = 5 // 9
+    role: distractor
+  - snippet: conversion_factor = base * 5 / 9
+    role: distractor
+- type: blank
+  location:
+    snippet: celsius_temp = (fahrenheit_temp - base) * conversion_factor
+  choices:
+  - snippet: celsius_temp = (fahrenheit_temp - base) * conversion_factor
+    role: solution
+    explanations:
+    - body: To get a Celsius equivalent of a Fahrenheit value, we subtract 32 from the Fahrenheit value
+        and multiply that by 5/9. Note that the precedence rules dictate that the multiplication happens
+        before the subtraction in the final conversion computation. Therefore, to enforce the subtraction
+        to be performed before multiplication, we must enclose the subtraction operator and its operands
+        in parentheses.
+  - snippet: celsius_temp = fahrenheit_temp - base * conversion_factor
+    role: distractor
+  - snippet: celsius_temp = ( base - fahrenheit_temp ) * conversion_factor
+    role: distractor

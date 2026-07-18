@@ -1,0 +1,85 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_find_average_2
+title: Calculating the Average of the Input Numbers (Case 3)
+description: |-
+  Construct a program that reads a series of non-negative floating-point numbers from the user, sums them up, and calculate their average.
+  Note that you need to think what value should the program use to indicate the end of the input.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program that reads a series of non-negative floating-point numbers from the user, sums them up, and calculate their average.
+  Note that you need to think what value should the program use to indicate the end of the input.
+executions:
+- title: Sample Run
+  stdin:
+  - '3.4'
+  - '2.5'
+  - '1.64'
+  - '2.0'
+  - '0'
+  - '-0.4'
+  - '-1'
+  stdout: "Enter a number: \nThe sum so far is 3.4 , count = 1\nEnter a number: \nThe sum so far is 5.9\
+    \ , count = 2\nEnter a number: \nThe sum so far is 7.54 , count = 3\nEnter a number: \nThe sum so\
+    \ far is 9.54 , count = 4\nEnter a number: \nThe sum so far is 9.54 , count = 5\nEnter a number: \n\
+    The average is: 1.908"
+  console: "Enter a number: \nThe sum so far is 3.4 , count = 1\nEnter a number: \nThe sum so far is 5.9\
+    \ , count = 2\nEnter a number: \nThe sum so far is 7.54 , count = 3\nEnter a number: \nThe sum so\
+    \ far is 9.54 , count = 4\nEnter a number: \nThe sum so far is 9.54 , count = 5\nEnter a number: \n\
+    The average is: 1.908"
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'while num >= 0.0 :'
+  choices:
+  - snippet: 'while num >= 0.0 :'
+    role: solution
+    explanations:
+    - body: We need to process the number that the user has entered and repeat receiving and processing
+        the numbers from the user as long as the user enters a number that is not negative. Therefore,
+        we need to use a loop structure. Since we don't know ahead of time how many times the loop will
+        be repeated, we need to use a while loop. The condition in the while loop tests whether the body
+        of the loop should be repeated, so it should test whether the input number is not a negative number.<br><br>We
+        could test whether the input number is non-negative by testing if the number is greater than or
+        equal to zero.
+    - body: The body of the while loop is repeated as long as the user enters a number that is greater
+        than or equal to zero. The loop terminates when the loop condition evaluates to False, that is
+        when the user enters a negative number.
+  - snippet: 'while num < -1 :'
+    role: distractor
+  - snippet: 'while num > -1 :'
+    role: distractor
+  - snippet: 'while num != 0.0 :'
+    role: distractor
+- type: blank
+  location:
+    snippet: num = float(text)
+    nth: 2
+  choices:
+  - snippet: num = float(text)
+    role: solution
+    explanations:
+    - body: We need to convert the input text to its float representation because the number could have
+        a decimal point. For this purpose, we use the conversion function float().
+    - body: Note that this can only be done if user input could be translated into a valid floating-point
+        value.
+  - snippet: num = int(text)
+    role: distractor
+  - snippet: num = int(text)
+    role: distractor

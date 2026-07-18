@@ -1,0 +1,67 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_list_change_1
+title: Modifying a List
+description: |-
+  Construct a program that swaps pairs of adjacent elements of the list. For example, if the list is [1, 2, 3, 4, 5, 6], the program will change it to [2, 1, 4, 3, 6, 5].
+  This program assumes that the list has always an even number of elements.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program that swaps pairs of adjacent elements of the list. For example, if the list is [1, 2, 3, 4, 5, 6], the program will change it to [2, 1, 4, 3, 6, 5].
+  This program assumes that the list has always an even number of elements.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '[2, 1, 4, 3, 6, 5]'
+  console: '[2, 1, 4, 3, 6, 5]'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: temp = lst[i]
+  choices:
+  - snippet: temp = lst[i]
+    role: solution
+    explanations:
+    - body: This statement stores the value of the element at index i of the list in the temporary variable
+        temp. Later, we use variable temp to copy the content of the element at index i into the element
+        at the index i+1.
+  - snippet: temp = lst[i+1]
+    role: distractor
+- type: blank
+  location:
+    snippet: lst[i] = lst[i+1]
+  choices:
+  - snippet: lst[i] = lst[i+1]
+    role: solution
+    explanations:
+    - body: This statement copies the value of the element at index i+1 of the list into the element at
+        the index i of the list.
+  - snippet: lst[i+1] = lst[i]
+    role: distractor
+  - snippet: lst[i] = lst[i+2]
+    role: distractor
+- type: blank
+  location:
+    snippet: lst[i+1] = temp
+  choices:
+  - snippet: lst[i+1] = temp
+    role: solution
+    explanations:
+    - body: This statement copies the value of the element at index i that we stored in temporary variable
+        temp into the element at index i+1 of the list.

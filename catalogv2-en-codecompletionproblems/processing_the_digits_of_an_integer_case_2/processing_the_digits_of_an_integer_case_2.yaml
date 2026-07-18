@@ -1,0 +1,76 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_digits_1
+title: Processing the Digits of an Integer (Case 2)
+description: Construct a program that calculates the sum of the digits of an integer.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that calculates the sum of the digits of an integer.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    last digit: 4 , sum: 4 , integer: 123
+    last digit: 3 , sum: 7 , integer: 12
+    last digit: 2 , sum: 9 , integer: 1
+    last digit: 1 , sum: 10 , integer: 0
+    The sum of the digits: 10
+  console: |-
+    last digit: 4 , sum: 4 , integer: 123
+    last digit: 3 , sum: 7 , integer: 12
+    last digit: 2 , sum: 9 , integer: 1
+    last digit: 1 , sum: 10 , integer: 0
+    The sum of the digits: 10
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'while num > 0 :'
+  choices:
+  - snippet: 'while num > 0 :'
+    role: solution
+    explanations:
+    - body: We need to process the digits of the integer from right to left and print them. Therefore,
+        we need to use a loop structure. Since we don't know ahead of time how many times the loop will
+        be repeated, we need to use a while loop. The condition in the while loop tests whether the body
+        of the loop should be repeated, so it should test whether there are more digits left that we have
+        not processed yet.<br><br>We could check whether the are more digits left by checking whether
+        the variable num, which gets updated in the body of the loop, is greater than zero. If variable
+        num is greater than zero, then it must have at least one digit, and in that case, the body of
+        the do loop will be repeated again.
+    - body: The body of the while loop is repeated as long as there are more digits left that we have
+        not processed yet. The loop terminates when the loop condition evaluates to False, that is when
+        we run out of digits to process.
+  - snippet: 'while num > 1 :'
+    role: distractor
+  - snippet: 'while num > -1 :'
+    role: distractor
+- type: blank
+  location:
+    snippet: total = total + last_digit
+  choices:
+  - snippet: total = total + last_digit
+    role: solution
+    explanations:
+    - body: We add the extracted digit to the variable total that stores the sum of the digits of the
+        integer and store the result back into the variable total.
+  - snippet: total = last_digit
+    role: distractor
+  - snippet: total = num + last_digit
+    role: distractor
+  - snippet: total += 1
+    role: distractor

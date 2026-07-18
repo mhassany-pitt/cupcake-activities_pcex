@@ -1,0 +1,65 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_rent_car_2
+title: Renting a Car (Case 3)
+description: Construct a program that determines whether a customer could rent a car based on the inputs
+  that it receives from the car rental agent. Rental cars are available to licensed drivers who are either
+  at least 21 years old or have a credit card with $10,000 or more of credit.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that determines whether a customer could rent a car based on the inputs that
+  it receives from the car rental agent. Rental cars are available to licensed drivers who are either
+  at least 21 years old or have a credit card with $10,000 or more of credit.
+executions:
+- title: Sample Run
+  stdin:
+  - '20'
+  - '1'
+  - '10000'
+  stdout: |2-
+      File "<string>", line 2
+        text = input('Enter the customer's age:\n')
+                                         ^
+    SyntaxError: invalid syntax
+  console: |2-
+      File "<string>", line 2
+        text = input('Enter the customer's age:\n')
+                                         ^
+    SyntaxError: invalid syntax
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: can_rent_car = has_license and (age >= 21 or credit >= 10000)
+  choices:
+  - snippet: can_rent_car = has_license and (age >= 21 or credit >= 10000)
+    role: solution
+    explanations:
+    - body: We need two conditions to determine whether the customer could rent a car. We use the and
+        operator to combine these conditions. The first condition is to test if the user has driver's
+        license. The second condition is to test if the user is at least 21 years old or have the minimum
+        credit amount.
+    - body: The and operator yields the result True if both conditions are True while the or operator
+        yields the result True if at least one of the conditions is True.
+  - snippet: can_rent_car = has_license and not ( age >= 21 or credit >= 10000 )
+    role: distractor
+  - snippet: can_rent_car = has_license and age >= 21 and credit >= 10000
+    role: distractor
+  - snippet: can_rent_car = has_license and age >= 21 or credit > 10000
+    role: distractor
+  - snippet: can_rent_car = not has_license or age >= 21 or credit > 10000
+    role: distractor

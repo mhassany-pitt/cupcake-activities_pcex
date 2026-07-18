@@ -1,0 +1,133 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_pandas_statistics_1_0
+title: PANDAS Statistics 1 Challenge
+description: From a class of 200 students, you have a dataset of students, their section, and grades.
+  Find students with grade == 'A' and print the top 10 names.
+authors:
+- first: Rully
+  last: Hendrawan
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: From a class of 200 students, you have a dataset of students, their section, and grades. Find
+  students with grade == 'A' and print the top 10 names.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+    ModuleNotFoundError: No module named 'pandas'
+  console: |-
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+    ModuleNotFoundError: No module named 'pandas'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: section_2_counts = df[df["grade"] == 'A']
+  choices:
+  - snippet: section_2_counts = df[df["grade"] == 'A']
+    role: solution
+    explanations:
+    - body: This line filters the DataFrame 'df' to create a new DataFrame 'section_2_counts' that only
+        includes rows where the 'grade' column has a value of 'A'.
+    - body: This is essential for isolating the students who achieved the highest grade.
+    - body: The syntax 'df[df['grade'] == 'A']' uses boolean indexing, where 'df['grade'] == 'A'' creates
+        a boolean Series that is True for rows where the condition is met.
+    - body: The DataFrame 'df' is then indexed with this boolean Series to return only the matching rows.
+  - snippet: section_2_counts = df['section'].value_counts()
+    role: distractor
+    explanations:
+    - body: You might think that using value_counts directly on the 'section' column would give you the
+        counts of students in each section. However, this line does not filter the DataFrame to only include
+        students with a grade of 'A'. As a result, you would get the total counts of all sections, not
+        just those of students who received an 'A'. This would lead to incorrect results, as you would
+        not be addressing the specific requirement of counting only 'A' grades by section. The correct
+        line first filters the DataFrame to include only those students with a grade of 'A' before counting
+        the sections, which is crucial for obtaining the desired output.
+  - snippet: section_2_counts = df[df['section'] == '2']['grade'].value_counts()
+    role: distractor
+    explanations:
+    - body: You might mistakenly think that filtering by section first and then counting grades would
+        yield the correct counts of students with an 'A' grade. However, this distractor incorrectly focuses
+        on counting grades within a specific section rather than counting students with an 'A' grade across
+        all sections. This would not fulfill the requirement of the task, which is to count how many students
+        received an 'A' in each section. The correct line filters the DataFrame based on the grade first,
+        ensuring that you are only counting the relevant students before grouping by section.
+  - snippet: section_2_counts = df['grade'].value_counts()
+    role: distractor
+    explanations:
+    - body: You may think that applying value_counts directly to the 'grade' column will give you the
+        counts of 'A' grades by section. However, this line will only provide the total counts of each
+        grade across the entire dataset, without any regard for the sections. This means you would miss
+        the requirement to break down the counts by section, which is essential for the task. The correct
+        line first filters the DataFrame to include only students with an 'A' grade and then counts how
+        many of those students belong to each section, which is necessary to achieve the desired output.
+  - snippet: section_2_counts = df[df['grade'] == 'A'].groupby('section').size()
+    role: distractor
+    explanations:
+    - body: You might consider using groupby to count the number of students with an 'A' grade by section.
+        While this approach is valid, it does not directly produce a Series with counts like value_counts
+        does. Instead, it returns a DataFrame with the counts, which may not be what you expect when trying
+        to print the top 10 entries. The correct line uses value_counts to directly get a Series of counts,
+        which is simpler and more straightforward for this specific task. Using groupby here would require
+        additional steps to format the output correctly, making it less efficient for the goal of counting
+        'A' grades by section.
+  - snippet: section_2_counts = section_2_counts.sort_values(by=['name'])
+    role: distractor
+    explanations:
+    - body: You might think that by assigning the result of sort_values back to section_2_counts, you
+        are correctly sorting the DataFrame. However, this line actually creates a new sorted DataFrame
+        and assigns it to section_2_counts, which can lead to confusion about whether the original DataFrame
+        is modified. In this case, if you were to use this line, you would not see the sorted results
+        printed in the subsequent lines because the original DataFrame remains unchanged. The correct
+        approach is to simply call sort_values without reassigning it, as it allows you to view the sorted
+        DataFrame directly without altering the original data structure. This distractor is invalid because
+        it misrepresents how sorting works in pandas, leading to potential errors in understanding DataFrame
+        manipulation.
+  - snippet: section_2_counts = section_2_counts.sort_values(by='name')
+    role: distractor
+    explanations:
+    - body: You might think that using single quotes around 'name' is enough to sort by that column. However,
+        when you want to sort by multiple columns, you need to provide a list of column names. This distractor
+        suggests that you can sort by a single column using a string, which is misleading. If you were
+        to use this line, it would not cause an error, but it would not fulfill the requirement of sorting
+        by multiple columns if that were the intention. The correct line uses a list to ensure that you
+        can sort by multiple criteria if needed. This distractor highlights a common misunderstanding
+        about how to format the input for the sort_values function.
+- type: blank
+  location:
+    snippet: section_2_counts.sort_values(by=['name'])
+  choices:
+  - snippet: section_2_counts.sort_values(by=['name'])
+    role: solution
+    explanations:
+    - body: This line sorts the DataFrame 'section_2_counts' based on the values in the 'name' column.
+    - body: Sorting is essential here because you want to organize the students alphabetically before
+        selecting the top 10.
+    - body: The syntax 'section_2_counts.sort_values(by=['name'])' uses the 'sort_values' method from
+        the pandas library.
+    - body: The 'by' parameter specifies the column to sort by, which in this case is 'name'.
+  - snippet: section_2_counts.sort_values(by=['name'], ascending=False)
+    role: distractor
+    explanations:
+    - body: You might think that specifying ascending=False is necessary to sort the names in a particular
+        order. However, the problem statement does not specify that you need to sort in descending order;
+        it simply asks for the top 10 names. By using this distractor, you would sort the names in reverse
+        order, which may not align with the intended outcome of finding the top names. The correct line
+        does not specify the ascending parameter, allowing it to default to ascending order, which is
+        typically what you want when looking for the top entries. This distractor reflects a common misconception
+        about the need to always specify sorting order.

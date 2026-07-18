@@ -1,0 +1,77 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_str_repeat_chars_1
+title: Repeating Characters of a String
+description: |-
+  Construct a program that has a function that receives a string and creates a new string that has every other character of the given string, starting with the first character, repeated two times.
+  For example, the new string that will be formed from the string 'abcde' is 'aaccee'.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program that has a function that receives a string and creates a new string that has every other character of the given string, starting with the first character, repeated two times.
+  For example, the new string that will be formed from the string 'abcde' is 'aaccee'.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: HH  hhrr
+  console: HH  hhrr
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'for i in range(0, len(s), 2) :'
+  choices:
+  - snippet: 'for i in range(0, len(s), 2) :'
+    role: solution
+    explanations:
+    - body: We want to iterate over every other characters in the given string, starting from the first
+        character, and add each character repeated two times to the new string. We can achieve this by
+        iterating over the index of the characters in the given string and then access the character at
+        each index. We need the indexes to start at 0 (index of the first character) with every second
+        integer number up to but not including the string length. We get this sequence by calling the
+        range(0,len(s),2) function.
+    - body: The last number in the range function specifies how much to increase each successive integer
+        in the sequence, if this is omitted then step defaults to 1. Since we want to access every other
+        character in the string, we set the step to 2.
+    - body: Note that len(s) returns the number of the characters in the string. Also note that all statements
+        inside the loop need to be indented with respect to the loop header.
+  - snippet: 'for i in range(1, len(s), 2) :'
+    role: distractor
+  - snippet: 'for i in range(len(s)) :'
+    role: distractor
+- type: blank
+  location:
+    snippet: new_s += s[i] * 2
+  choices:
+  - snippet: new_s += s[i] * 2
+    role: solution
+    explanations:
+    - body: This statement concatenates the string value stored in variable new_s with the character at
+        the index i of the given string repeated two times. The result of the concatenation is stored
+        in variable new_s.
+    - body: The repetition operator * repeats the character at index i of the given string for the specified
+        number of times. Also, note that the + operator creates a new string from the contents of its
+        operands joined.
+    - body: The += operator concatenates the string value stored in variable new_s with the character
+        at the index i of the string repeated two times and the result is stored in the variable new_s.
+        Thus, this statement is equivalent to the statement new_s = new_s + s[i] * 2.
+  - snippet: new_s = s[i] * 2
+    role: distractor
+  - snippet: new_s = i * 2
+    role: distractor
+  - snippet: new_s = new_s * 2 + s[i]
+    role: distractor

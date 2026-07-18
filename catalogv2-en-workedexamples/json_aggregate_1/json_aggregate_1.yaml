@@ -1,0 +1,50 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_json_agg_1_0
+title: JSON Aggregate 1
+description: How many employees in this company have salary greater than 30,000.  You're provided a json
+  data assigned to a variable. only use simple python code, for loops
+authors:
+- first: Rully
+  last: Hendrawan
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: How many employees in this company have salary greater than 30,000.  You're provided a json
+  data assigned to a variable. only use simple python code, for loops
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '2'
+  console: '2'
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'if employee["salary"] > 30000:'
+  explanations:
+  - body: This line checks if the salary of the current employee is greater than 30,000.
+  - body: The condition inside the 'if' statement evaluates to either True or False, determining whether
+      the subsequent block of code (Line 15) will execute.
+  - body: The syntax 'employee["salary"]' accesses the 'salary' key from the current employee dictionary.
+      The use of double quotes inside the square brackets is necessary because the key is a string.
+  - body: This is a common way to access values in a dictionary in Python.
+- type: explanation
+  location:
+    snippet: print(count)
+  explanations:
+  - body: This line outputs the value of the 'count' variable, which represents the number of employees
+      with a salary greater than 30,000. By using 'print(count)', you are displaying the result of your
+      calculations to the user.
+  - body: The 'print' function is a built-in Python function that takes one or more arguments and outputs
+      them to the console. In this case, 'count' is the argument being passed to 'print'.

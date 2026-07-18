@@ -1,0 +1,88 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_file_input_stat_1
+title: Reporting File Information
+description: Construct a program that receives the full path to an input file from the user, reads that
+  file and reports the number of lines, the longest line, the number of words on each line, and the length
+  of the longest word on each line. Make sure that the program handles each specific exception that could
+  occur. Also, the program must ask the user for a valid file path until the user enters a file path that
+  could be accessed without any exception.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that receives the full path to an input file from the user, reads that file
+  and reports the number of lines, the longest line, the number of words on each line, and the length
+  of the longest word on each line. Make sure that the program handles each specific exception that could
+  occur. Also, the program must ask the user for a valid file path until the user enters a file path that
+  could be accessed without any exception.
+executions:
+- title: Sample Run
+  stdin:
+  - /Users/input_stat_2.txt
+  - /Users/input_stat.txt
+  stdout: "Enter the full path of a file: \nFile not found.\nEnter the full path of a file: \nLine 1 has\
+    \ 5 tokens (longest = 11)\nLine 2 has 8 tokens (longest = 6)\nLine 3 has 6 tokens (longest = 6)\n\
+    Line 4 has 3 tokens (longest = 13)\nLongest line:the jaws that bite, the claws that catch,"
+  console: "Enter the full path of a file: \nFile not found.\nEnter the full path of a file: \nLine 1\
+    \ has 5 tokens (longest = 11)\nLine 2 has 8 tokens (longest = 6)\nLine 3 has 6 tokens (longest = 6)\n\
+    Line 4 has 3 tokens (longest = 13)\nLongest line:the jaws that bite, the claws that catch,"
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'while not valid :'
+  choices:
+  - snippet: 'while not valid :'
+    role: solution
+    explanations:
+    - body: We need to repeat asking the user to enter the file path as long as the user enters a file
+        path that is not valid. Therefore, we need to use a loop structure. Since we don't know ahead
+        of time how many times the loop will be repeated, we need to use a while loop. The condition in
+        the while loop tests whether the body of the loop should be repeated, so it should test whether
+        the file path is not valid.
+    - body: We check whether the file path is not valid by inverting the condition that checks whether
+        the file path is valid. We invert the condition by using the not operator. Note that the following
+        statement is also correct:<br>while valid == False
+    - body: Note that the not operator takes a single condition and evaluates to True if that condition
+        is False and to False if the condition is True.
+    - body: The body of the while loop is repeated as long as the user enters a file path that is not
+        valid. The loop terminates when the loop condition evaluates to False, that is when the user enters
+        a file path that is valid.
+  - snippet: 'while valid :'
+    role: distractor
+  - snippet: 'if not valid :'
+    role: distractor
+- type: blank
+  location:
+    snippet: myfile.close()
+    nth: 1
+  choices:
+  - snippet: myfile.close()
+    role: solution
+    explanations:
+    - body: We need to close the file after opening it; therefore, we use close() to close it and free
+        up any system resources taken up by the open file.
+- type: blank
+  location:
+    snippet: valid = True
+  choices:
+  - snippet: valid = True
+    role: solution
+    explanations:
+    - body: The statement is executed when none of the previous statements in the try block throw an exception.
+        In this case, the input file path is valid and we set variable valid to True.
+  - snippet: 'if valid == False :'
+    role: distractor

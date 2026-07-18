@@ -1,0 +1,221 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_double_linked_list_0
+title: Doubly Linked List
+description: Create the necessary classes for a Doubly Linked List, containing the method insert_at_start(data)
+  to add a new item to the beginning of the linked list, insert_at_end(data) to add a new item to the
+  end of the linked list, delete_at_start() to delete the first item from the link, and an __str__ method
+  to print out the doubly linked list. Test the doubly linked list after all classes and methods are created.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Create the necessary classes for a Doubly Linked List, containing the method insert_at_start(data)
+  to add a new item to the beginning of the linked list, insert_at_end(data) to add a new item to the
+  end of the linked list, delete_at_start() to delete the first item from the link, and an __str__ method
+  to print out the doubly linked list. Test the doubly linked list after all classes and methods are created.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '[John, Jeff, Gray]'
+  console: '[John, Jeff, Gray]'
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'class DoublyLinkedListNode:'
+  explanations:
+  - body: Linked lists are defined by nodes in a list, instead of object literals in a normal list. This
+      node class defines the contents in a list, the next, and the previous nodes.
+  - body: Doubly linked lists are linked in two directions. A node is linked to the previous node (pref)
+      and the next node (nref).
+- type: explanation
+  location:
+    snippet: 'def __init__(self, initData):'
+  explanations:
+  - body: Constructs a new node and initializes it to contain the govern object (initData).
+- type: explanation
+  location:
+    snippet: 'class DoublyLinkedList:'
+  explanations:
+  - body: Linked lists can store data like a normal list, but it is more efficient because it can dynamically
+      change size without shifting all other objects in the list. However, random access of a linked list
+      is not allowed. To access a particular element in a linked list, the list has to be sequentially
+      traversed from the first node (the head).
+- type: explanation
+  location:
+    snippet: 'def __init__(self):'
+  explanations:
+  - body: The linked list is initialized with a start node (currently None).
+- type: explanation
+  location:
+    snippet: 'def __str__(self):'
+  explanations:
+  - body: __str__ method is automatically called when the print() function is invoked. This method prints
+      the contents of the linked list in a readable format instead of the SLinkedList object.
+- type: explanation
+  location:
+    snippet: current = self.start_node
+  explanations:
+  - body: '"current" represents the current node. Starting from the first node, it is incremented to access
+      each element in the linked list.'
+- type: explanation
+  location:
+    snippet: 'while current != None:'
+  explanations:
+  - body: '"current" is not None unless it has reached the end of the linked list, where it is None. The
+      content from "current" will be appended to a string, and printed.'
+- type: explanation
+  location:
+    snippet: 'if i != 0:'
+  explanations:
+  - body: '"i" is only greater than 0 when "current" is not the first object in the linked list. If it
+      is not the first item, a comma is added between every element of the linked list until the last
+      item.'
+- type: explanation
+  location:
+    snippet: 'else:'
+  explanations:
+  - body: The "else" block executes when "i" is 0, or when "current" referes to the first item of the
+      list.
+- type: explanation
+  location:
+    snippet: current = current.nref
+  explanations:
+  - body: '"current" is incremented to the next node in the list, and the while loop continues.'
+- type: explanation
+  location:
+    snippet: return s + ']'
+  explanations:
+  - body: Ultimately, a comma-separated string containing all items of the linked list is returned.
+- type: explanation
+  location:
+    snippet: 'def insert_at_start(self, data):'
+  explanations:
+  - body: The insert_at_start(data) method adds an item to the beginning of the linked list.
+- type: explanation
+  location:
+    snippet: new_node = DoublyLinkedListNode(data)
+    nth: 1
+  explanations:
+  - body: Creates new node
+- type: explanation
+  location:
+    snippet: 'if self.start_node is None:'
+    nth: 1
+  explanations:
+  - body: If the start node is None, it means the linked list is empty, and the new node is inserted as
+      the start node.
+- type: explanation
+  location:
+    snippet: self.start_node = new_node
+    nth: 1
+  explanations:
+  - body: Inserts new node as the start node if the linked list is empty.
+- type: explanation
+  location:
+    snippet: new_node.nref = self.start_node
+  explanations:
+  - body: What was the start node becomes the new "next" node, because we want to insert another new as
+      the start node.
+- type: explanation
+  location:
+    snippet: self.start_node.pref = new_node
+  explanations:
+  - body: Currently "start_node" is still the first item in the linked list (not the new node to be added).
+      This node's "previous" is set to the new node, because it's going to become the second item in the
+      list.
+- type: explanation
+  location:
+    snippet: self.start_node = new_node
+    nth: 2
+  explanations:
+  - body: The new "start_node" is assigned to the new node that is added.
+- type: explanation
+  location:
+    snippet: 'def insert_at_end(self, data):'
+  explanations:
+  - body: The insert_at_start(data) method adds an item to the end of the linked list.
+- type: explanation
+  location:
+    snippet: new_node = DoublyLinkedListNode(data)
+    nth: 2
+  explanations:
+  - body: Creates new node
+- type: explanation
+  location:
+    snippet: 'if self.start_node is None:'
+    nth: 2
+  explanations:
+  - body: If the start node is None, it means the linked list is empty, and the new node is inserted as
+      the start node.
+- type: explanation
+  location:
+    snippet: self.start_node = new_node
+    nth: 3
+  explanations:
+  - body: Inserts new node as the start node if the linked list is empty.
+- type: explanation
+  location:
+    snippet: 'while n.nref is not None:'
+  explanations:
+  - body: Use while loop to traverse the linked list to reach the last node. When the loop finishes, "n"
+      is the last node of the linked list.
+- type: explanation
+  location:
+    snippet: n.nref = new_node
+  explanations:
+  - body: Because a new node is inserted at the end of the linked list, "n"'s next node is set as the
+      new node to be inserted.
+- type: explanation
+  location:
+    snippet: new_node.pref = n
+  explanations:
+  - body: The newly inserted node's "previous node" reference is set to "n", last time in the list.
+- type: explanation
+  location:
+    snippet: 'def delete_at_start(self):'
+  explanations:
+  - body: The delete_at_start() method deletes the first item in the linked list.
+- type: explanation
+  location:
+    snippet: 'if self.start_node is None:'
+    nth: 3
+  explanations:
+  - body: If the start_node is None, it means the list is empty. Therefore, there are no nodes to delete.
+- type: explanation
+  location:
+    snippet: 'if self.start_node.nref is None:'
+  explanations:
+  - body: If the start_node is not None but the start_node's "next node" reference is None, it means there
+      is only one node in the linked list.
+- type: explanation
+  location:
+    snippet: self.start_node = None
+    nth: 2
+  explanations:
+  - body: The only item in the linked list is deleted by setting the start_node to None.
+- type: explanation
+  location:
+    snippet: self.start_node = self.start_node.nref
+  explanations:
+  - body: If there is more than 1 item in the linked list, the start_node reference is changed to the
+      old start start node's "next" reference (the second element in the linked list).
+- type: explanation
+  location:
+    snippet: self.start_node.pref = None
+  explanations:
+  - body: The first item of the linked list is deleted by setting the new start_node's "previous node"
+      reference is to None.

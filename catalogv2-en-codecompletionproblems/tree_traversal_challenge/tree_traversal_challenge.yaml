@@ -1,0 +1,69 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_trees_traversal_1
+title: Tree traversal. Challenge
+description: |-
+  The tree can be traversed by deciding on a sequence to visit each node. There are three traversal algorithms: in-order traversal, pre-order traversal and post-order traversal.
+  <b>In-order traversal</b> visits the nodes from the left, the root node and the right
+  <b>Pre-order traversal</b> visits the nodes from the root node, the left and the right
+  <b>Post-order traversal</b> visits the nodes from the left, the right and the root node.
+  In this challenge, we construct an post-order traversal algorithm.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  The tree can be traversed by deciding on a sequence to visit each node. There are three traversal algorithms: in-order traversal, pre-order traversal and post-order traversal.
+  <b>In-order traversal</b> visits the nodes from the left, the root node and the right
+  <b>Pre-order traversal</b> visits the nodes from the root node, the left and the right
+  <b>Post-order traversal</b> visits the nodes from the left, the right and the root node.
+  In this challenge, we construct an post-order traversal algorithm.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '[4, 3, 10, 16, 14, 5]'
+  console: '[4, 3, 10, 16, 14, 5]'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: res = self.postorder_traversal(root.left)
+  choices:
+  - snippet: res = self.postorder_traversal(root.left)
+    role: solution
+    explanations:
+    - body: We recursively visit the left nodes first
+  - snippet: res = root.left
+    role: distractor
+- type: blank
+  location:
+    snippet: res = res + self.postorder_traversal(root.right)
+  choices:
+  - snippet: res = res + self.postorder_traversal(root.right)
+    role: solution
+    explanations:
+    - body: We recursively visit the right nodes the next
+  - snippet: res = res + self.right
+    role: distractor
+- type: blank
+  location:
+    snippet: res.append(root.key)
+  choices:
+  - snippet: res.append(root.key)
+    role: solution
+    explanations:
+    - body: We last visit the root node of the tree and the subtree
+  - snippet: res.append(postorder_traversal(root.key))
+    role: distractor

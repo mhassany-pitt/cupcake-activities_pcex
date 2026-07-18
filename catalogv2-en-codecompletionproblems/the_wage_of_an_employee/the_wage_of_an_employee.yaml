@@ -1,0 +1,71 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_if_else_wage_1
+title: The Wage of an Employee
+description: |-
+  Construct a program for the payment department of a company to calculate the wage of an employee who works at the customer service call center. Like other employees in the company, the employees at the customer service call center are paid based on the hours that they work. If they work over 40 hours in a week, the payment amount should take into account the overtime hours. The overtime hours are paid at a rate one and a half times the regular pay rate.
+  The company's policy is to pay more to those employees at the customer service call center who work during weekends. Therefore, the minimum extra pay that the employees could receive for each day of work during weekends is $30. The extra pay increases to the maximum of $50 for the employees who have at least 5 days of work during weekends.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program for the payment department of a company to calculate the wage of an employee who works at the customer service call center. Like other employees in the company, the employees at the customer service call center are paid based on the hours that they work. If they work over 40 hours in a week, the payment amount should take into account the overtime hours. The overtime hours are paid at a rate one and a half times the regular pay rate.
+  The company's policy is to pay more to those employees at the customer service call center who work during weekends. Therefore, the minimum extra pay that the employees could receive for each day of work during weekends is $30. The extra pay increases to the maximum of $50 for the employees who have at least 5 days of work during weekends.
+executions:
+- title: Sample Run
+  stdin:
+  - '40'
+  - '5'
+  stdout: "Enter the number of hours that the employee has worked: \nEnter the number of days that the\
+    \ employee has worked during weekends: \nWage: 580.0"
+  console: "Enter the number of hours that the employee has worked: \nEnter the number of days that the\
+    \ employee has worked during weekends: \nWage: 580.0"
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'if no_weekend_days < 5 :'
+  choices:
+  - snippet: 'if no_weekend_days < 5 :'
+    role: solution
+    explanations:
+    - body: The if statement tests whether the payment should take into account the minimum extra pay
+        for working during weekend days. The payment should take into account the minimum extra pay when
+        the employee has worked less than 5 days during weekend days.
+    - body: If the number of days that the employee has worked during weekends is less than 5, then the
+        body of this if statement gets executed. Otherwise, the body of this if statement is skipped.
+  - snippet: 'if no_weekend_days >= 5 :'
+    role: distractor
+  - snippet: 'if (no_weekend_days == 5) :'
+    role: distractor
+- type: blank
+  location:
+    snippet: wage += (no_weekend_days * weekend_pay_max)
+  choices:
+  - snippet: wage += (no_weekend_days * weekend_pay_max)
+    role: solution
+    explanations:
+    - body: When the number of days that the employee has worked during weekends is at least five, the
+        maximum extra pay (i.e., $50) will be added to the employee's wage for each day that the employee
+        has worked during the weekend.
+    - body: The += operator adds the value on the right-hand side of the assignment operator to the current
+        value of the variable on the left-hand side (i.e., value of variable wage) and the result is stored
+        in the variable wage. Thus, this statement is equivalent to the statement wage = wage + (no_weekend_days
+        * weekend_pay_max).
+  - snippet: wage = ( no_weekend_days * weekend_pay_max )
+    role: distractor
+  - snippet: wage += weekend_pay_max
+    role: distractor

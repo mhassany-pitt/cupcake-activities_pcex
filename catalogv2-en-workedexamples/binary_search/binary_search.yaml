@@ -1,0 +1,126 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_search_binary_search_0
+title: Binary search
+description: |-
+  Binary Search operates by dividing an array in half, and then determining whether or not the target value would be in the larger or smaller half. Then, this process repeats by dividing whichever half must contain the target in half again, over and over until the target is found.
+  Construct a function that performs binary search on a given array and returns the index of the target value if it is found in the array. Assume that the target will be in the array (in other words, do not handle the case where the target does not exist in the array).
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Binary Search operates by dividing an array in half, and then determining whether or not the target value would be in the larger or smaller half. Then, this process repeats by dividing whichever half must contain the target in half again, over and over until the target is found.
+  Construct a function that performs binary search on a given array and returns the index of the target value if it is found in the array. Assume that the target will be in the array (in other words, do not handle the case where the target does not exist in the array).
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '5'
+  console: '5'
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def binary_search(data, key):'
+  explanations:
+  - body: We first need to define a function that takes in the sorted array (data) and the target value
+      (key) that we are searching for.
+- type: explanation
+  location:
+    snippet: found = False
+  explanations:
+  - body: We’ll need to track whether or not we’ve found the key in the data. At the start of the function,
+      we haven’t found it yet, so it must be initialized to False.
+- type: explanation
+  location:
+    snippet: low = 0
+  explanations:
+  - body: Binary search narrows down its search area over time. When the search begins, the entire array
+      is considered, so we initialize the lower bound of the search range to be index 0 (the first element)
+      of the array
+- type: explanation
+  location:
+    snippet: high = len(data)-1
+  explanations:
+  - body: The upper bound of the search range is set to the index of the last element of the array (length-1).
+- type: explanation
+  location:
+    snippet: 'while not found:'
+  explanations:
+  - body: We must keep searching until we find the element, so we will use a while loop that will run
+      until found = True.
+- type: explanation
+  location:
+    snippet: guess = (high+low)//2
+  explanations:
+  - body: In each iteration, we guess that the target value is in the middle of the search area.
+- type: explanation
+  location:
+    snippet: 'if (key == data[guess]):'
+  explanations:
+  - body: We check if the current element at the middle index is our key
+- type: explanation
+  location:
+    snippet: found = True
+  explanations:
+  - body: If it is found, we set found = True, which will end the while loop.
+- type: explanation
+  location:
+    snippet: 'else:'
+    nth: 1
+  explanations:
+  - body: Otherwise, if we have not found the value, we will continue the search
+- type: explanation
+  location:
+    snippet: 'if (key<data[guess]):'
+  explanations:
+  - body: 'We will determine where to make our guess based on whether or not the target value is lower
+      or higher than the number at the index of our previous guess (remember: binary search assumes that
+      the array is already sorted!).'
+- type: explanation
+  location:
+    snippet: high = guess-1
+  explanations:
+  - body: If the target value is less than the value at the guessed index, then we narrow the search range
+      by lowering the upper bound.
+- type: explanation
+  location:
+    snippet: 'else:'
+    nth: 2
+  explanations:
+  - body: Otherwise, we narrow the search by increasing the lower bound
+- type: explanation
+  location:
+    snippet: low = guess+1
+  explanations:
+  - body: We instead raise the lower bound.
+- type: explanation
+  location:
+    snippet: return guess
+  explanations:
+  - body: This line returns the index of the target within the array to the caller.
+- type: explanation
+  location:
+    snippet: data = [1, 5, 7, 9, 11, 13]
+  explanations:
+  - body: We initialize the list
+- type: explanation
+  location:
+    snippet: print(binary_search(data, 13))
+  explanations:
+  - body: We want to call binarySearch on the array. This particular implementation of binarySearch assumes
+      that the target value exists within the array, so we must specify a key that we know to be in the
+      array. This function call is enclosed within a print statement so that the returned value is then
+      printed.

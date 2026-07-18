@@ -1,0 +1,108 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_time_conversion_llm__677c5572949ed2ff17c30456_0
+title: Converting Milliseconds to Hours-Minutes- and Seconds.
+description: Construct a program that obtains hours, minutes, and seconds from an amount of time in milliseconds.
+authors:
+- first: Mohammad
+  last: Hassany
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that obtains hours, minutes, and seconds from an amount of time in milliseconds.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: "Enter the milliseconds: \n16803000 milliseconds is 4 hours and 40 minutes and 3 seconds."
+  console: "Enter the milliseconds: \n16803000 milliseconds is 4 hours and 40 minutes and 3 seconds."
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: hours = total_secs // 3600
+  choices:
+  - snippet: hours = total_secs // 3600
+    role: solution
+    explanations:
+    - body: To obtain the hours, we divide the seconds by 3600 because there are 3600 seconds in an hour.
+        Note that we want to truncate the fractional part of the result, if there is any. Therefore, we
+        need to use the floor division by using // operator.
+  - snippet: hours = total_secs / 3600
+    role: distractor
+    explanations:
+    - body: You might choose this line if you confuse integer division with floating-point division. Using
+        '/' instead of '//' will perform floating-point division, which results in a decimal value. This
+        means 'hours' will not be an integer, which is incorrect because hours should be a whole number.
+        This mistake will cause the program to display a non-integer number of hours, which is not meaningful
+        in the context of time conversion. The key aspect missing here is the use of integer division
+        to ensure the result is a whole number.
+  - snippet: hours = total_secs % 3600
+    role: distractor
+    explanations:
+    - body: This line might seem correct if you confuse the modulus operator with division. The modulus
+        operator '%' gives the remainder of a division, not the quotient. Using '%' here will result in
+        'hours' being the remainder of seconds after dividing by 3600, which does not represent the number
+        of complete hours. This will lead to incorrect results, as 'hours' will not reflect the actual
+        number of full hours in the given milliseconds. The key aspect missing is the use of division
+        to extract whole units of hours.
+  - snippet: hours = milliseconds // 3600
+    role: distractor
+    explanations:
+    - body: You might select this line if you forget to convert milliseconds to seconds before calculating
+        hours. By dividing 'milliseconds' directly by 3600, you are skipping the necessary conversion
+        from milliseconds to seconds, leading to a drastically incorrect number of hours. This mistake
+        arises from not recognizing the need to work with consistent units (seconds) when performing time
+        calculations. The key aspect missing is the initial conversion of milliseconds to seconds before
+        calculating hours.
+- type: blank
+  location:
+    snippet: mins = ( total_secs // 60 ) % 60
+  choices:
+  - snippet: mins = ( total_secs // 60 ) % 60
+    role: solution
+    explanations:
+    - body: To obtain the remaining minutes after taking away the hours, we have to take the remainder
+        of the total minutes divided by 60. We get the total minutes by dividing the seconds by 60. Note
+        that we want to truncate the fractional part of the result, if there is any. Therefore, we need
+        to use the floor division by using // operator.<br>Also note that the % operator returns the remainder
+        of the division.
+  - snippet: mins = total_secs // 60
+    role: distractor
+    explanations:
+    - body: You might think that simply dividing total seconds by 60 will give you the correct number
+        of minutes, but this approach overlooks the need to isolate the minutes that remain after accounting
+        for full hours. This line calculates the total number of minutes from the start, not the minutes
+        left after full hours are removed. As a result, the program would incorrectly report the total
+        minutes since the start of the time period, rather than the minutes within the current hour. This
+        mistake is common if you forget to use the modulo operation to find the remainder after dividing
+        by 60, which is necessary to get the minutes past the last full hour.
+  - snippet: mins = total_secs % 60
+    role: distractor
+    explanations:
+    - body: It's easy to confuse the calculation for minutes with that for seconds, especially when both
+        involve the modulo operation. This line mistakenly uses modulo 60 on total seconds, which actually
+        gives you the remaining seconds, not minutes. If you use this line, the program will incorrectly
+        assign the number of seconds past the last full minute to the minutes variable, leading to incorrect
+        output. This error often arises from misunderstanding how to separate minutes from seconds, as
+        both require different operations on the total seconds.
+  - snippet: mins = (milliseconds // 60000) % 60
+    role: distractor
+    explanations:
+    - body: You might think that dividing milliseconds directly by 60000 (the number of milliseconds in
+        a minute) will give you the correct number of minutes, but this approach skips the necessary step
+        of first converting milliseconds to seconds. This line attempts to convert milliseconds directly
+        to minutes, which can lead to confusion about the correct conversion process. If you use this
+        line, the program will miscalculate the minutes because it doesn't account for the conversion
+        from milliseconds to seconds first, leading to incorrect results. This mistake is common if you
+        misunderstand the need to first convert to seconds before further breaking down the time into
+        hours, minutes, and seconds.

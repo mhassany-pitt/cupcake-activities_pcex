@@ -1,0 +1,105 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_linkedlist_searching_0
+title: Search in the linked list.
+description: When using a LinkedList, it is possible that you may want to search through the list to see
+  if a specific value is in it. To do so, each node must be checked individually. Construct a search function
+  within the LinkedList class that traverses through all nodes in the list and returns True if a given
+  target value is within the list.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: When using a LinkedList, it is possible that you may want to search through the list to see
+  if a specific value is in it. To do so, each node must be checked individually. Construct a search function
+  within the LinkedList class that traverses through all nodes in the list and returns True if a given
+  target value is within the list.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: Found 11 in list
+  console: Found 11 in list
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'class Node:'
+  explanations:
+  - body: In order to make a LinkedList, we need to define a Node class first.
+- type: explanation
+  location:
+    snippet: self.data = data
+  explanations:
+  - body: We set the data of the Node equal to the data we passed in.
+- type: explanation
+  location:
+    snippet: self.next = None
+  explanations:
+  - body: We set the reference to the node adjacent to the current one to None (since it doesn’t exist
+      yet)
+- type: explanation
+  location:
+    snippet: 'class LinkedList:'
+  explanations:
+  - body: We now define the linkind list class.
+- type: explanation
+  location:
+    snippet: self.head = None
+  explanations:
+  - body: We initialize the head of the list to be None, since it doesn’t exist yet.
+- type: explanation
+  location:
+    snippet: 'def push(self, new):'
+  explanations:
+  - body: We want to be able to add things to the list, so we define a push method to do so.
+- type: explanation
+  location:
+    snippet: new_node = Node(new)
+  explanations:
+  - body: To add data to the list, we create a new Node object and pass it the data we want to add to
+      the list.
+- type: explanation
+  location:
+    snippet: new_node.next = self.head
+  explanations:
+  - body: Since the new node is added at the beginning, its 'next node' is set to the current head.
+- type: explanation
+  location:
+    snippet: self.head = new_node
+  explanations:
+  - body: New node to be inserted becomes the new head, because it is at the beginning of the linked list.
+- type: explanation
+  location:
+    snippet: 'def search(self, target):'
+  explanations:
+  - body: We want to be able to search for values in the LinkedList, so we define a search method to do
+      so that takes in a specific target value.
+- type: explanation
+  location:
+    snippet: current = self.head
+  explanations:
+  - body: We set the current node equal to the head of the list to begin traversal.
+- type: explanation
+  location:
+    snippet: 'while current is not None:'
+  explanations:
+  - body: We go through the whole linked list by using while loop. 'current' is not none unless it has
+      reached the end of the linked list.
+- type: explanation
+  location:
+    snippet: 'if current.data == target:'
+  explanations:
+  - body: We check if the current data is the target. If it is, return true, if not, we set the current
+      to the next one until the current is none.

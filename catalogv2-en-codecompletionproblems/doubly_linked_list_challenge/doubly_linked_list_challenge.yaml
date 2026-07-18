@@ -1,0 +1,57 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_double_linked_list_1
+title: Doubly Linked List Challenge
+description: Create the necessary classes for a Doubly Linked List, containing the method insert_at_start(data)
+  to add a new item to the beginning of the linked list, insert_at_end(data) to add a new item to the
+  end of the linked list, delete_at_start() to delete the first item from the link, and an __str__ method
+  to print out the doubly linked list. Test the doubly linked list after all classes and methods are created.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Create the necessary classes for a Doubly Linked List, containing the method insert_at_start(data)
+  to add a new item to the beginning of the linked list, insert_at_end(data) to add a new item to the
+  end of the linked list, delete_at_start() to delete the first item from the link, and an __str__ method
+  to print out the doubly linked list. Test the doubly linked list after all classes and methods are created.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '[Greyson, Riley, Mike]'
+  console: '[Greyson, Riley, Mike]'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: self.start_node = None
+    nth: 2
+  choices:
+  - snippet: self.start_node = None
+    role: solution
+    explanations:
+    - body: The only item in the linked list is deleted by setting the start_node to None.
+  - snippet: self.start_node.nref = None
+    role: distractor
+- type: blank
+  location:
+    snippet: n.pref.nref = None
+  choices:
+  - snippet: n.pref.nref = None
+    role: solution
+    explanations:
+    - body: The last item of the linked list is deleted by setting itself to None. This is done by setting
+        the "n"'s previous node's next node (current node) to be None.
+  - snippet: n = None
+    role: distractor

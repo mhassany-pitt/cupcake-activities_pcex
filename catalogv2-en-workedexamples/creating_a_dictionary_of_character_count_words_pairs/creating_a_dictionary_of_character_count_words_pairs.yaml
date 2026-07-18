@@ -1,0 +1,157 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_char_dict_0
+title: Creating a Dictionary of Character-Count/Words Pairs
+description: |-
+  Construct a program that has a function which receives a string from the user and creates a dictionary that maps each character in the given string to its frequency, that is, how many times that character appears in the given string.
+  For example, if the given string is "book", the program creates the following dictionary:
+  b : 1
+  o : 2
+  k : 1
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program that has a function which receives a string from the user and creates a dictionary that maps each character in the given string to its frequency, that is, how many times that character appears in the given string.
+  For example, if the given string is "book", the program creates the following dictionary:
+  b : 1
+  o : 2
+  k : 1
+executions:
+- title: Sample Run
+  stdin:
+  - Mississippi
+  stdout: |-
+    Enter a string: Mississippi
+    The character counts for Mississippi
+    M : 1
+    i : 4
+    s : 4
+    p : 2
+  console: |-
+    Enter a string: Mississippi
+    The character counts for Mississippi
+    M : 1
+    i : 4
+    s : 4
+    p : 2
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def create_dictionary(s):'
+  explanations:
+  - body: We need to first declare the function that receives a string and create a dictionary that maps
+      each character in the given string to its frequency, that is, how many times that character appears
+      in the given string. The given string is referred by variable s.<br><br>Note that all statements
+      following the header line are indented.
+- type: explanation
+  location:
+    snippet: counts = {}
+  explanations:
+  - body: We first need to define a dictionary referred by variable counts for storing the frequency of
+      the characters in the given string. We initialize it with an empty dictionary by setting it to a
+      pair of braces {}.<br><br>We need this dictionary to store key-value pairs where each key represents
+      a character in the given string and the value that is mapped to that represents the frequency of
+      that character in the given string.
+- type: explanation
+  location:
+    snippet: 'for char in s:'
+  explanations:
+  - body: We want to iterate over the characters in the given string and update the frequency of them
+      each time that they appear in the string. We can use a for loop to iterate through the characters
+      in the string.
+  - body: This for loop assigns the name char to each of the characters in the given string in turn, from
+      left to right, and then the statement in the loop body will be executed for each character.
+  - body: Note that all statements inside the loop need to be indented with respect to the loop header.
+- type: explanation
+  location:
+    snippet: 'if char in counts:'
+  explanations:
+  - body: To determine if the visited character already exists as the key in the dictionary, we employ
+      the in operator to test membership. Because the in operator implicitly scans the keys in the dictionary
+      looking for a match.
+  - body: If the visited character already exists as the key in the dictionary, then the body of this
+      if statement gets executed. Otherwise, the body of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: counts[char] += 1
+  explanations:
+  - body: When the visited character already exists as the key in the dictionary, we need to increment
+      its value by 1. This way, the frequency of the visited character in the given string will be increased
+      by 1.
+  - body: The += operator adds 1 to the value of the dictionary entry that has the visited character as
+      its key. Therefore, it is functionally equivalent to the statement counts[char] = counts[char] +
+      1.
+- type: explanation
+  location:
+    snippet: 'else:'
+  explanations:
+  - body: If the above if test fails (i.e., when the visited character does not exist as the key in the
+      dictionary), we need to add a new entry to the dictionary with the visited character as the key
+      and 1 as its value.
+  - body: The statement inside the body of this else statement is executed when the visited character
+      does not exist as the key in the dictionary. Otherwise, the body of this else statement is skipped.
+- type: explanation
+  location:
+    snippet: counts[char] = 1
+  explanations:
+  - body: When the visited character does not exist as the key in the dictionary, we need to add it to
+      the dictionary as a new key and set its value to 1. We set its value to 1 because this is the first
+      occurrence of the character in the given string.
+- type: explanation
+  location:
+    snippet: print("The character counts for", s)
+  explanations:
+  - body: This statement prints to the default standard output stream the text "The character counts for"
+      and the value of variable s.<br>The printed text shows the arguments of the print function separated
+      by the default delimiter (i.e., single space character) and followed by the end-of-line character
+      at the end.
+- type: explanation
+  location:
+    snippet: 'for char in counts:'
+  explanations:
+  - body: To see the frequency of each character, we need to iterate over the keys in the dictionary and
+      print the value that is mapped to each key. We can use a for loop to iterate through the keys in
+      the dictionary.
+  - body: This for loop assigns the name char to each of the keys in the dictionary in turn, from left
+      to right, and then the statement in the loop body will be executed for each character.<br><br>Note
+      that each key in the dictionary represents a character in the given string.
+  - body: Note that all statements inside the loop need to be indented with respect to the loop header.
+- type: explanation
+  location:
+    snippet: print(char, ":", counts[char])
+  explanations:
+  - body: This statement prints to the default standard output stream the visited key in the dictionary,
+      the string ":" and the value that is mapped to that key.<br>Each key represents a character in the
+      given string and the value that is mapped to that represents the frequency of that character in
+      the given string.
+  - body: The printed text shows the arguments of the print function separated by the default delimiter
+      (i.e., single space character) and followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: 's = input("Enter a string: ")'
+  explanations:
+  - body: 'We need to read the string that the user enters. To read the user input from the command line,
+      we use the input() function. This statement prints a text on the screen "Enter a string: ", then
+      reads the text entered by the user.<br><br>The value that will be read is a string; we assign it
+      to variable s.'
+- type: explanation
+  location:
+    snippet: create_dictionary(s)
+  explanations:
+  - body: This statement calls the create_dictionary function and passes the string that the user enters
+      as its argument. Note that the function call must be done after the function is declared.

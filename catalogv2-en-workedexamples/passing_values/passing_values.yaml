@@ -1,0 +1,89 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_references_passing_values_0
+title: Passing Values
+description: Construct a function that increases the original integer's value by 1 and return the increased
+  value's memory address.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Construct a function that increases the original integer's value by 1 and return the increased
+  value's memory address.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Initial address of n: 4456437616
+    Initial address of x: 4456437616
+    Final address of x: 4456436624
+    Final address of n: 4456437616
+  console: |-
+    Initial address of n: 4456437616
+    Initial address of x: 4456437616
+    Final address of x: 4456436624
+    Final address of n: 4456437616
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def increment(x):'
+  explanations:
+  - body: We need to first declare the function so that we can call it later. The following lines declare
+      the function increment that takes an integer and prints its original memory address and increases
+      the original integer by 1 and then prints its current memory address.
+  - body: Note that all statements following the header line are indented.
+- type: explanation
+  location:
+    snippet: 'print(f"Initial address of x: {id(x)}")'
+  explanations:
+  - body: This statement prints the original memory address of x. We use a built in function id( ) to
+      get the value’s memory address.
+- type: explanation
+  location:
+    snippet: x += 1
+  explanations:
+  - body: This statement increases x’s value by 1.
+- type: explanation
+  location:
+    snippet: 'print(f"Final address of x: {id(x)}")'
+  explanations:
+  - body: This statement prints the increased value’s memory address. We use a built in function id( )
+      to get the value’s memory address.
+- type: explanation
+  location:
+    snippet: n = 9001
+  explanations:
+  - body: The statement initiates the integer n’s value.
+- type: explanation
+  location:
+    snippet: 'print(f"Initial address of n: {id(n)}")'
+  explanations:
+  - body: This statement prints the original memory address of n. We use a built in function id( ) to
+      get the value’s memory address.
+- type: explanation
+  location:
+    snippet: increment(n)
+  explanations:
+  - body: This statement calls the increment function and passes the value n as its argument.
+  - body: Note that the function call must be done after the function is declared.
+- type: explanation
+  location:
+    snippet: 'print(f"Final address of n: {id(n)}")'
+  explanations:
+  - body: This statement prints the original memory address of n. We use a built-in function id( ) to
+      get the value’s memory address.
+  - body: Note that the address of x initially matches the address of n but changes after reassignment.
+      However, the address of n never changes.

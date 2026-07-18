@@ -1,0 +1,68 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_concat_str_num_1
+title: Concatenating Strings and Numbers (Case 2)
+description: Construct a program that uses variables x, y, and z to print "x * 2 = 4".
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that uses variables x, y, and z to print "x * 2 = 4".
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: x * 2 = 4
+  console: x * 2 = 4
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: z = x * 2
+  choices:
+  - snippet: z = x * 2
+    role: solution
+    explanations:
+    - body: This statement sets variable z to the integer value that is the result of the multiplication
+        operation.
+    - body: The expression on the right-hand side of the assignment operator multiplies the value stored
+        in variable x by 2. The result of the multiplication is an integer value because both operands
+        of the multiplication operator are integers. Note that variable x has an integer value.
+- type: blank
+  location:
+    snippet: print(y + str(z))
+  choices:
+  - snippet: print(y + str(z))
+    role: solution
+    explanations:
+    - body: This statement concatenates the content of variables y, z to print the requested output. We
+        concatenate the content of these variables using the + operator. Variable y has a string value
+        and we can use the + operator to concatenate its content with any other string. Variable z, on
+        the other hand, has an integer value and its value can be concatenated with a string only when
+        we it is explicitly converted to a string using the str function.
+    - body: Note that the concatenating and printing are done in the same line. That is, we don't have
+        to store the concatenated string to a new variable at first and then print it in the next line.
+    - body: Note that the + operator creates a new string from the contents of its operands joined. This
+        string will be printed by the print function and followed by the end-of-line character at the
+        end.
+  - snippet: y + str(z)
+    role: distractor
+  - snippet: y + z
+    role: distractor
+  - snippet: print(y + z)
+    role: distractor
+  - snippet: print(x + str(z))
+    role: distractor
+  - snippet: print(x + y)
+    role: distractor

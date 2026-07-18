@@ -1,0 +1,66 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_squares_2
+title: Printing the Squares of Numbers Within a Specified Range (Case 3)
+description: Construct a program to write out the squares of every number between 20 and 25, both inclusive.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program to write out the squares of every number between 20 and 25, both inclusive.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    20 squared = 400
+    21 squared = 441
+    22 squared = 484
+    23 squared = 529
+    24 squared = 576
+    25 squared = 625
+  console: |-
+    20 squared = 400
+    21 squared = 441
+    22 squared = 484
+    23 squared = 529
+    24 squared = 576
+    25 squared = 625
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'for num in range(20, 26):'
+  choices:
+  - snippet: 'for num in range(20, 26):'
+    role: solution
+    explanations:
+    - body: We need to repeat the same process for each of the integers between 20 and 25, both inclusive.
+        To do this, we need to use a loop structure. We use for loops instead of a while loop because
+        we need to repeat the loop a certain number of times, and for loops are best-suited in cases like
+        this when we know ahead of time the number of times that we need to repeat the loop.<br><br>We
+        use the range function because it generates a sequence of numbers for the for loop. Here, we want
+        a sequence that starts at 20 with every integer number up to but not including 26. We get this
+        sequence by calling the function range(20,26).
+    - body: Note that all statements inside the loop need to be indented with respect to the loop header.
+  - snippet: 'for num in range(20, 26, 2):'
+    role: distractor
+  - snippet: 'for num in range(20, 25, 2):'
+    role: distractor
+  - snippet: 'for num in range(25, 20):'
+    role: distractor
+  - snippet: 'for num in range(26, 20, 2):'
+    role: distractor
+  - snippet: 'for num in range(20, 25):'
+    role: distractor

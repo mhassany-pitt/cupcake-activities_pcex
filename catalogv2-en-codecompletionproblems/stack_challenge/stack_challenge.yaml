@@ -1,0 +1,60 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_stack_stack_1
+title: Stack Challenge
+description: |-
+  Implementing Stack. Using Class to construct a Stack. Implement a function to determine if all the given brackets are paired.
+  For example:
+         paired brackets list:['[','{','(','{','}',')','}',']’] ; unpaired brackets list:['{',']','(','{','}',')','}',']']
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Implementing Stack. Using Class to construct a Stack. Implement a function to determine if all the given brackets are paired.
+  For example:
+         paired brackets list:['[','{','(','{','}',')','}',']’] ; unpaired brackets list:['{',']','(','{','}',')','}',']']
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    True
+    False
+  console: |-
+    True
+    False
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: s.push(brackets)
+  choices:
+  - snippet: s.push(brackets)
+    role: solution
+    explanations:
+    - body: This statement invokes the method push() of s to pass the current bracket and add it to the
+        list. Note that s is the implied subject (instance) passed to self.
+  - snippet: s.pop(brackets)
+    role: distractor
+  - snippet: s.push()
+    role: distractor
+- type: blank
+  location:
+    snippet: s.pop()
+  choices:
+  - snippet: s.pop()
+    role: solution
+    explanations:
+    - body: We invoke the method pop() of s to pop out the last elements in the stack.

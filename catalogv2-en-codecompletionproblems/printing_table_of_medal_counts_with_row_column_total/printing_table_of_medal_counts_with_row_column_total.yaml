@@ -1,0 +1,114 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_print_medals_1
+title: Printing Table of Medal Counts with Row/Column Total
+description: |-
+  Assume that we have a 7x4 matrix that stores the number of medals that seven countries won in the skating competitions at the Winter Olympic. This matrix looks like as follows:
+  [[ "Canada", 1, 0, 1 ],
+   [ "China", 1, 1, 0 ],
+   ...]
+  Each row of this matrix corresponds to the medal counts for the country in that row. The second, third, and fourth numbers within a row represent the number of Gold, Silver, and Bronze medals won by the corresponding country in that row.
+  Construct a program that takes this matrix and prints a table of medal counts with row and column totals. The column totals are the sum of the gold, silver, and bronze medals won in the competition. The output table should look like as follows:
+        Country    Gold  Silver  Bronze   Total
+           Canada        1       0       1          2
+              China        1       1       0          2
+             ...
+  Column Total      4       4       4
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Assume that we have a 7x4 matrix that stores the number of medals that seven countries won in the skating competitions at the Winter Olympic. This matrix looks like as follows:
+  [[ "Canada", 1, 0, 1 ],
+   [ "China", 1, 1, 0 ],
+   ...]
+  Each row of this matrix corresponds to the medal counts for the country in that row. The second, third, and fourth numbers within a row represent the number of Gold, Silver, and Bronze medals won by the corresponding country in that row.
+  Write a program that takes this matrix and prints a table of medal counts with row and column totals. The column totals are the sum of the gold, silver, and bronze medals won in the competition. The output table should look like as follows:
+        Country    Gold  Silver  Bronze   Total
+           Canada        1       0       1          2
+              China        1       1       0          2
+             ...
+  Column Total      4       4       4
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Name  G  S  B All
+     CAN  1  0  1  2
+     CHN  1  1  0  2
+     GER  0  0  1  1
+     KOR  1  0  0  1
+     JPN  0  1  1  2
+     RUS  0  1  1  2
+     USA  1  1  0  2
+     All  4  4  4
+  console: |-
+    Name  G  S  B All
+     CAN  1  0  1  2
+     CHN  1  1  0  2
+     GER  0  0  1  1
+     KOR  1  0  0  1
+     JPN  0  1  1  2
+     RUS  0  1  1  2
+     USA  1  1  0  2
+     All  4  4  4
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: column_totals = [0] * ( len(medal_counts[0]) - 1 )
+  choices:
+  - snippet: column_totals = [0] * ( len(medal_counts[0]) - 1 )
+    role: solution
+    explanations:
+    - body: We want to calculate the column totals. To do this, we need a list of length len(medal_counts[0])
+        - 1. We don't need to calculate the column total for the first column of the matrix because it
+        stores the countries names.
+    - body: In this statement, we create the list and fill it with 0s because we have not started computing
+        the column totals yet.
+    - body: We use the repetition operator * to create the list column_totals. The repetition operator
+        makes N copies of this list and joins them all together into a single list, where N is the number
+        of columns in the medal_counts that stores the medals each country won, here, 3. Note that when
+        the operand on the left side of the * is a list, it becomes the repetition operator and not the
+        multiplication.
+  - snippet: column_totals = [0]
+    role: distractor
+  - snippet: column_totals = [0] * ( len(medal_counts) )
+    role: distractor
+- type: blank
+  location:
+    snippet: column_totals[j-1] += medal_counts[i][j]
+  choices:
+  - snippet: column_totals[j-1] += medal_counts[i][j]
+    role: solution
+    explanations:
+    - body: This statement adds the value of the current element in row i and column j to the element
+        in the index j-1 of the list column_totals. Note that column_totals[j-1] stores the column total
+        for the column j in the matrix referred by variable medals_counts.
+    - body: If j is 1, it adds the current element to the column_totals[0] that stores total gold medals
+        won in the competition; if j is 2, it adds the current element to the column_totals[1] that stores
+        total silver medals won in the competition; and if j is 3, it adds the current element to the
+        column_totals[2] that stores total bronze medals won in the competition.
+    - body: Note that the += operator adds the value of the element in row i and column j of the medal_counts
+        (i.e., element medal_counts[i][j]) to the value of the list element column_totals[j-1] and the
+        result is stored in the list element column_totals[j-1]. Thus, this statement is equivalent to
+        the statement column_totals[j-1] = column_totals[j-1] + medal_counts[i][j].
+  - snippet: column_totals[i-1] += medal_counts[i][j];
+    role: distractor
+  - snippet: column_totals[i-1] = medal_counts[i][j];
+    role: distractor
+  - snippet: column_totals[j-1] += medal_counts[j][i];
+    role: distractor

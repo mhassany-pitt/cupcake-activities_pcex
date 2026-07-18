@@ -1,0 +1,168 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_check_product_code_0
+title: Counting the Number of Valid and Banned Product Codes
+description: |-
+  Suppose a hypothetical company uses codes to represent its various products. A product code includes, among other information, a character in the tenth position that represents the zone from which that product was made. Due to some reorganization, products from zone R are banned from being sold.
+  Construct a program that reads product codes from the user and counts the number of valid and banned codes entered. Make sure that the program handles all possible exceptions.
+  The program must ask the user for an input until the user enters STOP.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Suppose a hypothetical company uses codes to represent its various products. A product code includes, among other information, a character in the tenth position that represents the zone from which that product was made. Due to some reorganization, products from zone R are banned from being sold.
+  Write a program that reads product codes from the user and counts the number of valid and banned codes entered. Make sure that the program handles all possible exceptions.
+  The program must ask the user for an input until the user enters STOP.
+executions:
+- title: Sample Run
+  stdin:
+  - TRV2475A5Z-14
+  - TRD1704A7R-12
+  - TRV2105A2
+  - TRL2k74A5S-11
+  - STOP
+  stdout: "Enter product code: \nEnter product code: \nEnter product code: \nImproper code length.\nEnter\
+    \ product code: \nEnter product code: \n# of valid codes entered: 3\n# of banned codes entered: 1"
+  console: "Enter product code: \nEnter product code: \nEnter product code: \nImproper code length.\n\
+    Enter product code: \nEnter product code: \n# of valid codes entered: 3\n# of banned codes entered:\
+    \ 1"
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def check_product_code():'
+  explanations:
+  - body: We need to first declare the function that reads product codes from the user and counts the
+      number of valid and banned codes entered. This function asks the user for an input until the user
+      enters STOP.
+  - body: Note that all statements following the header line are indented.
+- type: explanation
+  location:
+    snippet: valid = 0
+  explanations:
+  - body: We need this variable to count the number of the valid product codes that the user enters. We
+      set it 0 because we have not started counting yet.
+- type: explanation
+  location:
+    snippet: banned = 0
+  explanations:
+  - body: We need this variable to count the number of the banned product codes that the user enters.
+      We set it 0 because we have not started counting yet.
+- type: explanation
+  location:
+    snippet: 'code = input("Enter product code: ")'
+    nth: 1
+  explanations:
+  - body: The input function prompts the user to enter the product code, then reads the text entered by
+      the user and places it in the variable code. The value that will be stored in variable code is a
+      string.
+- type: explanation
+  location:
+    snippet: 'while ( code != "STOP") :'
+  explanations:
+  - body: We need to repeat receiving the input from the user as long as the user does not enter STOP.
+      Therefore, we need to use a loop structure. Since we don't know ahead of time how many times the
+      loop will be repeated, we need to use a while loop. The condition in the while loop tests whether
+      the body of the loop should be repeated, so it should test whether the input is different from STOP.
+  - body: Note that we could compare whether two strings are different using != operator.
+  - body: The body of the while loop is repeated as long as the user does not enter STOP. The loop terminates
+      when the loop condition evaluates to False, that is when the user enters STOP.
+- type: explanation
+  location:
+    snippet: 'try :'
+  explanations:
+  - body: The try blocks tries to execute the code within it. The statements in the try block may throw
+      several types of exception.
+  - body: If an error is encountered, the try block code execution is stopped and transferred down to
+      the except block(s).
+- type: explanation
+  location:
+    snippet: zone = code[9]
+  explanations:
+  - body: code[9] gives us the character at index 9 of the given string. This character represents the
+      zone from which the product was made.
+- type: explanation
+  location:
+    snippet: valid += 1
+  explanations:
+  - body: When we could extract the zone from the product code, it means the code is valid. Therefore,
+      we need to increment the number of valid codes by 1.
+  - body: The += operator adds the value on the right-hand side of the assignment operator (i.e., 1) to
+      the current value of the variable on the left-hand side (i.e., value of variable valid) and the
+      result is stored in the variable valid. Thus, this statement is equivalent to the statement valid
+      = valid + 1.
+- type: explanation
+  location:
+    snippet: 'if zone == "R" :'
+  explanations:
+  - body: We need to compare the product's zone with string "R". If the zone is R, then we increment the
+      number of banned codes by 1.
+  - body: Note that we could compare whether two strings are equal using == operator.
+  - body: If the product's zone is R, then the body of this if statement gets executed. Otherwise, the
+      body of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: banned += 1
+  explanations:
+  - body: When the product's zone is R, it means the product is banned from being sold. Therefore, we
+      need to increment the number of banned codes by 1.
+  - body: The += operator adds the value on the right-hand side of the assignment operator (i.e., 1) to
+      the current value of the variable on the left-hand side (i.e., value of variable banned) and the
+      result is stored in the variable banned. Thus, this statement is equivalent to the statement banned
+      = banned + 1.
+- type: explanation
+  location:
+    snippet: 'except IndexError :'
+  explanations:
+  - body: We need to handle the IndexError. This error occurs when the try block accesses the character
+      at the index that does not exist in the code.
+  - body: The body of this except block gets executed only if the length of the code is less than 10;
+      in that case, the character at index 9 does not exist in the code. Otherwise, the body of this except
+      statement is skipped.
+- type: explanation
+  location:
+    snippet: print("Improper code length.")
+  explanations:
+  - body: This statement prints to the default standard output stream the error that caused the IndexError.
+      The printed text is followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: 'code = input("Enter product code: ")'
+    nth: 2
+  explanations:
+  - body: The input function prompts the user to enter the next product code, then reads the text entered
+      by the user and places it in the variable code. The value that will be stored in variable code is
+      a string.
+- type: explanation
+  location:
+    snippet: print("# of valid codes entered:", valid)
+  explanations:
+  - body: This statement prints to the default standard output stream the given text and the value of
+      variable valid. The printed text shows the arguments of the print function separated by the default
+      delimiter (i.e., single space character) and followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: print("# of banned codes entered:", banned)
+  explanations:
+  - body: This statement prints to the default standard output stream the given text and the value of
+      variable banned. The printed text shows the arguments of the print function separated by the default
+      delimiter (i.e., single space character) and followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: check_product_code()
+  explanations:
+  - body: This statement calls the check_product_code function. Note that the function call must be done
+      after the function is declared.

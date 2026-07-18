@@ -1,0 +1,81 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_search_list_2
+title: Searching Values of a List in Another List (Case 3)
+description: |-
+  Construct a program that has a function that receives two lists and creates a list that contains the number of times each element in the 2nd list appears in the 1st list. For example, if the 1st list is [1, 2, 3, 3, 4, 4, 5, 6] and the 2nd list is [3, 4, 5, 6, 7], then the list that contains the number of times each element in the 2nd list appears in the 1st list is [2, 2, 1, 1, 0].
+  Assume that all elements in the 2nd list are unique.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program that has a function that receives two lists and creates a list that contains the number of times each element in the 2nd list appears in the 1st list. For example, if the 1st list is [1, 2, 3, 3, 4, 4, 5, 6] and the 2nd list is [3, 4, 5, 6, 7], then the list that contains the number of times each element in the 2nd list appears in the 1st list is [2, 2, 1, 1, 0].
+  Assume that all elements in the 2nd list are unique.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: 'The list that contains the number of times each element in the 2nd list appears in the 1st
+    list: [0, 2, 2]'
+  console: 'The list that contains the number of times each element in the 2nd list appears in the 1st
+    list: [0, 2, 2]'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: counts = [0] * len(lst2)
+  choices:
+  - snippet: counts = [0] * len(lst2)
+    role: solution
+    explanations:
+    - body: We need N variables to store the number of matches for each element in the 2nd list; that
+        means a list is a great way to store this data. Therefore, we need to create a list with the same
+        length as the 2nd list and fill it with 0s as we have not started counting yet. In general, the
+        element at index i in this list will be used for storing the number of times the element at index
+        i in the 2nd list appears in the 1st list.
+    - body: The repetition operator * makes N copies of the list [0] and joins them all together into
+        a single list, where N is the number of elements in the 2nd list.
+    - body: Note that the function len(lst2) returns the number of elements in the 2nd list. Also, note
+        that when the operand on the left side of the * is a list, it becomes the repetition operator
+        and not the multiplication.
+  - snippet: counts = []
+    role: distractor
+  - snippet: counts = [0] * len(lst1)
+    role: distractor
+- type: blank
+  location:
+    snippet: counts[ lst2.index(val2) ] += 1
+  choices:
+  - snippet: counts[ lst2.index(val2) ] += 1
+    role: solution
+    explanations:
+    - body: This statement increments the number of matches for val2 (the value that we visited in the
+        2nd list) by 1 every time we find a match between val2 and a value in the 1st list.<br><br>To
+        update the number of matches that corresponds to val2, we need to find the index in the counts
+        that corresponds to val2. When we find the index, we increment the value that is stored at that
+        index by 1.
+    - body: The index function returns the lowest index in 2nd list that val2 appears. Since all elements
+        of the 2nd list are unique, each value in the 2nd list appears in only one index; and thus, we
+        always get the right index for val2.<br><br> When the returned index is i, we increment the number
+        of matches for the value at index i in the 2nd list.
+    - body: Note that we do not necessarily have to store the returned value from the index function in
+        a variable. We could use the index function call directly as the list index.
+    - body: Note that the += operator adds 1 to the value stored in counts[lst2.index(val2)] and the result
+        is stored into the element counts[lst2.index(val2)]. Therefore, it is functionally equivalent
+        to the statement counts[lst2.index(val2)] = counts[lst2.index(val2)] + 1.
+  - snippet: counts[ lst1.index(val2) ] += 1
+    role: distractor
+  - snippet: counts[ val2 ] += 1
+    role: distractor

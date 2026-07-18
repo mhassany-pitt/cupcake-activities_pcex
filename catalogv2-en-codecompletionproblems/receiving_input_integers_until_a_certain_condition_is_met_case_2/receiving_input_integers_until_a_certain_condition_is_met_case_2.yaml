@@ -1,0 +1,82 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_input_1
+title: Receiving Input Integers Until a Certain Condition is Met (Case 2)
+description: Construct a program that receives an integer from the user, outputs that integer, and stops
+  receiving integers when the user enters an integer that is not in the range of 30 to 90 both inclusive.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that receives an integer from the user, outputs that integer, and stops receiving
+  integers when the user enters an integer that is not in the range of 30 to 90 both inclusive.
+executions:
+- title: Sample Run
+  stdin:
+  - '80'
+  - '40'
+  - '30'
+  - '90'
+  - '10'
+  stdout: |-
+    Enter an integer:
+    The integer entered is: 80
+    Enter an integer:
+    The integer entered is: 40
+    Enter an integer:
+    The integer entered is: 30
+    Enter an integer:
+    The integer entered is: 90
+    Enter an integer:
+    End of input.
+  console: |-
+    Enter an integer:
+    The integer entered is: 80
+    Enter an integer:
+    The integer entered is: 40
+    Enter an integer:
+    The integer entered is: 30
+    Enter an integer:
+    The integer entered is: 90
+    Enter an integer:
+    End of input.
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'while num >= 30 and num <= 90 :'
+  choices:
+  - snippet: 'while num >= 30 and num <= 90 :'
+    role: solution
+    explanations:
+    - body: We need to repeat receiving the integers from the user as long as the user enters an integer
+        that is in the range of 30 to 90 both inclusive. Therefore, we need to use a loop structure. Since
+        we don't know ahead of time how many times the loop will be repeated, we need to use a while loop.
+        The condition in the while loop tests whether the body of the loop should be repeated, so it should
+        test whether the input integer is in the range of 30 to 90 both inclusive.<br><br>We could check
+        whether the input integer is in the range of 30 to 90 (both inclusive) by checking whether the
+        input integer is greater than or equal to 30 and less than or equal to 90.
+    - body: The body of the while loop is repeated as long as the user enters an integer that is in the
+        range of 30 to 90 both inclusive. The loop terminates when the loop condition evaluates to False,
+        that is when the user enters an integer that is not in this range.
+    - body: Note that the and operator yields the result True if both conditions are True.
+  - snippet: 'while num >= 30 or num <= 90 :'
+    role: distractor
+  - snippet: 'while num > 30 and num < 90 :'
+    role: distractor
+  - snippet: 'while num <= 30 or num >= 90 :'
+    role: distractor
+  - snippet: 'while num <= 30 and num >= 90 :'
+    role: distractor

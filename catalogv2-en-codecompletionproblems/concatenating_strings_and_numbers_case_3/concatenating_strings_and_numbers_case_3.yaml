@@ -1,0 +1,65 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_concat_str_num_2
+title: Concatenating Strings and Numbers (Case 3)
+description: Construct a program that uses variables x, y, and z to print "10 + 20 = 30".
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that uses variables x, y, and z to print "10 + 20 = 30".
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: 10 + 20 = 30
+  console: 10 + 20 = 30
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: z = x + y
+  choices:
+  - snippet: z = x + y
+    role: solution
+    explanations:
+    - body: This statement sets variable z to the integer value that is the result of the addition operation.
+    - body: The expression on the right-hand side of the assignment operator adds the values stored in
+        variable x and y. The result of the addition is an integer value because both operands of the
+        addition operator are integers. Note that variables x and y have an integer value.
+  - snippet: z = str(x) + str(y)
+    role: distractor
+  - snippet: z = str(x) + y
+    role: distractor
+- type: blank
+  location:
+    snippet: print(str(x) + " + " + str(y) + " = " + str(z))
+  choices:
+  - snippet: print(str(x) + " + " + str(y) + " = " + str(z))
+    role: solution
+    explanations:
+    - body: This statement concatenates the content of variables x, y, and z to print the requested output.
+        We concatenate the content of these variables using the + operator. All three variables have integer
+        values and their values could be concatenated with strings only when they are explicitly converted
+        to a string using the str function.
+    - body: Note that the concatenating and printing are done in the same line. That is, we don't necessarily
+        have to store the concatenated string to a new variable at first and then print it in the next
+        line.
+    - body: Note that the + operator creates a new string from the contents of its operands joined. This
+        string will be printed by the print function and followed by the end-of-line character at the
+        end.
+  - snippet: print(x + " + " + y + " = " + z)
+    role: distractor
+  - snippet: str(x) + " + " + str(y) + " = " + str(z)
+    role: distractor

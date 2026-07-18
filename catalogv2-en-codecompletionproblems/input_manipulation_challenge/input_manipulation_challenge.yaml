@@ -1,0 +1,60 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_datatype_input_manipulation_1
+title: Input Manipulation Challenge
+description: Construct a program that takes a user's inputs and calculate the division of the inputs.Then
+  convert the division result into an integer, check the current division result's type and print the
+  original division result, converted result and the original division result's float absolute value.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that takes a user's inputs and calculate the division of the inputs.Then convert
+  the division result into an integer, check the current division result's type and print the original
+  division result, converted result and the original division result's float absolute value.
+executions:
+- title: Sample Run
+  stdin:
+  - '15'
+  - '4'
+  stdout: |-
+    Enter the first integer:
+    Enter the second integer:
+    3
+    True
+    3.75
+  console: |-
+    Enter the first integer:
+    Enter the second integer:
+    3
+    True
+    3.75
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: f = isinstance(d,int)
+  choices:
+  - snippet: f = isinstance(d,int)
+    role: solution
+    explanations:
+    - body: We want to check if the division result d is an integer type. We use the built-in function
+        isinstance(), and store the Boolean result into the variable f.
+  - snippet: f = d
+    role: distractor
+  - snippet: f = d is int
+    role: distractor
+  - snippet: f = type(d)
+    role: distractor

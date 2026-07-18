@@ -1,0 +1,98 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_find_average_1
+title: Calculating the Average of the Input Numbers (Case2)
+description: Construct a program that reads a series of integer values from the user, sums up the integers
+  that are an even number, and calculate their average. The user enters 0 to indicate the end of the input.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that reads a series of integer values from the user, sums up the integers that
+  are an even number, and calculate their average. The user enters 0 to indicate the end of the input.
+executions:
+- title: Sample Run
+  stdin:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '0'
+  stdout: "Enter an integer (0 to quit): \nThe sum of even numbers so far is 0 , count of even numbers\
+    \ = 0\nEnter an integer (0 to quit): \nThe sum of even numbers so far is 2 , count of even numbers\
+    \ = 1\nEnter an integer (0 to quit): \nThe sum of even numbers so far is 2 , count of even numbers\
+    \ = 1\nEnter an integer (0 to quit): \nThe sum of even numbers so far is 6 , count of even numbers\
+    \ = 2\nEnter an integer (0 to quit): \nThe sum of even numbers so far is 6 , count of even numbers\
+    \ = 2\nEnter an integer (0 to quit): \nThe sum of even numbers so far is 12 , count of even numbers\
+    \ = 3\nEnter an integer (0 to quit): \nThe average is: 4.0"
+  console: "Enter an integer (0 to quit): \nThe sum of even numbers so far is 0 , count of even numbers\
+    \ = 0\nEnter an integer (0 to quit): \nThe sum of even numbers so far is 2 , count of even numbers\
+    \ = 1\nEnter an integer (0 to quit): \nThe sum of even numbers so far is 2 , count of even numbers\
+    \ = 1\nEnter an integer (0 to quit): \nThe sum of even numbers so far is 6 , count of even numbers\
+    \ = 2\nEnter an integer (0 to quit): \nThe sum of even numbers so far is 6 , count of even numbers\
+    \ = 2\nEnter an integer (0 to quit): \nThe sum of even numbers so far is 12 , count of even numbers\
+    \ = 3\nEnter an integer (0 to quit): \nThe average is: 4.0"
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'if num % 2 == 0 :'
+  choices:
+  - snippet: 'if num % 2 == 0 :'
+    role: solution
+    explanations:
+    - body: We want to calculate the average of the even numbers that the user enters. Therefore, we should
+        skip numbers that aren't even. To do this, we need an if statement that uses the remainder (%)
+        operator to test whether the integer that the user entered is even. The even integer must be divisible
+        by 2 i.e. when it is divided by 2, there is a zero remainder.
+    - body: The body of this if statement is executed only if the integer is even, that is the remainder
+        when the integer is divided by 2 is zero. Note that the % operator returns the remainder of the
+        division.
+  - snippet: 'if count % 2 == 0 :'
+    role: distractor
+- type: blank
+  location:
+    snippet: count += 1
+  choices:
+  - snippet: count += 1
+    role: solution
+    explanations:
+    - body: We have to count the number of even integers that are entered because we need it for calculating
+        the average of even integers. Therefore, each time that the user enters an even integer, we need
+        to increment the number of even integers that user has entered by 1. Note that if the user enters
+        0, it will not be counted.
+    - body: The += operator adds the value on the right-hand side of the assignment operator (i.e., 1)
+        to the current value of the variable on the left-hand side (i.e., value of variable count) and
+        the result is stored in the variable count. Thus, this statement is equivalent to the statement
+        count = count + 1.
+  - snippet: count += 2
+    role: distractor
+- type: blank
+  location:
+    snippet: total += num
+  choices:
+  - snippet: total += num
+    role: solution
+    explanations:
+    - body: We need to add the even integer that the user has entered to the running total. So, each time
+        that the user enters an even integer, that integer needs to be added to and stored back into total.
+    - body: The += operator adds the value on the right-hand side of the assignment operator (i.e., value
+        of variable num) to the current value of the variable on the left-hand side (i.e., value of variable
+        total) and the result is stored in the variable total. Thus, this statement is equivalent to the
+        statement total = total + num.
+  - snippet: num = num + 2
+    role: distractor

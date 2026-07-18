@@ -1,0 +1,52 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_list_basic_2
+title: Updating an Element in a List (Case 3)
+description: Construct a program that initializes a list with four string values, changes the last element
+  in the list, and finally, prints the list.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that initializes a list with four string values, changes the last element in
+  the list, and finally, prints the list.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '[''a'', ''b'', ''c'', ''e'']'
+  console: '[''a'', ''b'', ''c'', ''e'']'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: lst[3] = "e"
+  choices:
+  - snippet: lst[3] = "e"
+    role: solution
+    explanations:
+    - body: This statement, updates the last element of the list to string value "e".
+    - body: To update an element in the list, we need to give the square bracket slice operator ([ ] )
+        along with an index of the element that we want to update on the left-hand side of the assignment
+        operator. The index could start at 0 and continue up to but not including the length of the list.
+        The value on the right-hand side of the assignment operator is the new value that we want to assign
+        to the list element.
+  - snippet: lst[0] = "e"
+    role: distractor
+  - snippet: lst[1] = "e"
+    role: distractor
+  - snippet: lst[2] = "e"
+    role: distractor
+  - snippet: lst[4] = "e"
+    role: distractor

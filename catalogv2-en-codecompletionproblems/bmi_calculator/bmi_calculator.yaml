@@ -1,0 +1,63 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_bmi_calculator_1
+title: BMI Calculator
+description: "BMI is a measure of body fat based on height and weight that applies to adult men and women.\
+  \ BMI Categories are as follows: \nUnderweight = <18.5\nNormal weight = 18.5–24.9\nOverweight = 25–29.9\n\
+  Obesity = BMI of 30 or greater.\nEnglish BMI Formula (Imperial) is: BMI = (Weight in Pounds / (Height\
+  \ in inches x Height in inches)) x 703.\n BMI results are usually displayed as integers (values without\
+  \ decimal points). Construct a program to round the BMI result to the nearest integer."
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: "BMI is a measure of body fat based on height and weight that applies to adult men and women.\
+  \ BMI Categories are as follows: \nUnderweight = <18.5\nNormal weight = 18.5–24.9\nOverweight = 25–29.9\n\
+  Obesity = BMI of 30 or greater.\nEnglish BMI Formula (Imperial) is: BMI = (Weight in Pounds / (Height\
+  \ in inches x Height in inches)) x 703.\n BMI results are usually displayed as integers (values without\
+  \ decimal points). Write a program to round the BMI result to the nearest integer."
+executions:
+- title: Sample Run
+  stdin:
+  - '163'
+  - '63'
+  stdout: |-
+    Enter the weight in pounds:
+    Enter the height in inches:
+    The BMI rounded to the nearest integer is: 29
+  console: |-
+    Enter the weight in pounds:
+    Enter the height in inches:
+    The BMI rounded to the nearest integer is: 29
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: bmi = round(bmi)
+  choices:
+  - snippet: bmi = round(bmi)
+    role: solution
+    explanations:
+    - body: We round up the BMI to the nearest integer. For this purpose we use the round() function.
+    - body: Note that, by default, this function rounds the number to 0 digits from the decimal point.
+        Since we want to round BMI to the nearest integer, we need to use round(bmi
+  - snippet: bmi = int(bmi)
+    role: distractor
+  - snippet: bmi = round(bmi,2)
+    role: distractor
+  - snippet: bmi = float(bmi)
+    role: distractor
+  - snippet: bmi = round(bmi,1)
+    role: distractor

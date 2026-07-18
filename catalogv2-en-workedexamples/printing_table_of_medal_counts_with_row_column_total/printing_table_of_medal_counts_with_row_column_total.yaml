@@ -1,0 +1,193 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_print_medals_0
+title: Printing Table of Medal Counts with Row/Column Total
+description: |
+  Assume that we have a 7x4 matrix that stores the number of medals that seven countries won in the skating competitions at the Winter Olympic. This matrix looks like as follows:
+  [[ "Canada", 1, 0, 1 ],
+   [ "China", 1, 1, 0 ],
+   ...]
+  Each row of this matrix corresponds to the medal counts for the country in that row. The second, third, and fourth numbers within a row represent the number of Gold, Silver, and Bronze medals won by the corresponding country in that row.
+  Construct a program that takes this matrix and prints a table of medal counts with row total that shows the number of Gold, Silver, Bronze, and Total medals for each of the countries who participated in the competition. The output table should look like as follows:
+      Country    Gold  Silver  Bronze   Total
+       Canada        1       0       1            2
+          China        1       1       0            2
+         ...
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |
+  Assume that we have a 7x4 matrix that stores the number of medals that seven countries won in the skating competitions at the Winter Olympic. This matrix looks like as follows:
+  [[ "Canada", 1, 0, 1 ],
+   [ "China", 1, 1, 0 ],
+   ...]
+  Each row of this matrix corresponds to the medal counts for the country in that row. The second, third, and fourth numbers within a row represent the number of Gold, Silver, and Bronze medals won by the corresponding country in that row.
+  Write a program that takes this matrix and prints a table of medal counts with row total that shows the number of Gold, Silver, Bronze, and Total medals for each of the countries who participated in the competition. The output table should look like as follows:
+      Country    Gold  Silver  Bronze   Total
+       Canada        1       0       1            2
+          China        1       1       0            2
+         ...
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Name  G  S  B All
+     CAN  1  0  1  2
+     CHN  1  1  0  2
+     GER  0  0  1  1
+     KOR  1  0  0  1
+     JPN  0  1  1  2
+     RUS  0  1  1  2
+     USA  1  1  0  2
+  console: |-
+    Name  G  S  B All
+     CAN  1  0  1  2
+     CHN  1  1  0  2
+     GER  0  0  1  1
+     KOR  1  0  0  1
+     JPN  0  1  1  2
+     RUS  0  1  1  2
+     USA  1  1  0  2
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: medal_counts = [[ "CAN", 1, 0, 1 ],
+  explanations:
+  - body: We need to create the table of medal counts. To do this, we use a two-dimensional list (a list
+      of lists) where each row corresponds to country name, the number of gold, silver, and bronze medals
+      won by one country. This statement creates a 7x4 two-dimensional list called medal_counts. Each
+      row of the matrix corresponds to the medal counts for the country in that row. The second, third,
+      and fourth numbers within a row represent the number of Gold, Silver, and Bronze medals won by the
+      country in that row.
+  - body: Note that lists can naturally span multiple lines if we want them to because they are contained
+      by a pair of brackets.
+- type: explanation
+  location:
+    snippet: print("{:>4s}{:>3s}{:>3s}{:>3s}{:>4s}".format("Name","G","S","B","All"))
+  explanations:
+  - body: We want to print a header for the table. The columns of the table from left to right represent
+      the country, the number of gold, silver, and bronze medals the country won, and finally, the row
+      total that is the total medals the country won. We want to format the table so that all values are
+      right-aligned with sufficient spacing between columns. For this purpose, we call format function.<br>We
+      use {:>4s} to right-justify the first string argument of the format function (i.e., Country) in
+      a field that is 4-characters wide, {:>3s}/{:>4s} to right-justify remaining string argument of the
+      format function in a field that is 3-characters/4-characters wide.
+  - body: 'Notice that the format specification inside a pair of curly braces starts with a : and followed
+      by the text that specifies how the value should be presented, including the field width, alignment,
+      and the data type code. The data type s requires a string argument. An error will occur if the argument
+      is not a string, for instance, if the argument is an integer or a float.'
+  - body: This function returns the result of replacing each {…} placeholder in the template string with
+      its corresponding argument passed to the format function.
+  - body: The printed text is followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: 'for i in range(len(medal_counts)):'
+  explanations:
+  - body: We need to process the medal counts data and print medal counts and the total number of medals
+      won for each country (row totals). This data, that is stored in medal_counts, is a two-dimensional
+      list; therefore, we need to use nested for loops to process all of its elements and print the table.
+      This statement is the outer for loop in the nested loop and it processes the data stored in medal_counts
+      row by row.
+  - body: To iterate over the rows in the medal_counts, we need the indexes to start at 0 with every integer
+      number up to but not including the number of rows. We get this sequence by calling the range(len(medal_counts))
+      function. Note that the function len(medal_counts) returns the number of rows in the medal_counts.
+- type: explanation
+  location:
+    snippet: line = "{:>4s}".format(medal_counts[i][0])
+  explanations:
+  - body: The content of each row in the output table starts with the country name. We also want to format
+      the table row using the same format that we applied to the table header. So, similar to printing
+      the table header, we call format function.<br>We use {:>4s} to right-justify the name of the country
+      at row i (which is stored at medal_counts[i][0]) in a field that is 4-characters wide.
+  - body: 'Notice that the format specification inside a pair of curly braces starts with a : and followed
+      by the text that specifies how the value should be presented, including the field width, alignment,
+      and the data type code. The data type s requires a string argument. An error will occur if the argument
+      is not a string, for instance, if the argument is an integer or a float.'
+  - body: This function returns the result of replacing each {…} placeholder in the template string with
+      its corresponding argument passed to the format function.
+- type: explanation
+  location:
+    snippet: row_total = 0
+  explanations:
+  - body: We need variable row_total to calculate the total number of medals won by the country at row
+      i. We need to set it to 0 every time that we want to process a row and calculate the row total.
+      Note that this statement cannot be placed inside the inner loop or outside the outer loop.
+  - body: We cannot place this statement inside the inner loop because in every iteration of the inner
+      loop variable row_total would be set to 0 and that means that row total would be always equal to
+      the number of bronze medals no matter what the remaining medal counts are. We cannot place this
+      statement outside the outer loop either because in that case total would show the sum of the row
+      totals in each row and all its preceding rows. Therefore, the only place that we could place this
+      statement is in the outer loop body before reaching to the inner loop.
+- type: explanation
+  location:
+    snippet: 'for j in range(1, len(medal_counts[0])):'
+  explanations:
+  - body: This statement is the inner loop of the nested loop. It processes the number of the medals of
+      the country at row i. To iterate over the number of medals in row i, we need to check the second,
+      third and fourth element in each row. Therefore, we need the column indexes to start at 1 with every
+      integer number up to but not including the number of columns. We get this sequence by calling the
+      range(1,len(medal_counts[0])) function.
+  - body: Note that the function len(medal_counts[0]) returns the number of columns in the medal_counts.
+      Also, note that the name that we choose for the index in the inner loop should be different from
+      the index name in the outer for loop. Here, we choose i for the row index and j for the column index.
+- type: explanation
+  location:
+    snippet: line += "{:>3d}".format(medal_counts[i][j])
+  explanations:
+  - body: We concatenate the content of the row i of the output table with the number of the medals at
+      row i and column j of the the matrix. We also want to format the table row using the same format
+      that we applied to the table header. So, similar to printing the table header, we call format function.<br>We
+      use {:>3d} to right-justify the number of the medals, at row i and column j of the matrix, in a
+      field that is 3-characters wide.
+  - body: 'Notice that the format specification inside a pair of curly braces starts with a : and followed
+      by the text that specifies how the value should be presented, including the field width, alignment,
+      and the data type code. The data type d requires a decimal argument. An error will occur if the
+      argument is not a string, for instance, if the argument is an integer or a float.'
+  - body: This function returns the result of replacing each {…} placeholder in the template string with
+      its corresponding argument passed to the format function.
+- type: explanation
+  location:
+    snippet: row_total += medal_counts[i][j]
+  explanations:
+  - body: We need to accumulate the number of different medals (gold, silver, bronze) won by the country
+      at row i. So, in each iteration of the inner loop, the number of the medals at row i and column
+      j of the matrix is added to and stored back into the variable row_total.
+  - body: The += operator adds the value of the element in row i and column j of the two-dimensional list
+      medals_counts (i.e., element medal_counts[i][j]) to the value of the variable row_total and the
+      result is stored in the variable row_total. Thus, this statement is equivalent to the statement
+      row_total = row_total + medal_counts[i][j].
+- type: explanation
+  location:
+    snippet: line += "{:>3d}".format(row_total)
+  explanations:
+  - body: We concatenate the content of the row i of the output table with the row total that is the total
+      number of the medals won by the country at row i. We also want to format the table row using the
+      same format that we applied to the table header. So, similar to the printing the table header, we
+      call format function.<br>Here, we use {:>3d} to right-justify the row total in a field that is 3-characters
+      wide.
+  - body: 'Notice that the format specification inside a pair of curly braces starts with a : and followed
+      by the text that specifies how the value should be presented, including the field width, alignment,
+      and the data type code. The data type d requires a decimal argument. An error will occur if the
+      argument is not a string, for instance, if the argument is an integer or a float.'
+  - body: This function returns the result of replacing each {…} placeholder in the template string with
+      its corresponding argument passed to the format function.
+- type: explanation
+  location:
+    snippet: print(line)
+  explanations:
+  - body: This statement prints the content of the output table for the country at row i. The printed
+      text is followed by the end-of-line character at the end.

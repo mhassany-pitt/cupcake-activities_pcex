@@ -1,0 +1,87 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_search_list_0
+title: Searching Values of a List in Another List
+description: Construct a program that has a function that receives two lists and prints the values in
+  the 2nd list that exist in the 1st list.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that has a function that receives two lists and prints the values in the 2nd
+  list that exist in the 1st list.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    11 exists in both list.
+    3 exists in both list.
+  console: |-
+    11 exists in both list.
+    3 exists in both list.
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def search_lists(lst1, lst2):'
+  explanations:
+  - body: We need to first declare the function so that we can call it later. The following lines declare
+      the function search_lists that takes two lists and prints the elements in the 2nd list (the list
+      referred by variable lst2) that exist in the 1st list (the list referred by variable lst1).<br><br>Note
+      that all statements following the header line are indented.
+- type: explanation
+  location:
+    snippet: 'for val2 in lst2:'
+  explanations:
+  - body: We want to iterate over the list lst2 and check whether each element of the 2nd list exists
+      in the 1st list. We iterate through the values in the 2nd list using for loop because for loop can
+      step across any kind of sequence object including lists.
+  - body: This for loop assigns the name val2 to each of the values in the list lst2 in turn, from left
+      to right, and then the statements in the loop body will be executed for each.
+  - body: Note that all statements inside the loop need to be indented with respect to the loop header.
+- type: explanation
+  location:
+    snippet: 'if val2 in lst1:'
+  explanations:
+  - body: To determine if the visited value in the 2nd list exists in the 1st list, we employ the in operator
+      to test membership. Because the in operator implicitly scans the list looking for a match.
+  - body: If the visited value in the 2nd list (val2) exists in the 1st list, then the body of this if
+      statement gets executed. Otherwise, the body of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: print(val2, "exists in both list.")
+  explanations:
+  - body: This statement prints to the default standard output stream the value in the 2nd list that exists
+      in the 1st list followed by the text "exists in both list".<br>The printed text shows the arguments
+      of the print function separated by the default delimiter (i.e., single space character) and followed
+      by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: values_1 = [2.0, 11, 4, 5, 3, 3.5, 4, 10, 16]
+  explanations:
+  - body: We define list referred by variable values_1 to hold the values in the 1st list. We initialize
+      the list by separating elements with a comma and enclosing the collection in square brackets [ ].
+- type: explanation
+  location:
+    snippet: values_2 =  [7, 11, 3]
+  explanations:
+  - body: We define list referred by variable values_2 to hold the values in the 2nd list. We initialize
+      the list by separating elements with a comma and enclosing the collection in square brackets [ ].
+- type: explanation
+  location:
+    snippet: search_lists(values_1, values_2)
+  explanations:
+  - body: This statement calls the search_lists function and passes the 1st and 2nd list as its arguments.
+      Note that the function call must be done after the function is declared.

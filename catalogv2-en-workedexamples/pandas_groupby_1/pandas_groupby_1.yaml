@@ -1,0 +1,68 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_pandas_groupby_1_0
+title: PANDAS GroupBy 1
+description: From a class of 200 students, you have a dataset of students, their section, and grades.
+  get the mean grade by section. Assume you're given the dataset file in a .csv file and you will read
+  this into a dataframe object using pandas
+authors:
+- first: Rully
+  last: Hendrawan
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: From a class of 200 students, you have a dataset of students, their section, and grades. get
+  the mean grade by section. Assume you're given the dataset file in a .csv file and you will read this
+  into a dataframe object using pandas
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+    ModuleNotFoundError: No module named 'pandas'
+  console: |-
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+    ModuleNotFoundError: No module named 'pandas'
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: grouped_by_section_grade = df.groupby(['Section', 'Grade']).size()
+  explanations:
+  - body: This line calculates the counts of each unique value in the 'Grade' column of the DataFrame
+      'df' and stores the result in the variable 'grade_counts'. This is essential for understanding how
+      many students are in each grade.
+  - body: The syntax 'df['Grade']' accesses the 'Grade' column of the DataFrame. The method 'value_counts()'
+      is called on this Series, which counts the occurrences of each unique value. This method returns
+      a new Series indexed by the unique values in 'Grade', with the counts as the corresponding values.
+  - body: A common misconception is that 'value_counts()' modifies the original DataFrame. In reality,
+      it returns a new Series and does not alter 'df'. Additionally, ensure that the 'Grade' column exists
+      in your DataFrame; otherwise, you will encounter a KeyError.
+  - body: Best practice suggests checking for missing values in the 'Grade' column before calling 'value_counts()'
+      to avoid misleading results. You can use 'df['Grade'].isnull().sum()' to check for any missing entries.
+  - body: 'This line uses the groupby() function from pandas to group the DataFrame ''df'' by two columns:
+      ''Section'' and ''Grade''. This means that the data will be organized into subsets where each subset
+      corresponds to a unique combination of Section and Grade.'
+  - body: The syntax df.groupby(['Section', 'Grade']) creates a GroupBy object, which is a special type
+      of object in pandas that allows you to perform operations on grouped data. The .size() method is
+      then called on this object to count the number of entries in each group, effectively giving you
+      the number of students for each combination of Section and Grade.
+  - body: 'This line uses the groupby() function from pandas to group the DataFrame ''df'' by two columns:
+      ''Section'' and ''Grade''.'
+  - body: The syntax df.groupby(['Section', 'Grade']) creates a new DataFrame grouped by the unique combinations
+      of values in the 'Section' and 'Grade' columns.
+  - body: The size() function is then called on the grouped DataFrame to count the number of occurrences
+      for each group, resulting in a Series where the index is the unique combinations of 'Section' and
+      'Grade', and the values are the counts of students in each group.

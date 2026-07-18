@@ -1,0 +1,90 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_nestedloops_print_a_square_star_pattern_1
+title: Printing the outline of a square star pattern Challenge
+description: |-
+  Construct a program that takes an input as the size of a square and print the outline of the square.
+  For example, if a user’s input is 4, the printed square should look like:
+  ****
+  *  *
+  *  *
+  ****
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program that takes an input as the size of a square and print the outline of the square.
+  For example, if a user’s input is 4, the printed square should look like:
+  ****
+  *  *
+  *  *
+  ****
+executions:
+- title: Sample Run
+  stdin:
+  - '6'
+  - '4'
+  stdout: |-
+    Enter size of side of square :
+    ******
+    *    *
+    *    *
+    *    *
+    *    *
+    ******
+  console: |-
+    Enter size of side of square :
+    ******
+    *    *
+    *    *
+    *    *
+    *    *
+    ******
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'if i == 0 or i == size - 1:'
+  choices:
+  - snippet: 'if i == 0 or i == size - 1:'
+    role: solution
+    explanations:
+    - body: We use if-else statement to check if the current row is the first or the last one. if the
+        current row i is the first or the last row, we print the number of size asterisks.
+    - body: We start by checking whether the current row i == 0(the first row) or i==size-1(the last row).
+        If it is, then the body of this if statement gets executed. Otherwise, the body of this if statement
+        is skipped.
+  - snippet: if i == 0
+    role: distractor
+  - snippet: if i == 0 and i == size
+    role: distractor
+- type: blank
+  location:
+    snippet: 'for j in range(size - 2):'
+  choices:
+  - snippet: 'for j in range(size - 2):'
+    role: solution
+    explanations:
+    - body: This statement is the second inner for loop. Each iteration of the inner loop will print spaces.
+        For each row, the inner loop will iterate size-2 times; thus, creating a row with size-2 spaces.
+    - body: For the inner loop, we use the range function because it generates a sequence of numbers for
+        the for loop. Here, we want to repeat the loop size-2 times; therefore, we need a sequence that
+        starts at 0 with every integer number up to size-2 but not include size. We get this sequence
+        by calling the default function range(size-2).
+  - snippet: for j in range(size)
+    role: distractor
+  - snippet: for j in range(size - 1)
+    role: distractor

@@ -1,0 +1,52 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_json_agg_2_0
+title: JSON Aggregate 2
+description: You're give the age of different people in JSON format, find the name of the person
+authors:
+- first: Rully
+  last: Hendrawan
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: You're give the age of different people in JSON format, find the name of the person
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Traceback (most recent call last):
+      File "<string>", line 15, in <module>
+    NameError: name 'people' is not defined
+  console: |-
+    Traceback (most recent call last):
+      File "<string>", line 15, in <module>
+    NameError: name 'people' is not defined
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: max_age = None
+  explanations:
+  - body: This line initializes the variable 'max_age' to None, which serves as a placeholder to store
+      the maximum age found during the iteration over the list of people.
+  - body: By setting 'max_age' to None, you are indicating that no maximum age has been determined yet.
+  - body: This is important for the logic that follows, as it allows you to check if 'max_age' has been
+      assigned a value before comparing it to the ages of the people.
+- type: explanation
+  location:
+    snippet: 'if max_age is None or age > max_age:'
+  explanations:
+  - body: This line checks if 'max_age' is currently set to None (which means no age has been recorded
+      yet) or if the current person's age is greater than the current 'max_age'.
+  - body: The syntax 'if max_age is None or age > max_age:' uses a logical OR operator to combine two
+      conditions. If either condition is true, the block of code that follows will execute.

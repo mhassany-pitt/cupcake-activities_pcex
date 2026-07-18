@@ -1,0 +1,66 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_range_one_1
+title: Printing Consecutive Numbers Starting from Zero
+description: Construct a program that prints a sequence of numbers from 0 (inclusive) to 6 (exclusive).
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that prints a sequence of numbers from 0 (inclusive) to 6 (exclusive).
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    0
+    1
+    2
+    3
+    4
+    5
+  console: |-
+    0
+    1
+    2
+    3
+    4
+    5
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'for num in range(6):'
+  choices:
+  - snippet: 'for num in range(6):'
+    role: solution
+    explanations:
+    - body: We need to repeat printing the numbers that are in a sequence from 0 (inclusive) to 6 (exclusive).
+        To do this, we need to use a loop structure. We use for loops instead of a while loop because
+        we need to repeat the loop 6 times, and for loops are best-suited in cases like this when we know
+        ahead of time the number of times that we need to repeat the loop.<br><br>We use the range function
+        because it generates a sequence of numbers for the for loop. Here, we want a sequence that starts
+        at 0 with every integer number up to but not including 6. We get this sequence by calling the
+        function range(6).
+    - body: We do not need to provide the integer value at which the sequence begins because the sequence
+        returned by the range function start at 0 (inclusive) by default.<br><br>Note that all statements
+        inside the loop need to be indented with respect to the loop header.
+  - snippet: 'for num in range(5):'
+    role: distractor
+  - snippet: 'for num in range(7):'
+    role: distractor
+  - snippet: 'for num in range(8):'
+    role: distractor
+  - snippet: 'for num in range(4):'
+    role: distractor

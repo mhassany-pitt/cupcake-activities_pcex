@@ -1,0 +1,115 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_check_adjacent_0
+title: Comparing Adjacent Numbers in a Sequence of Numbers
+description: |-
+  Construct a program that checks whether a sequence of numbers, entered one at a time, contains adjacent duplicates. The user enters -1 to indicate the end of the input.
+  For example, 4 is a duplicate in the sequence of numbers 1, 3, 4, 4, -1.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program that checks whether a sequence of numbers, entered one at a time, contains adjacent duplicates. The user enters -1 to indicate the end of the input.
+  For example, 4 is a duplicate in the sequence of numbers 1, 3, 4, 4, -1.
+executions:
+- title: Sample Run
+  stdin:
+  - '1'
+  - '3'
+  - '3'
+  - '1'
+  - '1'
+  - '-2'
+  - '4'
+  - '4'
+  - '-1'
+  stdout: "Enter a number: \nEnter a number: \nEnter a number: \nDuplicate input for number: 3.0\nEnter\
+    \ a number: \nEnter a number: \nDuplicate input for number: 1.0\nEnter a number: \nEnter a number:\
+    \ \nEnter a number: \nDuplicate input for number: 4.0\nEnter a number:"
+  console: "Enter a number: \nEnter a number: \nEnter a number: \nDuplicate input for number: 3.0\nEnter\
+    \ a number: \nEnter a number: \nDuplicate input for number: 1.0\nEnter a number: \nEnter a number:\
+    \ \nEnter a number: \nDuplicate input for number: 4.0\nEnter a number:"
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'text = input("Enter a number: ")'
+    nth: 1
+  explanations:
+  - body: We need to read and process the input value that the user enters. To read the input value from
+      the user, we need to use the input() function. This statement prompts the user to enter the first
+      number. The value that will be stored in variable text is a string.
+- type: explanation
+  location:
+    snippet: num = float(text)
+    nth: 1
+  explanations:
+  - body: We need to convert the input text to its float representation because the number could have
+      a decimal point. For this purpose, we use the conversion function float().
+  - body: Note that this can only be done if user input could be translated into a valid floating-point
+      value.
+- type: explanation
+  location:
+    snippet: 'while num != -1 :'
+  explanations:
+  - body: We need to repeat receiving the numbers from the user as long as the user enters a number that
+      is different from -1. Therefore, we need to use a loop structure. Since we don't know ahead of time
+      how many times the loop will be repeated, we need to use a while loop. The condition in the while
+      loop tests whether the body of the loop should be repeated, so it should test whether the input
+      number is different from -1.
+  - body: The body of the while loop is repeated as long as the user enters a number that is different
+      from -1. The loop terminates when the loop condition evaluates to False, that is when the user enters
+      -1.
+- type: explanation
+  location:
+    snippet: previous = num
+  explanations:
+  - body: We store the number that the user entered in a variable called previous because we want to later
+      compare it with the next number that user will enter to check if they are adjacent duplicate.
+- type: explanation
+  location:
+    snippet: 'text = input("Enter a number: ")'
+    nth: 2
+  explanations:
+  - body: We need to read and process the next number that the user enters. To read the input value from
+      the user, we need to use the input() function. This statement prompts the user to enter the next
+      number. The value that will be stored in variable text is a string.
+- type: explanation
+  location:
+    snippet: num = float(text)
+    nth: 2
+  explanations:
+  - body: We need to convert the input text to its float representation because the number could have
+      a decimal point. For this purpose, we use the conversion function float().
+  - body: Note that this can only be done if user input could be translated into a valid floating-point
+      value.
+- type: explanation
+  location:
+    snippet: 'if num == previous :'
+  explanations:
+  - body: We check whether the number that the user entered is the duplicate of the previous number that
+      the user entered. To determine if the two numbers are duplicate we need to test whether they are
+      equal.
+  - body: If the number that the user entered is equal to the previous number that was entered, then the
+      body of this if statement gets executed. Otherwise, the body of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: print("Duplicate input for number:", num)
+  explanations:
+  - body: This statement prints to the default standard output stream the text "Duplicate input for number:"
+      and the value of variable num.<br>The printed text shows the arguments of the print function separated
+      by the default delimiter (i.e., single space character) and followed by the end-of-line character
+      at the end.

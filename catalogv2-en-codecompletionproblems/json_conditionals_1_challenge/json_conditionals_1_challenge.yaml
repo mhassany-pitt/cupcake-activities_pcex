@@ -1,0 +1,124 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_json_conditionals_1_0
+title: JSON Conditionals 1 Challenge
+description: A customer is looking for a restaurant that has at least 1 review and mexican cuisine, with
+  spicy food.  I should have at least tables with 2 seating and has a number of maximum allowed reservation
+  exactly at 30. Write a python code when you're assumed to be given a dataset of restaurants in json
+  assigned to a variable
+authors:
+- first: Rully
+  last: Hendrawan
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: A customer is looking for a restaurant that has at least 1 review and mexican cuisine, with
+  spicy food.  I should have at least tables with 2 seating and has a number of maximum allowed reservation
+  exactly at 30. Write a python code when you're assumed to be given a dataset of restaurants in json
+  assigned to a variable
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '[{''name'': ''Taco Fiesta'', ''reviews'': 5, ''cuisine'': ''Mexican'', ''spicy_food'': True,
+    ''seating'': [2, 4, 6], ''max_reservation'': 30}, {''name'': ''Salsa Heaven'', ''reviews'': 3, ''cuisine'':
+    ''Mexican'', ''spicy_food'': True, ''seating'': [2, 4, 8], ''max_reservation'': 30}]'
+  console: '[{''name'': ''Taco Fiesta'', ''reviews'': 5, ''cuisine'': ''Mexican'', ''spicy_food'': True,
+    ''seating'': [2, 4, 6], ''max_reservation'': 30}, {''name'': ''Salsa Heaven'', ''reviews'': 3, ''cuisine'':
+    ''Mexican'', ''spicy_food'': True, ''seating'': [2, 4, 8], ''max_reservation'': 30}]'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'if r["reviews"] >= 1:'
+  choices:
+  - snippet: 'if r["reviews"] >= 1:'
+    role: solution
+  - snippet: if r['reviews'] > 0
+    role: distractor
+    explanations:
+    - body: You might think that using '>' instead of '>=' is sufficient because you want to filter out
+        restaurants with no reviews. However, this would exclude restaurants that have exactly 1 review,
+        which is the minimum requirement stated in the problem. By using '>', you would miss valid options
+        that meet the criteria, leading to an incomplete list of filtered restaurants. The correct line
+        ensures that any restaurant with at least 1 review is included, while your distractor would incorrectly
+        filter out valid entries.
+  - snippet: if r['reviews'] == 1
+    role: distractor
+    explanations:
+    - body: You might think that checking for '==' 1 is the right approach because you want to find restaurants
+        with reviews. However, this would exclude any restaurant that has more than 1 review, which is
+        not what the problem statement requires. The requirement is to include any restaurant with at
+        least 1 review, not just those with exactly 1. This distractor would lead to a significant loss
+        of valid options, as it restricts the results too much.
+  - snippet: if r['reviews'] >= 0
+    role: distractor
+    explanations:
+    - body: You might think that checking for '>= 0' is a safe choice since it includes all restaurants.
+        However, this would allow restaurants with 0 reviews to pass through the filter, which contradicts
+        the requirement of having at least 1 review. This distractor would lead to invalid results, as
+        it does not enforce the necessary condition for reviews. The correct line specifically ensures
+        that only restaurants with at least 1 review are considered, which is crucial for meeting the
+        customer's needs.
+  - snippet: if r['reviews'] > 1
+    role: distractor
+    explanations:
+    - body: You might think that using '>' 1 is a good way to ensure quality by filtering for restaurants
+        with more than one review. However, this would completely exclude any restaurant that has exactly
+        1 review, which is the minimum requirement. This distractor would lead to a situation where valid
+        restaurants are overlooked, as it does not satisfy the condition of having at least 1 review.
+        The correct line allows for any restaurant with 1 or more reviews, ensuring that you meet the
+        customer's criteria.
+- type: blank
+  location:
+    snippet: 'if r["spicy_food"]:'
+  choices:
+  - snippet: 'if r["spicy_food"]:'
+    role: solution
+  - snippet: and not r['spicy_food']
+    role: distractor
+    explanations:
+    - body: You might think that using 'not' in this context would filter out restaurants that do not
+        serve spicy food, which seems logical if you misinterpret the requirement. However, the problem
+        statement specifically asks for restaurants that do serve spicy food. If you use 'not r['spicy_food']',
+        the program would incorrectly filter out all restaurants that are spicy, leading to an empty list
+        or missing valid options. This distractor misinterprets the requirement by suggesting that you
+        want to exclude spicy food instead of including it. The correct line ensures that only restaurants
+        with spicy food are included, which is essential for meeting the customer's request.
+  - snippet: and r['spicy_food'] == false
+    role: distractor
+    explanations:
+    - body: You might think that checking for 'false' would be a way to ensure that the restaurant does
+        not serve spicy food, which is a common misunderstanding when dealing with boolean values. However,
+        the requirement is to find restaurants that do serve spicy food, so using '== false' would exclude
+        all the restaurants that meet the criteria. This distractor would lead to an incorrect filtering
+        of the dataset, as it would only return restaurants that do not serve spicy food, which is the
+        opposite of what is needed. The correct line checks for 'true', ensuring that only restaurants
+        with spicy food are included.
+  - snippet: and r['spicy_food'] == 'yes'
+    role: distractor
+    explanations:
+    - body: You might think that the value for 'spicy_food' could be a string like 'yes' or 'no', which
+        is a common misconception when dealing with boolean values. However, in the provided dataset,
+        'spicy_food' is a boolean value (true or false). Using '== 'yes'' would not match any of the boolean
+        values and would result in an empty list. This distractor misinterprets the data type, leading
+        to a failure in filtering the restaurants correctly. The correct line uses the boolean value 'true'
+        to accurately filter for restaurants that serve spicy food.
+  - snippet: and r['spicy_food'] != true
+    role: distractor
+    explanations:
+    - body: You might think that using '!=' would be a way to filter out restaurants that do not serve
+        spicy food, which is a common error in logic. However, the requirement is to find restaurants
+        that do serve spicy food, so using '!= true' would exclude all the restaurants that meet the criteria.
+        This distractor would lead to an incorrect filtering of the dataset, as it would only return restaurants
+        that do not serve spicy food. The correct line checks for 'true', ensuring that only restaurants
+        with spicy food are included, which is essential for fulfilling the customer's request.

@@ -1,0 +1,126 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_student_score_0
+title: 'Creating a Dictionary of Student-Scores Pairs '
+description: |-
+  Assume we have a list of students and a list of their corresponding test scores. Construct a program that has a function which receives these two lists and returns a dictionary that maps each student to the scores of that student.
+  For example, if the student list is ['Sam', 'Kim', 'Sam'] and the scores list is [15, 10, 14], the program creates the following dictionary:
+  {'Sam': [15, 14], 'Kim': [10]}
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Assume we have a list of students and a list of their corresponding test scores. Write a program that has a function which receives these two lists and returns a dictionary that maps each student to the scores of that student.
+  For example, if the student list is ['Sam', 'Kim', 'Sam'] and the scores list is [15, 10, 14], the program creates the following dictionary:
+  {'Sam': [15, 14], 'Kim': [10]}
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '{''Joe'': [10, 9], ''Tom'': [23], ''Barbara'': [13], ''Sue'': [18, 15], ''Sally'': [12]}'
+  console: '{''Joe'': [10, 9], ''Tom'': [23], ''Barbara'': [13], ''Sue'': [18, 15], ''Sally'': [12]}'
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def create_dictionary(std_lst, test_lst):'
+  explanations:
+  - body: We need to first declare the function so that we can call it later. The following lines declare
+      the function create_dictionary that takes a list of students (referred by variable std_lst) and
+      a list of their corresponding test scores (referred by variable test_lst) and returns a dictionary
+      that maps each student to the scores of that student.<br><br>Note that all statements following
+      the header line are indented.
+- type: explanation
+  location:
+    snippet: res_dict={}
+  explanations:
+  - body: We first need to define a dictionary referred by variable res_dict for storing the scores of
+      each student. We initialize it with an empty dictionary by setting it to a pair of braces {}.<br><br>We
+      need this dictionary to store key-value pairs where each key represents a student and the value
+      that is mapped to that key represents the list of the student's scores.
+- type: explanation
+  location:
+    snippet: 'for i in range(len(std_lst)):'
+  explanations:
+  - body: We need to get each student and corresponding test scores for that student. We can do this by
+      iterating over the indexes in the given lists.<br><br>We need the list indexes to start at 0 with
+      every integer number up to but not including the list length. We get this sequence by calling the
+      range(len(std_lst)) function.
+  - body: Note that the function len(std_lst) returns the number of the values in the students list. Also
+      note that we could use len(test_lst) in the range function as both lists have equal number of values.
+  - body: Note that all statements inside the loop need to be indented with respect to the loop header.
+- type: explanation
+  location:
+    snippet: 'if std_lst[i]  in res_dict:'
+  explanations:
+  - body: To determine if the student at index i of the students list already exists as the key in the
+      dictionary, we employ the in operator to test membership. Because the in operator implicitly scans
+      the keys in the dictionary looking for a match.
+  - body: std_lst[i] gives us the student at index i in the students list.
+  - body: If the student at index i of the students list already exists as the key in the dictionary,
+      then the body of this if statement gets executed. Otherwise, the body of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: res_dict[ std_lst[i] ].append( test_lst[i] )
+  explanations:
+  - body: When the student at index i of the students list already exists as the key in the dictionary,
+      we call the function append(test_lst[i]) to add the test score at index i of the score list to the
+      end of the list that holds student's test scores.
+- type: explanation
+  location:
+    snippet: 'else:'
+  explanations:
+  - body: When the student at index i of the students list does not exist as the key in the dictionary,
+      we need to add a new entry to the dictionary for the student.
+  - body: The statement inside the body of this else statement is executed when the student at index i
+      of the students list does not exist as the key in the dictionary. Otherwise, the body of this else
+      statement is skipped.
+- type: explanation
+  location:
+    snippet: res_dict[ std_lst[i] ] = [ test_lst[i] ]
+  explanations:
+  - body: We need to add the student at index i in the students list as a new key to the dictionary. We
+      need to initialize the value mapped to this key with a list that has the test score at index i of
+      the scores list.
+- type: explanation
+  location:
+    snippet: return res_dict
+  explanations:
+  - body: Now that we created the dictionary, we need to return it.
+  - body: The return statement, when reached, ends the function call and sends the result back to the
+      caller.
+- type: explanation
+  location:
+    snippet: names = ['Joe', 'Tom', 'Barbara', 'Sue', 'Sally', 'Joe', 'Sue']
+  explanations:
+  - body: We define list referred by variable names to hold the students names. We initialize the list
+      by separating elements with a comma and enclosing the collection in square brackets [ ].
+- type: explanation
+  location:
+    snippet: scores=[10, 23, 13, 18, 12, 9, 15]
+  explanations:
+  - body: We define list referred by variable scores to hold the test scores. We initialize the list by
+      separating elements with a comma and enclosing the collection in square brackets [ ].
+- type: explanation
+  location:
+    snippet: print(create_dictionary(names, scores))
+  explanations:
+  - body: This statement prints to the default standard output stream the content of the dictionary returned
+      from the function call.
+  - body: Note that we do not necessarily have to store the returned dictionary from the function call
+      in a variable. We could use the dictionary returned from the function call directly in the print
+      function.
+  - body: Note that the function call must be done after the function is declared. Also note that we can
+      see the content of the dictionary by calling the print function and passing the dictionary to that.

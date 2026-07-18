@@ -1,0 +1,104 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_json_conditionals_2_0
+title: JSON Conditionals 2 Challenge
+description: You're provide a JSON list of different books, find non-fiction books with rating greater
+  than 4.5
+authors:
+- first: Rully
+  last: Hendrawan
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: You're provide a JSON list of different books, find non-fiction books with rating greater than
+  4.5
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '[''Science 101'', ''History of Time'', ''Cooking Basics'']'
+  console: '[''Science 101'', ''History of Time'', ''Cooking Basics'']'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'if book["genre"] == "Non-Fiction" and book["rating"] >= 4.5:'
+  choices:
+  - snippet: 'if book["genre"] == "Non-Fiction" and book["rating"] >= 4.5:'
+    role: solution
+  - snippet: 'if book[''genre''] == ''Non-Fiction'' or book[''rating''] >= 4.5:'
+    role: distractor
+    explanations:
+    - body: You might think that using 'or' instead of 'and' would work because it seems like it would
+        capture more books. However, this would lead to including books that are either non-fiction or
+        have a rating of at least 4.5, which is not what the problem asks for. For example, a fiction
+        book with a high rating would be included, which is incorrect. The correct line requires both
+        conditions to be true, ensuring that only non-fiction books with a rating of 4.5 or higher are
+        selected. By using 'or', you would end up with a list that does not meet the specified criteria,
+        leading to incorrect results.
+  - snippet: 'if book[''genre''] == ''Non-Fiction'' and book[''rating''] > 4.5:'
+    role: distractor
+    explanations:
+    - body: You might think that using '>' instead of '>=' would be correct because you want to find books
+        with a high rating. However, this would exclude books that have a rating exactly equal to 4.5,
+        which is part of the criteria. If a book has a rating of 4.5, it should be included in the results,
+        but using '>' would omit it. This misunderstanding of how to include boundary values can lead
+        to incomplete results. The correct line ensures that all books with a rating of 4.5 and above
+        are included.
+  - snippet: 'if book[''genre''] == ''Non-Fiction'' and book[''rating''] == 4.5:'
+    role: distractor
+    explanations:
+    - body: You might consider using '==' to check for a rating of exactly 4.5, thinking that this is
+        what the problem is asking for. However, this would exclude any non-fiction books with ratings
+        higher than 4.5, which are also valid results. The problem statement specifies that you need books
+        with a rating greater than 4.5, so using '==' would not fulfill the requirement. This distractor
+        highlights a common mistake of focusing too narrowly on a specific value rather than understanding
+        the range of acceptable values.
+- type: blank
+  location:
+    snippet: high_rated_nonfiction_books.append(book["title"])
+  choices:
+  - snippet: high_rated_nonfiction_books.append(book["title"])
+    role: solution
+  - snippet: high_rated_nonfiction_books.append(book)
+    role: distractor
+    explanations:
+    - body: You might think that appending the entire book object is sufficient because it contains all
+        the information about the book. However, the task specifically asks for the titles of the books,
+        not the entire book data. By using this distractor, your program would still run, but the output
+        would be incorrect as it would include the entire book objects instead of just the titles. This
+        would lead to a misunderstanding of how to access specific attributes within a dictionary. The
+        correct line focuses on extracting just the title, which is what the problem statement requires.
+  - snippet: high_rated_nonfiction_books.append(book['rating'])
+    role: distractor
+    explanations:
+    - body: You might think that appending the rating of the book is relevant because it meets the condition
+        of being above 4.5. However, the task is to collect the titles of the non-fiction books, not their
+        ratings. If you use this distractor, your output will consist of ratings instead of titles, which
+        does not fulfill the requirement of the problem statement. This distractor highlights a common
+        mistake of focusing on the wrong attribute when filtering data.
+  - snippet: high_rated_nonfiction_books.append(book['genre'])
+    role: distractor
+    explanations:
+    - body: You might mistakenly think that appending the genre of the book is useful because it is part
+        of the book's data. However, the problem specifically asks for the titles of non-fiction books.
+        If you use this distractor, your output will contain genres instead of titles, which does not
+        meet the requirement. This distractor illustrates a misunderstanding of the task's focus on specific
+        attributes and the importance of correctly identifying what is needed for the output.
+  - snippet: high_rated_nonfiction_books.append(book['pages'])
+    role: distractor
+    explanations:
+    - body: You might think that including the number of pages is relevant because it is part of the book's
+        information. However, the task is to collect the titles of the non-fiction books, not their page
+        counts. If you use this distractor, your output will consist of page numbers instead of titles,
+        which does not fulfill the requirement of the problem statement. This distractor highlights a
+        common error in understanding which attributes are relevant to the task at hand.

@@ -1,0 +1,63 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_fail_course_2
+title: Pass-Fail Rule (Case 3)
+description: Construct a program that determines whether a student fails the course based on the inputs
+  that it receives from the instructor. The student fails the course if his/her score is not above the
+  class average.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that determines whether a student fails the course based on the inputs that
+  it receives from the instructor. The student fails the course if his/her score is not above the class
+  average.
+executions:
+- title: Sample Run
+  stdin:
+  - '60'
+  - '70'
+  stdout: |2-
+      File "<string>", line 2
+        text = input('Enter the student's score:\n')
+                                        ^
+    SyntaxError: invalid syntax
+  console: |2-
+      File "<string>", line 2
+        text = input('Enter the student's score:\n')
+                                        ^
+    SyntaxError: invalid syntax
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: is_failing = not ( student_score > class_average )
+  choices:
+  - snippet: is_failing = not ( student_score > class_average )
+    role: solution
+    explanations:
+    - body: We could check whether a student fails the course by inverting the condition that tests whether
+        the student passes the course. In other words, we could invert the condition that tests if the
+        student's score is above the class average. Note that we invert the condition by using not operator.
+    - body: The not operator takes a single condition and evaluates to True if that condition is False
+        and to False if the condition is True.
+  - snippet: is_failing =  (student_score > class_average)
+    role: distractor
+  - snippet: is_failing =  (student_score >= class_average)
+    role: distractor
+  - snippet: is_failing =  not not ( student_score > class_average )
+    role: distractor
+  - snippet: is_failing =  not ( student_score < class_average )
+    role: distractor

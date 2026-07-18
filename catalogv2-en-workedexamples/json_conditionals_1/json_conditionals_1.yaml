@@ -1,0 +1,68 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_json_conditionals_1_0
+title: JSON Conditionals 1
+description: Display names of food items in a restaurant that have a beef as an ingredient from Mexican
+  Cuisine. Assume you're provided a json of all food items in a restaurant
+authors:
+- first: Rully
+  last: Hendrawan
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Display names of food items in a restaurant that have a beef as an ingredient from Mexican
+  Cuisine. Assume you're provided a json of all food items in a restaurant
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Traceback (most recent call last):
+      File "<string>", line 17, in <module>
+    NameError: name 'beef_mexican_items' is not defined
+  console: |-
+    Traceback (most recent call last):
+      File "<string>", line 17, in <module>
+    NameError: name 'beef_mexican_items' is not defined
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: restaurant_data = [
+  explanations:
+  - body: This line initializes a variable named 'restaurant_data' that holds a list of dictionaries,
+      where each dictionary represents a food item in the restaurant.
+  - body: The syntax 'restaurant_data = [...]' indicates that you are creating a list (denoted by the
+      square brackets) and assigning it to the variable 'restaurant_data'.
+  - body: Each item in the list is a dictionary, which is a collection of key-value pairs.
+- type: explanation
+  location:
+    snippet: 'for _item in restaurant_data:'
+  explanations:
+  - body: This line initiates a for loop that iterates over each item in the 'restaurant_data' list.
+  - body: The variable '_item' represents the current food item being processed during each iteration.
+  - body: The syntax 'for _item in restaurant_data:' is a standard way to loop through elements in a list
+      in Python.
+  - body: The 'for' keyword starts the loop, '_item' is a temporary variable that takes the value of each
+      element in 'restaurant_data' one at a time, and 'in' indicates that we are iterating over the elements
+      of the list.
+- type: explanation
+  location:
+    snippet: 'if _item["cuisine"] == "Mexican" and "beef" in _item["ingredients"]:'
+  explanations:
+  - body: 'This line checks two conditions: whether the cuisine of the current food item is ''Mexican''
+      and whether ''beef'' is one of its ingredients.'
+  - body: This is crucial for filtering the food items to meet the problem's requirements.
+  - body: The syntax uses the equality operator '==' to compare the value of the 'cuisine' key in the
+      dictionary '_item' with the string 'Mexican'.
+  - body: The 'in' keyword checks for membership, verifying if 'beef' exists within the list found at
+      the 'ingredients' key of '_item'.

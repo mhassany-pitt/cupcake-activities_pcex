@@ -1,0 +1,114 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_json_agg_1_0
+title: JSON Aggregate 1 Challenge
+description: how many employees in this company with the highest salary.  You're provided a json data
+  assigned to a variable. only use simple code, for loops
+authors:
+- first: Rully
+  last: Hendrawan
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: how many employees in this company with the highest salary.  You're provided a json data assigned
+  to a variable. only use simple code, for loops
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '2'
+  console: '2'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'for employee in data:'
+  choices:
+  - snippet: 'for employee in data:'
+    role: solution
+    explanations:
+    - body: This line checks if the current employee's salary is greater than the highest salary found
+        so far.
+    - body: You are using the 'if' statement to create a conditional that will execute the code block
+        below it only if the condition is true.
+    - body: The syntax 'if employee["salary"] > highest_salary:' uses square brackets to access the 'salary'
+        key from the 'employee' dictionary.
+    - body: Make sure you use the correct key name, as a typo will lead to a KeyError.
+  - snippet: 'if employee[''salary''] > highest_salary:'
+    role: distractor
+    explanations:
+    - body: If you were to use this line, you would be checking if an employee's salary is greater than
+        the highest salary instead of equal to it. This would lead to incorrect counting because no employee
+        can have a salary greater than the highest salary you just calculated. You might think that this
+        would help you find employees with the highest salary, but in reality, it would result in a count
+        of zero, as no employee can exceed the highest salary. The correct line checks for equality, which
+        is essential for counting those who match the highest salary. By using this distractor, you would
+        miss the employees who actually have the highest salary, leading to a significant error in your
+        program's output.
+  - snippet: 'if employee[''salary''] < highest_salary:'
+    role: distractor
+    explanations:
+    - body: Using this line would mean you are trying to count employees who earn less than the highest
+        salary, which is not what the problem is asking for. This would lead to a misunderstanding of
+        the task, as you would end up counting employees who do not meet the criteria of having the highest
+        salary. You might think this is a valid approach, but it completely misses the point of the problem.
+        The correct line checks for equality, ensuring that you only count those who earn the highest
+        salary. By using this distractor, you would end up with an incorrect count, as it would not reflect
+        the actual number of employees with the highest salary.
+  - snippet: 'if employee[''salary''] != highest_salary:'
+    role: distractor
+    explanations:
+    - body: If you use this line, you would be counting employees whose salaries do not match the highest
+        salary, which is the opposite of what you need to do. This distractor reflects a common misconception
+        where students think they need to filter out those who do not meet a certain criterion. However,
+        the task is to count those who do meet the criterion of having the highest salary. By using this
+        line, you would end up with a count of employees who do not have the highest salary, leading to
+        a completely incorrect result. The correct line checks for equality, which is crucial for accurately
+        counting the employees with the highest salary.
+  - snippet: count = count + 1
+    role: distractor
+    explanations:
+    - body: You might think that using 'count = count + 1' is a valid way to increment the count, but
+        this is actually a common misconception. While this line of code will work, it is not the most
+        efficient or idiomatic way to increment a variable in Python. The correct way to increment a variable
+        is to use 'count += 1', which is a shorthand for the same operation. If you use 'count = count
+        + 1', the program will still run correctly, but it may lead you to think that this is the only
+        way to increment a variable, which is not true. Understanding the shorthand notation is important
+        for writing cleaner and more readable code.
+  - snippet: count = 1
+    role: distractor
+    explanations:
+    - body: If you choose 'count = 1', you might be thinking that you should start counting from 1 because
+        you are looking for employees with the highest salary. However, this is a misunderstanding of
+        how counting works in this context. You need to start counting from 0 because you haven't counted
+        any employees yet. By initializing 'count' to 1, you would incorrectly assume that there is already
+        one employee with the highest salary, which would lead to an inaccurate final count. This could
+        cause you to misinterpret the results of your program.
+  - snippet: count = highest_salary
+    role: distractor
+    explanations:
+    - body: Choosing 'count = highest_salary' indicates a misunderstanding of what 'count' is supposed
+        to represent. You might think that setting 'count' to the value of 'highest_salary' would give
+        you the number of employees with that salary, but this is incorrect. 'highest_salary' is a numeric
+        value representing the highest salary, not a count of employees. By using this line, you would
+        overwrite the count variable with a salary value, which would lead to incorrect results when you
+        try to print 'count' later. It's crucial to keep the roles of your variables clear to avoid such
+        errors.
+  - snippet: count += 2
+    role: distractor
+    explanations:
+    - body: If you select 'count += 2', you might be thinking that you want to count every two employees
+        with the highest salary. However, this is a misunderstanding of how to accurately count occurrences.
+        The goal is to count each employee with the highest salary, so you should increment by 1 for each
+        match. By using 'count += 2', you would incorrectly double the count for each employee, leading
+        to an inflated and inaccurate result. It's important to increment by the correct amount to ensure
+        your count reflects the actual number of employees.

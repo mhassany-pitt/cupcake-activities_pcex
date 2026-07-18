@@ -1,0 +1,95 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_check_age_1
+title: Determining Whether One is a Teenager
+description: Construct a program that asks the user to enter a string that has the user name and age separated
+  by a colon, and prints whether the user is a teenager. Make sure that the program handles all possible
+  exceptions. The program must ask the user for an input until the user enters a string that could be
+  processed without any exception.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that asks the user to enter a string that has the user name and age separated
+  by a colon, and prints whether the user is a teenager. Make sure that the program handles all possible
+  exceptions. The program must ask the user for an input until the user enters a string that could be
+  processed without any exception.
+executions:
+- title: Sample Run
+  stdin:
+  - Johnny15
+  - Johnny:fiftheen
+  - Johnny:15
+  stdout: |-
+    Enter the name and age, separated by a colon:
+    Error! Separate the name and age by a colon.
+    Enter the name and age, separated by a colon:
+    Error! Age must be an integer.
+    Enter the name and age, separated by a colon:
+    Johnny is a teenager.
+  console: |-
+    Enter the name and age, separated by a colon:
+    Error! Separate the name and age by a colon.
+    Enter the name and age, separated by a colon:
+    Error! Age must be an integer.
+    Enter the name and age, separated by a colon:
+    Johnny is a teenager.
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: processed = False
+  choices:
+  - snippet: processed = False
+    role: solution
+    explanations:
+    - body: We need this variable to control when we should stop asking for the user input. This variable
+        is True when the input is processed, and False otherwise. We initialize it to False because we
+        have not processed the input yet.
+- type: blank
+  location:
+    snippet: 'while not processed :'
+  choices:
+  - snippet: 'while not processed :'
+    role: solution
+    explanations:
+    - body: We need to repeat asking the user for an input as long as the user enters a string that could
+        not be processed. Therefore, we need to use a loop structure. Since we don't know ahead of time
+        how many times the loop will be repeated, we need to use a while loop. The condition in the while
+        loop tests whether the body of the loop should be repeated, so it should test whether the input
+        string has not been processed.
+    - body: We check whether the input has not been processed by inverting the condition that checks whether
+        the input has been processed. We invert the condition by using the not operator. Note that the
+        following statement is also correct:<br>while processed == False
+    - body: Note that the not operator takes a single condition and evaluates to True if that condition
+        is False and to False if the condition is True.
+    - body: The body of the while loop is repeated as long as the user enters a string that could not
+        be processed. The loop terminates when the loop condition evaluates to False, that is when the
+        user enters a string that gets processed without any exception.
+  - snippet: 'while len(lst) > 1:'
+    role: distractor
+  - snippet: 'if not processed :'
+    role: distractor
+  - snippet: 'if len(lst) > 1 :'
+    role: distractor
+- type: blank
+  location:
+    snippet: processed = True
+  choices:
+  - snippet: processed = True
+    role: solution
+    explanations:
+    - body: The statement is executed when none of the previous statements in the try block throw an exception.
+        In this case, the input string is processed and we need to set variable processed to True.

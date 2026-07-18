@@ -1,0 +1,51 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_references_passing_lists_1
+title: Passing Lists Challenge
+description: Construct a program that convert Celsius temperature values in a list to Fahrenheit temperature
+  values
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that convert Celsius temperature values in a list to Fahrenheit temperature
+  values
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: 'The converted Fahrenheit temperature is: [77.0, 37.4, 104.0, 23.0]'
+  console: 'The converted Fahrenheit temperature is: [77.0, 37.4, 104.0, 23.0]'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'for i in range(len(c_list)):'
+  choices:
+  - snippet: 'for i in range(len(c_list)):'
+    role: solution
+    explanations:
+    - body: We want to iterate over the list and access each element by using index.
+  - snippet: 'for i in c_list:'
+    role: distractor
+- type: blank
+  location:
+    snippet: c_list[i] = (c_list[i]*1.8)+32
+  choices:
+  - snippet: c_list[i] = (c_list[i]*1.8)+32
+    role: solution
+    explanations:
+    - body: This statement converts each element to its Fahrenheit value.
+  - snippet: i=(i*1.8)+32
+    role: distractor

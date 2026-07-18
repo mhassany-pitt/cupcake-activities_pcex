@@ -1,0 +1,202 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_work_hours_0
+title: 'Reporting the Total Hours Each Employee Worked '
+description: |-
+  Suppose we have an input file that contains information about how many hours each employee of a company has worked. The file looks like the following (Employee's name, Hours):
+  Erica 7.5 8.5 10.25 8 8.5
+  Erin 10.5 11.5 12 11 10.75
+  Simone 8 8 8
+  ...
+  Construct a program that reads this file and calculates the total number of hours worked by each individual. Make sure that the program handles each specific exception that could occur.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Suppose we have an input file that contains information about how many hours each employee of a company has worked. The file looks like the following (Employee's name, Hours):
+  Erica 7.5 8.5 10.25 8 8.5
+  Erin 10.5 11.5 12 11 10.75
+  Simone 8 8 8
+  ...
+  Write a program that reads this file and calculates the total number of hours worked by each individual. Make sure that the program handles each specific exception that could occur.
+executions:
+- title: Sample Run
+  stdin:
+  - /Users/hours.txt
+  stdout: "Enter the full path of a file: \nFile not found"
+  console: "Enter the full path of a file: \nFile not found"
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def report_work_hours(file_name):'
+  explanations:
+  - body: We need to first declare the function that receives a full path for a file that contains information
+      about how many hours each employee of a company has worked, reads this file, and calculates the
+      total number of hours worked by each individual. The given full file path is referred by variable
+      file_name.<br><br>Note that all statements following the header line are indented.
+- type: explanation
+  location:
+    snippet: 'try :'
+    nth: 1
+  explanations:
+  - body: The try blocks tries to execute the code within it. The statements in the try block may throw
+      several types of exception.
+  - body: If an error is encountered, the try block code execution is stopped and transferred down to
+      the except block(s).
+- type: explanation
+  location:
+    snippet: myfile = open( file_name, "r")
+  explanations:
+  - body: The open function opens the file. The variable file_name specifies the path to this file. We
+      want to read the file; therefore, we open it in the read mode "r".
+  - body: We could also call the open function without specifying the mode, because when only the filename
+      is passed, the open function opens the file in read mode.
+- type: explanation
+  location:
+    snippet: 'for line in myfile:'
+  explanations:
+  - body: For reading lines from a file, we can loop over the file object.
+  - body: This for loop assigns the name line to each of the lines in the file in turn, from the beginning
+      of the file to the end, and then the statement in the loop body will be executed for each line.
+  - body: Note that all statements inside the loop need to be indented with respect to the loop header.
+- type: explanation
+  location:
+    snippet: tokens = line.split()
+  explanations:
+  - body: We need to split the line into words and store the words in a list.
+  - body: We use split() function with no arguments because we want the split function to separate strings
+      using space character. Note that, by default, this function considers any number of whitespace characters
+      as a word boundary.
+- type: explanation
+  location:
+    snippet: name = tokens[0]
+  explanations:
+  - body: tokens[0] gives us the element at index 0 of the list that represents the employee's name.
+- type: explanation
+  location:
+    snippet: total = 0.0;
+  explanations:
+  - body: We need variable total to maintain a running total, which means the sum of the hours the employee
+      worked. Of course, the total should be initialized with 0.
+- type: explanation
+  location:
+    snippet: 'for i in range(1, len(tokens)) :'
+  explanations:
+  - body: We use a for loop to iterate over the hours reported for the employee. We can get the hours
+      that the employee has worked by accessing the second through the last element in the list of line
+      tokens. We need the indexes to start at 1 with every integer number up to but not including the
+      list length. We get this sequence by calling the range(1,len(tokens)) function.
+  - body: Note that the loop starts at 1 because the value at the index 0 of the list is the employee's
+      name. The hours the employee has worked start from the second element in the list of line tokens.
+      Also, note that the function len(tokens) returns the number of the values in the list of line tokens.
+  - body: Note that all statements inside the loop need to be indented with respect to the loop header.
+- type: explanation
+  location:
+    snippet: 'try :'
+    nth: 2
+  explanations:
+  - body: If an error is encountered during calculating the total hours the employee has worked, the try
+      block code execution is stopped and transferred down to the except block(s).
+- type: explanation
+  location:
+    snippet: total += float(tokens[i])
+  explanations:
+  - body: We need to add each reported hour to the running total that is stored in variable total. So,
+      in each iteration, we add the reported hour to the variable total and store the result into the
+      variable total.<br><br>We get the reported hour by accessing the element at index i of the list
+      of line tokens. We need to covert this value to a float by calling the float function.
+  - body: Note that we could perform the float conversion and addition in the same line. Also, note that
+      each value that is stored in the list of line tokens is a string. Therefore, we need to convert
+      the hours employee has worked into a number. We convert each hour to a number by calling the float()
+      function because the reported hours could have a decimal point.
+  - body: The += operator adds the reported hour to the value of the variable total and the result is
+      stored in the variable total. Thus, this statement is equivalent to the statement total = total
+      + float(tokens[i]).
+- type: explanation
+  location:
+    snippet: 'except ValueError:'
+  explanations:
+  - body: We need to handle the ValueError. This error occurs when an hour that is reported for the employee
+      is not a number and we call the function float() to convert that value to a float.
+  - body: The body of this except block gets executed only if a reported hour in the line is not a number.
+      Otherwise, the body of this except statement is skipped.
+- type: explanation
+  location:
+    snippet: print("Error in the hour.")
+  explanations:
+  - body: This statement prints to the default standard output stream the error that caused the ValueError.
+      The printed text is followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: print("Total hours worked by " + name  + " = " + str(total))
+  explanations:
+  - body: This statement concatenates the content of the given strings, variable name and total to print
+      the total hours each employee has worked. We concatenate the content of these variables using the
+      + operator. Variable name has a string value and we can use the + operator to concatenate its content
+      with other strings. Variable total, on the other hand, has a float value and its value can be concatenated
+      with strings only when it is explicitly converted to a string using the str function.
+  - body: Note that the concatenating and printing are done in the same line. That is, we don't have to
+      store the concatenated string to a new variable at first and then print it in the next line.
+  - body: Note that the + operator creates a new string from the contents of its operands joined. This
+      string will be printed by the print function and followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: myfile.close()
+  explanations:
+  - body: We're done with reading the file; therefore, we use close() to close it and free up any system
+      resources taken up by the open file.
+- type: explanation
+  location:
+    snippet: 'except FileNotFoundError:'
+  explanations:
+  - body: We need to handle the FileNotFoundError. This error occurs when the file could not be found.
+  - body: The body of this except block gets executed only if the file could not be found. Otherwise,
+      the body of this except statement is skipped.
+- type: explanation
+  location:
+    snippet: print("File not found")
+  explanations:
+  - body: This statement prints to the default standard output stream the error that caused the FileNotFoundError.
+      The printed text is followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: 'except IOError:'
+  explanations:
+  - body: We need to handle the IOError. This error occurs when an error occurs when trying to read/close
+      the file.
+  - body: The body of this except block gets executed only if an error occurs when trying to read/close
+      the file. Otherwise, the body of this except statement is skipped.
+- type: explanation
+  location:
+    snippet: print("Problem with the file!")
+  explanations:
+  - body: This statement prints to the default standard output stream the error that caused the IOError.
+      The printed text is followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: 'name = input("Enter the full path of a file: ")'
+  explanations:
+  - body: We need to read the full file path that the user enters. To do this, we need to use the input()
+      function. This statement prompts the user to enter the full path for a file, then reads the text
+      entered by the user and places it in the variable name. The value that will be stored in variable
+      name is a string.
+- type: explanation
+  location:
+    snippet: report_work_hours(name)
+  explanations:
+  - body: This statement calls the report_work_hours function and passes the name as its arguments. Note
+      that the function call must be done after the function is declared.

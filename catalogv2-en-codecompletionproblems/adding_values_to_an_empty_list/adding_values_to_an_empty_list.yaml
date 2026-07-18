@@ -1,0 +1,77 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_list_fill_1
+title: Adding Values to an Empty List
+description: Construct a program that creates a list of eight string values received from the user.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that creates a list of eight string values received from the user.
+executions:
+- title: Sample Run
+  stdin:
+  - '"Sam"'
+  - '"Tom"'
+  - '"Liz"'
+  - '"Mary"'
+  - '"Elena"'
+  - '"Mira"'
+  - '"Tim"'
+  - '"Mark"'
+  stdout: |-
+    Enter a value:
+    Enter a value:
+    Enter a value:
+    Enter a value:
+    Enter a value:
+    Enter a value:
+    Enter a value:
+    Enter a value:
+    ['Sam', 'Tom', 'Liz', 'Mary', 'Elena', 'Mira', 'Tim', 'Mark']
+  console: |-
+    Enter a value:
+    Enter a value:
+    Enter a value:
+    Enter a value:
+    Enter a value:
+    Enter a value:
+    Enter a value:
+    Enter a value:
+    ['Sam', 'Tom', 'Liz', 'Mary', 'Elena', 'Mira', 'Tim', 'Mark']
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: lst.append( input("Enter a value:") )
+  choices:
+  - snippet: lst.append( input("Enter a value:") )
+    role: solution
+    explanations:
+    - body: We want to add the user input to the list. To do this, in each iteration, we call the function
+        append(input("Enter a value:"). Note that we do not necessarily have to store the returned value
+        from the input function in a variable. We could use the input function call directly as the append
+        function parameter.
+    - body: The input() function will print the text "Enter a value:" on the screen, reads the text entered
+        by the user and returns it as a string value. The append function uses the value returned by the
+        input() function and adds that to the end of the list.
+  - snippet: lst.append(i)
+    role: distractor
+  - snippet: lst.append(i) = input("Enter a value:")
+    role: distractor
+  - snippet: lst = input("Enter a value:")
+    role: distractor
+  - snippet: lst[i] = input("Enter a value:")
+    role: distractor

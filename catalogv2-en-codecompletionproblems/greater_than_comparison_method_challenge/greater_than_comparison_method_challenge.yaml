@@ -1,0 +1,81 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_rich_compare_1
+title: Greater Than Comparison Method Challenge
+description: Construct a program with two classes, where each class has a comparison method. Test whether
+  the value of the first class is greater than the value of the second class using the comparison method.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program with two classes, where each class has a comparison method. Test whether the
+  value of the first class is greater than the value of the second class using the comparison method.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    A __gt__ called
+    False
+    B __gt__ called
+    True
+  console: |-
+    A __gt__ called
+    False
+    B __gt__ called
+    True
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: return self.value > other.value
+    nth: 1
+  choices:
+  - snippet: return self.value > other.value
+    role: solution
+    explanations:
+    - body: Returns the original function of the ">" operator, a bool representing whether the value on
+        left side of the comparison operator is greater than the value on the right side.
+  - snippet: return self.value > other
+    role: distractor
+  - snippet: return self.value > other
+    role: distractor
+  - snippet: return self.value < other.value
+    role: distractor
+  - snippet: return self.value < other.value
+    role: distractor
+- type: blank
+  location:
+    snippet: return self.value > other.value
+    nth: 2
+  choices:
+  - snippet: return self.value > other.value
+    role: solution
+    explanations:
+    - body: Returns the original function of the ">" operator, a bool representing whether the value on
+        left side of the comparison operator is greater than the value on the right side.
+- type: blank
+  location:
+    snippet: print(a > b)
+  choices:
+  - snippet: print(a > b)
+    role: solution
+    explanations:
+    - body: The __gt__ method of each A is called when the > operator is used. In this example, whether
+        the value of a is greater than the value of b is checked, a statement is printed, and a bool is
+        returned.
+  - snippet: print(b >= a)
+    role: distractor
+  - snippet: print(a >= b)
+    role: distractor

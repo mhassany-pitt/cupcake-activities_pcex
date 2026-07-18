@@ -1,0 +1,85 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_str_count_1
+title: Counting the Occurrences of One String in Another
+description: |-
+  Construct a program that has a function that receives a string and returns the number of times that the string "hi?t" appears anywhere in the given string where '?' could be any letter. For example, "hint" and "hilt" would count as a match.
+  All string comparisons should be case-insensitive.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program that has a function that receives a string and returns the number of times that the string "hi?t" appears anywhere in the given string where '?' could be any letter. For example, "hint" and "hilt" would count as a match.
+  All string comparisons should be case-insensitive.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '1'
+  console: '1'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'for i in range(len(s)-3):'
+  choices:
+  - snippet: 'for i in range(len(s)-3):'
+    role: solution
+    explanations:
+    - body: We need to search for a match by checking if each four adjacent characters in the given string
+        match the string "hi?t" where '?' could be any letter. We can achieve this by iterating over the
+        indexes of the characters in the given string and then checking the substring that begins at each
+        index and extends to the characters at the next three subsequent indices. We need the indexes
+        of the string characters to start at 0 (index of the first character) with every integer number
+        up to but not including the len(s)-3. We get this sequence by calling the range(len(s)-3) function.
+    - body: The reason that we do not include the index of the last three characters in the sequence is
+        that we check the characters at the last three indices when we get to the fourth last index of
+        the given string.
+    - body: Note that len(s) returns the number of the characters in the string. Also note that all statements
+        inside the loop need to be indented with respect to the loop header.
+  - snippet: 'for i in range(0, len(s), 4):'
+    role: distractor
+  - snippet: 'for i in range(1, len(s)-3):'
+    role: distractor
+- type: blank
+  location:
+    snippet: 'if s[i:i+2].lower() == "hi" and s[i+3].lower() == "t":'
+  choices:
+  - snippet: 'if s[i:i+2].lower() == "hi" and s[i+3].lower() == "t":'
+    role: solution
+    explanations:
+    - body: We need to compare the string "hi" with the substring that begins at the index i and extends
+        to the characters at the next three subsequent indices (ignoring the case). We also need to compare
+        the character at index i+3 with the letter "t" (ignoring the case). If we find a match in both
+        comparisons, then we increment the number of occurrences of the string "hi?t" in the given string
+        by 1 ('?' could be any letter)
+    - body: s[i:i+2] fetches a range of characters starting from the index i and ending with the character
+        at the index i+1 of the given string.<br>s[i+3] gives us the character at index i+3 of the given
+        string.
+    - body: Note that we could compare two strings using == operator. Also, the function lower() returns
+        a copy of the string in which all case-based characters have been lowercased. We need to call
+        this function because we want case-insensitive string comparisons.
+    - body: If the substring that begins at the index i and extends to the character at index i+1 is equal
+        to the string "hi" (ignoring the case) and the character at index i+3 of the given string is equal
+        to "t" (ignoring the case), then the body of this if statement gets executed. Otherwise, the body
+        of this if statement is skipped.
+  - snippet: 'if s[i:i+1] == "hi" and s[i+4].lower() == "t":'
+    role: distractor
+  - snippet: 'if s[i:i+2].lower() == "hi" and s[i+2:i+3].lower() == "?t":'
+    role: distractor
+  - snippet: 'if s[i:i+1].lower() == "hi" and s[i+3:i+4].lower() == "?t":'
+    role: distractor
+  - snippet: 'if s[i:i+1].lower() == "hi" and s[i+3].lower() == "t":'
+    role: distractor

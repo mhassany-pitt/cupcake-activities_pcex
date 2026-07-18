@@ -1,0 +1,167 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_pandas_statistics_1_0
+title: PANDAS Statistics 1
+description: From a class of 200 students, you have a dataset of students, their section, and grades.
+  Start by inspecting the dataset. Get the sample size. Then, print top 5 examples. Next, get the mean.
+  Also, try the pandas describe function. Get student counts by grade. Find students in section 2 and
+  get the counts by grade.  Print the 10 entries in this result. Use the value_counts function
+authors:
+- first: Rully
+  last: Hendrawan
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: From a class of 200 students, you have a dataset of students, their section, and grades. Start
+  by inspecting the dataset. Get the sample size. Then, print top 5 examples. Next, get the mean. Also,
+  try the pandas describe function. Get student counts by grade. Find students in section 2 and get the
+  counts by grade.  Print the 10 entries in this result. Use the value_counts function
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+    ModuleNotFoundError: No module named 'pandas'
+  console: |-
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+    ModuleNotFoundError: No module named 'pandas'
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: df = pd.read_csv("students.csv")
+  explanations:
+  - body: This line reads the CSV file named 'students.csv' and loads its contents into a DataFrame called
+      'df'. The DataFrame is a two-dimensional, size-mutable, potentially heterogeneous tabular data structure
+      with labeled axes (rows and columns) provided by the pandas library.
+  - body: The syntax 'pd.read_csv("students.csv")' uses the read_csv function from the pandas library
+      (imported as 'pd') to read the data. The argument '"students.csv"' specifies the file path of the
+      CSV file. Ensure that the file is in the correct directory or provide the full path to avoid file
+      not found errors.
+  - body: A common misconception is that the DataFrame will automatically handle missing values or incorrect
+      data types. You should check the DataFrame after loading it to ensure the data is clean and formatted
+      correctly.
+  - body: Best practice suggests that you should always verify that the DataFrame has been loaded correctly
+      by checking its shape or using 'df.head()' to view the first few rows. This helps you confirm that
+      the data structure is as expected before proceeding with further analysis.
+- type: explanation
+  location:
+    snippet: sample_size = df.shape[0]
+  explanations:
+  - body: This line assigns the variable 'sample_size' the value of the number of rows in the DataFrame
+      'df'. The 'shape' attribute of a DataFrame returns a tuple representing its dimensions, where the
+      first element (index 0) corresponds to the number of rows.
+  - body: The syntax 'df.shape[0]' accesses the first element of the tuple returned by 'df.shape'. This
+      is a common way to quickly determine how many entries (students) are present in your dataset.
+  - body: A potential misconception is thinking that 'df.shape' returns just a single number. Remember,
+      it returns a tuple (rows, columns), so you need to specify the index [0] to get the row count. Also,
+      ensure that 'df' is defined and contains data; otherwise, this line will raise an error.
+  - body: Best practice suggests using descriptive variable names. Instead of 'sample_size', you might
+      consider 'number_of_students' for clarity, especially if your dataset could include other types
+      of samples in the future.
+- type: explanation
+  location:
+    snippet: print(df.head(5))
+  explanations:
+  - body: This line prints the first five rows of the DataFrame 'df' using the head() method, which is
+      essential for quickly inspecting the dataset's structure and content.
+  - body: The syntax df.head(5) calls the head() function on the DataFrame 'df', where '5' is an argument
+      specifying the number of rows to return. If you omit the argument, it defaults to 5.
+  - body: A common misconception is that head() modifies the DataFrame; however, it only returns a new
+      DataFrame containing the specified number of rows without altering the original data.
+  - body: Best practice suggests using head() when you want to quickly check the data format and ensure
+      that the DataFrame has been loaded correctly, especially after reading from a CSV file.
+- type: explanation
+  location:
+    snippet: mean_grade = df["grade"].mean()
+  explanations:
+  - body: This line calculates the mean (average) of the 'grade' column in the DataFrame 'df' and assigns
+      it to the variable 'mean_grade'. This is essential for understanding the overall performance of
+      the students in the class.
+  - body: The syntax 'df['grade'].mean()' uses square brackets to access the 'grade' column of the DataFrame.
+      The 'mean()' function is a built-in method in pandas that computes the average of the values in
+      that column.
+  - body: A common misconception is that the mean can be calculated directly on the DataFrame without
+      specifying the column. Remember, you must specify the column to get the correct mean value. Also,
+      if there are any non-numeric values in the 'grade' column, it could lead to errors or unexpected
+      results.
+  - body: Best practice suggests checking for missing or non-numeric values in the 'grade' column before
+      calculating the mean. You can use 'df['grade'].isnull().sum()' to check for missing values and 'df['grade'].dtype'
+      to ensure the column is numeric.
+- type: explanation
+  location:
+    snippet: print(df["grade"].describe())
+  explanations:
+  - body: This line prints the summary statistics of the 'grade' column from the DataFrame 'df'. The 'describe()'
+      function provides a quick overview of the distribution of the grades, including count, mean, standard
+      deviation, minimum, maximum, and quartiles.
+  - body: The syntax 'df['grade'].describe()' accesses the 'grade' column of the DataFrame 'df' and calls
+      the 'describe()' method on it. This method is built into pandas and is used to generate descriptive
+      statistics for numerical data.
+  - body: A common misconception is that 'describe()' only provides the mean; however, it gives a comprehensive
+      summary, which can be overlooked. Ensure you understand that it summarizes multiple aspects of the
+      data.
+  - body: Best practice is to always check the output of 'describe()' to understand the distribution of
+      your data before performing further analysis. This can help you identify any anomalies or outliers
+      in your dataset.
+- type: explanation
+  location:
+    snippet: print(df["grade"].value_counts())
+  explanations:
+  - body: This line prints the counts of each unique grade in the 'grade' column of the DataFrame. It
+      helps you understand how many students received each grade, which is essential for analyzing the
+      performance distribution.
+  - body: The syntax 'df['grade'].value_counts()' uses the 'value_counts()' method, which is a built-in
+      Pandas function that returns a Series containing counts of unique values. The brackets '[]' are
+      used to access the 'grade' column from the DataFrame 'df'.
+  - body: A common misconception is that 'value_counts()' modifies the original DataFrame; however, it
+      simply returns a new Series with the counts. Ensure you understand that this operation does not
+      change the data in 'df'.
+  - body: Best practice suggests that you should always check for missing values in your data before performing
+      operations like 'value_counts()'. You can do this by using 'df['grade'].isnull().sum()' to ensure
+      your analysis is accurate.
+- type: explanation
+  location:
+    snippet: section_2_counts = df[df["section"] == 2]["grade"].value_counts()
+  explanations:
+  - body: This line filters the DataFrame 'df' to include only the rows where the 'section' column equals
+      2, and then it calculates the value counts of the 'grade' column for those filtered rows. This is
+      essential for understanding how many students in section 2 received each grade.
+  - body: The syntax 'df[df['section'] == 2]' uses boolean indexing to create a new DataFrame that only
+      contains rows where the condition is true. The 'value_counts()' method is then called on the 'grade'
+      column of this filtered DataFrame to count the occurrences of each unique grade.
+  - body: A common misconception is that the filtering and counting can be done in one step without understanding
+      the intermediate DataFrame. Ensure you recognize that 'df[df['section'] == 2]' creates a new DataFrame,
+      and 'value_counts()' operates on that new DataFrame, not the original.
+  - body: Best practice suggests using clear variable names like 'section_2_counts' to indicate what data
+      is being stored. This improves code readability and maintainability, making it easier for you and
+      others to understand the purpose of the variable.
+- type: explanation
+  location:
+    snippet: print(section_2_counts.head(10))
+  explanations:
+  - body: This line prints the top 10 entries of the 'section_2_counts' Series, which contains the counts
+      of grades for students in section 2. By using the 'head(10)' method, you are specifically requesting
+      the first 10 entries, which helps you quickly see the most common grades in that section.
+  - body: The syntax 'section_2_counts.head(10)' calls the 'head' method on the 'section_2_counts' object,
+      which is a Pandas Series. The 'head' method is a convenient way to retrieve the first few rows of
+      a Series or DataFrame, and it defaults to 5 if no argument is provided. Here, you explicitly specify
+      10 to get more data.
+  - body: A common misconception is that 'head' modifies the original Series; however, it does not. It
+      simply returns a new Series containing the specified number of entries. Ensure you understand that
+      the original data remains unchanged.
+  - body: Best practice suggests that you should always check the output of your data manipulations, especially
+      when working with subsets. Using 'head' is a good way to verify that your filtering (in this case,
+      for section 2) has worked as intended.

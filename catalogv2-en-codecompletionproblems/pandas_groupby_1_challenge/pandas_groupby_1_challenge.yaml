@@ -1,0 +1,187 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_pandas_groupby_1_0
+title: PANDAS GroupBy 1 Challenge
+description: From a class of 200 students, you have a dataset of students, their section, grades for 10
+  homeworks and grades. Group students who got highest points in 5 homeworks and who got a final grade
+  greater than 80.
+authors:
+- first: Rully
+  last: Hendrawan
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: From a class of 200 students, you have a dataset of students, their section, grades for 10
+  homeworks and grades. Group students who got highest points in 5 homeworks and who got a final grade
+  greater than 80.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+    ModuleNotFoundError: No module named 'pandas'
+  console: |-
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+    ModuleNotFoundError: No module named 'pandas'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'if row[f''Homework_{i}''] == max_scores[f''Homework_{i}'']:'
+  choices:
+  - snippet: 'if row[f''Homework_{i}''] == max_scores[f''Homework_{i}'']:'
+    role: solution
+    explanations:
+    - body: This line checks if the score of the current homework (from the row being processed) is equal
+        to the maximum score recorded for that homework in the max_scores dictionary.
+    - body: The syntax 'if row[f'Homework_{i}'] == max_scores[f'Homework_{i}']:' uses f-strings to dynamically
+        access the column names based on the loop index 'i', which ranges from 1 to 10. This allows you
+        to compare the student's score for each homework to the maximum score.
+  - snippet: 'if row[f''Homework_{i}''] >= max_scores[f''Homework_{i}'']:'
+    role: distractor
+    explanations:
+    - body: You might think that using '>=' would include students who scored equal to the maximum score,
+        which seems reasonable. However, the problem specifically asks for students who scored the highest
+        points, meaning only those who achieved the exact maximum score should be counted. By using '>='
+        instead of '==', you would incorrectly include students who scored slightly less than the maximum,
+        leading to an inaccurate count of top homework scorers. This would result in more students being
+        flagged as top scorers than intended, skewing your final results. The correct line ensures that
+        only those who achieved the maximum score are counted, which is crucial for accurately identifying
+        the top performers.
+  - snippet: 'if row[f''Homework_{i}''] != max_scores[f''Homework_{i}'']:'
+    role: distractor
+    explanations:
+    - body: You might think that checking for '!=' would help you identify students who are not top scorers,
+        but this is a misunderstanding of the task. The goal is to count how many homeworks a student
+        scored the highest on, not to exclude those who didn't. If you use '!=', you would be counting
+        the wrong instances, leading to a count that does not reflect the number of homeworks where the
+        student excelled. This would ultimately result in incorrect identification of students who are
+        top scorers, as you would be counting the wrong conditions. The correct line specifically checks
+        for equality to ensure that only the highest scores are counted.
+  - snippet: 'if row[f''Homework_{i}''] < max_scores[f''Homework_{i}'']:'
+    role: distractor
+    explanations:
+    - body: You might think that checking for '<' would help you identify students who scored below the
+        maximum, but this is a fundamental misunderstanding of the problem. The task is to count how many
+        times a student scored at the maximum level, not to exclude those who scored lower. If you use
+        '<', you would be counting instances where the student did not achieve the highest score, which
+        is the opposite of what you need to do. This would lead to a count that inaccurately reflects
+        the student's performance, potentially excluding them from being recognized as a top scorer. The
+        correct line checks for equality, ensuring that only the highest scores are counted.
+  - snippet: 'if row[f''Homework_{i}''] == max_scores[f''Homework_{i}''] + 1:'
+    role: distractor
+    explanations:
+    - body: You might think that checking for '==' with an added 1 would help identify students who scored
+        exceptionally well, but this is a clear misunderstanding of the requirements. The task is to find
+        students who scored exactly the highest points, not those who exceeded it. By using '== max_scores[f'Homework_{i}']
+        + 1', you would be looking for scores that are impossible in this context, as no score can be
+        higher than the maximum recorded score. This would lead to a situation where no students are counted
+        as top scorers, which is not the intended outcome. The correct line simply checks for equality,
+        ensuring that only those who achieved the maximum score are counted.
+- type: blank
+  location:
+    snippet: top_students = df[df['Filtered']]
+  choices:
+  - snippet: top_students = df[df['Filtered']]
+    role: solution
+    explanations:
+    - body: This line creates a new DataFrame called 'top_students' that contains only the rows from 'df'
+        where the 'Filtered' column is True. This effectively isolates the students who meet the criteria
+        of scoring highest in at least 5 homeworks and having a final grade greater than 80.
+    - body: The syntax 'df[df['Filtered']]' uses boolean indexing, which is a powerful feature in pandas.
+        Here, 'df['Filtered']' returns a Series of boolean values (True or False) that correspond to each
+        row in the DataFrame. When you use this Series to index 'df', it returns only the rows where the
+        condition is True.
+  - snippet: top_students = df[df['Filtered'] == True]
+    role: distractor
+    explanations:
+    - body: You might think that to filter the DataFrame, you need to explicitly check if the 'Filtered'
+        column is equal to True. This is a common misconception where students believe that they must
+        always compare boolean values directly. However, in pandas, when you use a boolean Series to index
+        a DataFrame, it automatically filters the DataFrame based on the truthiness of the values in that
+        Series. By using 'df[df['Filtered'] == True]', you are unnecessarily complicating the code and
+        could introduce errors if the 'Filtered' column ever contains non-boolean values. The correct
+        approach simply uses 'df[df['Filtered']]', which directly utilizes the boolean values for filtering
+        without any additional comparison.
+  - snippet: top_students = df[df['Filtered'] & (df['Grade'] > 80)]
+    role: distractor
+    explanations:
+    - body: You might think that you need to combine conditions when filtering the DataFrame, leading
+        you to add an extra condition to check if the 'Grade' is greater than 80. This is a misunderstanding
+        of how the filtering process works in this context. The 'Filtered' column already encapsulates
+        the condition of having a final grade greater than 80 and being a top homework scorer. By adding
+        this extra condition, you are not only making the code more complex but also potentially introducing
+        logical errors if the conditions conflict. The correct line simply uses 'df[df['Filtered']]' to
+        filter based on the already established criteria.
+  - snippet: top_students = df[df['Filtered'] | (df['Grade'] > 80)]
+    role: distractor
+    explanations:
+    - body: You might mistakenly think that using an 'or' condition (|) is necessary to ensure that you
+        capture all students who either meet the filtering criteria or have a grade above 80. This reflects
+        a misunderstanding of how the filtering logic should work in this case. The 'Filtered' column
+        already indicates students who meet both criteria, so using 'or' would incorrectly include students
+        who do not meet the top homework scorer requirement but have a grade above 80. This could lead
+        to incorrect results. The correct line simply uses 'df[df['Filtered']]' to ensure that only students
+        who meet both conditions are included.
+  - snippet: top_students = df[df['Filtered'].isnull()]
+    role: distractor
+    explanations:
+    - body: You might think that to filter the DataFrame, you need to check for null values in the 'Filtered'
+        column. This misconception arises from a misunderstanding of how filtering works. The 'Filtered'
+        column is designed to contain boolean values, and checking for null values would not yield the
+        intended results. Instead, you would end up with an empty DataFrame if there are no null values.
+        The correct approach is to use 'df[df['Filtered']]', which directly filters based on the boolean
+        values without any unnecessary checks for nulls.
+- type: blank
+  location:
+    snippet: grouped_students = top_students.groupby(['Section', 'Grade']).size()
+  choices:
+  - snippet: grouped_students = top_students.groupby(['Section', 'Grade']).size()
+    role: solution
+    explanations:
+    - body: This line groups the filtered students by their 'Section' and 'Grade', allowing you to analyze
+        how many students fall into each combination of these categories.
+    - body: The syntax 'top_students.groupby(['Section', 'Grade'])' uses the 'groupby' method from pandas,
+        which is a powerful tool for aggregating data based on one or more columns.
+  - snippet: grouped_students = top_students.groupby('Section').size()
+    role: distractor
+    explanations:
+    - body: If you choose this distractor, you might think that grouping by just 'Section' is enough to
+        get the desired results. However, this would ignore the 'Grade' aspect, which is crucial for the
+        problem statement. By only grouping by 'Section', you would end up with a count of students per
+        section, but you wouldn't be able to differentiate between students with different grades within
+        the same section. This could lead to misleading results, as you would not be able to see how many
+        students scored above 80 in each section. The correct line groups by both 'Section' and 'Grade',
+        allowing you to accurately count the number of top students in each section and grade combination,
+        which is essential for the analysis you are trying to perform.
+  - snippet: grouped_students = top_students.groupby(['Grade']).size()
+    role: distractor
+    explanations:
+    - body: If you select this option, you might think that focusing solely on 'Grade' is the best way
+        to analyze the top students. However, this would ignore the 'Section' information, which is also
+        important. By grouping only by 'Grade', you would lose the context of which students belong to
+        which sections, leading to a lack of clarity in your results. You would end up with a count of
+        students per grade, but without knowing how many of those students are in each section. The correct
+        line includes both 'Section' and 'Grade', ensuring that you can see how many top students there
+        are in each section for each grade, which is necessary for a comprehensive analysis.
+  - snippet: grouped_students = top_students.groupby(['Section', 'Final_Grade']).size()
+    role: distractor
+    explanations:
+    - body: Choosing this distractor could stem from a misunderstanding of the DataFrame's structure.
+        You might think that 'Final_Grade' is the correct column name, but if the actual column is named
+        'Grade', this would lead to a KeyError. This distractor highlights a common mistake where students
+        assume different naming conventions without checking the DataFrame's actual structure. The correct
+        line uses the exact column names as defined in the DataFrame, which is crucial for the program
+        to run without errors. Always ensure you are using the correct column names to avoid such issues.

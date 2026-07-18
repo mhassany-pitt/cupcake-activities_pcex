@@ -1,0 +1,79 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_str_repeat_chars_0
+title: Repeating Characters of a String
+description: |-
+  Construct a program that has a function that receives a string and creates a new string that has each character of the given string repeated two times.
+  For example, the new string that will be formed from the string 'abc' is 'aabbcc'.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program that has a function that receives a string and creates a new string that has each character of the given string repeated two times.
+  For example, the new string that will be formed from the string 'abc' is 'aabbcc'.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: HHii  TThheerree
+  console: HHii  TThheerree
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def double_char(s):'
+  explanations:
+  - body: We need to first declare the function that receives a string and creates a new string that has
+      each character of the given string repeated two times. The given string is referred by variable
+      s.<br><br>Note that all statements following the header line are indented.
+- type: explanation
+  location:
+    snippet: new_s = ""
+  explanations:
+  - body: This statement sets variable new_s to the empty string. Later, we will update the content of
+      this variable as we iterate through the characters in the given string.
+- type: explanation
+  location:
+    snippet: 'for char in s:'
+  explanations:
+  - body: We want to iterate over the characters in the given string and add each character repeated two
+      times to the new string. We can use a for loop to iterate through the characters in the given string.
+  - body: This for loop assigns the name char to each of the characters in the given string in turn, from
+      left to right, and then the statement in the loop body will be executed for each character.
+  - body: Note that all statements inside the loop need to be indented with respect to the loop header.
+- type: explanation
+  location:
+    snippet: new_s += char * 2
+  explanations:
+  - body: This statement concatenates the string value stored in variable new_s with the character of
+      the given string repeated two times. The result of the concatenation is stored in variable new_s.
+  - body: The repetition operator * repeats the character stored in variable char for the specified number
+      of times. Also, note that the + operator creates a new string from the contents of its operands
+      joined.
+  - body: The += operator concatenates the string value stored in variable new_s with the character stored
+      in variable char repeated two times and the result is stored in the variable new_s. Thus, this statement
+      is equivalent to the statement new_s = new_s + char * 2.
+- type: explanation
+  location:
+    snippet: print(new_s)
+  explanations:
+  - body: This statement prints to the default standard output stream the new string that is stored in
+      variable new_s. The printed text is followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: double_char("Hi There")
+  explanations:
+  - body: This statement calls the double_char function and passes the string "Hi There" as its argument.
+      Note that the function call must be done after the function is declared.

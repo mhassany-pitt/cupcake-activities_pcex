@@ -1,0 +1,75 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_objects_classes_loan_1
+title: The Class for Representing a Loan
+description: |-
+  Construct a class that represents a loan. This class should contain data representing the interest rate, loan amount, and the length of loan period (in years); all of which could be accessed or changed only through the getter and setter methods. An instance of the class should be created by specifying annual interest rate, length of loan period, and loan amount.
+  The other methods of the this class should calculate the amount of monthly payments on the loan as well as the total payment.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Construct a class that represents a loan. This class should contain data representing the interest rate, loan amount, and the length of loan period (in years); all of which could be accessed or changed only through the getter and setter methods. An instance of the class should be created by specifying annual interest rate, length of loan period, and loan amount.
+  The other methods of the this class should calculate the amount of monthly payments on the loan as well as the total payment.
+executions:
+- title: Sample Run
+  stdin:
+  - '0.03'
+  - '5'
+  - '1000'
+  stdout: "Enter the annual interest rate: \nEnter the number of years for the loan period: \nEnter the\
+    \ loan amount: \nThe monthly payment for the loan is: 17.97 \nThe total payment for the loan is: 1078.12"
+  console: "Enter the annual interest rate: \nEnter the number of years for the loan period: \nEnter the\
+    \ loan amount: \nThe monthly payment for the loan is: 17.97 \nThe total payment for the loan is: 1078.12"
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'def get_total_payment(self) :'
+  choices:
+  - snippet: 'def get_total_payment(self) :'
+    role: solution
+    explanations:
+    - body: This method calculates and returns the total payment for the loan. Note that the first argument
+        (named self) is passed in automatically by the interpreter when the method is invoked on an instance
+        of the class.
+  - snippet: 'def get_total_payment() :'
+    role: distractor
+- type: blank
+  location:
+    snippet: total_payment = self.get_monthly_payment() * self.__number_of_years * 12
+  choices:
+  - snippet: total_payment = self.get_monthly_payment() * self.__number_of_years * 12
+    role: solution
+    explanations:
+    - body: 'We can calculate the total payment by multiplying the amount of monthly payments by the total
+        months in the loan period.<br>self.__number_of_years * 12: gives us the number of months in the
+        loan period.<br>self.get_monthly_payment(): gives us the monthly payment for the loan. Note that
+        we need to use self. to call a method of the class from another method in the same class.'
+  - snippet: total_payment = get_monthly_payment() * number_of_years * 12
+    role: distractor
+  - snippet: total_payment = Loan2.get_monthly_payment() * numberOfYears * 12
+    role: distractor
+  - snippet: total_payment = number_of_years * 12
+    role: distractor
+- type: blank
+  location:
+    snippet: return total_payment
+  choices:
+  - snippet: return total_payment
+    role: solution
+    explanations:
+    - body: This statement returns the total payment for the loan.

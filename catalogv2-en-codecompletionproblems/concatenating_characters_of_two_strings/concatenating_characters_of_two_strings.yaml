@@ -1,0 +1,77 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_concat_char_two_str_1
+title: Concatenating Characters of Two Strings
+description: |-
+  Construct a program that has a function that receives two strings and returns a string formed from the given strings separated by a space character such that the first two characters of the given strings are swapped.
+  For example, the new string that will be formed from the strings 'abc' and 'xyz' is 'xyc abz'.
+  Assume that both strings have at least two characters.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program that has a function that receives two strings and returns a string formed from the given strings separated by a space character such that the first two characters of the given strings are swapped.
+  For example, the new string that will be formed from the strings 'abc' and 'xyz' is 'xyc abz'.
+  Assume that both strings have at least two characters.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: Thllo Heere
+  console: Thllo Heere
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: new_a = b[:2] + a[2:]
+  choices:
+  - snippet: new_a = b[:2] + a[2:]
+    role: solution
+    explanations:
+    - body: This statements sets variable new_a to the string that is formed from the first two characters
+        of the 2nd string followed by the 1st string without its first two characters.<br><br>b[:2] fetches
+        the first two characters of the 2nd string.<br>a[2:] fetches all characters beyond the second
+        character in the 1st string.
+    - body: Note that we can get ranges of characters in a string by slicing, that is by providing a pair
+        of offsets separated by a colon in square brackets after the string (e.g., s[1:3]). The left offset
+        is taken to be the lower bound (inclusive), and the right is the upper bound (non-inclusive).
+        That is, Python fetches all characters from the lower bound up to but not including the upper
+        bound. If omitted, the left bound defaults to 0 and the right bound defaults to the length of
+        the string that we are slicing.
+  - snippet: new_a = a[:2] + b[2:]
+    role: distractor
+  - snippet: new_a = b[2:] + a[:2]
+    role: distractor
+- type: blank
+  location:
+    snippet: new_b = a[:2] + b[2:]
+  choices:
+  - snippet: new_b = a[:2] + b[2:]
+    role: solution
+    explanations:
+    - body: This statements sets variable new_b to the string that is formed from the first two characters
+        of the 1st string followed by the 2nd string without its first two characters.<br><br>a[:2] fetches
+        the first two characters of the 1st string.<br>b[2:] fetches all characters beyond the second
+        character in the 2nd string.
+    - body: Note that we can get ranges of characters in a string by slicing, that is by providing a pair
+        of offsets separated by a colon in square brackets after the string (e.g., s[1:3]). The left offset
+        is taken to be the lower bound (inclusive), and the right is the upper bound (non-inclusive).
+        That is, Python fetches all characters from the lower bound up to but not including the upper
+        bound. If omitted, the left bound defaults to 0 and the right bound defaults to the length of
+        the string that we are slicing.
+  - snippet: new_b = b[:2] + a[2:]
+    role: distractor
+  - snippet: new_b = a[2:] + b[:2]
+    role: distractor

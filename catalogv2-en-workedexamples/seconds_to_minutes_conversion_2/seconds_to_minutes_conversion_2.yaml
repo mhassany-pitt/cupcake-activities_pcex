@@ -1,0 +1,70 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_time_conversion_llm__677c5572949ed2ff17c30456_0
+title: Seconds to Minutes Conversion
+description: Construct a program that obtains minutes and remaining seconds from the input amount of time
+  in seconds. For example, 500 seconds contains 8 minutes and 20 seconds.
+authors:
+- first: Mohammad
+  last: Hassany
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that obtains minutes and remaining seconds from the input amount of time in
+  seconds. For example, 500 seconds contains 8 minutes and 20 seconds.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: "Enter an integer for seconds: \n450 seconds is 7 minutes and 30 seconds."
+  console: "Enter an integer for seconds: \n450 seconds is 7 minutes and 30 seconds."
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'text = input("Enter an integer for seconds: ")'
+  explanations:
+  - body: We need to read and process the input value that the user enters. To read the input value from
+      the user, we need to use the input() function. This statement prompts the user to enter the seconds,
+      then reads the text entered by the user and places it in the variable text. The value that will
+      be stored in variable text is a string.
+- type: explanation
+  location:
+    snippet: seconds = int(text)
+  explanations:
+  - body: We need to convert the input text to its integer representation. For this purpose, we use the
+      conversion function int().
+  - body: Note that the conversion to integer can only be done if the string actually presents a number.
+      If the input number is a float, the int() function cuts off the fractional part of the floating-point
+      number to create an integer.
+- type: explanation
+  location:
+    snippet: minutes = seconds // 60
+  explanations:
+  - body: To obtain the minutes in seconds, we divide the seconds by 60 because there are 60 seconds in
+      a minute. Note that we want to truncate the fractional part of the result, if there is any. Therefore,
+      we need to use the floor division by using // operator.
+- type: explanation
+  location:
+    snippet: remaining_seconds = seconds % 60
+  explanations:
+  - body: To obtain the remaining seconds after taking away the minutes, we have to take the remainder
+      of the seconds divided by 60. This is because there are 60 seconds in a minute. Note that the %
+      operator returns the remainder of the division.
+- type: explanation
+  location:
+    snippet: print(seconds , "seconds is" , minutes , "minutes and" , remaining_seconds , "seconds.")
+  explanations:
+  - body: This statement prints to the default standard output stream the minutes and remaining seconds
+      from the input amount of time in seconds.<br>The printed text shows the arguments of the print function
+      separated by the default delimiter (i.e., single space character) and followed by the end-of-line
+      character at the end.

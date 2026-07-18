@@ -1,0 +1,75 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_list2d_basic_2
+title: Updating Two-Dimensional List (Case 3)
+description: Construct a program that initializes a 2x4 two-dimensional matrix that has multiples of 10
+  from 10 to 80 for entries, updates the last row to a list holding values 1,3,5,7, then sets the second
+  element of the first row to be 8, and finally prints the matrix.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that initializes a 2x4 two-dimensional matrix that has multiples of 10 from
+  10 to 80 for entries, updates the last row to a list holding values 1,3,5,7, then sets the second element
+  of the first row to be 8, and finally prints the matrix.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '[[10, 8, 30, 40], [1, 3, 5, 7]]'
+  console: '[[10, 8, 30, 40], [1, 3, 5, 7]]'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: matrix[1] = [1, 3, 5, 7]
+  choices:
+  - snippet: matrix[1] = [1, 3, 5, 7]
+    role: solution
+    explanations:
+    - body: This statement assigns a list holding values 1,3,5,7 to the last row of the matrix.
+    - body: In a two-dimensional list, we can get an entire matrix row (a nested sublist) by using one
+        index. The row index could start at 0 and continue up to but not including the length of the two-dimensional
+        list, i.e., the number of rows in the two-dimensional list.
+    - body: In this statement, the list on the right-hand side of the assignment operator is the new list
+        that we want to assign to the matrix row. The index of the last row in the matrix is 1. So, matrix[1]
+        corresponds to the last row in the matrix.
+  - snippet: matrix[2] = [1, 3, 5, 7]
+    role: distractor
+  - snippet: matrix[0] = [1, 3, 5, 7]
+    role: distractor
+- type: blank
+  location:
+    snippet: matrix[0][1] = 8
+  choices:
+  - snippet: matrix[0][1] = 8
+    role: solution
+    explanations:
+    - body: This statement sets the second element of the first row in the matrix to be 8.
+    - body: In a two-dimensional list, we can access an element within a matrix row (a nested sublist)
+        by using two indices. The first index in [] is the row index and the second index in [] is the
+        column index. The row index could start at 0 and continue up to but not including the length of
+        the two-dimensional list, i.e., the number of rows in the two-dimensional list. The column index
+        could start at 0 and continue up to but not including the length of the row, i.e., the number
+        of elements within the row.
+    - body: The second element of the first row in the matrix has the row index of 0 and the column index
+        of 1. So, matrix[0][1] corresponds to the second element in the first row of the matrix.
+  - snippet: matrix[1][2] = 8
+    role: distractor
+  - snippet: matrix[1][0] = 8
+    role: distractor
+  - snippet: matrix[2][1] = 8
+    role: distractor
+  - snippet: matrix[0][2] = 8
+    role: distractor

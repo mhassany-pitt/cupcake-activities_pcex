@@ -1,0 +1,282 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_objects_classes_account_0
+title: The Class for Representing a Bank Account
+description: Construct a class that represents a basic bank account. This class should contain data representing
+  the name of the account’s owner, the account number, and the account’s current balance; all of which
+  could be accessed or changed only through the getter and setter methods. An instance of the class should
+  be created by specifying three parameters that are used to initialize the instance (i.e., object) data.
+  The other methods of this class should perform various services on the account (making deposits, withdrawals,
+  adding interest to the account). These methods should examine the data passed into them to make sure
+  the requested transaction is valid.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Construct a class that represents a basic bank account. This class should contain data representing
+  the name of the account’s owner, the account number, and the account’s current balance; all of which
+  could be accessed or changed only through the getter and setter methods. An instance of the class should
+  be created by specifying three parameters that are used to initialize the instance (i.e., object) data.
+  The other methods of this class should perform various services on the account (making deposits, withdrawals,
+  adding interest to the account). These methods should examine the data passed into them to make sure
+  the requested transaction is valid.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Angelica Adams's balance after deposit: 575.25
+    Angelica Adams's balance after deposit: 93.75
+    Angelica Adams's balance after adding interest: 97.03
+  console: |-
+    Angelica Adams's balance after deposit: 575.25
+    Angelica Adams's balance after deposit: 93.75
+    Angelica Adams's balance after adding interest: 97.03
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'class Account1 :'
+  explanations:
+  - body: We define the class Account1 to represent a bank account with basic services.
+- type: explanation
+  location:
+    snippet: 'def __init__(self, owner, account, initial) :'
+  explanations:
+  - body: To specify the initial state of a bank account, we need to have an __init__ method in the class
+      Account1 that accepts initial values for the bank account. The __init__ accepts the name of the
+      bank account, account number, and initial balance and stores them into the new Account1 object’s
+      acct_name, acct_number, and balance, respectively.
+  - body: The __init__ method is run automatically by Python each time an instance is created. The argument
+      (named self) is passed in automatically by the interpreter when the method is invoked on an instance
+      of the class.
+  - body: Note that Python automatically fills the first argument in with the instance object that is
+      the implied subject of the method call. Therefore, when this method is invoked on an instance of
+      the class, the last three parameters must be passed to the method.
+- type: explanation
+  location:
+    snippet: self.__acct_name = owner
+  explanations:
+  - body: This statement sets the instance attribute acct_name to the first parameter value (owner).<br>self
+      is the instance of the class and self.__acct_name is the account name. We start the attribute name
+      by two underscore (self.__acct_name) to prevent accessing the attribute directly from outside of
+      the class.
+- type: explanation
+  location:
+    snippet: self.__acct_number = account
+  explanations:
+  - body: This statement sets instance attribute acct_number to the second parameter value (account).<br>self
+      is the instance of the class and self.__acct_number is the account number. We start the attribute
+      name by two underscore (self.__acct_number) to prevent accessing the attribute directly from outside
+      of the class.
+- type: explanation
+  location:
+    snippet: self.__balance = initial
+  explanations:
+  - body: This statement sets instance attribute balance to the third parameter value (initial).<br>self
+      is the instance of the class and self.__balance is the account's balance. We start the attribute
+      name by two underscore (self.__balance) to prevent accessing the attribute directly from outside
+      of the class.
+- type: explanation
+  location:
+    snippet: 'def deposit(self, amount) :'
+  explanations:
+  - body: This method deposits the specified amount into this account and returns the new balance. The
+      balance is not modified if the deposit amount is invalid. Note that the first argument (named self)
+      is passed in automatically by the interpreter when the method is invoked on an instance of the class.
+  - body: Python automatically fills the first argument in with the instance object that is the implied
+      subject of the method call. Therefore, when this method is invoked on an instance of the class,
+      only the last parameter (amount) must be passed to the method.
+- type: explanation
+  location:
+    snippet: 'if (amount > 0) :'
+  explanations:
+  - body: Before we add the specified amount to the balance, we need to perform a test to check whether
+      the deposit amount is valid.
+  - body: The if statement tests whether the deposit amount is greater than 0. If the deposit amount is
+      greater than 0, then the body of this if statement gets executed. Otherwise, the body of this if
+      statement is skipped.
+- type: explanation
+  location:
+    snippet: 'def withdraw(self, amount, fee) :'
+  explanations:
+  - body: This method withdraws the specified amount and fee from this account and returns the new balance.
+      The balance is not modified if either the withdraw amount or fee are invalid or the balance is insufficient.
+      Note that the first argument (named self) is passed in automatically by the interpreter when the
+      method is invoked on an instance of the class.
+  - body: Python automatically fills the first argument in with the instance object that is the implied
+      subject of the method call. Therefore, when this method is invoked on an instance of the class,
+      only the last two parameters must be passed to the method.
+- type: explanation
+  location:
+    snippet: 'if (amount > 0 and fee >= 0 and amount+fee < self.__balance) :'
+  explanations:
+  - body: Before we withdraw the specified amount and fee from the account, we need to perform a test
+      to check whether the withdraw amount and fee are valid and the balance is sufficient.
+  - body: The if statement tests whether the withdraw amount is greater than zero, fee is greater than
+      or equal to zero, and the balance is sufficient. If the withdraw amount and fee are valid and the
+      balance is sufficient, then the body of this if statement gets executed. Otherwise, the body of
+      this if statement is skipped.
+  - body: Note that the and operator yields the result True if both conditions are True.
+- type: explanation
+  location:
+    snippet: 'def add_interest(self) :'
+  explanations:
+  - body: This method adds interest to this account and returns the new balance. Note that the first argument
+      (named self) is passed in automatically by the interpreter when the method is invoked on an instance
+      of the class.
+  - body: Python automatically fills the first argument in with the instance object that is the implied
+      subject of the method call. Therefore, when this method is invoked on an instance of the class,
+      no parameter must be passed to the method.
+- type: explanation
+  location:
+    snippet: 'def get_name(self) :'
+  explanations:
+  - body: This method returns the name of the account.Note that the first argument (named self) is passed
+      in automatically by the interpreter when the method is invoked on an instance of the class.
+  - body: Python automatically fills the first argument in with the instance object that is the implied
+      subject of the method call. Therefore, when this method is invoked on an instance of the class,
+      no parameter must be passed to the method.
+- type: explanation
+  location:
+    snippet: 'def get_balance(self) :'
+  explanations:
+  - body: This method returns the current balance of the account. Note that the first argument (named
+      self) is passed in automatically by the interpreter when the method is invoked on an instance of
+      the class.
+  - body: Python automatically fills the first argument in with the instance object that is the implied
+      subject of the method call. Therefore, when this method is invoked on an instance of the class,
+      no parameter must be passed to the method.
+- type: explanation
+  location:
+    snippet: 'def get_acct_number(self) :'
+  explanations:
+  - body: This method returns the account number of the account. Note that the first argument (named self)
+      is passed in automatically by the interpreter when the method is invoked on an instance of the class.
+  - body: Python automatically fills the first argument in with the instance object that is the implied
+      subject of the method call. Therefore, when this method is invoked on an instance of the class,
+      no parameter must be passed to the method.
+- type: explanation
+  location:
+    snippet: acct1 = Account1("Tina Murphy", 72354, 25.59)
+  explanations:
+  - body: We create an instance of the class Account1 to demonstrate the creation and use of Account1
+      instances
+  - body: This statement creates a Account1 instance with the specified account name, account number,
+      and account balance.
+  - body: Note that we can create an Account1 object with the specified account name, account number,
+      and account balance only when we have a __init__ method in the Account1 class that accepts these
+      parameters in the order that they are specified.
+- type: explanation
+  location:
+    snippet: acct2 = Account1("Angelica Adams", 69713, 500.00)
+  explanations:
+  - body: This statement creates a Account1 instance with the specified account name, account number,
+      and account balance.
+  - body: Note that we can create an Account1 object with the specified account name, account number,
+      and account balance only when we have a __init__ method in the Account1 class that accepts these
+      parameters in the order that they are specified.
+- type: explanation
+  location:
+    snippet: acct3 = Account1("Edward Demsey", 93757, 769.32)
+  explanations:
+  - body: This statement creates a Account1 instance with the specified account name, account number,
+      and account balance.
+  - body: Note that we can create an Account1 object with the specified account name, account number,
+      and account balance only when we have a __init__ method in the Account1 class that accepts these
+      parameters in the order that they are specified.
+- type: explanation
+  location:
+    snippet: acct1.deposit(44.10)
+  explanations:
+  - body: This statement invokes the method deposit of the acct1 to deposit $44.10. Note that acct1 is
+      the implied subject (instance) passed to self. Also note that it's possible to ignore the return
+      value from a method if the returned value is not going to be used. In this case, the deposit method
+      will still execute normally, updating the account balance with the specified amount.
+- type: explanation
+  location:
+    snippet: adams_balance = acct2.deposit(75.25)
+  explanations:
+  - body: This statement invokes the method deposit of the acct2 to deposit $75.25. Note that acct2 is
+      the implied subject (instance) passed to self. Here, the value that is returned from the deposit
+      method is assigned to variable adams_balance.
+- type: explanation
+  location:
+    snippet: 'print("{:s}''s balance after deposit: {:.2f}".format(acct2.get_name(), adams_balance))'
+  explanations:
+  - body: This statement prints the balance of acct2 after the deposit transaction using the format function.<br>{:s}
+      is replaced by the account name. We invoke the method get_name of acct2 to get the account's name.
+      Note that acct2 is the implied subject (instance) passed to self.<br>{:.2f} prints the balance with
+      two decimal digits.
+  - body: Note that we do not necessarily have to store the returned value from the invoked method in
+      a variable. We could use the returned values directly in the format method.
+  - body: The format function returns the result of replacing each {…} placeholder in the template string
+      with its corresponding argument passed to the format function. Anything else, which is not contained
+      in curly braces will be literally printed, i.e. without any changes.
+  - body: 'The format specification inside a pair of curly braces starts with a : and followed by the
+      text that specifies the data type. The data type s requires a string argument and the data type
+      f requires a floating-point argument. An error will occur if the argument is not the expected data
+      type.'
+- type: explanation
+  location:
+    snippet: 'print("{:s}''s balance after deposit: {:.2f}".format(acct2.get_name(), acct2.withdraw (480,
+      1.50)))'
+  explanations:
+  - body: This statement prints the balance of acct2 after the withdraw transaction using the format function.<br>{:s}
+      is replaced by the account name. We invoke the method get_name of acct2 to get the account's name.
+      Also, we withdraw the money from acct2 by invoking the method withdraw of acct2. Note that acct2
+      is the implied subject (instance) passed to self in both methods.<br>{:.2f} prints the balance with
+      two decimal digits.
+  - body: The format function returns the result of replacing each {…} placeholder in the template string
+      with its corresponding argument passed to the format function. Anything else, which is not contained
+      in curly braces will be literally printed, i.e. without any changes.
+  - body: 'The format specification inside a pair of curly braces starts with a : and followed by the
+      text that specifies the data type. The data type s requires a string argument and the data type
+      f requires a floating-point argument. An error will occur if the argument is not the expected data
+      type.'
+- type: explanation
+  location:
+    snippet: acct3.withdraw(-100.00, 1.50)
+  explanations:
+  - body: This statement invokes the method withdraw of acct3 to withdraw $-100 with a fee of $1.50. Here,
+      acct3 is the implied subject (instance) passed to self.<br>Note that it's possible to ignore the
+      return value from a method if the returned value is not going to be used. In this case, the withdraw
+      method will still execute normally. However, since the method withdraw prevents the withdrawal of
+      a negative amount, this transaction is considered to be invalid and acct3's balance will not be
+      updated.
+- type: explanation
+  location:
+    snippet: acct2.add_interest()
+  explanations:
+  - body: This statement invokes the method add_interest of the acct2. Here, acct2 is the implied subject
+      (instance) passed to self. Also note that it's possible to ignore the return value from a method
+      if the returned value is not going to be used. In this case, the add_interest method will still
+      execute normally, adding the interest earned to the balance.
+- type: explanation
+  location:
+    snippet: 'print("{:s}''s balance after adding interest: {:.2f}".format(acct2.get_name(), acct2.get_balance()))'
+  explanations:
+  - body: This statement prints the balance of acct2 after the interest is added to the account.<br>{:s}
+      is replaced by the account name. We invoke the method get_name of acct2 to get the account's name.
+      We invoke the method get_balance to get the account's balance. Note that acct2 is the implied subject
+      (instance) passed to self in both methods.<br>{:.2f} prints balance with two decimal digits.
+  - body: Note that we do not necessarily have to store the returned value from the invoked methods in
+      a variable. We could use the returned values directly in the format method.
+  - body: The format function returns the result of replacing each {…} placeholder in the template string
+      with its corresponding argument passed to the format function. Anything else, which is not contained
+      in curly braces will be literally printed, i.e. without any changes.
+  - body: 'The format specification inside a pair of curly braces starts with a : and followed by the
+      text that specifies the data type. The data type s requires a string argument and the data type
+      f requires a floating-point argument. An error will occur if the argument is not the expected data
+      type.'

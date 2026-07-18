@@ -1,0 +1,177 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_hot_dry_0
+title: Hot-Dry Weather
+description: Construct a program that determines whether it is both too hot and too dry based on the inputs
+  that it receives from the user.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that determines whether it is both too hot and too dry based on the inputs
+  that it receives from the user.
+executions:
+- title: Sample Run
+  stdin:
+  - '1'
+  - '1'
+  stdout: |-
+    Enter 1 if it is too hot, otherwise enter 0:
+    Enter 1 if it is too dry, otherwise enter 0:
+    Yes! It is too hot and too dry.
+  console: |-
+    Enter 1 if it is too hot, otherwise enter 0:
+    Enter 1 if it is too dry, otherwise enter 0:
+    Yes! It is too hot and too dry.
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: text = input("Enter 1 if it is too hot, otherwise enter 0:")
+  explanations:
+  - body: We need to read and process the input value that the user enters. To read the input value from
+      the user, we need to use the input() function. This statement prompts the user to enter whether
+      it is too hot, then reads the text entered by the user and places it in the variable text. The value
+      that will be stored in variable text is a string.
+- type: explanation
+  location:
+    snippet: input_num = int(text)
+    nth: 1
+  explanations:
+  - body: We need to convert the input text to its integer representation. For this purpose, we use the
+      conversion function int().
+  - body: Note that the conversion to integer can only be done if the string actually presents a number.
+      If the input number is a float, the int() function cuts off the fractional part of the floating-point
+      number to create an integer.
+- type: explanation
+  location:
+    snippet: 'if input_num == 1 :'
+    nth: 1
+  explanations:
+  - body: To determine whether it is too hot, we need to compare the integer that the user entered with
+      1. If the integer is 1, then variable too_hot should be initialized to True. Otherwise, variable
+      too_hot should be initialized to False.
+  - body: To check if the integer that the user entered is 1, we need to use == operator.
+  - body: If the integer is equal to 1, then the body of this if statement gets executed. Otherwise, the
+      body of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: too_hot = True
+  explanations:
+  - body: This statement initializes variable too_hot to True.
+- type: explanation
+  location:
+    snippet: 'else:'
+    nth: 1
+  explanations:
+  - body: If the above if test fails (i.e., when the integer that the user entered is different from 1),
+      we should initialize variable too_hot to False.
+  - body: The statement inside the body of this else statement is executed when the if condition is False,
+      i.e., when the integer that the user entered is different from 1. Otherwise, the body of this else
+      statement is skipped.
+- type: explanation
+  location:
+    snippet: too_hot = False
+  explanations:
+  - body: This statement initializes variable too_hot to False.
+- type: explanation
+  location:
+    snippet: text = input("Enter 1 if it is too dry, otherwise enter 0:")
+  explanations:
+  - body: We need to read and process the input value that the user enters. To read the input value from
+      the user, we need to use the input() function. This statement prompts the user to enter whether
+      it is too dry, then reads the text entered by the user and places it in the variable text. The value
+      that will be stored in variable text is a string.
+- type: explanation
+  location:
+    snippet: input_num = int(text)
+    nth: 2
+  explanations:
+  - body: We need to convert the input text to its integer representation. For this purpose, we use the
+      conversion function int().
+  - body: Note that the conversion to integer can only be done if the string actually presents a number.
+      If the input number is a float, the int() function cuts off the fractional part of the floating-point
+      number to create an integer.
+- type: explanation
+  location:
+    snippet: 'if input_num == 1 :'
+    nth: 2
+  explanations:
+  - body: To determine whether it is too dry, we need to compare the integer that the user entered with
+      1. If the integer is 1, then variable too_dry should be initialized to True. Otherwise, variable
+      too_dry should be initialized to False.
+  - body: To check if the integer that the user entered is 1, we need to use == operator.
+  - body: If the integer is equal to 1, then the body of this if statement gets executed. Otherwise, the
+      body of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: too_dry = True
+  explanations:
+  - body: This statement initializes variable too_dry to True.
+- type: explanation
+  location:
+    snippet: 'else:'
+    nth: 2
+  explanations:
+  - body: If the above if test fails (i.e., when the integer that the user entered is different from 1),
+      we should initialize variable too_dry to False.
+  - body: The statement inside the body of this else statement is executed when the if condition is False,
+      i.e., when the integer that the user entered is different from 1. Otherwise, the body of this else
+      statement is skipped.
+- type: explanation
+  location:
+    snippet: too_dry = False
+  explanations:
+  - body: This statement initializes variable too_dry to False.
+- type: explanation
+  location:
+    snippet: result = too_hot and too_dry
+  explanations:
+  - body: We need two conditions to determine whether it is too hot and too dry. We use the and operator
+      to combine the two conditions. The first condition is to test if it is too hot and the second condition
+      is to test if it is too dry.
+  - body: Note that the and operator yields the result True if both conditions are True.
+- type: explanation
+  location:
+    snippet: 'if result == True :'
+  explanations:
+  - body: To determine whether it is both too hot and too dry, we need to check the value of variable
+      result. If variable result is True, we print a message that shows it is both too hot and too dry.
+      Otherwise, we print a message that shows the weather condition 'too hot and too dry' is not met.
+  - body: 'To check if the variable result is True, we need to use == operator. Note that we could also
+      use the following if statement to perform this check:<br>if result :'
+  - body: If the variable result is True, then the body of this if statement gets executed. Otherwise,
+      the body of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: print("Yes! It is too hot and too dry.")
+  explanations:
+  - body: This statement prints to the default standard output stream the text in the double quotes. The
+      printed text is followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: 'else:'
+    nth: 3
+  explanations:
+  - body: If the above if test fails (i.e., when variable result is False), we should print a message
+      that shows the weather condition 'too hot and too dry' is not met.
+  - body: The statement inside the body of this else statement is executed when the if condition is False,
+      i.e., when variable result is False. Otherwise, the body of this else statement is skipped.
+- type: explanation
+  location:
+    snippet: print("No! the weather condition 'too hot and too dry' is not met.")
+  explanations:
+  - body: This statement prints to the default standard output stream the text in the double quotes. The
+      printed text is followed by the end-of-line character at the end.

@@ -1,0 +1,63 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_list_change_0
+title: Modifying a List
+description: Construct a program that increments all values of the list by 1.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that increments all values of the list by 1.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '[2, 3, 4, 5, 6, 7]'
+  console: '[2, 3, 4, 5, 6, 7]'
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: lst = [1, 2, 3, 4, 5, 6]
+  explanations:
+  - body: We define a list referred by variable lst to hold the specified numbers. We initialize the list
+      by separating elements with a comma and enclosing the collection in square brackets [ ].
+- type: explanation
+  location:
+    snippet: 'for i in range(len(lst)):'
+  explanations:
+  - body: We want to iterate over the list and increment each element in the list by 1. To really change
+      the list as we march across it, we need to use indexes so we can assign an updated value to each
+      position as we go.<br><br>We need the list indexes to start at 0 with every integer number up to
+      but not including the list length. We get this sequence by calling the range(len(lst)) function.
+  - body: Note that the function len(lst) returns the number of the values in the list. Also note that
+      we cannot try this with a simple for loop statement "for x in lst" that assigns the name x to each
+      of the values in the list in turn, from left to right. Because updating variable x does not update
+      the list where variable x originally came from; in this case, variable x is a piece of memory separate
+      from the list.
+  - body: Note that all statements inside the loop need to be indented with respect to the loop header.
+- type: explanation
+  location:
+    snippet: lst[i] += 1
+  explanations:
+  - body: This statement increments the list element at index i of the list by 1.
+  - body: The += operator adds 1 to the element at index i in the list and the result is stored in the
+      index i of the list. Therefore, it is functionally equivalent to the statement lst[i] = lst[i] +
+      1.
+- type: explanation
+  location:
+    snippet: print(lst)
+  explanations:
+  - body: We can see the content of the list by calling the print function and passing list to that. This
+      statement prints the list.

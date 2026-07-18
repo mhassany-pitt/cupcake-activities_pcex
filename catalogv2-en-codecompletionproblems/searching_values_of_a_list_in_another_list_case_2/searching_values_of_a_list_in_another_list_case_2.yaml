@@ -1,0 +1,76 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_search_list_1
+title: Searching Values of a List in Another List (Case 2)
+description: |-
+  Construct a program that has a function that receives two lists and prints the total number of times the elements in the 2nd list appear in the 1st list. For example, if the 1st list is [1, 2, 3, 3, 4, 4, 5, 6] and the 2nd list is [3, 4, 5, 6, 7], then the total number of times that the elements in the 2nd list appear in the 1st list is 6.
+  Note that we need to count matches for all values in the 2nd list (including duplicate values, if any).
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program that has a function that receives two lists and prints the total number of times the elements in the 2nd list appear in the 1st list. For example, if the 1st list is [1, 2, 3, 3, 4, 4, 5, 6] and the 2nd list is [3, 4, 5, 6, 7], then the total number of times that the elements in the 2nd list appear in the 1st list is 6.
+  Note that we need to count matches for all values in the 2nd list (including duplicate values, if any).
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: Total number of times the elements in the 2nd list appear in the 1st list is 4
+  console: Total number of times the elements in the 2nd list appear in the 1st list is 4
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'for val1 in lst1:'
+  choices:
+  - snippet: 'for val1 in lst1:'
+    role: solution
+    explanations:
+    - body: We need to iterate through the values in the 1st list to count the total number of times the
+        value that we visited in the 2nd list (val2) appear in 1st list. We iterate through the 1st list
+        using for loop because for loop can step across any kind of sequence object including lists.
+    - body: This for loop assigns the name val1 to each of the values in the 1st list in turn, from left
+        to right, and then the statements in the loop body will be executed for each.
+    - body: Note that all statements inside the loop need to be indented with respect to the loop header.
+  - snippet: 'for val1 in lst2:'
+    role: distractor
+- type: blank
+  location:
+    snippet: 'if val2 == val1:'
+  choices:
+  - snippet: 'if val2 == val1:'
+    role: solution
+    explanations:
+    - body: We check for match between the val1 and val2 using the == operator.
+    - body: If the visited value in the 2nd list (val2) matches the visited values in the 1st list (val1),
+        then the body of this if statement gets executed. Otherwise, the body of this if statement is
+        skipped.
+  - snippet: 'if val2 in lst1:'
+    role: distractor
+  - snippet: 'if val1 == lst2:'
+    role: distractor
+  - snippet: 'if val1 in lst2:'
+    role: distractor
+- type: blank
+  location:
+    snippet: count += 1
+  choices:
+  - snippet: count += 1
+    role: solution
+    explanations:
+    - body: When we find a match between values of the two list, we increment the total number of matches
+        stored in variable count by 1.
+    - body: The += operator adds 1 to the value of variable count and the result is stored into the variable
+        count. Therefore, it is functionally equivalent to the statement count = count + 1.

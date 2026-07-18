@@ -1,0 +1,78 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_objects_classes_point_1
+title: The Class for Representing a Point in the Euclidean Plane
+description: Construct a class that represents a point in the Euclidean plane. The class should contain
+  data that represents the point’s integer coordinates (x,y). The point's coordinates could be accessed
+  or changed only through the getter and setter methods. The class should also include a method to calculate
+  and return the point's distance from the origin (0,0).
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Construct a class that represents a point in the Euclidean plane. The class should contain
+  data that represents the point’s integer coordinates (x,y). The point's coordinates could be accessed
+  or changed only through the getter and setter methods. The class should also include a method to calculate
+  and return the point's distance from the origin (0,0).
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    p2 coordinates: (7, 2)
+    Distance of p2 from origin = 7.280109889280518
+  console: |-
+    p2 coordinates: (7, 2)
+    Distance of p2 from origin = 7.280109889280518
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'def distance_from_origin(self) :'
+  choices:
+  - snippet: 'def distance_from_origin(self) :'
+    role: solution
+    explanations:
+    - body: This method calculates and returns the distance of the point from the origin (0,0). The argument
+        (named self) is passed in automatically by the interpreter when the method is invoked on an instance
+        of the class.<br><br>This method does not have any other parameters because the only data that
+        we need to use in this method are the attribute of the instance of the class (the coordinates
+        of the point) and we can directly access the instance attributes from the methods that are inside
+        the class.
+    - body: Note that Python automatically fills the first argument in with the instance object that is
+        the implied subject of the method call. Therefore, when this method is invoked on an instance
+        of the class, no parameter must be passed to the method.
+  - snippet: 'def distance_from_origin(x, y) :'
+    role: distractor
+  - snippet: 'def distance_from_origin() :'
+    role: distractor
+- type: blank
+  location:
+    snippet: return (self.__x * self.__x + self.__y * self.__y) ** 0.5
+  choices:
+  - snippet: return (self.__x * self.__x + self.__y * self.__y) ** 0.5
+    role: solution
+    explanations:
+    - body: This statement calculates and returns the distance of the point from the origin (0,0). To
+        calculate the distance of the point from the origin (0,0), we need to use the Pythagorean Theorem,
+        taking the square root of the sum of the squares of the x and y values.<br>self is the instance
+        of the class, self.__x is the x-coordinate of the instance, and self.__y is the y-coordinate of
+        the instance. We start the attribute names by two underscore (self.__x and self.__y) to prevent
+        accessing the attributes directly from outside of the class.
+    - body: Note that we could take square root of a number by raising that number to the power of 0.5.
+        The ** operator is the exponent operator.
+  - snippet: distance = (self.__x * self.__x + self.__y * self.__y) ** 0.5
+    role: distractor
+  - snippet: return (self.__x * self.__x + self.__y * self.__y) * 0.5
+    role: distractor

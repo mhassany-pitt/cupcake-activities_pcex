@@ -1,0 +1,110 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_json_iterate_1_0
+title: JSON ITERATION 1
+description: Write the code that prints the all NFL stats for the superbowl winning teams from the year
+  2022 to 2025. You're provided with a simple json data assigned to a variable
+authors:
+- first: Rully
+  last: Hendrawan
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write the code that prints the all NFL stats for the superbowl winning teams from the year
+  2022 to 2025. You're provided with a simple json data assigned to a variable
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Traceback (most recent call last):
+      File "<string>", line 15, in <module>
+      File "/usr/lib/python3.12/json/__init__.py", line 346, in loads
+        return _default_decoder.decode(s)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/lib/python3.12/json/decoder.py", line 338, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/lib/python3.12/json/decoder.py", line 354, in raw_decode
+        obj, end = self.scan_once(s, idx)
+                   ^^^^^^^^^^^^^^^^^^^^^^
+    json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 3 column 6 (char 8)
+  console: |-
+    Traceback (most recent call last):
+      File "<string>", line 15, in <module>
+      File "/usr/lib/python3.12/json/__init__.py", line 346, in loads
+        return _default_decoder.decode(s)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/lib/python3.12/json/decoder.py", line 338, in decode
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "/usr/lib/python3.12/json/decoder.py", line 354, in raw_decode
+        obj, end = self.scan_once(s, idx)
+                   ^^^^^^^^^^^^^^^^^^^^^^
+    json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 3 column 6 (char 8)
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: '['
+  explanations:
+  - body: This line begins the definition of a JSON array, which is a collection of objects.
+  - body: In this context, it sets up the structure for the NFL data that will be parsed later.
+  - body: The square brackets '[]' indicate that the data will be in array format, which is essential
+      for organizing multiple entries (in this case, the stats for different teams across different years).
+- type: explanation
+  location:
+    snippet: data = json.loads(nfl_data)
+  explanations:
+  - body: This line uses the `json.loads()` function to parse the JSON string stored in the variable `nfl_data`
+      into a Python object, specifically a list of dictionaries.
+  - body: The syntax `data = json.loads(nfl_data)` consists of the function call `json.loads()` which
+      takes a single argument, the JSON string.
+  - body: This is essential because it transforms the raw JSON data into a format that you can easily
+      manipulate in Python.
+  - body: The result is assigned to the variable `data`, which will now hold the structured data.
+- type: explanation
+  location:
+    snippet: 'for entry in data:'
+  explanations:
+  - body: This line initiates a for loop that iterates over each entry in the 'data' list, which contains
+      the JSON objects representing the NFL stats for the Super Bowl-winning teams from 2022 to 2025.
+  - body: The syntax 'for entry in data:' is a common Python construct known as a 'for loop'.
+- type: explanation
+  location:
+    snippet: print("Year:", entry['year'])
+  explanations:
+  - body: This line prints the year of the Super Bowl-winning team, which is accessed from the current
+      entry in the loop using the key 'year'.
+  - body: The syntax 'entry['year']' uses square brackets to access the value associated with the 'year'
+      key in the dictionary 'entry'.
+  - body: A potential error here could be if 'entry' does not contain the 'year' key, which would raise
+      a KeyError.
+  - body: Ensure that the JSON structure is consistent and that 'year' is always present in each entry.
+  - body: 'Best practice suggests using formatted strings (f-strings) for better readability, such as
+      ''print(f"Year: {entry[''year'']}")'', which can make the output formatting clearer.'
+- type: explanation
+  location:
+    snippet: 'for stat, value in entry[''stats''].items():'
+  explanations:
+  - body: This line iterates over each key-value pair in the 'stats' dictionary of the current entry,
+      allowing you to access both the statistic name (key) and its corresponding value.
+  - body: The syntax 'for stat, value in entry['stats'].items():' uses the .items() method, which returns
+      a view object that displays a list of a dictionary's key-value tuple pairs
+  - body: This is essential for unpacking the dictionary into two variables, 'stat' and 'value'.
+  - body: Remember, if you only use 'for stat in entry['stats']:', you will only get the keys, not the
+      values.
+  - body: A common misconception is that you can directly access dictionary values without using .items().
+  - body: Best practice is to ensure that the dictionary you are iterating over is not empty to avoid
+      unnecessary iterations.
+  - body: You can check this by using 'if entry['stats']:' before the loop to confirm there are items
+      to process.

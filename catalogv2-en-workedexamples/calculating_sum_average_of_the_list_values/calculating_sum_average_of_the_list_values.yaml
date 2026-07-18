@@ -1,0 +1,83 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_list_process_elements_0
+title: 'Calculating Sum/Average of the List Values '
+description: Construct a program that has a function that receives a list and calculates the sum of the
+  values in that list.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that has a function that receives a list and calculates the sum of the values
+  in that list.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: ('The sum of all values in the list:', 51)
+  console: ('The sum of all values in the list:', 51)
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def calculate_list_sum(lst):'
+  explanations:
+  - body: We need to first declare the function so that we can call it later. The following lines declare
+      the function calculate_list_sum that takes a list, calculates the sum of list values, and prints
+      the sum.<br><br>Note that all statements following the header line are indented.
+- type: explanation
+  location:
+    snippet: total = 0
+  explanations:
+  - body: We need variable total to maintain a running total, which means the sum of the values in the
+      list. Of course, the total should be initialized with 0.
+- type: explanation
+  location:
+    snippet: 'for x in lst:'
+  explanations:
+  - body: We use a for loop to iterate over the list values and add each value to the running total. We
+      can do this by a simple for loop that visits each value in the list. This for loop assigns the name
+      x to each of the values in the list in turn, from left to right, and then the statement in the loop
+      body will be executed for each value.
+  - body: Note that all statements inside the loop need to be indented with respect to the loop header.
+- type: explanation
+  location:
+    snippet: total += x
+  explanations:
+  - body: We need to add each value in the list to the running total that is stored in variable total.
+      So, in each iteration, we add the visited value to the variable total and store the result into
+      the variable total.
+  - body: The += operator adds the value of variable x to the value of the variable total and the result
+      is stored in the variable total. Thus, this statement is equivalent to the statement total = total
+      + x.
+- type: explanation
+  location:
+    snippet: print("The sum of all values in the list:", total)
+  explanations:
+  - body: This statement prints to the default standard output stream the text "The sum of all values
+      in the list:" and the value of variable total.<br>The printed text shows the arguments of the print
+      function separated by the default delimiter (i.e., single space character) and followed by the end-of-line
+      character at the end.
+- type: explanation
+  location:
+    snippet: values = [6, 15, 9, 12, 1, 8]
+  explanations:
+  - body: We define the list referred by variable values to hold specified numbers. We initialize the
+      list by separating elements with a comma and enclosing the collection in square brackets [ ].
+- type: explanation
+  location:
+    snippet: calculate_list_sum(values)
+  explanations:
+  - body: This statement calls the calculate_list_sum function and passes the list referred by variable
+      values as its argument. Note that the function call must be done after the function is declared.

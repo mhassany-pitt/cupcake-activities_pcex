@@ -1,0 +1,59 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_recursion_gcf_1
+title: Greatest Common Factor Challenge
+description: Construct a program that recursively finds and returns the great common factor between of
+  two integers. This is a simple implementation--fill in the missing lines.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that recursively finds and returns the great common factor between of two integers.
+  This is a simple implementation--fill in the missing lines.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '2'
+  console: '2'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: return a
+  choices:
+  - snippet: return a
+    role: solution
+    explanations:
+    - body: When called recursively, b is 0 when a divided by b has a remainder of 0. This means that
+        a and b are multiples of each other, and that the great common factor must be a.
+  - snippet: return b
+    role: distractor
+  - snippet: return a%b
+    role: distractor
+- type: blank
+  location:
+    snippet: return gcd2(b, a%b)
+  choices:
+  - snippet: return gcd2(b, a%b)
+    role: solution
+    explanations:
+    - body: If a and b are not multiples of each other to start, we recursively call the gcd() method
+        again, but passing in b and the remainder of a%b as the values of a and b respectively. The greatest
+        common factor must be between these two numbers because the greatest common factor must be between
+        the smaller number, and the remainder between the bigger number divided by the smaller number.
+  - snippet: return gcd2(b%a, b)
+    role: distractor
+  - snippet: return gcd2(a%b, b)
+    role: distractor

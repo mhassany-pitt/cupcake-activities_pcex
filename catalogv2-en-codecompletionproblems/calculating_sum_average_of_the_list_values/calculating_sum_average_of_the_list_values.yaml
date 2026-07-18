@@ -1,0 +1,80 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_list_process_elements_2
+title: 'Calculating Sum/Average of the List Values '
+description: Construct a program that has a function that receives a list and calculates the average of
+  the values in that list. The program should handle lists with arbitrary number of values (including
+  an empty list).
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that has a function that receives a list and calculates the average of the
+  values in that list. The program should handle lists with arbitrary number of values (including an empty
+  list).
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: 'Average is: 8.5'
+  console: 'Average is: 8.5'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: print("The list has no values.")
+  choices:
+  - snippet: print("The list has no values.")
+    role: solution
+    explanations:
+    - body: This statement prints to the default standard output stream that the list has no values. This
+        text is followed by the end-of-line character at the end.
+- type: blank
+  location:
+    snippet: 'else :'
+  choices:
+  - snippet: 'else :'
+    role: solution
+    explanations:
+    - body: If the above if test fails (i.e., when the number of values in the list is different from
+        zero), we could calculate the average by dividing the sum of list values by the number of values
+        in the list.
+  - snippet: 'if lst == 0 :'
+    role: distractor
+- type: blank
+  location:
+    snippet: average = total / len(lst)
+  choices:
+  - snippet: average = total / len(lst)
+    role: solution
+    explanations:
+    - body: We need to calculate the average by dividing the sum of the values in the list by the number
+        of values in the list.<br><br>The function len(lst) returns the number of the values in the list.
+    - body: Note that since we want to keep the fractional part of the division result, we need to use
+        the real division by using / operator.
+  - snippet: average = total / lst
+    role: distractor
+  - snippet: average = 0
+    role: distractor
+- type: blank
+  location:
+    snippet: print("Average is:", average)
+  choices:
+  - snippet: print("Average is:", average)
+    role: solution
+    explanations:
+    - body: This statement prints to the default standard output stream the text "Average is:" and the
+        value of variable average.<br>The printed text shows the arguments of the print function separated
+        by the default delimiter (i.e., single space character) and followed by the end-of-line character
+        at the end.

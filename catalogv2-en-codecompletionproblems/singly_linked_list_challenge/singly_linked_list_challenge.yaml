@@ -1,0 +1,53 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_single_linked_list_1
+title: Singly Linked List Challenge
+description: Create the necessary classes for a Singly Linked List, containing the method add(item) to
+  add a new item to the beginning of the linked list. Test the singly linked list after the classes are
+  created.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Create the necessary classes for a Singly Linked List, containing the method add(item) to add
+  a new item to the beginning of the linked list. Test the singly linked list after the classes are created.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '[Position 0,Position 1]'
+  console: '[Position 0,Position 1]'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: temp.setNext(self.head)
+  choices:
+  - snippet: temp.setNext(self.head)
+    role: solution
+    explanations:
+    - body: Since the new node is added at the beginning, its "next node" is set to the current head.
+  - snippet: temp.setNext(self.head.getNext())
+    role: distractor
+- type: blank
+  location:
+    snippet: self.head = temp
+  choices:
+  - snippet: self.head = temp
+    role: solution
+    explanations:
+    - body: New node to be inserted becomes the new head, because it is at the beginning of the linked
+        list.
+  - snippet: self.head = self.head.getNext()
+    role: distractor

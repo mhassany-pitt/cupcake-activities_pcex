@@ -1,0 +1,67 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_three_booleans_2
+title: Three Booleans (Case 3)
+description: Construct a program that receives the value of three boolean variables from the user and
+  determines whether all variables have the same value, either all three True or all three False.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that receives the value of three boolean variables from the user and determines
+  whether all variables have the same value, either all three True or all three False.
+executions:
+- title: Sample Run
+  stdin:
+  - '0'
+  - '0'
+  - '0'
+  stdout: |-
+    Enter 1 if the value of the first boolean variable (variable a) is True, otherwise enter 0:
+    Enter 1 if the value of the second boolean variable (variable b) is True, otherwise enter 0:
+    Enter 1 if the value of the third boolean variable (variable c) is True, otherwise enter 0:
+    Yes! All the three boolean variables have the same value.
+  console: |-
+    Enter 1 if the value of the first boolean variable (variable a) is True, otherwise enter 0:
+    Enter 1 if the value of the second boolean variable (variable b) is True, otherwise enter 0:
+    Enter 1 if the value of the third boolean variable (variable c) is True, otherwise enter 0:
+    Yes! All the three boolean variables have the same value.
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: result = (a == b and b == c)
+  choices:
+  - snippet: result = (a == b and b == c)
+    role: solution
+    explanations:
+    - body: We need to check if all three boolean variables have the same value. To do this, we perform
+        two pairwise comparisons, one comparing the first variable to the second variable, and one comparing
+        the second (or first) variable to the third. We need to combine these conditions using the and
+        operator to make sure that both of them are True.
+    - body: 'Note that we could not achieve the same result using the expression a==b==c. Because this
+        comparison chain will be evaluated from the left side to the right and is interpreted as (a ==
+        b) == c. One example to show that this is wrong is: False == False == False. In this example,
+        all values are the same but we get the final result of False because the expression is being evaluated
+        from left to right. Therefore, the correct way to do this check is to perform two explicit comparisons.'
+    - body: Note that the and operator yields the result True if both conditions are True.
+  - snippet: result = not ( a == b or b == c )
+    role: distractor
+  - snippet: result = ( a != b and b != c )
+    role: distractor
+  - snippet: result = ( a != b or b != c )
+    role: distractor
+  - snippet: result = ( a == b == c )
+    role: distractor

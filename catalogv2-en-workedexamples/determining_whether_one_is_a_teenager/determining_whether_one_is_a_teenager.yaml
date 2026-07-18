@@ -1,0 +1,146 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_check_age_0
+title: Determining Whether One is a Teenager
+description: Construct a program that receives a string that has the user name and age separated by a
+  colon, and prints whether the user is a teenager. Make sure that the program handles all possible exceptions.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that receives a string that has the user name and age separated by a colon,
+  and prints whether the user is a teenager. Make sure that the program handles all possible exceptions.
+executions:
+- title: Sample Run
+  stdin:
+  - Johnny15
+  stdout: |-
+    Enter the name and age, separated by a colon:
+    Error! Separate the name and age by a colon.
+  console: |-
+    Enter the name and age, separated by a colon:
+    Error! Separate the name and age by a colon.
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def check_age(s):'
+  explanations:
+  - body: We need to first declare the function that receives a string that has the user name and age
+      separated by a colon, and prints whether the user is a teenager. The given string is referred by
+      variable s.<br><br>Note that all statements following the header line are indented.
+- type: explanation
+  location:
+    snippet: lst = s.split(":")
+  explanations:
+  - body: We need to split the given string into the name and age and store them in a list.
+  - body: 'We use split() function with : as its argument because we want the split function to separate
+      strings using the colon character.'
+- type: explanation
+  location:
+    snippet: 'try:'
+  explanations:
+  - body: The try blocks tries to execute the code within it. The statements in the try block may throw
+      several types of exception.
+  - body: If an error is encountered, the try block code execution is stopped and transferred down to
+      the except block(s).
+- type: explanation
+  location:
+    snippet: name = lst[0]
+  explanations:
+  - body: lst[0] gives us the element at index 0 of the list that represents the user name in the given
+      string.
+- type: explanation
+  location:
+    snippet: age = int(lst[1])
+  explanations:
+  - body: lst[1] gives us the element at index 1 of the list that represents the user age in the given
+      string. We convert this value to integer by using the int() function.
+  - body: Note that the conversion to integer can only be done if the string actually presents a number.
+      If the input number is a float, the int() function cuts off the fractional part of the floating-point
+      number to create an integer.
+- type: explanation
+  location:
+    snippet: 'if age >= 13 and age <= 19 :'
+  explanations:
+  - body: To determine whether the user is a teenager, we need to check whether the user's age falls within
+      the range from 13 to 19 (both inclusive). If it is, then we could conclude that the user is a teenager.
+  - body: If the integer is in the range from 13 to 19 (both inclusive), then the body of this if statement
+      gets executed. Otherwise, the body of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: print(name + " is a teenager.")
+  explanations:
+  - body: This statement concatenates the name and the given text and prints the result of concatenation.
+      The printed text is followed by the end-of-line character at the end.
+  - body: Note that we concatenate the content of two strings using the + operator. Also, note that the
+      concatenating and printing are done in the same line. That is, we don't have to store the concatenated
+      string to a new variable at first and then print it in the next line.
+- type: explanation
+  location:
+    snippet: 'else:'
+  explanations:
+  - body: If the above if test fails, we conclude that the user is not a teenager.
+- type: explanation
+  location:
+    snippet: print(name + " is not a teenager.")
+  explanations:
+  - body: This statement concatenates the name and the given text and prints the result of concatenation.
+      The printed text is followed by the end-of-line character at the end.
+  - body: Note that we concatenate the content of two strings using the + operator. Also, note that the
+      concatenating and printing are done in the same line. That is, we don't have to store the concatenated
+      string to a new variable at first and then print it in the next line.
+- type: explanation
+  location:
+    snippet: 'except IndexError :'
+  explanations:
+  - body: We need to handle the IndexError. This error occurs when the try block accesses the element
+      at the index that does not exist in the list. This happens when the name and age are not separated
+      by the colon. In that case, the list will have one value and an exception occurs when we try to
+      access the element at index 1 of the list.
+  - body: The body of this except block gets executed only if the index 1 could not be found in the list.
+      Otherwise, the body of this except statement is skipped.
+- type: explanation
+  location:
+    snippet: print("Error! Separate the name and age by a colon.")
+  explanations:
+  - body: This statement prints to the default standard output stream the error that caused the IndexError.
+      The printed text is followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: 'except ValueError :'
+  explanations:
+  - body: We need to handle the ValueError. This error occurs when the second value in the list is not
+      a number and we call the function int() to convert that value to an integer.
+  - body: The body of this except block gets executed only if the age in the given string is not a number.
+      Otherwise, the body of this except statement is skipped.
+- type: explanation
+  location:
+    snippet: print("Error! Age must be an integer.")
+  explanations:
+  - body: This statement prints to the default standard output stream the error that caused the ValueError.
+      The printed text is followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: check_age(input("Enter the name and age, separated by a colon:"))
+  explanations:
+  - body: This statement calls the check_age function and passes the string returned from the input function
+      as its argument.
+  - body: The input function prompts the user to enter the name and age, separated by a colon, then reads
+      and returns the text entered by the user. The value that will be returned from the input function
+      is passed to the check_age function.
+  - body: Note that we do not necessarily have to store the returned value from the function call in a
+      variable. We could use the value returned from the function call directly in the print function.
+      Also, note that the function call must be done after the function is declared.

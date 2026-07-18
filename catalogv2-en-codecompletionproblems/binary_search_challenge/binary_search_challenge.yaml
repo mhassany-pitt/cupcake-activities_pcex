@@ -1,0 +1,66 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_search_binary_search_1
+title: Binary search Challenge
+description: |-
+  Binary Search operates by dividing an array in half, and then determining whether or not the target value would be in the larger or smaller half. Then, this process repeats by dividing whichever half must contain the target in half again, over and over until the target is found.
+  Construct a function that performs binary search on a given array and returns the index of the target value if it is found, and -1 if it is not.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Binary Search operates by dividing an array in half, and then determining whether or not the target value would be in the larger or smaller half. Then, this process repeats by dividing whichever half must contain the target in half again, over and over until the target is found.
+  Construct a function that performs binary search on a given array and returns the index of the target value if it is found, and -1 if it is not.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '-1'
+  console: '-1'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'while (not found and low <= high):'
+  choices:
+  - snippet: 'while (not found and low <= high):'
+    role: solution
+    explanations:
+    - body: We must keep searching until we either find the element, or conclude that the target value
+        is not in the array because the upper and lower bounds of the search area have intersected with
+        no data remaining between them.
+  - snippet: 'while not found:'
+    role: distractor
+- type: blank
+  location:
+    snippet: 'if not found:'
+  choices:
+  - snippet: 'if not found:'
+    role: solution
+    explanations:
+    - body: If the while loop exits and found = False, then the target value does not exist in the array.
+  - snippet: 'if found:'
+    role: distractor
+- type: blank
+  location:
+    snippet: guess = -1
+  choices:
+  - snippet: guess = -1
+    role: solution
+    explanations:
+    - body: Because the target value is not in the array, we return -1 to indicate that no valid index
+        exists.
+  - snippet: guess = low
+    role: distractor

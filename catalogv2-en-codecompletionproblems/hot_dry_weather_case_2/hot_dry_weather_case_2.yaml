@@ -1,0 +1,58 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_hot_dry_1
+title: Hot-Dry Weather (Case 2)
+description: Construct a program that determines whether it is either too hot or too dry (or both) based
+  on the inputs that it receives from the user.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that determines whether it is either too hot or too dry (or both) based on
+  the inputs that it receives from the user.
+executions:
+- title: Sample Run
+  stdin:
+  - '0'
+  - '1'
+  stdout: |-
+    Enter 1 if it is too hot, otherwise enter 0:
+    Enter 1 if it is too dry, otherwise enter 0:
+    Yes! It is either too hot or too dry (or both).
+  console: |-
+    Enter 1 if it is too hot, otherwise enter 0:
+    Enter 1 if it is too dry, otherwise enter 0:
+    Yes! It is either too hot or too dry (or both).
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: result = too_hot or too_dry
+  choices:
+  - snippet: result = too_hot or too_dry
+    role: solution
+    explanations:
+    - body: We need two conditions to determine whether it is either too hot or too dry (or both). We
+        use the or operator to combine the two conditions. The first condition is to test if it is too
+        hot and the second condition is to test if it is too dry.
+    - body: Note that the or operator yields the result True if at least one of the conditions is True.
+  - snippet: result = too_hot and too_dry
+    role: distractor
+  - snippet: result = too_hot and not too_dry
+    role: distractor
+  - snippet: result = too_hot or not too_dry
+    role: distractor
+  - snippet: result = not (too_hot or too_dry)
+    role: distractor

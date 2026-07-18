@@ -1,0 +1,84 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_input_3
+title: Receiving Input Integers Until a Certain Condition is Met (Case 4)
+description: Construct a program that receives an integer from the user, outputs that integer, and stops
+  receiving integers when the user enters an even integer less than 10.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that receives an integer from the user, outputs that integer, and stops receiving
+  integers when the user enters an even integer less than 10.
+executions:
+- title: Sample Run
+  stdin:
+  - '16'
+  - '10'
+  - '3'
+  - '1'
+  - '4'
+  stdout: |-
+    Enter an integer:
+    The integer entered is: 16
+    Enter an integer:
+    The integer entered is: 10
+    Enter an integer:
+    The integer entered is: 3
+    Enter an integer:
+    The integer entered is: 1
+    Enter an integer:
+    End of input.
+  console: |-
+    Enter an integer:
+    The integer entered is: 16
+    Enter an integer:
+    The integer entered is: 10
+    Enter an integer:
+    The integer entered is: 3
+    Enter an integer:
+    The integer entered is: 1
+    Enter an integer:
+    End of input.
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'while num % 2 != 0 or num >= 10 :'
+  choices:
+  - snippet: 'while num % 2 != 0 or num >= 10 :'
+    role: solution
+    explanations:
+    - body: We need to repeat receiving the integers from the user as long as the user enters an integer
+        that is not even or is not less than 10. Therefore, we need to use a loop structure. Since we
+        don't know ahead of time how many times the loop will be repeated, we need to use a while loop.
+        The condition in the while loop tests whether the body of the loop should be repeated, so it should
+        test whether the input integer is not even or not less than 10.<br><br>We check whether the input
+        integer is not even by checking whether the remainder when the integer is divided by 2 is not
+        zero. We could check whether the input integer is not less than 10 by checking whether the input
+        integer is greater than or equal to 10.
+    - body: The body of the while loop is repeated as long as the user enters an integer that is not even
+        or is not less than 10. The loop terminates when the loop condition evaluates to False, that is
+        when the user enters an even integer less than 10.
+    - body: Note that the or operator yields the result True if at least one of the conditions is True.
+        Also note that the % operator returns the remainder of the division.
+  - snippet: 'while num % 2 == 0 and num < 10 :'
+    role: distractor
+  - snippet: 'while num % 2 != 0 and num >= 10 :'
+    role: distractor
+  - snippet: 'while num % 2 == 0 or num < 10 :'
+    role: distractor
+  - snippet: 'while num % 2 != 0 or num > 10 :'
+    role: distractor

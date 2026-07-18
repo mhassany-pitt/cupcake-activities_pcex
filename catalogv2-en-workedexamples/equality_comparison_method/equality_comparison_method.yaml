@@ -1,0 +1,96 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_rich_compare_0
+title: Equality Comparison Method
+description: Construct a program with two classes, where each class has a comparison method. Test whether
+  instances of each class is equal to each other using the comparison method.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program with two classes, where each class has a comparison method. Test whether instances
+  of each class is equal to each other using the comparison method.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    A __eq__ called
+    B __eq__ called
+    True
+  console: |-
+    A __eq__ called
+    B __eq__ called
+    True
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def __init__(self, value):'
+    nth: 1
+  explanations:
+  - body: A value is passed in, and assigned to the class.
+- type: explanation
+  location:
+    snippet: 'def __eq__(self, other):'
+    nth: 1
+  explanations:
+  - body: The __eq__ method is implicity called whenever the "==" operator is used. The left side of the
+      comparison operator is passed in as "self", and the right side is passed in as "other".
+  - body: The __eq__ method overrides the original function of "==", in this case it also prints "A __eq__
+      is called"
+- type: explanation
+  location:
+    snippet: return self.value == other
+    nth: 1
+  explanations:
+  - body: Returns the original function of the "==" operator, a bool representing whether the values on
+      either side of the comparison operator are equal.
+- type: explanation
+  location:
+    snippet: 'def __init__(self, value):'
+    nth: 2
+  explanations:
+  - body: A value is passed in, and assigned to the class.
+- type: explanation
+  location:
+    snippet: 'def __eq__(self, other):'
+    nth: 2
+  explanations:
+  - body: The __eq__ method is implicity called whenever the "==" operator is used. The left side of the
+      comparison operator is passed in as "self", and the right side is passed in as "other".
+  - body: The __eq__ method overrides the original function of "==", in this case it also prints "B __eq__
+      is called"
+- type: explanation
+  location:
+    snippet: return self.value == other
+    nth: 2
+  explanations:
+  - body: Returns the original function of the "==" operator, a bool representing whether the values on
+      either side of the comparison operator are equal.
+- type: explanation
+  location:
+    snippet: valueA = A(3)
+  explanations:
+  - body: Initializes an instance of each class, with a value passed in.
+- type: explanation
+  location:
+    snippet: print(valueA==valueB)
+  explanations:
+  - body: The __eq__ method of each class is called when the == operator is used on an instance of each
+      class. In this example, whether the value of a equals the value of b is checked. When the __eq__
+      method is called, it prints a statement as well as returns a bool representing the equality of the
+      two instances.
+  - body: The __eq__ method in class A is called first and the __eq__ method in class B is called second,
+      because the instance of class A (valueA) appears first (on the left side of the == operator).

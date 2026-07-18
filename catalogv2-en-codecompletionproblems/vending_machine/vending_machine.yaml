@@ -1,0 +1,70 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_vending_machine_1
+title: Vending Machine
+description: Suppose we have a vending machine that gives change. A customer selects an item for purchase
+  and inserts a bill into the vending machine. The vending machine dispenses the purchased item and gives
+  change. We will assume that all item prices are multiples of 5 cents, and the machine gives all change
+  in quarters, dimes, and nickels. Construct a program that computes how many quarters, dimes, and nickels
+  to return to the customer.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Suppose we have a vending machine that gives change. A customer selects an item for purchase
+  and inserts a bill into the vending machine. The vending machine dispenses the purchased item and gives
+  change. We will assume that all item prices are multiples of 5 cents, and the machine gives all change
+  in quarters, dimes, and nickels. Write a program that computes how many quarters, dimes, and nickels
+  to return to the customer.
+executions:
+- title: Sample Run
+  stdin:
+  - '5'
+  - '135'
+  stdout: "Enter bill value in dollars (1 = $1 bill, 5 = $5 bill, etc.): \nEnter item price in pennies:\
+    \ \nYour change consists of:\n14 quarters\n1 dimes\n1 nickels"
+  console: "Enter bill value in dollars (1 = $1 bill, 5 = $5 bill, etc.): \nEnter item price in pennies:\
+    \ \nYour change consists of:\n14 quarters\n1 dimes\n1 nickels"
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: dimes = change_due // pennies_per_dime
+  choices:
+  - snippet: dimes = change_due // pennies_per_dime
+    role: solution
+    explanations:
+    - body: To obtain the dimes in the remaining change due, we have to divide the change due by pennies
+        per dime. Note that we want to truncate the fractional part of the result, if there is any. Therefore,
+        we need to use the floor division by using // operator.
+    - body: Note that the number of pennies per dime is stored in the variable pennies_per_dime.
+  - snippet: dimes = change_due % pennies_per_nickel
+    role: distractor
+  - snippet: dimes = change_due % pennies_per_dime
+    role: distractor
+- type: blank
+  location:
+    snippet: change_due = change_due % pennies_per_dime
+  choices:
+  - snippet: change_due = change_due % pennies_per_dime
+    role: solution
+    explanations:
+    - body: To obtain the remaining change due after taking away the dimes, we have to take the remainder
+        of the change due divided by pennies per dime. The % operator returns the remainder of the division.
+    - body: Note that the number of pennies per dime is stored in the variable pennies_per_dime.
+  - snippet: change_due = change_due // pennies_per_dime
+    role: distractor
+  - snippet: change_due = change_due - change_due // pennies_per_dime
+    role: distractor

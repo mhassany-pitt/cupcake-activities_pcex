@@ -1,0 +1,93 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_student_score_1
+title: 'Creating a Dictionary of Student-Scores Pairs '
+description: "Assume we have a list of students and a list of their corresponding test scores. Construct\
+  \ a program that has two functions:\n- a function that receives these two lists and returns a dictionary\
+  \ that maps each student to the scores of that student, and \n- a function that receives the dictionary\
+  \ created by the above function and calculates the average score of each student"
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: "Assume we have a list of students and a list of their corresponding test scores. Write a program\
+  \ that has two functions:\n- a function that receives these two lists and returns a dictionary that\
+  \ maps each student to the scores of that student, and \n- a function that receives the dictionary created\
+  \ by the above function and calculates the average score of each student"
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Joe 9.5
+    Tom 23.0
+    Barbara 13.0
+    Sue 16.5
+    Sally 12.0
+  console: |-
+    Joe 9.5
+    Tom 23.0
+    Barbara 13.0
+    Sue 16.5
+    Sally 12.0
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'for std_name in new_dict :'
+  choices:
+  - snippet: 'for std_name in new_dict :'
+    role: solution
+    explanations:
+    - body: We need to iterate over the students in the dictionary and calculate their average score.
+        We can get the students by iterating through the keys in the dictionary using a for loop.
+    - body: This for loop assigns the name std_name to each of the keys in the dictionary in turn, from
+        left to right, and then the statement in the loop body will be executed for each character.<br><br>Note
+        that each key in the dictionary represents a student.
+    - body: Note that all statements inside the loop need to be indented with respect to the loop header.
+  - snippet: 'for i in range(new_dict) :'
+    role: distractor
+  - snippet: 'for std_name in new_dict[score]:'
+    role: distractor
+- type: blank
+  location:
+    snippet: 'for score in new_dict[std_name]:'
+  choices:
+  - snippet: 'for score in new_dict[std_name]:'
+    role: solution
+    explanations:
+    - body: To calculate the average score of each student, we need to iterate over the list of student's
+        scores. We do this by using a for loop that iterates through the list of student's scores.
+    - body: This for loop assigns the name score to each of the values in the list of student's score
+        in turn, from left to right, and then the statement in the loop body will be executed for each
+        character.<br><br>Note that new_dict[std_name] returns the student's scores.
+    - body: Note that all statements inside the loop need to be indented with respect to the loop header.
+  - snippet: 'for score in new_dict :'
+    role: distractor
+  - snippet: 'for score in new_dict:'
+    role: distractor
+- type: blank
+  location:
+    snippet: average = total/len(new_dict[std_name])
+  choices:
+  - snippet: average = total/len(new_dict[std_name])
+    role: solution
+    explanations:
+    - body: We calculate the average by dividing the sum of student's scores by the number of student's
+        scores.<br><br>The function len(new_dict[std_name]) returns the number of the scores in the list
+        that is mapped to the student.
+    - body: Note that since we want to keep the fractional part of the division result, we need to use
+        the real division by using / operator.
+  - snippet: average = total/len(new_dict)
+    role: distractor

@@ -1,0 +1,94 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_work_hours_1
+title: 'Reporting the Total Hours Each Employee Worked '
+description: |-
+  Suppose we have an input file that contains information about how many hours each employee of a company has worked. The file looks like the following (Employee's identification number, Employee's name, Hours):
+  101 Erica 7.5 8.5 10.25 8 8.5
+  783 Erin 10.5 11.5 12 11 10.75
+  114 Simone 8 8 8
+  ...
+  Construct a program that reads this file and calculates the total number of hours worked by each individual. Make sure that the program handles each specific exception that could occur.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Suppose we have an input file that contains information about how many hours each employee of a company has worked. The file looks like the following (Employee's identification number, Employee's name, Hours):
+  101 Erica 7.5 8.5 10.25 8 8.5
+  783 Erin 10.5 11.5 12 11 10.75
+  114 Simone 8 8 8
+  ...
+  Write a program that reads this file and calculates the total number of hours worked by each individual. Make sure that the program handles each specific exception that could occur.
+executions:
+- title: Sample Run
+  stdin:
+  - /Users/hours2.txt
+  stdout: "Enter the full path of a file: \nTotal hours worked by Erica = 42.75\nError in the employee's\
+    \ id.\nTotal hours worked by Erin = 55.75\nTotal hours worked by Simone = 24.0\nTotal hours worked\
+    \ by Ryan = 31.75\nTotal hours worked by Kendall = 5.5"
+  console: "Enter the full path of a file: \nTotal hours worked by Erica = 42.75\nError in the employee's\
+    \ id.\nTotal hours worked by Erin = 55.75\nTotal hours worked by Simone = 24.0\nTotal hours worked\
+    \ by Ryan = 31.75\nTotal hours worked by Kendall = 5.5"
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'try :'
+    nth: 2
+  choices:
+  - snippet: 'try :'
+    role: solution
+    explanations:
+    - body: If an error is encountered during getting the id of the employee, the try block code execution
+        is stopped and transferred down to the except block(s).
+- type: blank
+  location:
+    snippet: eid = int(tokens[0])
+  choices:
+  - snippet: eid = int(tokens[0])
+    role: solution
+    explanations:
+    - body: We need to get the id of the employee by accessing the first element in the list of line tokens.
+        The id of an employee is a number; therefore, we convert it to a number by calling the int() function.
+    - body: tokens[0] gives us the element at index 0 of the list that represents the employee's id.
+  - snippet: eid = tokens[0]
+    role: distractor
+- type: blank
+  location:
+    snippet: 'except ValueError :'
+  choices:
+  - snippet: 'except ValueError :'
+    role: solution
+    explanations:
+    - body: We need to handle the ValueError. This error occurs when the employee's id is not a number
+        and we call the function int() to convert that value to an int.
+    - body: The body of this except block gets executed only if the employee's id is not a number. Otherwise,
+        the body of this except statement is skipped.
+  - snippet: 'except IndexError :'
+    role: distractor
+  - snippet: 'except KeyError :'
+    role: distractor
+- type: blank
+  location:
+    snippet: print("Error in the employee's id.")
+  choices:
+  - snippet: print("Error in the employee's id.")
+    role: solution
+    explanations:
+    - body: This statement prints to the default standard output stream the error that caused the ValueError.
+        The printed text is followed by the end-of-line character at the end.
+  - snippet: print("Error in the employee's name.")
+    role: distractor

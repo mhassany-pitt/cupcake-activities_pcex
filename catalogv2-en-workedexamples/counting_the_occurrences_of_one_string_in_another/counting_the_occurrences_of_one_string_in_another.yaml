@@ -1,0 +1,97 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_str_count_0
+title: Counting the Occurrences of One String in Another
+description: Construct a program that has a function that receives a string and returns the number of
+  times that the string "hi" appears anywhere in the given string, ignoring the case.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that has a function that receives a string and returns the number of times
+  that the string "hi" appears anywhere in the given string, ignoring the case.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '3'
+  console: '3'
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def count_hi(s):'
+  explanations:
+  - body: We need to first declare the function so that we can call it later. The following lines declare
+      the function count_hi that receives a string and returns the number of times that the string "hi"
+      appears anywhere in the given string, ignoring the case. The given string is referred by variable
+      s.<br><br>Note that all statements following the header line are indented.
+- type: explanation
+  location:
+    snippet: count = 0
+  explanations:
+  - body: We need this variable to count the occurrences of the string "hi" in the given string. Of course,
+      it should be initialized with 0 because we have not started counting yet.
+- type: explanation
+  location:
+    snippet: 'for i in range(len(s)-1):'
+  explanations:
+  - body: We need to search for a match by checking if each two adjacent characters in the given string
+      are equal to the string "hi". We can achieve this by iterating over the indexes of the characters
+      in the given string and then checking the substring that begins at each index and extends to the
+      character at the immediate next index. We need the indexes of the string characters to start at
+      0 (index of the first character) with every integer number up to but not including the len(s)-1.
+      We get this sequence by calling the range(len(s)-1) function.
+  - body: The reason that we do not include the index of the last character in the sequence is that we
+      check the character at the last index when we get to the second last index of the given string.
+  - body: Note that len(s) returns the number of the characters in the string. Also note that all statements
+      inside the loop need to be indented with respect to the loop header.
+- type: explanation
+  location:
+    snippet: 'if s[i:i+2].lower() == "hi":'
+  explanations:
+  - body: We need to compare the string "hi" with the substring that begins at the index i and extends
+      to the character at index i+1. If this substring is equal to string "hi" (ignoring the case), then
+      we increment the number of occurrences of the string "hi" in the given string by 1.<br><br>s[i:i+2]
+      fetches a range of characters starting from the index i and ending with the character at the index
+      i+1 of the given string.
+  - body: Note that we could compare two strings using == operator. Also, the function lower() returns
+      a copy of the string in which all case-based characters have been lowercased. We need to call this
+      function because we want a case-insensitive string comparison.
+  - body: If the substring that begins at the index i and extends to the character at index i+1 is equal
+      to the string "hi" (ignoring the case), then the body of this if statement gets executed. Otherwise,
+      the body of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: count += 1
+  explanations:
+  - body: When we find a match starting at the character at the index i of the given string, then we have
+      to increment the number of occurrences of the string "hi" in the given string by 1.
+  - body: The += operator adds 1 to the value of variable count and the result is stored into the variable
+      count. Therefore, it is functionally equivalent to the statement count = count + 1.
+- type: explanation
+  location:
+    snippet: return count
+  explanations:
+  - body: This statement returns the  number of occurrences of the string "hi" in the given string.
+  - body: The return statement, when reached, ends the function call and sends the result back to the
+      caller.
+- type: explanation
+  location:
+    snippet: print(count_hi("hiabc Hi ho hIx"))
+  explanations:
+  - body: This statement prints to the default standard output stream the value returned from the function
+      call. Note that we do not necessarily have to store the returned value from the function call in
+      a variable. We could use the value returned from the function call directly in the print function.
+  - body: Note that the function call must be done after the function is declared.

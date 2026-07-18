@@ -1,0 +1,68 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_rent_car_1
+title: Renting a Car (Case 2)
+description: Construct a program that determines whether a customer could rent a car based on the inputs
+  that it receives from the car rental agent. Rental cars are available to licensed drivers of 21 years
+  of age or over who have not had a car accident.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that determines whether a customer could rent a car based on the inputs that
+  it receives from the car rental agent. Rental cars are available to licensed drivers of 21 years of
+  age or over who have not had a car accident.
+executions:
+- title: Sample Run
+  stdin:
+  - '21'
+  - '1'
+  - '0'
+  stdout: |2-
+      File "<string>", line 2
+        text = input('Enter the customer's age:\n')
+                                         ^
+    SyntaxError: invalid syntax
+  console: |2-
+      File "<string>", line 2
+        text = input('Enter the customer's age:\n')
+                                         ^
+    SyntaxError: invalid syntax
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: can_rent_car = age >= 21 and has_license and not had_accidents
+  choices:
+  - snippet: can_rent_car = age >= 21 and has_license and not had_accidents
+    role: solution
+    explanations:
+    - body: We need three conditions to determine whether the customer could rent a car. We use the and
+        operator to combine these conditions. The first condition is to test if the customer is 21 years
+        of age or older, the second condition is to test if the customer has driver's license, and the
+        third condition is to test if the customer has not had an accident.
+    - body: We could check whether the customer has not had an accident by inverting the condition that
+        tests whether the customer has had an accident. We invert the condition by using not operator.
+    - body: Note that the and operator yields the result True if both conditions are True. Also note that
+        the not operator takes a single condition and evaluates to True if that condition is False and
+        to False if the condition is True.
+  - snippet: can_rent_car = age > 21 and has_license and not had_accidents
+    role: distractor
+  - snippet: can_rent_car = age >= 21 and not has_license and not had_accidents
+    role: distractor
+  - snippet: can_rent_car = age >= 21 and not has_license and had_accidents
+    role: distractor
+  - snippet: can_rent_car = age > 21 or has_license and had_accidents
+    role: distractor

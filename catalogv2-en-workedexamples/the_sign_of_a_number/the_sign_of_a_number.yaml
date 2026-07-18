@@ -1,0 +1,100 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_if_else_num_0
+title: The Sign of a Number
+description: Construct a program that determines whether an integer is positive, negative, or zero.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that determines whether an integer is positive, negative, or zero.
+executions:
+- title: Sample Run
+  stdin:
+  - '0'
+  stdout: "Enter an integer: \nThe integer is zero."
+  console: "Enter an integer: \nThe integer is zero."
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'text = input("Enter an integer: ")'
+  explanations:
+  - body: We need to read and process the input value that the user enters. To read the input value from
+      the user, we need to use the input() function. This statement prompts the user to enter an integer,
+      then reads the text entered by the user and places it in the variable text. The value that will
+      be stored in variable text is a string.
+- type: explanation
+  location:
+    snippet: num = int(text)
+  explanations:
+  - body: We need to convert the input text to its integer representation. For this purpose, we use the
+      conversion function int().
+  - body: Note that the conversion to integer can only be done if the string actually presents a number.
+      If the input number is a float, the int() function cuts off the fractional part of the floating-point
+      number to create an integer.
+- type: explanation
+  location:
+    snippet: 'if num > 0 :'
+  explanations:
+  - body: 'To determine the sign of the integer, we need to perform two tests: one for determining whether
+      the integer is positive and one for determining whether the integer is negative. If the integer
+      is neither positive nor negative, then we could conclude that the integer is zero.<br><br>The conditions
+      that tests for the integer''s sign are mutually exclusive (i.e., one and only one of the conditions
+      can be true) therefore, their order does not matter. Also, it is better to use if-else if statements
+      instead of sequential if statements because an integer has only one sign and once we find the sign,
+      we don''t need to perform more tests.<br>In this program, we first test if the integer is positive
+      and then we will check if the integer is negative. If both of these tests fail, then we could conclude
+      that the integer is zero.'
+  - body: To check if the integer is positive, we need to check whether the integer is greater than zero.
+  - body: If the integer is greater than zero, then the body of this if statement gets executed. Otherwise,
+      the body of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: print("The integer is positive.")
+  explanations:
+  - body: This statement prints that the integer is positive. The printed text is followed by the end-of-line
+      character at the end.
+- type: explanation
+  location:
+    snippet: 'elif num < 0 :'
+  explanations:
+  - body: If the first test fails (i.e., when the integer is not positive), we need to test if the integer
+      is negative.
+  - body: To check if the integer is negative, we need to check whether the integer is less than zero.
+  - body: If the first test fails (i.e., when the integer is not positive), the body of the previous if
+      statement will not be executed, instead the program jumps to this else if statement where we test
+      whether the integer is less than zero.<br><br>If integer is less than zero, then the body of this
+      else if statement gets executed. Otherwise, the body of this else if statement is skipped.
+- type: explanation
+  location:
+    snippet: print("The integer is negative.")
+  explanations:
+  - body: This statement prints that the integer is negative. The printed text is followed by the end-of-line
+      character at the end.
+- type: explanation
+  location:
+    snippet: 'else :'
+  explanations:
+  - body: We need to end the above if-else if statements with an else statement that its body is executed
+      when none of the above tests are true, that is when the integer is zero.
+  - body: Note than when we end series of if-else if statements with an else statement, we make sure to
+      execute the body of exactly one of those statements.
+- type: explanation
+  location:
+    snippet: print("The integer is zero.")
+  explanations:
+  - body: This statement prints that the integer is zero. The printed text is followed by the end-of-line
+      character at the end.

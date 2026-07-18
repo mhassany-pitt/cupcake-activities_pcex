@@ -1,0 +1,172 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_find_average_0
+title: Calculating the Average of the Input Numbers
+description: Construct a program that reads a series of integers from the user, sums them up, and calculates
+  their average. The user enters 0 to indicate the end of the input.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that reads a series of integers from the user, sums them up, and calculates
+  their average. The user enters 0 to indicate the end of the input.
+executions:
+- title: Sample Run
+  stdin:
+  - '9'
+  - '2'
+  - '5'
+  - '6'
+  - '0'
+  stdout: "Enter an integer (0 to quit): \nThe sum so far is 9 , count = 1\nEnter an integer (0 to quit):\
+    \ \nThe sum so far is 11 , count = 2\nEnter an integer (0 to quit): \nThe sum so far is 16 , count\
+    \ = 3\nEnter an integer (0 to quit): \nThe sum so far is 22 , count = 4\nEnter an integer (0 to quit):\
+    \ \nThe average is: 5.5"
+  console: "Enter an integer (0 to quit): \nThe sum so far is 9 , count = 1\nEnter an integer (0 to quit):\
+    \ \nThe sum so far is 11 , count = 2\nEnter an integer (0 to quit): \nThe sum so far is 16 , count\
+    \ = 3\nEnter an integer (0 to quit): \nThe sum so far is 22 , count = 4\nEnter an integer (0 to quit):\
+    \ \nThe average is: 5.5"
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: total = 0
+  explanations:
+  - body: We need variable total to maintain a running total, which means the sum of the integers that
+      the user enters.
+- type: explanation
+  location:
+    snippet: count = 0
+  explanations:
+  - body: We need variable count to count how many integers the user enters. This is required for calculating
+      the average of the integers that the user enters.
+- type: explanation
+  location:
+    snippet: 'text = input("Enter an integer (0 to quit): ")'
+    nth: 1
+  explanations:
+  - body: We need to read and process the input value that the user enters. To read the input value from
+      the user, we need to use the input() function. This statement prompts the user to enter an integer,
+      then reads the text entered by the user and places it in the variable text. The value that will
+      be stored in variable text is a string.
+- type: explanation
+  location:
+    snippet: num = int(text)
+    nth: 1
+  explanations:
+  - body: We need to convert the input text to its integer representation. For this purpose, we use the
+      conversion function int().
+  - body: Note that the conversion to integer can only be done if the string actually presents a number.
+      If the input number is a float, the int() function cuts off the fractional part of the floating-point
+      number to create an integer.
+- type: explanation
+  location:
+    snippet: 'while num != 0 :'
+  explanations:
+  - body: We need to process the integer that the user has entered and repeat receiving and processing
+      the integers from the user as long as the user enters an integer that is different from 0. Therefore,
+      we need to use a loop structure. Since we don't know ahead of time how many times the loop will
+      be repeated, we need to use a while loop. The condition in the while loop tests whether the body
+      of the loop should be repeated, so it should test whether the input integer is different from 0.
+  - body: The body of the while loop is repeated as long as the user enters an integer that is different
+      from 0. The loop terminates when the loop condition evaluates to False, that is when the user enters
+      0.
+- type: explanation
+  location:
+    snippet: count += 1
+  explanations:
+  - body: We have to count the number of integers that are entered because we need it for calculating
+      the average. Therefore, each time that the user enters an integer, we need to increment the number
+      of integers that user has entered by 1. Note that if the user enters 0, it will not be counted.
+  - body: The += operator adds the value on the right-hand side of the assignment operator (i.e., 1) to
+      the current value of the variable on the left-hand side (i.e., value of variable count) and the
+      result is stored in the variable count. Thus, this statement is equivalent to the statement count
+      = count + 1.
+- type: explanation
+  location:
+    snippet: total += num
+  explanations:
+  - body: We need to add the integer that the user has entered to the running total. So, each time that
+      the user enters an integer, that integer needs to be added to and stored back into total.
+  - body: The += operator adds the value on the right-hand side of the assignment operator (i.e., value
+      of variable num) to the current value of the variable on the left-hand side (i.e., value of variable
+      total) and the result is stored in the variable total. Thus, this statement is equivalent to the
+      statement total = total + num.
+- type: explanation
+  location:
+    snippet: print("The sum so far is", total, ", count =", count)
+  explanations:
+  - body: Each time the body of the while loop is repeated, the sum and the number of the integers that
+      the user has entered will be printed to the default standard output stream. We do this to see how
+      sum and count are updated after each repeat of the loop.<br>The printed text shows the arguments
+      of the print function separated by the default delimiter (i.e., single space character) and followed
+      by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: 'text = input("Enter an integer (0 to quit): ")'
+    nth: 2
+  explanations:
+  - body: We need to read and process the next integer value that the user enters. To read the input value
+      from the user, we need to use the input() function. This statement prompts the user to enter the
+      next integer, then reads the text entered by the user and places it in the variable text. The value
+      that will be stored in variable text is a string.
+- type: explanation
+  location:
+    snippet: num = int(text)
+    nth: 2
+  explanations:
+  - body: We need to convert the input text to its integer representation. For this purpose, we use the
+      conversion function int().
+  - body: Note that the conversion to integer can only be done if the string actually presents a number.
+      If the input number is a float, the int() function cuts off the fractional part of the floating-point
+      number to create an integer.
+- type: explanation
+  location:
+    snippet: 'if count == 0 :'
+  explanations:
+  - body: We need the if statement at the end of the program to avoid a divide-by-zero error. This occurs
+      if the user immediately enters zero before entering any other integers.<br><br>To determine if the
+      divide-by-zero error would occur, we need to test if the number of integers entered by the user
+      is equal to zero.
+  - body: If the number of integers that the user has entered is equal to zero, then the body of this
+      if statement gets executed. Otherwise, the body of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: print("No integers were entered.")
+  explanations:
+  - body: This statement prints to the default standard output stream that no integers were entered. This
+      text is followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: 'else :'
+  explanations:
+  - body: If the above if test fails (i.e., when the number of integers the the user has entered is different
+      from zero), we could calculate the average by dividing the sum by the number of integers entered
+      by the user.
+- type: explanation
+  location:
+    snippet: average = total / count
+  explanations:
+  - body: We need to calculate the average by dividing the sum of the integers by the number of the integers
+      that the user entered. Note that since we want to keep the fractional part of the division result,
+      we need to use the real division by using / operator.
+- type: explanation
+  location:
+    snippet: print("The average is:", average)
+  explanations:
+  - body: This statement prints to the default standard output stream the text "The average is:" and the
+      value of variable average.<br>The printed text shows the arguments of the print function separated
+      by the default delimiter (i.e., single space character) and followed by the end-of-line character
+      at the end.

@@ -1,0 +1,65 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_squares_0
+title: Printing the Squares of Numbers Within a Specified Range
+description: Construct a program to write out the squares of even positive integers less than or equal
+  to 10.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program to write out the squares of even positive integers less than or equal to 10.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    2 squared = 4
+    4 squared = 16
+    6 squared = 36
+    8 squared = 64
+    10 squared = 100
+  console: |-
+    2 squared = 4
+    4 squared = 16
+    6 squared = 36
+    8 squared = 64
+    10 squared = 100
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'for num in range(2, 11, 2):'
+  explanations:
+  - body: We need to repeat the same process for each of the even positive integers that are less than
+      or equal to 10. To do this, we need to use a loop structure. We use for loops instead of a while
+      loop because we need to repeat the loop a certain number of times, and for loops are best-suited
+      in cases like this when we know ahead of time the number of times that we need to repeat the loop.<br><br>We
+      use the range function because it generates a sequence of numbers for the for loop. Here, we want
+      a sequence that starts at 2 (2 is the first positive even number) with every even integer number
+      up to but not including 11. We get this sequence by calling the function range(2,11,2).
+  - body: The last number in the range function specifies how much to increase each successive integer
+      in the sequence, if this is omitted then step defaults to 1. Since we want to print only every even
+      integer numbers, we set the step to 2.<br><br>Note that all statements inside the loop need to be
+      indented with respect to the loop header.
+- type: explanation
+  location:
+    snippet: print(num, "squared =", num * num)
+  explanations:
+  - body: In each iteration of the loop, this statement prints the square number to the default standard
+      output stream. To square each number in the sequence, we multiply it by itself using the multiplication
+      (*) operator.<br><br>Note that we do not necessarily have to store the squared number in a variable.
+      The multiplication may also be performed directly in the print statement.
+  - body: The printed text shows the arguments of the print function separated by the default delimiter
+      (i.e., single space character) and followed by the end-of-line character at the end.

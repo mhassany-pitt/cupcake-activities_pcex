@@ -1,0 +1,53 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_functions_multiple_parameters_1
+title: Multiple Parameters Challenge
+description: Construct a program that calculates the pay and current savings.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that calculates the pay and current savings.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: 'after payday and expenses, you will have:  565.0'
+  console: 'after payday and expenses, you will have:  565.0'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: paycheck = calculate_pay(work_hours)
+  choices:
+  - snippet: paycheck = calculate_pay(work_hours)
+    role: solution
+    explanations:
+    - body: To get the pay amount, this statement invokes the calculate pay function.
+  - snippet: paycheck = calculatePay()
+    role: distractor
+  - snippet: paycheck = calculatePay(food)
+    role: distractor
+- type: blank
+  location:
+    snippet: current_savings = current_savings + paycheck
+  choices:
+  - snippet: current_savings = current_savings + paycheck
+    role: solution
+    explanations:
+    - body: This statement calculates the total amount of the saving
+  - snippet: current_savings = paycheck
+    role: distractor
+  - snippet: current_savings = paycheck + work_hours
+    role: distractor

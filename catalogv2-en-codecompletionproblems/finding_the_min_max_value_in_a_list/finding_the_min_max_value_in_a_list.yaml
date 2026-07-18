@@ -1,0 +1,59 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_list_min_max_1
+title: Finding the Min/Max Value in a List
+description: Write a program that finds the minimum value in a list.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that finds the minimum value in a list.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: 'Minimum value: 0'
+  console: 'Minimum value: 0'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'if (values[i] < min_value):'
+  choices:
+  - snippet: 'if (values[i] < min_value):'
+    role: solution
+    explanations:
+    - body: We need to compare the value at the index i of the list with the minimum value stored in variable
+        min_value. If the value at index i is smaller than the minimum value, then we need to set the
+        minimum value to the value of the element at index i.
+    - body: If the list value at index i is less than the minimum value so far, then the body of this
+        if statement gets executed. Otherwise, the body of this if statement is skipped.
+  - snippet: 'if (values[i] > min_value):'
+    role: distractor
+  - snippet: values[i] = min_value
+    role: distractor
+  - snippet: 'if (values[i+1] > min_value):'
+    role: distractor
+- type: blank
+  location:
+    snippet: min_value = values[i]
+  choices:
+  - snippet: min_value = values[i]
+    role: solution
+    explanations:
+    - body: This statement sets the minimum value to the value of the element at index i of the list.
+  - snippet: min_value = i
+    role: distractor
+  - snippet: min_value = values[i+1]
+    role: distractor

@@ -1,0 +1,60 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_divisor_1
+title: Finding Smallest/Largest Divisor of a Positive Number
+description: Construct a program that finds the largest divisor of a positive number, excluding the number
+  itself. For example, the largest divisor of 24 is 12.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that finds the largest divisor of a positive number, excluding the number itself.
+  For example, the largest divisor of 24 is 12.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: The largest divisor of 15 is 5
+  console: The largest divisor of 15 is 5
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: divisor = num-1
+  choices:
+  - snippet: divisor = num-1
+    role: solution
+    explanations:
+    - body: We define variable divisor to store the largest divisor of the number. We initialize variable
+        divisor to num-1 because we want to find the largest divisor of the number, excluding the number
+        itself. This means that the maximum possible value that the divisor could take is num -1.
+  - snippet: divisor = 1
+    role: distractor
+  - snippet: divisor = num
+    role: distractor
+  - snippet: divisor = num % divisor
+    role: distractor
+- type: blank
+  location:
+    snippet: divisor -= 1
+  choices:
+  - snippet: divisor -= 1
+    role: solution
+    explanations:
+    - body: When the divisor is not a factor of the number, we decrement the variable divisor by 1.
+    - body: The -= operator subtract 1 from the value of variable divisor and the result is stored back
+        into the variable divisor. Therefore, it is functionally equivalent to the statement divisor =
+        divisor - 1.
+  - snippet: divisor += 1
+    role: distractor

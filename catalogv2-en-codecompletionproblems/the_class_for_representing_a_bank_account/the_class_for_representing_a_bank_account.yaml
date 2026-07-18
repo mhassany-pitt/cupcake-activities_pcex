@@ -1,0 +1,84 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_objects_classes_account_1
+title: The Class for Representing a Bank Account
+description: |-
+  Construct a class that represents a basic bank account. This class should contain data representing the name of the account’s owner, the account number, and the account’s current balance; all of which could be accessed or changed only through the getter and setter methods. An instance of the class should be created by specifying three parameters that are used to initialize the instance (i.e., object) data. The other methods of this class should:
+   - provide a one-line description of the account, and
+   - perform various services on the account (making deposits, withdrawals, adding interest to the account). These methods should examine the data passed into them to make sure the requested transaction is valid.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Construct a class that represents a basic bank account. This class should contain data representing the name of the account’s owner, the account number, and the account’s current balance; all of which could be accessed or changed only through the getter and setter methods. An instance of the class should be created by specifying three parameters that are used to initialize the instance (i.e., object) data. The other methods of this class should:
+   - provide a one-line description of the account, and
+   - perform various services on the account (making deposits, withdrawals, adding interest to the account). These methods should examine the data passed into them to make sure the requested transaction is valid.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    72354         Tina Murphy     25.59
+    69713      Angelica Adams    500.00
+    93757       Edward Demsey    769.32
+  console: |-
+    72354         Tina Murphy     25.59
+    69713      Angelica Adams    500.00
+    93757       Edward Demsey    769.32
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'def __str__(self) :'
+  choices:
+  - snippet: 'def __str__(self) :'
+    role: solution
+    explanations:
+    - body: This method returns a one-line description of the account as a string. The argument (named
+        self) is passed in automatically by the interpreter when the method is invoked on an instance
+        of the class.
+    - body: Note that this method is called automatically when we pass an Account2's object to a print
+        method (or when we concatenate an Account2's object to a string).
+  - snippet: 'def __str__() :'
+    role: distractor
+  - snippet: 'def __str__(self, owner, account, initial ) :'
+    role: distractor
+  - snippet: 'def str(self) :'
+    role: distractor
+- type: blank
+  location:
+    snippet: return "{:d}{:>20s}{:>10.2f}".format(self.__acct_number, self.__acct_name, self.__balance)
+  choices:
+  - snippet: return "{:d}{:>20s}{:>10.2f}".format(self.__acct_number, self.__acct_name, self.__balance)
+    role: solution
+    explanations:
+    - body: This statement returns the account attributes. We call format function to format the string
+        so that all values are right-aligned with sufficient spacing between values.<br>{:d} is replaced
+        by the account number<br>{:>20s} right-justifies the account's name in a field that is 20-characters
+        wide<br>{:>10.2f} right-justifies the balance with two decimal digits in a field that is 10-characters
+        wide.
+    - body: The format function returns the result of replacing each {…} placeholder in the template string
+        with its corresponding argument passed to the format function. Anything else, which is not contained
+        in curly braces will be literally printed, i.e. without any changes.
+    - body: 'Also, the format specification inside a pair of curly braces starts with a : and followed
+        by the text that specifies the data type. The data type d requires a decimal argument, the data
+        type s requires a string argument, and the data type f requires a floating-point argument. An
+        error will occur if the argument is not the expected data type.'
+  - snippet: description = "{:d}{:>20s}{:>10.2f}".format(self.__acct_number, self.__acct_name, self.__balance)
+    role: distractor
+  - snippet: return "{:d}{:>20s}{:>10.2f}".format(self.acct_number, self.acct_name, self.balance)
+    role: distractor
+  - snippet: description = "{:s}{:>20s}{:>10d}".format(self.__acct_number, self.__acct_name, self.__balance)
+    role: distractor

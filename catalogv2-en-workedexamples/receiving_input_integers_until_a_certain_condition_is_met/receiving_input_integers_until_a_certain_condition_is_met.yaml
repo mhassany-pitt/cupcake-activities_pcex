@@ -1,0 +1,111 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_input_0
+title: Receiving Input Integers Until a Certain Condition is Met
+description: Construct a program that receives an integer from the user, outputs that integer, and stops
+  receiving integers when the user enters a negative integer.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that receives an integer from the user, outputs that integer, and stops receiving
+  integers when the user enters a negative integer.
+executions:
+- title: Sample Run
+  stdin:
+  - '5'
+  - '0'
+  - '-4'
+  stdout: |-
+    Enter an integer:
+    The integer entered is: 5
+    Enter an integer:
+    The integer entered is: 0
+    Enter an integer:
+    End of input.
+  console: |-
+    Enter an integer:
+    The integer entered is: 5
+    Enter an integer:
+    The integer entered is: 0
+    Enter an integer:
+    End of input.
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: text = input("Enter an integer:")
+    nth: 1
+  explanations:
+  - body: We need to read and process the input value that the user enters. To read the input value from
+      the user, we need to use the input() function. This statement prompts the user to enter the integer,
+      then reads the text entered by the user and places it in the variable text. The value that will
+      be stored in variable text is a string.
+- type: explanation
+  location:
+    snippet: num = int(text)
+    nth: 1
+  explanations:
+  - body: We need to convert the input text to its integer representation. For this purpose, we use the
+      conversion function int().
+  - body: Note that the conversion to integer can only be done if the string actually presents a number.
+      If the input number is a float, the int() function cuts off the fractional part of the floating-point
+      number to create an integer.
+- type: explanation
+  location:
+    snippet: 'while num >= 0 :'
+  explanations:
+  - body: We need to repeat receiving the integers from the user as long as the user enters an integer
+      that is not negative. Therefore, we need to use a loop structure. Since we don't know ahead of time
+      how many times the loop will be repeated, we need to use a while loop. The condition in the while
+      loop tests whether the body of the loop should be repeated, so it should test whether the input
+      integer is non-negative.<br><br>We could check whether the input integer is non-negative by checking
+      whether the input integer is greater than or equal to zero.
+  - body: The body of the while loop is repeated as long as the user enters an integer that is greater
+      than or equal to zero. The loop terminates when the loop condition evaluates to False, that is when
+      the user enters a negative integer.
+- type: explanation
+  location:
+    snippet: print("The integer entered is:", num)
+  explanations:
+  - body: This statement prints to the default standard output stream the text "The integer entered is:"
+      and the value of variable num.<br>The printed text shows the arguments of the print function separated
+      by the default delimiter (i.e., single space character) and followed by the end-of-line character
+      at the end.
+- type: explanation
+  location:
+    snippet: text = input("Enter an integer:")
+    nth: 2
+  explanations:
+  - body: We need to read and process the next input value that the user enters. To read the input value
+      from the user, we need to use the input() function. This statement prompts the user to enter the
+      integer, then reads the text entered by the user and places it in the variable text. The value that
+      will be stored in variable text is a string.
+- type: explanation
+  location:
+    snippet: num = int(text)
+    nth: 2
+  explanations:
+  - body: We need to convert the input text to its integer representation. For this purpose, we use the
+      conversion function int().
+  - body: Note that the conversion to integer can only be done if the string actually presents a number.
+      If the input number is a float, the int() function cuts off the fractional part of the floating-point
+      number to create an integer.
+- type: explanation
+  location:
+    snippet: print("End of input.")
+  explanations:
+  - body: We inform the user that this is the end of input. The printed text is followed by the end-of-line
+      character at the end.

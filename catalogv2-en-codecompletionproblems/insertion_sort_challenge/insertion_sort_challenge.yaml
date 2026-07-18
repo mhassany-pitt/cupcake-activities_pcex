@@ -1,0 +1,68 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_sorting_insertion_sort_1
+title: Insertion Sort Challenge
+description: 'Insertion sort works similarly to how one would sort a hand of cards: by choosing an element
+  and searching through the rest of the array to determine its proper place. Construct a function that
+  performs insertion sort in descending order on the given list.'
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: 'Insertion sort works similarly to how one would sort a hand of cards: by choosing an element
+  and searching through the rest of the array to determine its proper place. Construct a function that
+  performs insertion sort in descending order on the given list.'
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '[30, 25, 5, 2, 0, -20]'
+  console: '[30, 25, 5, 2, 0, -20]'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'while j>=0 and current > data[j]:'
+  choices:
+  - snippet: 'while j>=0 and current > data[j]:'
+    role: solution
+    explanations:
+    - body: The outer loop iterates through the list sequentially, whereas the inner while loop will iterate
+        through the list backwards if the current element is greater than its predecessor. We want the
+        algorithm to keep comparing current to larger and larger elements of the list until it finds the
+        index it should be at, so we initialize the while loop condition to run until either there are
+        no more elements to traverse backwards through, or we find the right place for current to reside
+        in the array.
+  - snippet: 'while j>0 and current > data[j]:'
+    role: distractor
+  - snippet: 'while j>=0 and current < data[j]:'
+    role: distractor
+  - snippet: 'while j>=0 and current < data[j]:'
+    role: distractor
+- type: blank
+  location:
+    snippet: data[j+1] = data[j]
+  choices:
+  - snippet: data[j+1] = data[j]
+    role: solution
+    explanations:
+    - body: If current is smaller than its predecessor, we want to swap their positions. However, we don’t
+        want to swap current just yet, because we might end up needing to make more swaps afterwards if
+        current still isn’t in the right place. It’s easier to keep track of current’s initial position
+        by instead swapping array elements directly, keeping current in reserve assigned to the current
+        element of the list (that is, the current element before any swaps happened).
+  - snippet: data[j] = data[j+1]
+    role: distractor
+  - snippet: data[i+1] = data[i]
+    role: distractor

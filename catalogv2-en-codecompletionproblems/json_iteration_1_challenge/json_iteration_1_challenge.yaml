@@ -1,0 +1,77 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_json_iterate_1_0
+title: JSON ITERATION 1 Challenge
+description: Write the code that prints the names of all restaurants. You're provided with list of restaurants
+  in json format
+authors:
+- first: Rully
+  last: Hendrawan
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write the code that prints the names of all restaurants. You're provided with list of restaurants
+  in json format
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Taqueria
+    Romanos
+    Bao
+  console: |-
+    Taqueria
+    Romanos
+    Bao
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: print(item['name'])
+  choices:
+  - snippet: print(item['name'])
+    role: solution
+  - snippet: print(item.name)
+    role: distractor
+    explanations:
+    - body: You might think that since 'item' represents a restaurant, you can access its properties like
+        you would with an object in some programming languages. However, in Python, dictionaries use keys
+        to access values, not attributes. If you use 'item.name', Python will raise an AttributeError
+        because 'item' is a dictionary, not an object with attributes. This distractor highlights a common
+        misconception about how data structures work in Python, especially for those coming from languages
+        that treat objects differently.
+  - snippet: print(item['menu'])
+    role: distractor
+    explanations:
+    - body: You might misinterpret the problem statement and think that you need to print the menu of
+        each restaurant instead of their names. While 'item['menu']' is a valid way to access the menu
+        list, it does not fulfill the requirement of printing the restaurant names. This distractor shows
+        how easily one can overlook the specific task at hand, leading to incorrect outputs that do not
+        meet the problem's criteria.
+  - snippet: print(item[0])
+    role: distractor
+    explanations:
+    - body: You might mistakenly think that 'item' is a list and try to access its first element using
+        an index. However, 'item' is actually a dictionary representing a restaurant, and using an index
+        like 'item[0]' will result in a TypeError. This distractor illustrates a common error where students
+        confuse the types of data structures, leading to incorrect assumptions about how to access their
+        contents.
+  - snippet: print('item.name')
+    role: distractor
+    explanations:
+    - body: You might think that you need to use a string to represent the key when printing, leading
+        you to write 'print('item.name')'. This will simply print the string 'item.name' instead of the
+        actual name of the restaurant. This distractor highlights a misunderstanding of how to access
+        values in a dictionary, as it confuses the syntax for accessing dictionary keys with string formatting.
+        This would not produce the desired output and shows a lack of understanding of how to work with
+        data structures in Python.

@@ -1,0 +1,175 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_nested_if_min_max_0
+title: The Min/Max of Three Integers
+description: Construct a program that determines the smallest of the three integer values entered by the
+  user.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that determines the smallest of the three integer values entered by the user.
+executions:
+- title: Sample Run
+  stdin:
+  - '43'
+  - '26'
+  - '69'
+  stdout: "Enter the first integer: \nEnter the second integer: \nEnter the third integer: \nMinimum value:\
+    \ 26"
+  console: "Enter the first integer: \nEnter the second integer: \nEnter the third integer: \nMinimum\
+    \ value: 26"
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'text = input("Enter the first integer: ")'
+  explanations:
+  - body: We need to read and process the input value that the user enters. To read the input value from
+      the user, we need to use the input() function. This statement prompts the user to enter the first
+      integer, then reads the text entered by the user and places it in the variable text. The value that
+      will be stored in variable text is a string.
+- type: explanation
+  location:
+    snippet: num1 = int(text)
+  explanations:
+  - body: We need to convert the input text to its integer representation. For this purpose, we use the
+      conversion function int().
+  - body: Note that the conversion to integer can only be done if the string actually presents a number.
+      If the input number is a float, the int() function cuts off the fractional part of the floating-point
+      number to create an integer.
+- type: explanation
+  location:
+    snippet: 'text = input("Enter the second integer: ")'
+  explanations:
+  - body: We need to read and process the input value that the user enters. To read the input value from
+      the user, we need to use the input() function. This statement prompts the user to enter the second
+      integer, then reads the text entered by the user and places it in the variable text. The value that
+      will be stored in variable text is a string.
+- type: explanation
+  location:
+    snippet: num2 = int(text)
+  explanations:
+  - body: We need to convert the input text to its integer representation. For this purpose, we use the
+      conversion function int().
+  - body: Note that the conversion to integer can only be done if the string actually presents a number.
+      If the input number is a float, the int() function cuts off the fractional part of the floating-point
+      number to create an integer.
+- type: explanation
+  location:
+    snippet: 'text = input("Enter the third integer: ")'
+  explanations:
+  - body: We need to read and process the input value that the user enters. To read the input value from
+      the user, we need to use the input() function. This statement prompts the user to enter the third
+      integer, then reads the text entered by the user and places it in the variable text. The value that
+      will be stored in variable text is a string.
+- type: explanation
+  location:
+    snippet: num3 = int(text)
+  explanations:
+  - body: We need to convert the input text to its integer representation. For this purpose, we use the
+      conversion function int().
+  - body: Note that the conversion to integer can only be done if the string actually presents a number.
+      If the input number is a float, the int() function cuts off the fractional part of the floating-point
+      number to create an integer.
+- type: explanation
+  location:
+    snippet: 'if num1 < num2 :'
+  explanations:
+  - body: We find the minimum by finding the smallest of the first two integers and then comparing the
+      smallest value with the third integer. Here, we perform the first test (finding smallest of the
+      first two integers) by comparing num1 and num2.
+  - body: If num1 is the smallest, then the body of this if statement gets executed. Otherwise, the body
+      of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: 'if num1 < num3 :'
+  explanations:
+  - body: When num1 is the smallest of num1 and num2, we need to compare num1 (smallest of the first two
+      integers) with the third integer.
+  - body: If num1 (smallest of the first two integers) is also smaller than num3, then the body of this
+      if statement gets executed and num1 is the minimum. Otherwise, the body of this if statement is
+      skipped.
+- type: explanation
+  location:
+    snippet: min_num = num1
+  explanations:
+  - body: When num1 (smallest of the first two numbers) is also smaller than the third number, num1 is
+      the minimum of the three integers and we assign it to variable min_num.
+- type: explanation
+  location:
+    snippet: 'else :'
+    nth: 1
+  explanations:
+  - body: When num1 (smallest of the first two integers) is not smaller than num3, then we could conclude
+      that num3 is the minimum
+  - body: The statement inside the body of this else statement gets executed when the if condition is
+      False, i.e., when num1 (smallest of the first two integers) is not smaller than num3. Otherwise,
+      the body of this else statement is skipped.
+- type: explanation
+  location:
+    snippet: min_num = num3
+    nth: 1
+  explanations:
+  - body: When num3 is smaller than num1 (smallest of the first two integers), num3 is the minimum of
+      the three integers and we assign it to variable min_num.
+- type: explanation
+  location:
+    snippet: 'else :'
+    nth: 2
+  explanations:
+  - body: We need an else statement to process the case that num1 is the not the smallest of the first
+      two integers.
+  - body: The statement inside the body of this else statement gets executed when num2 is the smallest
+      of the first two integers. Otherwise, the body of this else statement is skipped.
+- type: explanation
+  location:
+    snippet: 'if num2 < num3 :'
+  explanations:
+  - body: When num2 is the smallest of num1 and num2, we need to compare num2 (smallest of the first two
+      integers) with the third integer that is num3.
+  - body: If num2 (smallest of the first two integers) is also smaller than num3, then the body of this
+      if statement gets executed and we could conclude that num2 is the minimum. Otherwise, the body of
+      this if statement is skipped.
+- type: explanation
+  location:
+    snippet: min_num = num2
+  explanations:
+  - body: When num2 (smallest of the first two numbers) is also smaller than the third number, then we
+      could conclude that num2 is the minimum of the three integers and we assign it to variable min_num.
+- type: explanation
+  location:
+    snippet: 'else :'
+    nth: 3
+  explanations:
+  - body: When num2 (smallest of the first two integers) is not smaller than num3, then we could conclude
+      that num3 is the minimum.
+  - body: The statement inside the body of this else statement gets executed when num3 is the smallest
+      integer. Otherwise, the body of this else statement is skipped.
+- type: explanation
+  location:
+    snippet: min_num = num3
+    nth: 2
+  explanations:
+  - body: When num3 is smaller than num2 (smallest of the first two integers), then we could conclude
+      that num3 is the minimum and we assign it to variable min_num.
+- type: explanation
+  location:
+    snippet: print("Minimum value:", min_num)
+  explanations:
+  - body: This statement prints to the default standard output stream the text "Minimum value =" and the
+      value of variable min_num.<br>The printed text shows the arguments of the print function separated
+      by the default delimiter (i.e., single space character) and followed by the end-of-line character
+      at the end.

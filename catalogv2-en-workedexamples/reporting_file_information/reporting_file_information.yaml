@@ -1,0 +1,227 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_file_input_stat_0
+title: Reporting File Information
+description: Construct a program that receives the full path to an input file from the user, reads that
+  file and reports the number of lines, the longest line, the number of words on each line, and the length
+  of the longest word on each line. Make sure that the program handles each specific exception that could
+  occur.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that receives the full path to an input file from the user, reads that file
+  and reports the number of lines, the longest line, the number of words on each line, and the length
+  of the longest word on each line. Make sure that the program handles each specific exception that could
+  occur.
+executions:
+- title: Sample Run
+  stdin:
+  - /Users/input_stat.txt
+  stdout: "Enter the full path of a file: \n Line 1 has 5 tokens (longest = 11)\nLine 2 has 8 tokens (longest\
+    \ = 6)\nLine 3 has 6 tokens (longest = 6)\nLine 4 has 3 tokens (longest = 13)\nLongest line:the jaws\
+    \ that bite, the claws that catch,"
+  console: "Enter the full path of a file: \n Line 1 has 5 tokens (longest = 11)\nLine 2 has 8 tokens\
+    \ (longest = 6)\nLine 3 has 6 tokens (longest = 6)\nLine 4 has 3 tokens (longest = 13)\nLongest line:the\
+    \ jaws that bite, the claws that catch,"
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def get_stat(file_name):'
+  explanations:
+  - body: We need to first declare the function that receives a full path for a file, reads that file,
+      and reports some information related to that file. The given full file path is referred by variable
+      file_name.<br><br>Note that all statements following the header line are indented.
+- type: explanation
+  location:
+    snippet: num_lines = 0
+  explanations:
+  - body: We need this variable to track the line numbers. We set it to 0 because we have not started
+      processing the lines yet.
+- type: explanation
+  location:
+    snippet: longest_line = ""
+  explanations:
+  - body: We need this variable to track the longest line. This statement sets variable longest_line to
+      the empty string. Later, we will update the content of this variable as we iterate through the lines
+      in the file.
+- type: explanation
+  location:
+    snippet: 'try :'
+  explanations:
+  - body: The try blocks tries to execute the code within it. The statements in the try block may throw
+      several types of exception.
+  - body: If an error is encountered, the try block code execution is stopped and transferred down to
+      the except block(s).
+- type: explanation
+  location:
+    snippet: myfile = open( file_name, "r")
+  explanations:
+  - body: The open function opens the file. The variable file_name specifies the path to this file. We
+      want to read the file; therefore, we open it in the read mode "r".
+  - body: We could also call the open function without specifying the mode, because when only the filename
+      is passed, the open function opens the file in read mode.
+- type: explanation
+  location:
+    snippet: 'for line in myfile:'
+  explanations:
+  - body: For reading lines from a file, we can loop over the file object.
+  - body: This for loop assigns the name line to each of the lines in the file in turn, from the beginning
+      of the file to the end, and then the statement in the loop body will be executed for each line.
+  - body: Note that all statements inside the loop need to be indented with respect to the loop header.
+- type: explanation
+  location:
+    snippet: num_lines += 1
+  explanations:
+  - body: Once we start processing each line, we increment the line number by 1.
+  - body: The += operator adds the value on the right-hand side of the assignment operator (i.e., 1) to
+      the current value of the variable on the left-hand side (i.e., value of variable num_lines) and
+      the result is stored in the variable num_lines. Thus, this statement is equivalent to the statement
+      num_lines = num_lines + 1.
+- type: explanation
+  location:
+    snippet: num_words = len(line.split())
+  explanations:
+  - body: To get the number of words in the line, we need to split the line into words, and count the
+      number of words. We split the line into a list of words by calling the split function. The len()
+      function returns the number of words in the list that is returned by the split function.
+  - body: Note that we don't necessarily need to store the list of words returned by the split function
+      in a variable. To get the number of words in this list, we could use the returned list from the
+      split function directly in the len() function .
+  - body: Also, note that, by default, the split function considers any number of whitespace characters
+      as a word boundary.
+- type: explanation
+  location:
+    snippet: 'if (len(line) > len(longest_line)) :'
+  explanations:
+  - body: To find the longest line, we need to compare the number of characters in the current line with
+      the number of characters in the longest line we've found so far. If the current line has more characters,
+      then we need to set the variable longest_line to the current line.
+  - body: len(line) returns the number of characters in the current line.<br>len(longest_line) returns
+      the number of characters in the longest line we've found so far.
+  - body: If the current line has more characters than the longest line we've found so far, then the body
+      of this if statement gets executed. Otherwise, the body of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: longest_line = line
+  explanations:
+  - body: This statement sets the longest line to the current line.
+- type: explanation
+  location:
+    snippet: longest_word = 0
+  explanations:
+  - body: We need this variable to find the length of the longest word in the line. We set it to 0 because
+      we have not started processing the words of the line yet.
+- type: explanation
+  location:
+    snippet: 'for w in line.split() :'
+  explanations:
+  - body: We want to iterate over the words in the line and find the length of the longest word. We can
+      use a for loop to iterate through the words in the list of words in the line.
+  - body: This for loop assigns the name w to each of the words in the list of words in turn, from left
+      to right, and then the statement in the loop body will be executed for each word.
+  - body: Note that we could iterate through the list of words that will be returned by the split function
+      without necessarily having to store that list in a variable. We could use the returned list from
+      the split function directly in the for loop header.
+  - body: Also, note that, by default, the split function considers any number of whitespace characters
+      as a word boundary. Also, note that all statements inside the loop need to be indented with respect
+      to the loop header.
+- type: explanation
+  location:
+    snippet: 'if len(w) > longest_word :'
+  explanations:
+  - body: To find the length of the longest word, we need to compare the number of characters in the visited
+      word with the number of characters in the longest word that we've found so far. If the visited word
+      has more characters, then we need to set the variable longest_word to the length of the visited
+      word.
+  - body: Note that the function len(w) returns the number of characters in the visited word.
+  - body: If the visited word has more characters than the longest word that we've found so far, then
+      the body of this if statement gets executed. Otherwise, the body of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: longest_word = len(w)
+  explanations:
+  - body: This statement sets the length of the longest word to the length of the visited word.
+  - body: Note that the function len(w) returns the number of characters in the visited word.
+- type: explanation
+  location:
+    snippet: print("Line " + str(num_lines) + " has " + str(num_words) + " tokens (longest = " + str(longest_word)
+      + ")")
+  explanations:
+  - body: This statement concatenates the content of the given strings and variables to print the file
+      information. We concatenate the content of these variables using the + operator. Variables num_lines,
+      num_words, and longest_word hold integer values and their values can be concatenated with strings
+      only when they're explicitly converted to a string using the str function.
+  - body: Note that the concatenating and printing are done in the same line. That is, we don't have to
+      store the concatenated string to a new variable at first and then print it in the next line.
+  - body: Note that the + operator creates a new string from the contents of its operands joined. This
+      string will be printed by the print function and followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: print("Longest line:" + longest_line)
+  explanations:
+  - body: This statement prints the given text followed by the longest line to the default output stream.
+      The printed text is followed by the end-of-line character at the end.
+  - body: Note that we concatenate the content of two strings using the + operator. Also, note that the
+      concatenating and printing are done in the same line. That is, we don't have to store the concatenated
+      string to a new variable at first and then print it in the next line.
+- type: explanation
+  location:
+    snippet: myfile.close()
+  explanations:
+  - body: We're done with reading the file; therefore, we use close() to close it and free up any system
+      resources taken up by the open file.
+- type: explanation
+  location:
+    snippet: 'except FileNotFoundError:'
+  explanations:
+  - body: We need to handle the FileNotFoundError. This error occurs when the file could not be found.
+  - body: The body of this except block gets executed only if the file could not be found. Otherwise,
+      the body of this except statement is skipped.
+- type: explanation
+  location:
+    snippet: print("File not found.")
+  explanations:
+  - body: This statement prints to the default standard output stream the error that caused the FileNotFoundError.
+      The printed text is followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: 'except IOError:'
+  explanations:
+  - body: We need to handle the IOError. This error occurs when an error occurs when trying to read/close
+      the file.
+  - body: The body of this except block gets executed only if an error occurs when trying to read/close
+      the file. Otherwise, the body of this except statement is skipped.
+- type: explanation
+  location:
+    snippet: print("Problem with the file!")
+  explanations:
+  - body: This statement prints to the default standard output stream the error that caused the IOError.
+      The printed text is followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: 'name = input("Enter the full path of a file: " )'
+  explanations:
+  - body: We need to read the full file path that the user enters. To do this, we need to use the input()
+      function. This statement prompts the user to enter the full path for a file, then reads the text
+      entered by the user and places it in the variable name. The value that will be stored in variable
+      name is a string.
+- type: explanation
+  location:
+    snippet: get_stat( name )
+  explanations:
+  - body: This statement calls the get_stat function and passes the name as its arguments. Note that the
+      function call must be done after the function is declared.

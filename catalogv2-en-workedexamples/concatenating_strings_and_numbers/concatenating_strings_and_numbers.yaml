@@ -1,0 +1,57 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_concat_str_num_0
+title: 'Concatenating Strings and Numbers '
+description: Construct a program that uses variables x, y, and z to print "Python was invented in 1989.".
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that uses variables x, y, and z to print "Python was invented in 1989.".
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: Python was invented in 1989.
+  console: Python was invented in 1989.
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: x = "Python was invented in "
+  explanations:
+  - body: This statement sets variable x to the string "Python was invented in ".
+- type: explanation
+  location:
+    snippet: y = 1989
+  explanations:
+  - body: This statement sets variable y to the integer 1989.
+- type: explanation
+  location:
+    snippet: z = "."
+  explanations:
+  - body: This statement sets variable z to the string ".".
+- type: explanation
+  location:
+    snippet: print(x + str(y) + z)
+  explanations:
+  - body: This statement concatenates the content of variables x, y, and z to print the requested output.
+      We concatenate the content of these variables using the + operator. Variables x and z have a string
+      value and we can use the + operator to concatenate their content. Variable y, on the other hand,
+      has an integer value and its value can be concatenated with strings only when it is explicitly converted
+      to a string using the str function.
+  - body: Note that the concatenating and printing are done in the same line. That is, we don't have to
+      store the concatenated string to a new variable at first and then print it in the next line.
+  - body: Note that the + operator creates a new string from the contents of its operands joined. This
+      string will be printed by the print function and followed by the end-of-line character at the end.

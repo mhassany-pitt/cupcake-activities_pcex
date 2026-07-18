@@ -1,0 +1,75 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_win_percentage_1
+title: Calculating the Winning Percentage of a Sports Team (Case 2)
+description: Construct a program that receives from the user the number of games in a tournament and the
+  number of the games that a sports team won in the tournament, and calculates the winning percentage
+  of that sports team. The program must ask the user for each of the two inputs until the user enters
+  a valid number.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that receives from the user the number of games in a tournament and the number
+  of the games that a sports team won in the tournament, and calculates the winning percentage of that
+  sports team. The program must ask the user for each of the two inputs until the user enters a valid
+  number.
+executions:
+- title: Sample Run
+  stdin:
+  - '-1'
+  - '0'
+  - '10'
+  - '-1'
+  - '11'
+  - '7'
+  stdout: "Enter the number of games in the tournament: \nEnter the number of games in the tournament:\
+    \ \nEnter the number of games in the tournament: \nEnter the number of games that the sports team\
+    \ won in the tournament: \nEnter the number of games that the sports team won in the tournament: \n\
+    Enter the number of games that the sports team won in the tournament: \nWinning percentage: 0.7"
+  console: "Enter the number of games in the tournament: \nEnter the number of games in the tournament:\
+    \ \nEnter the number of games in the tournament: \nEnter the number of games that the sports team\
+    \ won in the tournament: \nEnter the number of games that the sports team won in the tournament: \n\
+    Enter the number of games that the sports team won in the tournament: \nWinning percentage: 0.7"
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'while total_games <= 0 :'
+  choices:
+  - snippet: 'while total_games <= 0 :'
+    role: solution
+    explanations:
+    - body: We need to validate the number that the user has entered and ask for a valid input as long
+        as the user enters an invalid number. Therefore, we need to use a loop structure. Since we don't
+        know ahead of time how many times the loop will be repeated, we need to use a while loop. The
+        condition in the while loop tests whether the body of the loop should be repeated, so it should
+        test whether the number that the user entered is an invalid number.<br><br>The input for the number
+        of games in the tournament is an invalid number if it is outside the valid range. The number of
+        games in the tournament must be greater than zero, therefore, the input is invalid if the user
+        enters a number less than or equal to zero.
+    - body: The body of the while loop is repeated as long as the user enters a number that is less than
+        or equal to zero. The loop terminates when the loop condition evaluates to False, that is when
+        the user enters a number greater than zero.
+  - snippet: 'while total_games >= 0 :'
+    role: distractor
+  - snippet: 'if total_games < 0 :'
+    role: distractor
+  - snippet: 'if total_games > 0 :'
+    role: distractor
+  - snippet: 'while total_games < wins :'
+    role: distractor
+  - snippet: 'if total_games < wins :'
+    role: distractor

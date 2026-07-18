@@ -1,0 +1,94 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_check_product_code_1
+title: Counting the Number of Valid and Banned Product Codes
+description: |-
+  Suppose a hypothetical company uses codes to represent its various products. A product code includes, among other information, a character in the tenth position that represents the zone from which that product was made, and a four-digit integer representing the district in which it will be sold. This four-digit integer begins at the 4th character and extends to the 7th character in the input code (inclusive). Due to some reorganization, products from zone R are banned from being sold in districts with a designation of 2000 or higher.
+  Construct a program that reads product codes from the user and counts the number of valid and banned codes entered. Make sure that the program handles all possible exceptions.
+  The program must ask the user for an input until the user enters STOP.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Suppose a hypothetical company uses codes to represent its various products. A product code includes, among other information, a character in the tenth position that represents the zone from which that product was made, and a four-digit integer representing the district in which it will be sold. This four-digit integer begins at the 4th character and extends to the 7th character in the input code (inclusive). Due to some reorganization, products from zone R are banned from being sold in districts with a designation of 2000 or higher.
+  Write a program that reads product codes from the user and counts the number of valid and banned codes entered. Make sure that the program handles all possible exceptions.
+  The program must ask the user for an input until the user enters STOP.
+executions:
+- title: Sample Run
+  stdin:
+  - TRV2475A5Z-14
+  - TRV275A5Z-14
+  - TRD1704A7R-12
+  - TRQ2778A7R-19
+  - TRV2105A2
+  - STOP
+  stdout: "Enter product code: \nEnter product code: \nError! District is not numeric.\nEnter product\
+    \ code: \nEnter product code: \nEnter product code: \nImproper code length.\nEnter product code: \n\
+    # of valid codes entered: 3\n# of banned codes entered: 1"
+  console: "Enter product code: \nEnter product code: \nError! District is not numeric.\nEnter product\
+    \ code: \nEnter product code: \nEnter product code: \nImproper code length.\nEnter product code: \n\
+    # of valid codes entered: 3\n# of banned codes entered: 1"
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: district = int(code[3:7])
+  choices:
+  - snippet: district = int(code[3:7])
+    role: solution
+    explanations:
+    - body: We need to extract the substring that represents the district in which the product will be
+        sold. We get this substring by code[3:7] that fetches a range of characters starting from the
+        index 3 and ending with the character at the index 6 of the given string (inclusive). We convert
+        this substring to integer by using the int() function.
+    - body: Note that the conversion to integer can only be done if the string actually presents a number.
+        If the input number is a float, the int() function cuts off the fractional part of the floating-point
+        number to create an integer.
+  - snippet: district = int(code[4:8])
+    role: distractor
+  - snippet: district = code[3:6]
+    role: distractor
+  - snippet: district = int(code[3:6])
+    role: distractor
+- type: blank
+  location:
+    snippet: valid += 1
+  choices:
+  - snippet: valid += 1
+    role: solution
+    explanations:
+    - body: When we could extract the zone and district from the product code, it means the code is valid.
+        Therefore, we need to increment the number of valid codes by 1.
+    - body: The += operator adds the value on the right-hand side of the assignment operator (i.e., 1)
+        to the current value of the variable on the left-hand side (i.e., value of variable valid) and
+        the result is stored in the variable valid. Thus, this statement is equivalent to the statement
+        valid = valid + 1.
+- type: blank
+  location:
+    snippet: 'except ValueError :'
+  choices:
+  - snippet: 'except ValueError :'
+    role: solution
+    explanations:
+    - body: We need to handle the ValueError. This error occurs when the district substring in the product's
+        code does not contain a valid integer and we call the function int() to convert that value to
+        an integer.
+    - body: The body of this except block gets executed only if the district substring in the product's
+        code is not a number. Otherwise, the body of this except statement is skipped.
+  - snippet: 'except KeyError :'
+    role: distractor
+  - snippet: 'except IndexError :'
+    role: distractor

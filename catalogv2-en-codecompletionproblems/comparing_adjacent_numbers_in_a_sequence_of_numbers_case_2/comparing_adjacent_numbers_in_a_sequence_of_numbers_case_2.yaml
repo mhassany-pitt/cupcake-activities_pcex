@@ -1,0 +1,70 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_check_adjacent_1
+title: Comparing Adjacent Numbers in a Sequence of Numbers (Case 2)
+description: |-
+  Construct a program that checks whether a sequence of integers, entered one at a time, contains adjacent integers that are consecutive. The user enters -1 to indicate the end of the input.
+  Note that integers which follow each other in order, without gaps, from smallest to largest are consecutive numbers. For example, 12, 13, 14 and 15 are consecutive numbers.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program that checks whether a sequence of integers, entered one at a time, contains adjacent integers that are consecutive. The user enters -1 to indicate the end of the input.
+  Note that integers which follow each other in order, without gaps, from smallest to largest are consecutive numbers. For example, 12, 13, 14 and 15 are consecutive numbers.
+executions:
+- title: Sample Run
+  stdin:
+  - '12'
+  - '9'
+  - '2'
+  - '6'
+  - '7'
+  - '6'
+  - '3'
+  - '-2'
+  - '-1'
+  stdout: "Enter an integer: \nEnter an integer: \nEnter an integer: \nEnter an integer: \nEnter an integer:\
+    \ \n6 and 7 are consecutive.\nEnter an integer: \nEnter an integer: \nEnter an integer: \nEnter an\
+    \ integer:"
+  console: "Enter an integer: \nEnter an integer: \nEnter an integer: \nEnter an integer: \nEnter an integer:\
+    \ \n6 and 7 are consecutive.\nEnter an integer: \nEnter an integer: \nEnter an integer: \nEnter an\
+    \ integer:"
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'if num != -1 and num - previous == 1 :'
+  choices:
+  - snippet: 'if num != -1 and num - previous == 1 :'
+    role: solution
+    explanations:
+    - body: We need to test if the integer that the user entered is different from -1 because -1 indicates
+        the end of the input and we need to skip it. We also need to test whether the integer that the
+        user entered and its previous integer are consecutive numbers. To determine if the two integers
+        are consecutive we need to test whether the difference between the two integers is 1 (consecutive
+        numbers must differ by 1).
+    - body: If the integer that the user entered is different from -1 and differs by 1 from its previous
+        integer, then the body of this if statement gets executed. Otherwise, the body of this if statement
+        is skipped.
+    - body: Note that the and operator yields the result True if both conditions are True.
+  - snippet: 'if num != -1 and num - previous = 1 :'
+    role: distractor
+  - snippet: 'if num = -1 or num - previous = 1 :'
+    role: distractor
+  - snippet: 'if num - previous == 1 :'
+    role: distractor
+  - snippet: 'if num > previous :'
+    role: distractor

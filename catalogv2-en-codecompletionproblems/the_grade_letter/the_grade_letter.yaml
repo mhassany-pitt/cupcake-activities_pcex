@@ -1,0 +1,87 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_if_else_grade_1
+title: The Grade Letter
+description: |-
+  Construct a program that receives a grade from the user and prints the numeric range for that grade using the following grading rules:
+  A for scores ≥ 90
+  B for scores ≥ 80
+  C for scores ≥ 70
+  D for scores ≥ 60
+  F for scores < 60
+  For example, if the user enters the grade D, the program prints "Score is in range [60-70)".
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program that receives a grade from the user and prints the numeric range for that grade using the following grading rules:
+  A for scores ≥ 90
+  B for scores ≥ 80
+  C for scores ≥ 70
+  D for scores ≥ 60
+  F for scores < 60
+  For example, if the user enters the grade D, the program prints "Score is in range [60-70)".
+executions:
+- title: Sample Run
+  stdin:
+  - B
+  stdout: "Enter a grade letter in uppercase: \nScore is in range [80-90)."
+  console: "Enter a grade letter in uppercase: \nScore is in range [80-90)."
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'if grade == "A" :'
+  choices:
+  - snippet: 'if grade == "A" :'
+    role: solution
+    explanations:
+    - body: We have 5 possible letter grades that are A, B, C, D, and F. We could determine the score
+        range by testing whether the letter grade matches the grade A, B, C, or D. If all of these tests
+        fail, then we could conclude that the grade is F.<br><br>The conditions that we want to use to
+        test what is the letter grade are mutually exclusive (i.e., one and only one condition can be
+        true) therefore, the order that we perform these tests does not matter. Also, it's better to use
+        if-else if statements instead of sequential if statements because each grade corresponds to only
+        one score range and once we find the matching grade, we don't need to perform more tests.<br>In
+        this program, we first test if the grade is A.
+    - body: To test if the grade is A, we need to compare the grade with string A using the == operator.<br><br>Note
+        that we assign the input received from the user to variable grade. Therefore variable grade has
+        a string value.
+    - body: If the grade is equal to A (including case), then the body of this if statement gets executed.
+        Otherwise, the body of this if statement is skipped.
+  - snippet: 'if grade != "A" :'
+    role: distractor
+  - snippet: 'if grade == "B" :'
+    role: distractor
+  - snippet: 'if grade != "A" :'
+    role: distractor
+- type: blank
+  location:
+    snippet: 'elif grade == "B" :'
+  choices:
+  - snippet: 'elif grade == "B" :'
+    role: solution
+    explanations:
+    - body: If the first test failed (i.e., when grade is not A), we test if the grade is B.
+    - body: To test if the grade is B, we need to compare the grade with string B using the == operator.<br><br>Note
+        that we assign the input received from the user to variable grade. Therefore variable grade has
+        a string value.
+    - body: If the grade is not equal to A (including case), then the body of the previous if statement
+        will not be executed, instead the program jumps to this else if statement, where we test whether
+        the grade is B.<br><br>If the grade is B (including case), The body of this else if statement
+        gets executed. Otherwise, the body of this else if statement is skipped.
+  - snippet: 'elif grade == "B" :'
+    role: distractor

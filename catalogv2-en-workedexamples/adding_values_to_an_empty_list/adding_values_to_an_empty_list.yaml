@@ -1,0 +1,56 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_list_fill_0
+title: Adding Values to an Empty List
+description: Construct a program that creates a list of first ten positive odd numbers.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that creates a list of first ten positive odd numbers.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]'
+  console: '[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]'
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: lst = []
+  explanations:
+  - body: We need to create a list of the odd numbers. Therefore, we initialize the list referred by variable
+      lst to an empty list and will later use the function append to add odd numbers to it.
+- type: explanation
+  location:
+    snippet: 'for i in range(10):'
+  explanations:
+  - body: We use a for loop to iterate over the list indexes and set an odd value to each index. We need
+      the list indexes to have a length of 10 and start at 0 with every integer number up to but not including
+      10. We get this sequence by calling the range(10) function.
+  - body: Note that the length of the list is 10 because we want to store 10 values in this list. Also,
+      note that all statements inside the loop need to be indented with respect to the loop header.
+- type: explanation
+  location:
+    snippet: lst.append( 2 * i + 1 )
+  explanations:
+  - body: We want to add an odd value to each index. To do this, in each iteration, we call the function
+      append(2*i+1) to add an odd number to the end of the list. Note that 2*i+1 is always an odd number.
+- type: explanation
+  location:
+    snippet: print(lst)
+  explanations:
+  - body: We can see the content of the list by calling the print function and passing the list to that.
+      This statement will print the list.

@@ -1,0 +1,62 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_three_booleans_1
+title: Three Booleans (Case 2)
+description: Construct a program that determines whether at least one of the three boolean variables is
+  False based on the inputs that it receives from the user.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that determines whether at least one of the three boolean variables is False
+  based on the inputs that it receives from the user.
+executions:
+- title: Sample Run
+  stdin:
+  - '0'
+  - '0'
+  - '1'
+  stdout: |-
+    Enter 1 if the value of the first boolean variable (variable a) is True, otherwise enter 0:
+    Enter 1 if the value of the second boolean variable (variable b) is True, otherwise enter 0:
+    Enter 1 if the value of the third boolean variable (variable c) is True, otherwise enter 0:
+    Yes! At least one of the three boolean variables is False.
+  console: |-
+    Enter 1 if the value of the first boolean variable (variable a) is True, otherwise enter 0:
+    Enter 1 if the value of the second boolean variable (variable b) is True, otherwise enter 0:
+    Enter 1 if the value of the third boolean variable (variable c) is True, otherwise enter 0:
+    Yes! At least one of the three boolean variables is False.
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: result = not (a and b and c)
+  choices:
+  - snippet: result = not (a and b and c)
+    role: solution
+    explanations:
+    - body: We check whether at least one of the three boolean variables is False by inverting the condition
+        that checks if all variables are True. We invert the condition by using not operator.
+    - body: Note that the and operator yields the result True if both conditions are True. Also note that
+        the not operator takes a single condition and evaluates to True if that condition is False and
+        to False if the condition is True.
+  - snippet: result = a and b and c
+    role: distractor
+  - snippet: result = a or b or not c
+    role: distractor
+  - snippet: result = a and b and not c
+    role: distractor
+  - snippet: result = not (a or b or c)
+    role: distractor

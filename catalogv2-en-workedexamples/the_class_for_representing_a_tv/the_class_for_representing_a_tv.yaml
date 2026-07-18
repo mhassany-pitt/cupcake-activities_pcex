@@ -1,0 +1,313 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_objects_classes_tv_0
+title: The Class for Representing a TV
+description: Construct a class that represents a TV. The class should contain data that represents the
+  TV's state (power on or off, current channel). The state of the TV could be accessed or changed only
+  through the getter and setter methods. The class should also include methods to change the state of
+  the TV (turn on/off, change channels). Assume that the valid channel range is from 1 to 120 (both inclusive).
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Construct a class that represents a TV. The class should contain data that represents the TV's
+  state (power on or off, current channel). The state of the TV could be accessed or changed only through
+  the getter and setter methods. The class should also include methods to change the state of the TV (turn
+  on/off, change channels). Assume that the valid channel range is from 1 to 120 (both inclusive).
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    tv1's channel is 30
+    tv2's channel is 2
+  console: |-
+    tv1's channel is 30
+    tv2's channel is 2
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'class TV1 :'
+  explanations:
+  - body: We define the class named TV1 to represent a TV.
+- type: explanation
+  location:
+    snippet: 'def __init__(self):'
+  explanations:
+  - body: We want to initialize the attributes of the TV when we create an instance of the TV1 class.
+      We do this by defining an __init__ method, which is run automatically by Python each time an instance
+      is created. The argument (named self) is passed in automatically by the interpreter when the method
+      is invoked on an instance of the class.
+  - body: Note that Python automatically fills the first argument in with the instance object that is
+      the implied subject of the method call. Therefore, when this method is invoked on an instance of
+      the class, no parameter must be passed to the method.
+- type: explanation
+  location:
+    snippet: self.__on = False
+    nth: 1
+  explanations:
+  - body: This statement sets the on/off state of the TV to False because, by default, the TV is off.<br>self
+      is the instance of the class and self.__on shows whether the TV is on. The self.__on is True when
+      the TV is on, and False otherwise. We start the attribute name by two underscore (self.__on) to
+      prevent accessing the attribute directly from outside of the class.
+- type: explanation
+  location:
+    snippet: self.__channel = 1
+  explanations:
+  - body: This statement sets the TV channel to 1 because, we assume that the default channel of the TV
+      is 1.<br>self is the instance of the class and self.__channel shows the current TV channel. We start
+      the attribute name by two underscore (self.__channel) to prevent accessing the attribute directly
+      from outside of the class.
+- type: explanation
+  location:
+    snippet: 'def turn_on(self) :'
+  explanations:
+  - body: This method turns on the TV. The argument (named self) is passed in automatically by the interpreter
+      when the method is invoked on an instance of the class.
+  - body: Note that Python automatically fills the first argument in with the instance object that is
+      the implied subject of the method call. Therefore, when this method is invoked on an instance of
+      the class, no parameter must be passed to the method.
+- type: explanation
+  location:
+    snippet: self.__on = True
+  explanations:
+  - body: This statement sets the on/off state of the TV to True to turn on the TV.<br>self is the instance
+      of the class and self.__on shows whether the TV is on. We start the attribute name by two underscore
+      (self.__on) to prevent accessing the attribute directly from outside of the class.
+- type: explanation
+  location:
+    snippet: 'def turn_off(self) :'
+  explanations:
+  - body: This method turns off the TV. The argument (named self) is passed in automatically by the interpreter
+      when the method is invoked on an instance of the class.
+  - body: Note that Python automatically fills the first argument in with the instance object that is
+      the implied subject of the method call. Therefore, when this method is invoked on an instance of
+      the class, no parameter must be passed to the method.
+- type: explanation
+  location:
+    snippet: self.__on = False
+    nth: 2
+  explanations:
+  - body: This statement sets the on/off state of the TV to False to turn off the TV.<br>self is the instance
+      of the class and self.__on shows whether the TV is on. We start the attribute name by two underscore
+      (self.__on) to prevent accessing the attribute directly from outside of the class.
+- type: explanation
+  location:
+    snippet: 'def set_channel(self, new_channel) :'
+  explanations:
+  - body: This method sets the current channel of the TV to a channel (new_channel) that is specified
+      as the method's parameter. The first argument (named self) is passed in automatically by the interpreter
+      when the method is invoked on an instance of the class.
+  - body: Note that Python automatically fills the first argument in with the instance object that is
+      the implied subject of the method call. Therefore, when this method is invoked on an instance of
+      the class, only the last parameter (new_channel) must be passed to the method.
+- type: explanation
+  location:
+    snippet: 'if self.__on and new_channel >= 1 and new_channel <= 120 :'
+  explanations:
+  - body: We need to perform a test to check whether the conditions for setting the current channel of
+      the TV to the given channel exist. The current channel of the TV could be set to the given channel
+      only when the TV is on and the given channel is within the valid channel range. A valid range for
+      the TV channel is from 1 to 120 (both inclusive).
+  - body: The if statement tests whether the TV is on and the given channel is greater than or equal to
+      1 and less than or equal to 120. If the TV is on and the given channel is greater than or equal
+      to 1 and less than or equal to 120, then the body of this if statement gets executed. Otherwise,
+      the body of this if statement is skipped.
+  - body: Note that the and operator yields the result True if both conditions are True.
+- type: explanation
+  location:
+    snippet: self.__channel = new_channel
+  explanations:
+  - body: This statement sets the current TV channel to the given value (new_channel).<br>self is the
+      instance of the class and self.__channel shows the current TV channel. We start the attribute name
+      by two underscore (self.__channel) to prevent accessing the attribute directly from outside of the
+      class.
+- type: explanation
+  location:
+    snippet: 'def channel_up(self) :'
+  explanations:
+  - body: This method increases the current channel number of the TV by 1. The argument (named self) is
+      passed in automatically by the interpreter when the method is invoked on an instance of the class.<br><br>This
+      method does not have any parameters because the only data that we need to use in this method are
+      the instance attributes of the class (the TV on/off state and the current channel of the TV) and
+      we can directly access the instance attributes from the methods that are inside the class.
+  - body: Note that Python automatically fills the first argument in with the instance object that is
+      the implied subject of the method call. Therefore, when this method is invoked on an instance of
+      the class, no parameter must be passed to the method.
+- type: explanation
+  location:
+    snippet: 'if self.__on and self.__channel < 120 :'
+  explanations:
+  - body: We need to perform a test to check whether the conditions for increasing the current channel
+      number by 1 exist. The current channel of the TV could be increased by 1 only when the TV is on
+      and the current channel is less than 120.
+  - body: The if statement tests whether the TV is on and the current channel is less than 120. If the
+      TV is on and the current channel is less than 120, then the body of this if statement gets executed.
+      Otherwise, the body of this if statement is skipped.
+  - body: Note that the and operator yields the result True if both conditions are True.
+- type: explanation
+  location:
+    snippet: self.__channel += 1
+  explanations:
+  - body: This statement increases the current channel number of the TV by 1.<br>self is the instance
+      of the class and self.__channel shows the current TV channel. We start the attribute name by two
+      underscore (self.__channel) to prevent accessing the attribute directly from outside of the class.
+  - body: The increment operator (+=) adds 1 to the value of instance attribute self.__channel and the
+      result is stored back into the instance attribute self.__channel. Therefore, it is functionally
+      equivalent to the statement self.__channel = self.__channel + 1.
+- type: explanation
+  location:
+    snippet: 'def channel_down(self) :'
+  explanations:
+  - body: This method decrease the current channel number of the TV by 1. The argument (named self) is
+      passed in automatically by the interpreter when the method is invoked on an instance of the class.<br><br>This
+      method does not have any parameters because the only data that we need to use in this method are
+      the instance attributes of the class (the TV on/off state and the current channel of the TV) and
+      we can directly access the instance attributes from the methods that are inside the class.
+  - body: Note that Python automatically fills the first argument in with the instance object that is
+      the implied subject of the method call. Therefore, when this method is invoked on an instance of
+      the class, no parameter must be passed to the method.
+- type: explanation
+  location:
+    snippet: 'if self.__on and self.__channel > 1 :'
+  explanations:
+  - body: We need to perform a test to check whether the conditions for decreasing the current channel
+      number by 1 exist. The channel of the TV could be decreased by 1 only when the TV is on and the
+      current channel is greater than 1.
+  - body: The if statement tests whether the TV is on and the current channel is greater than 1. If the
+      TV is on and the current channel is greater than 1, then the body of this if statement gets executed.
+      Otherwise, the body of this if statement is skipped.
+  - body: Note that the and operator yields the result True if both conditions are True.
+- type: explanation
+  location:
+    snippet: self.__channel -= 1
+  explanations:
+  - body: This statement decreases the channel number of the TV by 1.<br>self is the instance of the class
+      and self.__channel shows the current TV channel. We start the attribute name by two underscore (self.__channel)
+      to prevent accessing the attribute directly from outside of the class.
+  - body: The decrement operator (-=) subtracts 1 from the value of instance attribute self.__channel
+      and the result is stored back into the instance attribute self.__channel. Therefore, it is functionally
+      equivalent to the statement self.__channel = self.__channel - 1.
+- type: explanation
+  location:
+    snippet: 'def get_channel(self) :'
+  explanations:
+  - body: This method returns the current channel of the TV. The argument (named self) is passed in automatically
+      by the interpreter when the method is invoked on an instance of the class.
+  - body: Note that Python automatically fills the first argument in with the instance object that is
+      the implied subject of the method call. Therefore, when this method is invoked on an instance of
+      the class, no parameter must be passed to the method.
+- type: explanation
+  location:
+    snippet: return self.__channel
+  explanations:
+  - body: This statement returns the current channel of the TV.<br>self is the instance of the class and
+      self.__channel is the current channel of the instance. We start the attribute name by two underscore
+      (self.__channel) to prevent accessing the attribute directly from outside of the class.
+- type: explanation
+  location:
+    snippet: 'def is_on(self) :'
+  explanations:
+  - body: This method returns whether the TV is on/off. The argument (named self) is passed in automatically
+      by the interpreter when the method is invoked on an instance of the class.
+  - body: Note that Python automatically fills the first argument in with the instance object that is
+      the implied subject of the method call. Therefore, when this method is invoked on an instance of
+      the class, no parameter must be passed to the method.
+- type: explanation
+  location:
+    snippet: return self.__on
+  explanations:
+  - body: This statement returns whether the TV is on/off.<br>self is the instance of the class and self.__on
+      shows whether the TV is on. We start the attribute name by two underscore (self.__on) to prevent
+      accessing the attribute directly from outside of the class.
+- type: explanation
+  location:
+    snippet: tv1 = TV1()
+  explanations:
+  - body: We create an instance of the class TV1 to demonstrate the creation and use of TV1 instances
+  - body: This statement creates a TV1 instance. The variable tv1 holds a reference to a TV1 instance.
+- type: explanation
+  location:
+    snippet: tv1.turn_on()
+  explanations:
+  - body: This statement invokes the method turn_on of the tv1 to turn on this TV. Note that tv1 is the
+      implied subject (instance) passed to self.
+- type: explanation
+  location:
+    snippet: tv1.set_channel(30)
+  explanations:
+  - body: This statement invokes the method set_channel of the tv1 to set its channel to 30. Note that
+      tv1 is the implied subject (instance) passed to self.
+- type: explanation
+  location:
+    snippet: tv2 = TV1()
+  explanations:
+  - body: This statement creates another TV1 instance. The variable tv2 holds a reference to a TV1 instance.
+- type: explanation
+  location:
+    snippet: tv2.turn_on()
+  explanations:
+  - body: This statement invokes the method turn_on of the tv2 to turn on this TV. Note that tv2 is the
+      implied subject (instance) passed to self.
+- type: explanation
+  location:
+    snippet: tv2.channel_up()
+    nth: 1
+  explanations:
+  - body: This statement invokes the method channel_up of the tv2 to increase the channel number of this
+      TV by 1. Note that tv2 is the implied subject (instance) passed to self.
+- type: explanation
+  location:
+    snippet: tv2.channel_up()
+    nth: 2
+  explanations:
+  - body: This statement invokes the method channel_up of the tv2 to increase the channel number of this
+      TV by 1. Note that tv2 is the implied subject (instance) passed to self.
+- type: explanation
+  location:
+    snippet: tv2.channel_down()
+  explanations:
+  - body: This statement invokes the method channel_down of the tv2 to decrease the channel number of
+      this TV by 1. Note that tv2 is the implied subject (instance) passed to self.
+- type: explanation
+  location:
+    snippet: print("tv1's channel is " + str(tv1.get_channel()))
+  explanations:
+  - body: This statement concatenates the content of the given strings and variables to print the current
+      channel of tv1. To get the current channel of tv1, we invoke the method get_channel of tv1. Note
+      that we do not necessarily have to store the returned value of this method in a variable. We could
+      use the returned value directly in the print statement.
+  - body: Note that We concatenate the current channel of tv1 with the given string using the + operator.
+      The channel is a number and can be concatenated with strings only when it is explicitly converted
+      to a string using the str function.
+  - body: Note that the concatenating and printing are done in the same line. That is, we don't have to
+      store the concatenated string to a new variable at first and then print it in the next line.
+  - body: Note that the + operator creates a new string from the contents of its operands joined. This
+      string will be printed by the print function and followed by the end-of-line character at the end.
+- type: explanation
+  location:
+    snippet: print("tv2's channel is " + str(tv2.get_channel()))
+  explanations:
+  - body: This statement concatenates the content of the given strings and variables to print the current
+      channel of tv2. To get the current channel of tv2, we invoke the method get_channel of tv2. Note
+      that we do not necessarily have to store the returned value of this method in a variable. We could
+      use the returned value directly in the print statement.
+  - body: Note that We concatenate the current channel of tv2 with the given string using the + operator.
+      The channel is a number and can be concatenated with strings only when it is explicitly converted
+      to a string using the str function.
+  - body: Note that the concatenating and printing are done in the same line. That is, we don't have to
+      store the concatenated string to a new variable at first and then print it in the next line.
+  - body: Note that the + operator creates a new string from the contents of its operands joined. This
+      string will be printed by the print function and followed by the end-of-line character at the end.

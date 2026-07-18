@@ -1,0 +1,64 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_functions_multiple_parameters_0
+title: Multiple Parameters
+description: Construct a program that calculates the current savings after getting paid and the total
+  expense.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that calculates the current savings after getting paid and the total expense.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: 'after payday and expenses, you will have: $ 850'
+  console: 'after payday and expenses, you will have: $ 850'
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def budget(rent, utilities, food, paycheck, current_savings):'
+  explanations:
+  - body: We need to first declare the function so that we can call it later. The following lines declare
+      the function budget that takes five parameters and calculates the current savings.
+  - body: Note that all statements following the header line are indented.
+- type: explanation
+  location:
+    snippet: total_expenses = rent + utilities + food
+  explanations:
+  - body: This statement calculates the total expenses
+- type: explanation
+  location:
+    snippet: current_savings = current_savings + paycheck
+  explanations:
+  - body: This statement calculates the total savings after getting paid and before deducting the total
+      expenses.
+- type: explanation
+  location:
+    snippet: current_savings = current_savings - total_expenses
+  explanations:
+  - body: This statement calculates the current saving after deducting the total expenses.
+- type: explanation
+  location:
+    snippet: return (current_savings)
+  explanations:
+  - body: This statement returns the current saving.
+- type: explanation
+  location:
+    snippet: 'print("after payday and expenses, you will have: ""$", budget(900, 150, 300, 700, 1500))'
+  explanations:
+  - body: This statement prints the current savings and invokes the function budget and passes five parameters
+      to the function budget.

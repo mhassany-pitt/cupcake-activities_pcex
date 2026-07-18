@@ -1,0 +1,72 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_phone_age_1
+title: Buying a New Phone
+description: |-
+  Construct a program that determines whether it is time to buy a new phone based on the inputs that it receives from the user. A new phone should be bought in either of the following cases:
+  the phone breaks
+  the screen has a problem
+  the phone has the random shutdown problem
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program that determines whether it is time to buy a new phone based on the inputs that it receives from the user. A new phone should be bought in either of the following cases:
+  the phone breaks
+  the screen has a problem
+  the phone has the random shutdown problem
+executions:
+- title: Sample Run
+  stdin:
+  - '0'
+  - '1'
+  - '1'
+  stdout: |-
+    Enter 1 if the phone is broken, otherwise enter 0:
+    Enter 1 if the phone screen is good, otherwise enter 0:
+    Enter 1 if the phone has the random shutdown problem, otherwise enter 0:
+    Yes! It is time to buy a new phone.
+  console: |-
+    Enter 1 if the phone is broken, otherwise enter 0:
+    Enter 1 if the phone screen is good, otherwise enter 0:
+    Enter 1 if the phone has the random shutdown problem, otherwise enter 0:
+    Yes! It is time to buy a new phone.
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: need_phone = is_broken or not screen_is_good or random_shutdown
+  choices:
+  - snippet: need_phone = is_broken or not screen_is_good or random_shutdown
+    role: solution
+    explanations:
+    - body: We need three conditions to determine if it is the time for a new phone. We use the or operator
+        to combine these conditions. The first condition is to test if the phone is broken, the second
+        condition is to test if the screen has a problem, and the last one is to test if the phone shutdown
+        randomly.
+    - body: We could check whether the screen has a problem by inverting the condition that tests whether
+        the screen is good. We invert the condition by using not operator.
+    - body: Note that the or operator yields the result True if at least one of the conditions is True.
+        Also, the not operator takes a single condition and evaluates to True if that condition is False
+        and to False if the condition is True.
+  - snippet: need_phone = is_broken or not screen_is_good and random_shutdown
+    role: distractor
+  - snippet: need_phone = is_broken and screen_is_good and random_shutdown
+    role: distractor
+  - snippet: need_phone = is_broken and screen_is_good and not random_shutdown
+    role: distractor
+  - snippet: need_phone = is_broken or not screen_is_good or not random_shutdown
+    role: distractor

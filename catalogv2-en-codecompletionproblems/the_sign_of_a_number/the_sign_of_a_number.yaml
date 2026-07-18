@@ -1,0 +1,56 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_if_else_num_1
+title: The Sign of a Number
+description: Construct a program that determines whether an integer is even or odd.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that determines whether an integer is even or odd.
+executions:
+- title: Sample Run
+  stdin:
+  - '8'
+  stdout: "Enter an integer: \nThe integer is even."
+  console: "Enter an integer: \nThe integer is even."
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'if num % 2 == 0 :'
+  choices:
+  - snippet: 'if num % 2 == 0 :'
+    role: solution
+    explanations:
+    - body: We could determine whether the integer is even or odd by performing one test. This test checks
+        whether the integer is even. If the test fails, then we could conclude that the integer is odd.<br><br>We
+        use if statement with the remainder (%) operator to test whether the integer is even. The even
+        integer must be divisible by 2 i.e. when it is divided by 2, there is a zero remainder.
+    - body: The body of this if statement is executed only if the integer is even, that is the remainder
+        when the integer is divided by 2 is zero. Note that the % operator returns the remainder of the
+        division.
+  - snippet: 'if num / 2 == 0 :'
+    role: distractor
+  - snippet: 'if num % 3 == 0 :'
+    role: distractor
+  - snippet: 'if num / 3 == 0 :'
+    role: distractor
+  - snippet: 'if num % 2 != 0 :'
+    role: distractor
+  - snippet: 'if num % 2 == 1 :'
+    role: distractor
+  - snippet: 'if num % 3 == 1 :'
+    role: distractor

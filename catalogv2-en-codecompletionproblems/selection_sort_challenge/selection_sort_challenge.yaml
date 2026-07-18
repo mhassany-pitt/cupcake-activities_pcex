@@ -1,0 +1,48 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_sorting_selection_sort_1
+title: Selection sort Challenge
+description: Descending-order Selection sort operates by finding the maximum element of an array and moving
+  it to the “beginning” of the array, with the “beginning” of the array incrementing forward after each
+  element is placed in its proper position. Construct a function that performs selection sort on the given
+  list, in descending order.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Descending-order Selection sort operates by finding the maximum element of an array and moving
+  it to the “beginning” of the array, with the “beginning” of the array incrementing forward after each
+  element is placed in its proper position. Construct a function that performs selection sort on the given
+  list, in descending order.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '[300, 25, 20, 10, 0, -3]'
+  console: '[300, 25, 20, 10, 0, -3]'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'if data[max_index] < data[j]:'
+  choices:
+  - snippet: 'if data[max_index] < data[j]:'
+    role: solution
+    explanations:
+    - body: We want to sort in descending order, so we check to see if we’ve found an element greater
+        than the current element at maxIndex.
+  - snippet: if max_index < j
+    role: distractor
+  - snippet: if data[max_index] < data[j]
+    role: distractor

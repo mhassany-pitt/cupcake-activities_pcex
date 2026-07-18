@@ -1,0 +1,117 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_pandas_select_1_0
+title: PANDAS Select 1
+description: From a class of 200 students, first select only student ids and their letter grades. Then,
+  select students in 'Section 1'. You're given a dataset as a .csv format, read dataframe using pandas.
+authors:
+- first: Rully
+  last: Hendrawan
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: From a class of 200 students, first select only student ids and their letter grades. Then,
+  select students in 'Section 1'. You're given a dataset as a .csv format, read dataframe using pandas.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Traceback (most recent call last):
+      File "<string>", line 2, in <module>
+    ModuleNotFoundError: No module named 'pandas'
+  console: |-
+    Traceback (most recent call last):
+      File "<string>", line 2, in <module>
+    ModuleNotFoundError: No module named 'pandas'
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: import pandas as pd
+  explanations:
+  - body: This line imports the pandas library, which is essential for data manipulation and analysis
+      in Python. By using 'import pandas as pd', you can refer to pandas functions with the 'pd' prefix,
+      making your code cleaner and easier to read.
+  - body: The syntax 'import pandas as pd' consists of the keyword 'import', followed by the library name
+      'pandas', and an alias 'as pd'. This alias allows you to use 'pd' instead of 'pandas' throughout
+      your code, which is a common practice to save time and space.
+  - body: A common misconception is that you need to import every function from a library. However, importing
+      the entire library and using an alias is more efficient and keeps your namespace clean. Remember
+      that if you forget to import pandas, you'll encounter a 'NameError' when trying to use any pandas
+      functions.
+  - body: Best practice suggests that you always import libraries at the beginning of your script. This
+      makes it clear which external dependencies your code relies on, improving readability and maintainability.
+- type: explanation
+  location:
+    snippet: 'df = pd.read_csv(''science_class.csv'')  # Replace with your actual CSV file'
+  explanations:
+  - body: This line reads the CSV file named 'science_class.csv' into a pandas DataFrame called 'df'.
+      The DataFrame is a two-dimensional, size-mutable, potentially heterogeneous tabular data structure
+      with labeled axes (rows and columns).
+  - body: The syntax 'pd.read_csv()' is a function from the pandas library that takes the file path as
+      an argument and returns a DataFrame. Ensure that the file path is correct and that the file is accessible
+      in your working directory.
+  - body: A common misconception is that the CSV file must be in the same directory as your script. If
+      it's not, you need to provide the full path to the file. Additionally, if the file is not formatted
+      correctly (e.g., missing headers or incorrect delimiters), it may lead to errors or unexpected results.
+  - body: Best practice suggests checking if the file exists before attempting to read it, using a try-except
+      block to handle potential errors gracefully. For example, you could use 'os.path.exists()' to verify
+      the file's presence.
+- type: explanation
+  location:
+    snippet: df_selected = df[['student_id', 'letter_grade']]
+  explanations:
+  - body: This line creates a new DataFrame called 'df_selected' that contains only the columns 'student_id'
+      and 'letter_grade' from the original DataFrame 'df'. This is essential for focusing on the specific
+      data you need for further analysis.
+  - body: The syntax 'df[['student_id', 'letter_grade']]' uses double square brackets to select multiple
+      columns from the DataFrame. The outer brackets indicate that you are creating a new DataFrame, while
+      the inner brackets specify the list of columns you want to include.
+  - body: A common misconception is that using single brackets (df['student_id', 'letter_grade']) will
+      work, but this will raise a KeyError because single brackets are used for selecting a single column
+      or a Series, not multiple columns. Always remember to use double brackets for multiple selections.
+  - body: Best practice suggests that you should always check if the columns you are trying to select
+      exist in the DataFrame to avoid runtime errors. You can do this by using 'df.columns' to list all
+      available columns before selection.
+- type: explanation
+  location:
+    snippet: df_section1 = df[df['section'] == 'Section 1']
+  explanations:
+  - body: This line filters the DataFrame 'df' to create a new DataFrame 'df_section1' that only includes
+      rows where the 'section' column has the value 'Section 1'. This is crucial for isolating the specific
+      group of students you want to analyze.
+  - body: The syntax 'df[df['section'] == 'Section 1']' uses boolean indexing. Here, 'df['section'] ==
+      'Section 1'' creates a boolean Series that is True for rows where the condition is met and False
+      otherwise. The DataFrame 'df' is then indexed with this boolean Series to return only the rows that
+      satisfy the condition.
+  - body: A common misconception is that the condition inside the brackets modifies the original DataFrame.
+      Instead, it creates a new DataFrame based on the filtered results. Remember that 'df' remains unchanged
+      unless you explicitly assign the filtered result back to it.
+  - body: Best practice suggests using clear and descriptive variable names. Instead of 'df_section1',
+      you might consider a name like 'students_section1' to enhance readability and convey the content
+      of the DataFrame more clearly.
+- type: explanation
+  location:
+    snippet: print(df_section1)
+  explanations:
+  - body: This line outputs the contents of the dataframe 'df_section1' to the console, allowing you to
+      see the filtered results of students who are in 'Section 1'.
+  - body: The 'print()' function is a built-in Python function that takes an argument (in this case, the
+      dataframe) and displays it as text in the console. This is useful for debugging and verifying that
+      your data manipulation has worked as intended.
+  - body: A common misconception is that 'print()' can only display strings. However, it can display various
+      data types, including dataframes, lists, and dictionaries. Just ensure that the object you are trying
+      to print is compatible with the function.
+  - body: Best practice suggests that you should format your output for readability, especially when dealing
+      with large dataframes. Consider using 'df_section1.head()' to display only the first few rows, or
+      'df_section1.to_string()' for a more controlled output format.

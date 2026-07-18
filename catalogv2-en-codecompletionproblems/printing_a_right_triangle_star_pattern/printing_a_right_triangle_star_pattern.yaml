@@ -1,0 +1,80 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_star_patterns_1
+title: Printing A Right Triangle Star Pattern
+description: |-
+  An inverted right triangle star pattern of N rows contains N-i+1 asterisks in the i-th row. Construct a program that receives the number of rows in the inverted right triangle star pattern and prints that triangle. For example, when the number of rows in the inverted right triangle star pattern is 5, the program prints the following output:
+  *****
+  ****
+  ***
+  **
+  *
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  An inverted right triangle star pattern of N rows contains N-i+1 asterisks in the i-th row. Write a program that receives the number of rows in the inverted right triangle star pattern and prints that triangle. For example, when the number of rows in the inverted right triangle star pattern is 5, the program prints the following output:
+  *****
+  ****
+  ***
+  **
+  *
+executions:
+- title: Sample Run
+  stdin:
+  - '5'
+  stdout: |-
+    Enter the number of rows in the inverted right triangle star pattern:
+    *****
+    ****
+    ***
+    **
+    *
+  console: |-
+    Enter the number of rows in the inverted right triangle star pattern:
+    *****
+    ****
+    ***
+    **
+    *
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'for j in range(1, N-i+2):'
+  choices:
+  - snippet: 'for j in range(1, N-i+2):'
+    role: solution
+    explanations:
+    - body: This statement is the inner for loop. Each iteration of inner loop will concatenate the string
+        value stored in variable row with one asterisk (*). For the i-th row of the inverted right triangle
+        star pattern, the inner loop will iterate N-i+1 times; thus, creating a row with N-i+1 asterisks.
+        <br><br>For the inner loop, we use the range function because it generates a sequence of numbers
+        for the for loop. Here, we want to repeat the loop N-i+1 times; therefore, we need a sequence
+        that starts at 1 with every integer number up to but not including N-i+2. We get this sequence
+        by calling the function range(1, N-i+2).
+    - body: Note that the name that we choose for the loop variable in the inner loop should be different
+        from the outer for loop. Here, i is the loop variable in the outer loop and j is the loop variable
+        in the inner loop. Also, note that the inner for loop need to be indented with respect to the
+        outer for loop.
+  - snippet: 'for j in range(N, i, -1):'
+    role: distractor
+  - snippet: 'for j in range(N-1, i+1, -1):'
+    role: distractor
+  - snippet: 'for j in range(i, N):'
+    role: distractor
+  - snippet: for j in range(1, N-i+1)
+    role: distractor

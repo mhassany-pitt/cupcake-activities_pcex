@@ -1,0 +1,73 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_nested_if_temperature_1
+title: Warning about the Changes in the Weather Condition
+description: Construct a program that receives the temperature and humidity for today and yesterday and
+  warns the user when it is getting colder or warmer or neither. When it is getting warmer, the program
+  should also warn the user about the changes in humidity. In particular, it should warn the user when
+  today's humidity is more, less, or has not changed compared to yesterday's humidity. Note that the temperature
+  and humidity values could have a decimal point.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that receives the temperature and humidity for today and yesterday and warns
+  the user when it is getting colder or warmer or neither. When it is getting warmer, the program should
+  also warn the user about the changes in humidity. In particular, it should warn the user when today's
+  humidity is more, less, or has not changed compared to yesterday's humidity. Note that the temperature
+  and humidity values could have a decimal point.
+executions:
+- title: Sample Run
+  stdin:
+  - '60.2'
+  - '65.0'
+  - '74'
+  - '70'
+  stdout: "Enter the yesterday's temperature: \nEnter the today's temperature: \nEnter yesterday's humidity:\
+    \ \nEnter today's humidity: \nIt is getting warmer but less humid!"
+  console: "Enter the yesterday's temperature: \nEnter the today's temperature: \nEnter yesterday's humidity:\
+    \ \nEnter today's humidity: \nIt is getting warmer but less humid!"
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'if humidity_today < humidity_yesterday :'
+  choices:
+  - snippet: 'if humidity_today < humidity_yesterday :'
+    role: solution
+    explanations:
+    - body: When it is getting warmer, we need to determine how humidity is changing. There are three
+        possible ways that today's humidity could change compared to yesterday's humidity, it could get
+        more humid, less humid, or the humidity could stay the same.<br>One way that we could compare
+        the humidity values is to first check if today's humidity is less than yesterday's humidity. If
+        it is, then it's getting less humid. If it is not, we could perform another test to check if today's
+        humidity is greater than yesterday's humidity. If it is, then it's getting more humid. If it is
+        not, then we could conclude that today's humidity is the same as yesterday's humidity.<br><br>The
+        conditions that we want to use to compare the humidity values are mutually exclusive (i.e., one
+        and only one of the conditions can be True) therefore, their order does not matter. Also, it is
+        better to use if-else statements instead of sequential if statements because the humidity could
+        change in only one way and once one of the tests evaluates to True, we don't need to perform more
+        tests.
+    - body: We start by checking whether the today's humidity is less than yesterday's humidity. If it
+        is, then the body of this if statement gets executed. Otherwise, the body of this if statement
+        is skipped.
+  - snippet: 'if humidity_today > humidity_yesterday :'
+    role: distractor
+  - snippet: 'if humidity_today >= humidity_yesterday :'
+    role: distractor
+  - snippet: 'if humidity_today < yesterday :'
+    role: distractor
+  - snippet: 'if humidity_today <= yesterday :'
+    role: distractor

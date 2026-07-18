@@ -1,0 +1,78 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_input_2
+title: Receiving Input Integers Until a Certain Condition is Met (Case 3)
+description: Construct a program that receives an integer from the user, outputs that integer, and stops
+  receiving integers when the user enters a negative integer or an integer greater than 1000.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that receives an integer from the user, outputs that integer, and stops receiving
+  integers when the user enters a negative integer or an integer greater than 1000.
+executions:
+- title: Sample Run
+  stdin:
+  - '999'
+  - '1000'
+  - '0'
+  - '1001'
+  stdout: |-
+    Enter an integer:
+    The integer entered is: 999
+    Enter an integer:
+    The integer entered is: 1000
+    Enter an integer:
+    The integer entered is: 0
+    Enter an integer:
+    End of input.
+  console: |-
+    Enter an integer:
+    The integer entered is: 999
+    Enter an integer:
+    The integer entered is: 1000
+    Enter an integer:
+    The integer entered is: 0
+    Enter an integer:
+    End of input.
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'while num >= 0 and num <= 1000 :'
+  choices:
+  - snippet: 'while num >= 0 and num <= 1000 :'
+    role: solution
+    explanations:
+    - body: We need to repeat receiving the integers from the user as long as the user enters an integer
+        that not negative and is not greater than 1000. Therefore, we need to use a loop structure. Since
+        we don't know ahead of time how many times the loop will be repeated, we need to use a while loop.
+        The condition in the while loop tests whether the body of the loop should be repeated, so it should
+        test whether the input integer is non-negative and not greater than 1000.<br><br>We could check
+        whether the input integer is non-negative by checking whether the input integer is greater than
+        or equal to zero. We could check whether the input integer is not greater than 1000 by checking
+        whether the input integer is less than or equal to 1000.
+    - body: The body of the while loop is repeated as long as the user enters an integer that is not negative
+        and is not greater than 1000. The loop terminates when the loop condition evaluates to False,
+        that is when the user enters a negative integer or an integer greater than 1000.
+    - body: Note that the and operator yields the result True if both conditions are True.
+  - snippet: 'while num > 0 and num <= 1000 :'
+    role: distractor
+  - snippet: 'while num >= 0 and num < 1000 :'
+    role: distractor
+  - snippet: 'while num <= 0 or num > 1000 :'
+    role: distractor
+  - snippet: 'while num >= 0 or num <= 1000 :'
+    role: distractor

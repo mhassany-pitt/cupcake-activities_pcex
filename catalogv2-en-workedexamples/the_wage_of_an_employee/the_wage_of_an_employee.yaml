@@ -1,0 +1,108 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_if_else_wage_0
+title: The Wage of an Employee
+description: Construct a program for the payment department of a company to calculate the wage of an employee
+  based on the number of hours that the employee has worked. If an employee works over 40 hours in a week,
+  the payment amount should take into account the overtime hours. The overtime hours are paid at a rate
+  one and a half times the regular pay rate.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program for the payment department of a company to calculate the wage of an employee
+  based on the number of hours that the employee has worked. If an employee works over 40 hours in a week,
+  the payment amount should take into account the overtime hours. The overtime hours are paid at a rate
+  one and a half times the regular pay rate.
+executions:
+- title: Sample Run
+  stdin:
+  - '41'
+  stdout: "Enter the number of hours that the employee has worked: \nWage: 342.375"
+  console: "Enter the number of hours that the employee has worked: \nWage: 342.375"
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: rate = 8.25
+  explanations:
+  - body: We need variable rate to store the regular hourly pay rate. We set it to 8.25, assuming that
+      the employee receives $8.25 for each hour of work.
+- type: explanation
+  location:
+    snippet: standard = 40
+  explanations:
+  - body: We need variable standard to store the standard hours in a work week. We set it to 40.
+- type: explanation
+  location:
+    snippet: 'text = input("Enter the number of hours that the employee has worked: ")'
+  explanations:
+  - body: We need to read and process the input value that the user enters. To read the input value from
+      the user, we need to use the input() function. This statement prompts the user to enter the number
+      of hours that the employee has worked, then reads the text entered by the user and places it in
+      the variable text. The value that will be stored in variable text is a string.
+- type: explanation
+  location:
+    snippet: hours = int(text)
+  explanations:
+  - body: We need to convert the input text to its integer representation. For this purpose, we use the
+      conversion function int().
+  - body: Note that the conversion to integer can only be done if the string actually presents a number.
+      If the input number is a float, the int() function cuts off the fractional part of the floating-point
+      number to create an integer.
+- type: explanation
+  location:
+    snippet: 'if hours > standard :'
+  explanations:
+  - body: To determine whether we should pay overtime to the employee, we need to test whether the employee
+      has worked more than the standard hours in a work week. If the employee has worked more than the
+      standard hours in a work week, then the payment should take into account the overtime hours and
+      we need to pay overtime at "time and a half" of the regular rate of pay. Otherwise, we pay the employee
+      based on the number of hours that the employee has worked and the regular pay rate.
+  - body: The if statement tests whether the number of hours entered by the user is greater than the standard
+      hours in a work week. If the number of hours is greater than the standard hours in a work week,
+      then the body of this if statement gets executed. Otherwise, the body of this if statement is skipped.
+- type: explanation
+  location:
+    snippet: wage = standard * rate + ( hours - standard ) * ( rate * 1.5 )
+  explanations:
+  - body: When the number of hours is greater than the standard hours in a work week, we need to pay the
+      employee for the standard hours in a work week plus the overtime hours that the employee has worked.<br><br>The
+      standard hours in a work week are paid at a regular pay rate. The overtime hours are paid at a rate
+      one and a half times the regular pay rate. Therefore, the employee’s overtime rate of pay is the
+      regular pay rate multiplied by 1.5.
+- type: explanation
+  location:
+    snippet: 'else :'
+  explanations:
+  - body: If the above if test fails (i.e., when the employee has worked less than or equal to the standard
+      hours in a work week), we should calculate the wage based on the number of hours that the employee
+      has worked and the regular pay rate.
+  - body: The statement inside the body of this else statement is executed when the if condition is false,
+      i.e., the number of hours is less than or equal to the standard hours in a work week. Otherwise,
+      the body of this else statement is skipped.
+- type: explanation
+  location:
+    snippet: wage = hours * rate
+  explanations:
+  - body: When there are no overtime hours, the wage is calculated based on the number of hours that the
+      employee has worked and the regular pay rate.
+- type: explanation
+  location:
+    snippet: print("Wage:", wage)
+  explanations:
+  - body: This statement prints to the default standard output stream the text "Wage:" and the value of
+      variable wage.<br>The printed text shows the arguments of the print function separated by the default
+      delimiter (i.e., single space character) and followed by the end-of-line character at the end.

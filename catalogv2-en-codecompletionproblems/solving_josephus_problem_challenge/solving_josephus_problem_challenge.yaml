@@ -1,0 +1,71 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_queue_queue_1
+title: Solving Josephus Problem Challenge
+description: Construct a program by using Queue structure to solve a Josephus problem. Josephus problem
+  is a counting-out game. N people are in a circle, labeled as 1, 2, 3, … ,n. Given a skip number k, counting
+  from the person labeled as 1, in every round, after k number of people are skipped, the next person
+  will be counted out of the circle. Repeat the process with the remaining people until only one person
+  remains. Then free the last one person. The program should return the last freed  person.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program by using Queue structure to solve a Josephus problem. Josephus problem is a
+  counting-out game. N people are in a circle, labeled as 1, 2, 3, … ,n. Given a skip number k, counting
+  from the person labeled as 1, in every round, after k number of people are skipped, the next person
+  will be counted out of the circle. Repeat the process with the remaining people until only one person
+  remains. Then free the last one person. The program should return the last freed  person.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: Brad
+  console: Brad
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: q.enqueue(name_list[i])
+  choices:
+  - snippet: q.enqueue(name_list[i])
+    role: solution
+    explanations:
+    - body: This statement invokes the method enqueue() of q to pass the each element from the list parameter
+        and add it to the queue. Note that q is the implied subject (instance) passed to self.
+  - snippet: q.dequeue(name_list[i])
+    role: distractor
+- type: blank
+  location:
+    snippet: temp = q.dequeue()
+  choices:
+  - snippet: temp = q.dequeue()
+    role: solution
+    explanations:
+    - body: We create a variable temp to store the dequeued elements. We invokes the method dequeue()
+        of q to remove the elements from the queue. Note that q is the implied subject (instance) passed
+        to self.
+  - snippet: temp=q.enqueue()
+    role: distractor
+  - snippet: q.dequeue(temp)
+    role: distractor
+- type: blank
+  location:
+    snippet: q.enqueue(temp)
+  choices:
+  - snippet: q.enqueue(temp)
+    role: solution
+    explanations:
+    - body: This statement invokes the method enqueue() of q to pass the previous dequeued element back
+        to the queue. Note that q is the implied subject (instance) passed to self.

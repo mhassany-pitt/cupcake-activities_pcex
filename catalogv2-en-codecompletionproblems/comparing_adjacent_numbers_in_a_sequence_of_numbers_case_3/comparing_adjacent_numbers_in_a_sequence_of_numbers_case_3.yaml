@@ -1,0 +1,92 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_check_adjacent_2
+title: Comparing Adjacent Numbers in a Sequence of Numbers (Case 3)
+description: |-
+  Construct a program that checks whether a sequence of non-zero numbers, entered one at a time, contains adjacent numbers in ascending order. Numbers are said to be in ascending order when they are arranged from the smallest to the largest number. For example, 5, 9, 13, 17 and 21 are arranged in ascending order.
+  Note that you need to think what value should the program use to indicate the end of the input.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: |-
+  Write a program that checks whether a sequence of non-zero numbers, entered one at a time, contains adjacent numbers in ascending order. Numbers are said to be in ascending order when they are arranged from the smallest to the largest number. For example, 5, 9, 13, 17 and 21 are arranged in ascending order.
+  Note that you need to think what value should the program use to indicate the end of the input.
+executions:
+- title: Sample Run
+  stdin:
+  - '-10'
+  - '-30'
+  - '-2'
+  - '-9'
+  - '-10'
+  - '3'
+  - '5'
+  - '6'
+  - '-1'
+  - '0'
+  stdout: "Enter a number: \nEnter a number: \nEnter a number: \n-30.0 and -2.0 are in ascending order.\n\
+    Enter a number: \nEnter a number: \nEnter a number: \n-10.0 and 3.0 are in ascending order.\nEnter\
+    \ a number: \n3.0 and 5.0 are in ascending order.\nEnter a number: \n5.0 and 6.0 are in ascending\
+    \ order.\nEnter a number: \nEnter a number:"
+  console: "Enter a number: \nEnter a number: \nEnter a number: \n-30.0 and -2.0 are in ascending order.\n\
+    Enter a number: \nEnter a number: \nEnter a number: \n-10.0 and 3.0 are in ascending order.\nEnter\
+    \ a number: \n3.0 and 5.0 are in ascending order.\nEnter a number: \n5.0 and 6.0 are in ascending\
+    \ order.\nEnter a number: \nEnter a number:"
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'while num != 0 :'
+  choices:
+  - snippet: 'while num != 0 :'
+    role: solution
+    explanations:
+    - body: We need to repeat receiving the number from the user as long as the user enters a non-zero
+        number. Therefore, we need to use a loop structure. Since we don't know ahead of time how many
+        times the loop will be repeated, we need to use a while loop. The condition in the while loop
+        tests whether the body of the loop should be repeated, so it should test whether the input number
+        is not equal to the value that indicates the end of the input. In this program, we designate 0
+        to indicate the end of the input because it is outside the normal range of numbers that the user
+        will enter.
+    - body: The body of the while loop is repeated as long as the user enters a number that is different
+        from 0. The loop terminates when the loop condition evaluates to False, that is when the user
+        enters 0.
+- type: blank
+  location:
+    snippet: 'if num != 0 and num > previous :'
+  choices:
+  - snippet: 'if num != 0 and num > previous :'
+    role: solution
+    explanations:
+    - body: We need to test if the number that the user entered is different from 0 because 0 indicates
+        the end of the input and we need to skip it. We also need to test whether the number that the
+        user entered and its previous number are in ascending order. To determine if the two number are
+        in ascending order we need to check if the value of variable num is greater than the value of
+        variable previous.
+    - body: If the number that the user entered is different from zero and greater than its previous number,
+        then the body of this if statement gets executed. Otherwise, the body of this if statement is
+        skipped.
+    - body: Note that the and operator yields the result True if both conditions are True.
+  - snippet: 'if num != -1 and previous > num :'
+    role: distractor
+  - snippet: 'if num = 0 or num > previous :'
+    role: distractor
+  - snippet: 'if num > previous :'
+    role: distractor
+  - snippet: 'if previous > num :'
+    role: distractor
+  - snippet: 'if num != 0 and previous > num :'
+    role: distractor

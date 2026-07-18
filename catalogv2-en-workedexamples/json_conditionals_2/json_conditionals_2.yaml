@@ -1,0 +1,75 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_json_conditionals_2_0
+title: JSON Conditionals 2
+description: You're provide a JSON list of different books, find the ones with greater than 300 pages.
+authors:
+- first: Rully
+  last: Hendrawan
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: You're provide a JSON list of different books, find the ones with greater than 300 pages.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '[''The Great Adventure'', ''Epic Saga'']'
+  console: '[''The Great Adventure'', ''Epic Saga'']'
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: long_fiction_books = []
+  explanations:
+  - body: This line initializes an empty list named 'long_fiction_books'. You will use this list to store
+      the titles of books that meet the criteria of being fiction and having more than 300 pages.
+  - body: The syntax 'long_fiction_books = []' creates a new list. The square brackets '[]' denote an
+      empty list in Python, which is a mutable data structure that can hold multiple items.
+  - body: A common misconception is that you need to pre-fill the list with values. However, initializing
+      it as empty is essential because you will be adding items to it dynamically based on the conditions
+      checked in the loop that follows.
+  - body: Best practice suggests that you should always initialize your lists (or any data structures)
+      before using them. This prevents potential errors related to referencing an undefined variable and
+      ensures that your code is clear and understandable.
+- type: explanation
+  location:
+    snippet: 'if book["genre"] == "Fiction" and book["pages"] > 300:'
+  explanations:
+  - body: 'This line checks two conditions for each book in the ''book_data'' list: whether the book''s
+      genre is ''Fiction'' and whether the number of pages is greater than 300. If both conditions are
+      true, the code inside the if statement will execute.'
+  - body: The syntax 'book['genre']' accesses the value associated with the 'genre' key in the current
+      book dictionary. Similarly, 'book['pages']' accesses the number of pages. The '==' operator checks
+      for equality, while '>' checks if the number of pages exceeds 300.
+  - body: A common misconception is that the 'and' operator can be confused with 'or'. Remember that 'and'
+      requires both conditions to be true for the if statement to execute, while 'or' would execute if
+      at least one condition is true. This distinction is crucial for correct logic flow.
+  - body: Best practice suggests using clear and descriptive variable names. In this case, 'book' is appropriate,
+      but if your data structure becomes more complex, consider using more descriptive names to enhance
+      readability.
+- type: explanation
+  location:
+    snippet: long_fiction_books.append(book["title"])
+  explanations:
+  - body: This line appends the title of the current book to the 'long_fiction_books' list if the conditions
+      in the previous line are met. This is crucial for collecting the titles of all fiction books that
+      have more than 300 pages.
+  - body: The syntax 'long_fiction_books.append(book["title"])' uses the 'append' method of the list object
+      to add a new element. The 'book["title"]' accesses the 'title' key of the current book dictionary,
+      retrieving the title as a string.
+  - body: A common misconception is that you might think 'append' modifies the original list instead of
+      adding a new element. Remember, 'append' does not return a new list; it modifies the existing list
+      in place.
+  - body: Best practice suggests that you should ensure the list is initialized before appending items
+      to it, as done here with 'long_fiction_books = []'. Additionally, consider using meaningful variable
+      names that clearly indicate their purpose.

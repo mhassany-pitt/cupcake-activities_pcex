@@ -1,0 +1,101 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_search_binary_recursive_0
+title: Recursive Binary Search
+description: 'Construct a function that uses recursive binary search to find if a specific value is in
+  a list (known as a "key"). Recall: Binary search uses the "Divide and Conquer" strategy. Given a list
+  of ordered integers, the key is searched by dividing the data list in half and only searching in the
+  half that contains the key, and repeating the process until the key is found and the index of the key
+  is returned. If the key is not found, -1 is returned.'
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: 'Construct a function that uses recursive binary search to find if a specific value is in a
+  list (known as a "key"). Recall: Binary search uses the "Divide and Conquer" strategy. Given a list
+  of ordered integers, the key is searched by dividing the data list in half and only searching in the
+  half that contains the key, and repeating the process until the key is found and the index of the key
+  is returned. If the key is not found, -1 is returned.'
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: '7'
+  console: '7'
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def binary_search(data, key, low, high):'
+  explanations:
+  - body: The binary_search function takes in several arguments. "data" represents the list to be searched
+      through, "key" is the value you are looking for, and "low" and "high" are boundaries within the
+      list where you know the key is.
+- type: explanation
+  location:
+    snippet: guess = (high + low) // 2
+  explanations:
+  - body: '"guess" represents the index within the data list where you make your first guess at where
+      the key may be located. We know the key has to be either within the first half of "data", or the
+      second half. If the guess is higher than the key, we will only continue the search in the first
+      half of the list. If the guess is lower than the key, we will only continue the search in the latter
+      half'
+- type: explanation
+  location:
+    snippet: 'if low >= high:'
+  explanations:
+  - body: 'Terminating condition 1: If the lower boundary is greater than or equal to the high boundary,
+      it means the entire list has been searched and that the key is not in the list.'
+- type: explanation
+  location:
+    snippet: return -1
+  explanations:
+  - body: -1 is returned as a convention, when the key is not found.
+- type: explanation
+  location:
+    snippet: 'elif key == data[guess]:'
+  explanations:
+  - body: 'Terminating condition 2: If the key value matches the value in "guess"'' position in "data",
+      we have found the key.'
+- type: explanation
+  location:
+    snippet: return data.index(key)
+  explanations:
+  - body: The index of the key in "data" is returned.
+- type: explanation
+  location:
+    snippet: 'else:'
+    nth: 1
+  explanations:
+  - body: Executes if the key has not yet been found, and "data" has not been completely searched through.
+- type: explanation
+  location:
+    snippet: 'if (key < data[guess]):'
+  explanations:
+  - body: If the key is less than the value guessed, "high" is set to "guess" because the key can only
+      be in the first half of the list.
+- type: explanation
+  location:
+    snippet: 'else:'
+    nth: 2
+  explanations:
+  - body: If the key is greater than the value guessed, "low" is set to "guess + 1" because the key can
+      only be in the latter half of the list. +1 is added to "low" so that the "low" and "high" will equal
+      if the list has been completely searched.
+- type: explanation
+  location:
+    snippet: return binary_search(data, key, low, high)
+  explanations:
+  - body: The binary_search function is recursively called, but passing in a more restricted range for
+      "low" and "high".

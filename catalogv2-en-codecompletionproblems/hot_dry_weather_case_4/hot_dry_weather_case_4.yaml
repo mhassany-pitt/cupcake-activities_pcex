@@ -1,0 +1,64 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_hot_dry_3
+title: Hot-Dry Weather (Case 4)
+description: Construct a program that determines whether it is either too hot or too dry but not both
+  based on the inputs that it receives from the user.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that determines whether it is either too hot or too dry but not both based
+  on the inputs that it receives from the user.
+executions:
+- title: Sample Run
+  stdin:
+  - '0'
+  - '1'
+  stdout: |-
+    Enter 1 if it is too hot, otherwise enter 0:
+    Enter 1 if it is too dry, otherwise enter 0:
+    Yes! it is either too hot or too dry but not both.
+  console: |-
+    Enter 1 if it is too hot, otherwise enter 0:
+    Enter 1 if it is too dry, otherwise enter 0:
+    Yes! it is either too hot or too dry but not both.
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: result1 = ( too_hot or too_dry ) and not ( too_hot and too_dry )
+  choices:
+  - snippet: result1 = ( too_hot or too_dry ) and not ( too_hot and too_dry )
+    role: solution
+    explanations:
+    - body: We need one condition to determine whether it is either too hot or too dry and another condition
+        to test if it is not both too dry and too hot. We use the and operator to combine these two conditions.
+    - body: '(too_hot or too_dry): We need to combine the too_hot and too_dry conditions using the or
+        operator because it yields True when at least one condition is True.<br><br>not ( too_hot and
+        too_dry ): We check if it''s not both too_hot and too_dry by inverting the condition that checks
+        if it''s both too hot and too dry. We invert the condition by using not operator.'
+    - body: Note that the and operator yields the result True if both conditions are True. The or operator,
+        on the other hand, yields the result True if at least one of the conditions is True. Also, note
+        that the not operator takes a single condition and evaluates to True if that condition is False
+        and to False if the condition is True.
+  - snippet: result1 = not ( too_hot or too_dry )
+    role: distractor
+  - snippet: result1 = ( too_hot or too_dry ) and ( too_hot and too_dry )
+    role: distractor
+  - snippet: result1 = ( too_hot or too_dry) and not ( too_hot or too_dry )
+    role: distractor
+  - snippet: result1 = ( too_hot or not too_dry) and not ( too_hot and too_dry )
+    role: distractor

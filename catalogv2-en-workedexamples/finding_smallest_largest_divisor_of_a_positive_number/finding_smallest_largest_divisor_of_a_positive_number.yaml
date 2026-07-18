@@ -1,0 +1,75 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_divisor_0
+title: Finding Smallest/Largest Divisor of a Positive Number
+description: Construct a program that finds the smallest divisor (other than 1) of a positive number.
+  For example, the smallest divisor of 4 is 2.
+authors:
+- first: Roya
+  last: Hosseini
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that finds the smallest divisor (other than 1) of a positive number. For example,
+  the smallest divisor of 4 is 2.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: The smallest divisor of 15 is 3
+  console: The smallest divisor of 15 is 3
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: num = 15
+  explanations:
+  - body: We define variable num to store the number that we want to find its smallest divisor. We could
+      initialize it to any positive integer greater than 1. In this program, we initialize variable num
+      to 15.
+- type: explanation
+  location:
+    snippet: divisor = 2
+  explanations:
+  - body: We define variable divisor to store the smallest divisor of the number. We initialize variable
+      divisor by 2 because we want to find the smallest divisor except 1.
+- type: explanation
+  location:
+    snippet: 'while num % divisor != 0 :'
+  explanations:
+  - body: We need to increment the divisor repeatedly as long as the divisor is not a factor of the number.
+      Therefore, we need to use a loop structure. Since we don't know ahead of time how many times the
+      loop will be repeated, we need to use a while loop. The condition in the while loop tests whether
+      the body of the loop should be repeated, so it should test whether the divisor is not a factor of
+      the number.<br><br>We could check whether the divisor is not a factor of the number by computing
+      the remainder of the division of the number by the divisor.
+  - body: The body of the while loop is repeated as long as the divisor is not a factor of the number.
+      The loop terminates when the loop condition evaluates to False, that is when the divisor is a factor
+      of the number.<br>In this program, the while loop executes once and updates the value of divisor
+      to 3. After that, the loop stops repeating because 3 is a factor of 15 and the loop test will be
+      evaluated as False.
+  - body: Also note that the % operator returns the remainder of the division.
+- type: explanation
+  location:
+    snippet: divisor += 1
+  explanations:
+  - body: When the divisor is not a factor of the number, we increment the variable divisor by 1.
+  - body: The += operator adds 1 to the value of variable divisor and the result is stored back into the
+      variable divisor. Therefore, it is functionally equivalent to the statement divisor = divisor +
+      1.
+- type: explanation
+  location:
+    snippet: print("The smallest divisor of", num, "is", divisor)
+  explanations:
+  - body: This statement prints to the default standard output stream the smallest divisor of the number.<br>The
+      printed text shows the arguments of the print function separated by the default delimiter (i.e.,
+      single space character) and followed by the end-of-line character at the end.

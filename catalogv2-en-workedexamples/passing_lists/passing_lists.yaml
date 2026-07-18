@@ -1,0 +1,75 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_references_passing_lists_0
+title: Passing Lists
+description: Construct a function that calculate square values of the list’s elements.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Construct a function that calculate square values of the list’s elements.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    [4, 9, 16, 25]
+    [4, 9, 16, 25]
+  console: |-
+    [4, 9, 16, 25]
+    [4, 9, 16, 25]
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'def square(list):'
+  explanations:
+  - body: We need to first declare the function so that we can call it later. The following lines declare
+      the function square that takes a list and square each element.
+  - body: Note that all statements following the header line are indented.
+- type: explanation
+  location:
+    snippet: 'for i in range(len(list)):'
+  explanations:
+  - body: We want to iterate over the list and access each element by using index.
+- type: explanation
+  location:
+    snippet: list[i] *= list[i]
+  explanations:
+  - body: This statement converts each element to its squared value.
+- type: explanation
+  location:
+    snippet: print(list)
+  explanations:
+  - body: This statement prints the list after converting all the original values to squared values.
+- type: explanation
+  location:
+    snippet: num_list = [2,3,4,5]
+  explanations:
+  - body: This statement initiates the original list
+- type: explanation
+  location:
+    snippet: square(num_list)
+  explanations:
+  - body: This statement calls the square function and pass the list num_list as its argument.
+  - body: Note that the function call must be done after the function is declared.
+- type: explanation
+  location:
+    snippet: print(num_list)
+  explanations:
+  - body: This statement prints the list num_list.
+  - body: 'The list has two characteristics: subscriptability and mutability. Subscriptability indicates
+      that a list can be accessed by index positions; mutability indicates that a list structure can be
+      changed in place rather than requiring reassignment. When passing a list and access it by its index,
+      we are also changing its original values'

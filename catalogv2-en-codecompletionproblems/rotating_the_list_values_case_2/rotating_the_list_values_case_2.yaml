@@ -1,0 +1,83 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_list_rotate_1
+title: Rotating the List Values (Case 2)
+description: Construct a program that has a function that receives a list of values and returns the list
+  rotated to the left by 2 position so that the value at the front of the list goes to the second last
+  position, the second value of the list goes to the back, and the order of the other values stays the
+  same. For example, if the list is [1, 2, 3, 4, 5, 6], the program will change it to [3, 4, 5, 6, 1,
+  2].
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that has a function that receives a list of values and returns the list rotated
+  to the left by 2 position so that the value at the front of the list goes to the second last position,
+  the second value of the list goes to the back, and the order of the other values stays the same. For
+  example, if the list is [1, 2, 3, 4, 5, 6], the program will change it to [3, 4, 5, 6, 1, 2].
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Original list: [3, 8, 9, 8, 7, 5]
+    Rotated list: [9, 8, 7, 5, 3, 8]
+  console: |-
+    Original list: [3, 8, 9, 8, 7, 5]
+    Rotated list: [9, 8, 7, 5, 3, 8]
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: lst[i] = lst[i + 2]
+  choices:
+  - snippet: lst[i] = lst[i + 2]
+    role: solution
+    explanations:
+    - body: We need to shift value at index i+2 to value at index i. We do this by setting the value at
+        index i to the value at index i+2.
+  - snippet: lst[i] = lst[i - 2]
+    role: distractor
+  - snippet: lst[i - 2] = lst[i]
+    role: distractor
+  - snippet: lst[i + 2] = lst[i]
+    role: distractor
+- type: blank
+  location:
+    snippet: lst[len(lst)-2] = first
+  choices:
+  - snippet: lst[len(lst)-2] = first
+    role: solution
+    explanations:
+    - body: After shifting the values to the left, we’ve made room at the end of the list for the first
+        value that used to be at the front of the list (which is currently stored in local variable called
+        first). This statement copies the value of variable first to the index of the second last element
+        in the list.
+    - body: Note that len(lst)-2 is the index of the second last element in the list.
+  - snippet: lst[len(lst)-1] = first
+    role: distractor
+- type: blank
+  location:
+    snippet: lst[len(lst)-1] = second
+  choices:
+  - snippet: lst[len(lst)-1] = second
+    role: solution
+    explanations:
+    - body: After shifting the values to the left, we’ve made room at the end of the list for the second
+        value that used to be at the front of the list (which is currently stored in local variable called
+        second). This statement copies the value of variable second to the index of the last element in
+        the list.
+    - body: Note that len(lst)-1 is the index of the last element in the list.
+  - snippet: lst[len(lst)-2] = second
+    role: distractor

@@ -1,0 +1,78 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_digits_2
+title: Processing the Digits of an Integer (Case 3)
+description: Construct a program that reverses the digits of an integer mathematically.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that reverses the digits of an integer mathematically.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    last digit: 4 , reverse: 4 , integer: 123
+    last digit: 3 , reverse: 43 , integer: 12
+    last digit: 2 , reverse: 432 , integer: 1
+    last digit: 1 , reverse: 4321 , integer: 0
+    The reversed integer is: 4321
+  console: |-
+    last digit: 4 , reverse: 4 , integer: 123
+    last digit: 3 , reverse: 43 , integer: 12
+    last digit: 2 , reverse: 432 , integer: 1
+    last digit: 1 , reverse: 4321 , integer: 0
+    The reversed integer is: 4321
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'while num > 0 :'
+  choices:
+  - snippet: 'while num > 0 :'
+    role: solution
+    explanations:
+    - body: We need to process the digits of the integer from right to left and print them. Therefore,
+        we need to use a loop structure. Since we don't know ahead of time how many times the loop will
+        be repeated, we need to use a while loop. The condition in the while loop tests whether the body
+        of the loop should be repeated, so it should test whether there are more digits left that we have
+        not processed yet.<br><br>We could check whether the are more digits left by checking whether
+        the variable num, which gets updated in the body of the loop, is greater than zero. If variable
+        num is greater than zero, then it must have at least one digit, and in that case, the body of
+        the do loop will be repeated again.
+    - body: The body of the while loop is repeated as long as there are more digits left that we have
+        not processed yet. The loop terminates when the loop condition evaluates to False, that is when
+        we run out of digits to process.
+  - snippet: num = num // 100
+    role: distractor
+  - snippet: num = num // 1000
+    role: distractor
+- type: blank
+  location:
+    snippet: reverse = (reverse * 10) + last_digit
+  choices:
+  - snippet: reverse = (reverse * 10) + last_digit
+    role: solution
+    explanations:
+    - body: To build the reversed number we need to append the last digit that we extracted onto the end
+        of the reversed integer. Remember that both the last digit and the reversed integer are numbers
+        so we can not simply concatenate them. Therefore, we need to first multiply the reversed integer
+        by 10 so that the ones column becomes the tens column, the tens column becomes the hundreds column,
+        and so on. This also leaves us with a new ones column where we can add the last digit. After the
+        reversed integer is multiplied by 10, we need to add the last digit to the reversed integer.
+  - snippet: reverse = (reverse * 100) + last_digit
+    role: distractor
+  - snippet: reverse = reverse + last_digit
+    role: distractor

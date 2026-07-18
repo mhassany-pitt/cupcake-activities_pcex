@@ -1,0 +1,58 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_references_passing_values_1
+title: Passing Values Challenge
+description: Construct a program that convert Celsius to Fahrenheit.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that convert Celsius to Fahrenheit.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    The Fahrenheit is: 89.6
+    The Celsius is: 32
+  console: |-
+    The Fahrenheit is: 89.6
+    The Celsius is: 32
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: print("The Fahrenheit is:", convert(c))
+  choices:
+  - snippet: print("The Fahrenheit is:", convert(c))
+    role: solution
+    explanations:
+    - body: This statement prints converted Fahrenheit value. In order to get c’s Fahrenheit value, we
+        call the function convert and pass the value c as its argument.
+  - snippet: print("The Fahrenheit is:", c)
+    role: distractor
+  - snippet: print("The Fahrenheit is:", F)
+    role: distractor
+- type: blank
+  location:
+    snippet: print("The Celsius is:",c)
+  choices:
+  - snippet: print("The Celsius is:",c)
+    role: solution
+    explanations:
+    - body: This statement prints the original Celsius value
+  - snippet: print("The Celsius is:",convert(c))
+    role: distractor
+  - snippet: print("The Celsius is:",F)
+    role: distractor

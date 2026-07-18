@@ -1,0 +1,56 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_pythagorean_theorem__664e23fd91363872f0ba32ea_0
+title: Pythagorean Theorem (Case 2)
+description: Suppose that the user provides two input values for a right-angle triangle. The first input
+  is for the length of an adjacent side in the triangle and the second input is for the hypotenuse of
+  that triangle. The program calculates the second adjacent side of the triangle using these two input
+  values. Use the Pythagorean theorem (c^2 = a^2 + b^2) to find the length of the second adjacent side.
+authors:
+- first: Mohammad
+  last: Hassany
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Suppose that the user provides two input values for a right-angle triangle. The first input
+  is for the length of an adjacent side in the triangle and the second input is for the hypotenuse of
+  that triangle. The program calculates the second adjacent side of the triangle using these two input
+  values. Use the Pythagorean theorem (c^2 = a^2 + b^2) to find the length of the second adjacent side.
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: 'Enter the length of side A:'
+  console: 'Enter the length of side A:'
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: side_B = (square_hypotenuse - square_side_A) ** 0.5
+  choices:
+  - snippet: side_B = (square_hypotenuse - square_side_A) ** 0.5
+    role: solution
+    explanations:
+    - body: We use Pythagorean theorem to calculate the length of the triangle's other adjacent side.
+        We know that hypotenuse ** 2 = side_A ** 2 + side_B ** 2. Therefore, side_B ** 2 = hypotenuse
+        ** 2 - side_A ** 2. We could take a square root of both sides of this equation to get the length
+        of the other adjacent side in the triangle, that is:<br>side_B = ( hypotenuse ** 2 - side_A **
+        2 ) ** 0.5.
+    - body: Note that we could take a square root of a number by raising that number to the power of 0.5.
+  - snippet: side_B = ( square_hypotenuse + square_side_A ) ** 0.5
+    role: distractor
+  - snippet: side_B = square_hypotenuse ** 0.5 + square_side_A ** 2
+    role: distractor
+  - snippet: side_B = ( square_side_A ** 2 - square_hypotenuse ** 2 ) ** 0.5
+    role: distractor
+  - snippet: side_B = ( square_side_A - square_hypotenuse ) ** 2
+    role: distractor

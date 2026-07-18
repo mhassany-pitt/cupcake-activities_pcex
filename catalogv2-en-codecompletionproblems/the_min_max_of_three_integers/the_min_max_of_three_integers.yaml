@@ -1,0 +1,55 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_nested_if_min_max_1
+title: The Min/Max of Three Integers
+description: Construct a program that determines the largest of the three integer values entered by the
+  user.
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that determines the largest of the three integer values entered by the user.
+executions:
+- title: Sample Run
+  stdin:
+  - '43'
+  - '69'
+  - '26'
+  stdout: "Enter the first integer: \nEnter the second integer: \nEnter the third integer: \nMaximum value:\
+    \ 69"
+  console: "Enter the first integer: \nEnter the second integer: \nEnter the third integer: \nMaximum\
+    \ value: 69"
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'if num1 > num2 :'
+  choices:
+  - snippet: 'if num1 > num2 :'
+    role: solution
+    explanations:
+    - body: We find the maximum by finding the largest of the first two integers and then comparing the
+        largest value with the third integer. Here, we perform the first test (finding largest of the
+        first two integers) by comparing num1 and num2.
+    - body: If num1 is the largest, then the body of this if statement gets executed. Otherwise, the body
+        of this if statement is skipped.
+  - snippet: 'if num1 < num2 :'
+    role: distractor
+  - snippet: 'if num1 > num3 :'
+    role: distractor
+  - snippet: 'if num1 != num3 :'
+    role: distractor
+  - snippet: 'if num2 != num3 :'
+    role: distractor

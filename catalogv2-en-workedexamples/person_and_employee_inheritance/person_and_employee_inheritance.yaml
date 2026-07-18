@@ -1,0 +1,139 @@
+$schema: https://learning-contents.org/schemas/worked-example/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: we_py_classes_inheritance_0
+title: Person and Employee Inheritance
+description: 'Construct two classes: one represents a Person and another one represents an Employee that
+  should be defined as Person''s child class. The classes should define the functions to check if the
+  person is an employee and return the person''s name.'
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: worked-example
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: 'Construct two classes: one represents a Person and another one represents an Employee that
+  should be defined as Person''s child class. The classes should define the functions to check if the
+  person is an employee and return the person''s name.'
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Melody False
+    Linda True
+  console: |-
+    Melody False
+    Linda True
+  stderr: ''
+  status: pass
+elements:
+- type: explanation
+  location:
+    snippet: 'class Person():'
+  explanations:
+  - body: We define the class named Person to represent a person.
+- type: explanation
+  location:
+    snippet: 'def __init__(self, name):'
+  explanations:
+  - body: We want to initialize the attributes of the Person when we create an instance of the Person
+      class. We do this by defining an __init__ method, which is run automatically by Python each time
+      an instance is created. This method passes the name of a person that is specified as the method's
+      parameter. The argument (named self) is passed in automatically by the interpreter when the method
+      is invoked on an instance of the class.
+  - body: Note that Python automatically fills the first argument in with the instance object that is
+      the implied subject of the method call. Therefore, when this method is invoked on an instance of
+      the class, no parameter must be passed to the method.
+- type: explanation
+  location:
+    snippet: self.name = name
+  explanations:
+  - body: This statement sets the person’s name to the passed parameter. self is the instance of the class
+      and self.name shows the person’s name.
+- type: explanation
+  location:
+    snippet: 'def get_name(self):'
+  explanations:
+  - body: This method returns the person’s name. The argument (named self) is passed in automatically
+      by the interpreter when the method is invoked on an instance of the class.
+  - body: Note that Python automatically fills the first argument in with the instance object that is
+      the implied subject of the method call. Therefore, when this method is invoked on an instance of
+      the class, no parameter must be passed to the method.
+- type: explanation
+  location:
+    snippet: return self.name
+  explanations:
+  - body: This statement returns the name of the person. self is the instance of the class and self.name
+      is the name of the instance.
+- type: explanation
+  location:
+    snippet: 'def is_employee(self):'
+    nth: 1
+  explanations:
+  - body: The method is to return if the current person is not an employee. The argument (named self)
+      is passed in automatically by the interpreter when the method is invoked on an instance of the class.
+  - body: Note that Python automatically fills the first argument in with the instance object that is
+      the implied subject of the method call. Therefore, when this method is invoked on an instance of
+      the class, no parameter must be passed to the method.
+- type: explanation
+  location:
+    snippet: return False
+  explanations:
+  - body: The statement returns False to represent this person is not an employee.
+- type: explanation
+  location:
+    snippet: 'class Employee(Person):'
+  explanations:
+  - body: We define the subclass of Person named Employee to return the person is an employee.
+- type: explanation
+  location:
+    snippet: 'def is_employee(self):'
+    nth: 2
+  explanations:
+  - body: The method is to return the current person is an employ. The argument (named self) is passed
+      in automatically by the interpreter when the method is invoked on an instance of the class.
+  - body: Note that Python automatically fills the first argument in with the instance object that is
+      the implied subject of the method call. Therefore, when this method is invoked on an instance of
+      the class, no parameter must be passed to the method.
+- type: explanation
+  location:
+    snippet: return True
+  explanations:
+  - body: The statement returns True to represent this person is not an employee.
+- type: explanation
+  location:
+    snippet: emp = Person("Melody")
+  explanations:
+  - body: We create an instance of the class Person to demonstrate the creation and use of Person instances.
+  - body: This statement creates a Person instance. The variable person holds a reference to a Person
+      instance.
+- type: explanation
+  location:
+    snippet: print(emp.get_name(), emp.is_employee())
+    nth: 1
+  explanations:
+  - body: This statement invokes getName and isEmployee methods of class Person and prints the current
+      person’s name and if the person is an employee.
+- type: explanation
+  location:
+    snippet: emp = Employee("Linda")
+  explanations:
+  - body: We created an instance of the child class Employee to demonstrate the creation and use of both
+      Person and Employee’s instances.
+  - body: This statement creates a Employee instance. The variable emp holds a reference to an Employee
+      instance and its parent class Person’s instance.
+- type: explanation
+  location:
+    snippet: print(emp.get_name(), emp.is_employee())
+    nth: 2
+  explanations:
+  - body: This statement invokes getName and isEmployee methods of class Person and the child class Employee
+      respectively and prints the current person’s name and if the person is an employ.

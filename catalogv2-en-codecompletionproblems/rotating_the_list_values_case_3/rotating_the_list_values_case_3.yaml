@@ -1,0 +1,79 @@
+$schema: https://learning-contents.org/schemas/code-completion/0.1.0
+source: main.py
+license: MIT
+locale: en
+id: cc_py_list_rotate_2
+title: Rotating the List Values (Case 3)
+description: Construct a program that has a function that receives a list of values and returns the list
+  rotated to the right by one position so that the value that is currently at the end of the list is moved
+  to the front, shifting the remaining values to the right. For example, if the list is [1, 2, 3, 4, 5,
+  6], the program will change it to [6, 1, 2, 3, 4, 5].
+authors:
+- first: Kamil
+  last: Akhuseyinoglu
+  email: moh70@pitt.edu
+  affiliation: University of Pittsburgh
+pedagogy:
+  activity: code-completion
+  difficulty: novice
+  prereq_topics: []
+  topics: []
+runtime:
+  language: python
+  version: 3
+statement: Write a program that has a function that receives a list of values and returns the list rotated
+  to the right by one position so that the value that is currently at the end of the list is moved to
+  the front, shifting the remaining values to the right. For example, if the list is [1, 2, 3, 4, 5, 6],
+  the program will change it to [6, 1, 2, 3, 4, 5].
+executions:
+- title: Sample Run
+  stdin: []
+  stdout: |-
+    Original list: [3, 8, 9, 8, 7, 5]
+    Rotated list: [5, 3, 8, 9, 8, 7]
+  console: |-
+    Original list: [3, 8, 9, 8, 7, 5]
+    Rotated list: [5, 3, 8, 9, 8, 7]
+  stderr: ''
+  status: pass
+elements:
+- type: blank
+  location:
+    snippet: 'for i in range(len(lst)-1, 0, -1):'
+  choices:
+  - snippet: 'for i in range(len(lst)-1, 0, -1):'
+    role: solution
+    explanations:
+    - body: With value at the end safely tucked away, we now have to shift the remaining values to the
+        right by one position. We could break down the overall task into shifting operations, each of
+        which is a simple assignment statement. Because of repeated shift operations on the list values,
+        we’d want to write this with a for loop. We’ll replace the value at index i with the value currently
+        stored at index i-1, this will shift the value at index i-1 to the right, by one position.<br><br>To
+        properly shift the values to the right, we have to run the loop in reverse order (from right to
+        left instead of left to right). We need to use the range function to get a sequence of list indexes
+        in the reverse order, starting at the last index and going down to 0 (exclusive).
+    - body: We get this sequence by calling the function range(len(lst)-1, 0, -1). The reason that we
+        do not want to include the index 0 is that in the assignment statement in the loop body we always
+        move the value one position before the current index. That is, when we get into index 1 in the
+        sequence, we move the value at index 0 to index 1.
+    - body: Note that len(lst) returns the number of the values in the list. Also note that all statements
+        inside the loop need to be indented with respect to the loop header.
+  - snippet: 'for i in range(len(lst)-1):'
+    role: distractor
+  - snippet: 'for i in range(len(lst)):'
+    role: distractor
+  - snippet: 'for i in range(len(lst)-1, -1, -1):'
+    role: distractor
+- type: blank
+  location:
+    snippet: lst[i] = lst[i - 1]
+  choices:
+  - snippet: lst[i] = lst[i - 1]
+    role: solution
+    explanations:
+    - body: We need to shift value at index i-1 to value at index i. We do this by setting the value at
+        index i to the value at index i-1.
+  - snippet: lst[i] = lst[i + 1]
+    role: distractor
+  - snippet: lst[i - 1] = lst[i]
+    role: distractor
