@@ -23,8 +23,9 @@ runtime:
 statement: |-
   Write a program that has a function that receives a string and returns the number of times that the string "hi?t" appears anywhere in the given string where '?' could be any letter. For example, "hint" and "hilt" would count as a match.
   All string comparisons should be case-insensitive.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: '1'
   console: '1'

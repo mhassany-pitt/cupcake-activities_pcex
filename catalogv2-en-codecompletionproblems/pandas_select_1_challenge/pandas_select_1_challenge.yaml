@@ -23,8 +23,9 @@ runtime:
 statement: From a class of 200 students, first select only student ids and their letter grades. Then,
   select students with grades 'A' or 'B' You're given a dataset as a .csv format, read dataframe using
   pandas.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: |-
     Traceback (most recent call last):

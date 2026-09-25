@@ -21,8 +21,9 @@ runtime:
   version: 3
 statement: how many employees in this company with the highest salary.  You're provided a json data assigned
   to a variable. only use simple code, for loops
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: '2'
   console: '2'

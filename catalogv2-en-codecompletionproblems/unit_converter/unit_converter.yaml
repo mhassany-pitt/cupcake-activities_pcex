@@ -21,8 +21,9 @@ runtime:
   version: 3
 statement: Write a program that computes the Celsius equivalent of an input Fahrenheit value using the
   formula C = (F - 32) (5/9). The input Fahrenheit value is an integer.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '59'
   stdout: "Enter the Fahrenheit value: \nFahrenheit Temperature: 59\nCelsius Equivalent: 15.0"

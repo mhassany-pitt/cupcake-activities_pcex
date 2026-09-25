@@ -25,8 +25,9 @@ statement: |-
   Implementing Stack. Using Class to construct a Stack. Implement a function to determine if all the given brackets are paired.
   For example:
          paired brackets list:['[','{','(','{','}',')','}',']’] ; unpaired brackets list:['{',']','(','{','}',')','}',']']
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: |-
     True

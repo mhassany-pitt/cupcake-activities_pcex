@@ -27,8 +27,9 @@ statement: Suppose we have a vending machine that gives change. A customer selec
   change. We will assume that all item prices are multiples of 5 cents, and the machine gives all change
   in quarters, dimes, and nickels. Write a program that computes how many quarters, dimes, and nickels
   to return to the customer.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: 'Enter bill value in dollars (1 = $1 bill, 5 = $5 bill, etc.):'
   console: 'Enter bill value in dollars (1 = $1 bill, 5 = $5 bill, etc.):'

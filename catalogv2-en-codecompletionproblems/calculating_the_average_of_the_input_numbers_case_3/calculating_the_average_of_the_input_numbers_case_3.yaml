@@ -23,8 +23,9 @@ runtime:
 statement: |-
   Write a program that reads a series of non-negative floating-point numbers from the user, sums them up, and calculate their average.
   Note that you need to think what value should the program use to indicate the end of the input.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '3.4'
   - '2.5'

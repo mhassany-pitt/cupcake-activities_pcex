@@ -23,8 +23,9 @@ runtime:
 statement: Write a program that takes a user's inputs and calculate the division of the inputs.Then convert
   the division result into an integer, check the current division result's type and print the original
   division result, converted result and the original division result's float absolute value.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '15'
   - '4'

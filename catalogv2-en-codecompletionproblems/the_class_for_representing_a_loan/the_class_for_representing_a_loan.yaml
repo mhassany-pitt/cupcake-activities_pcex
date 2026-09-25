@@ -23,8 +23,9 @@ runtime:
 statement: |-
   Construct a class that represents a loan. This class should contain data representing the interest rate, loan amount, and the length of loan period (in years); all of which could be accessed or changed only through the getter and setter methods. An instance of the class should be created by specifying annual interest rate, length of loan period, and loan amount.
   The other methods of the this class should calculate the amount of monthly payments on the loan as well as the total payment.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '0.03'
   - '5'

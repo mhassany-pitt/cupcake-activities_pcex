@@ -20,8 +20,9 @@ runtime:
   language: python
   version: 3
 statement: Write a program that determines the largest of the three integer values entered by the user.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '43'
   - '69'

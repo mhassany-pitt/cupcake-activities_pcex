@@ -21,8 +21,9 @@ runtime:
   version: 3
 statement: Write a program that recursively finds and returns the great common factor between of two integers.
   This is a simple implementation--fill in the missing lines.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: '2'
   console: '2'

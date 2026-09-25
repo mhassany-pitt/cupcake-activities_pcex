@@ -23,8 +23,9 @@ runtime:
 statement: 'Construct two classes: one represents a Person and another one represents an Employee that
   should be defined as Person''s child class. The classes should define functions to display the employee''s
   information'
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: |-
     Rahul

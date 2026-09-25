@@ -27,8 +27,9 @@ statement: Write a program by using Queue structure to solve a Josephus problem.
   from the person labeled as 1, in every round, after k number of people are skipped, the next person
   will be counted out of the circle. Repeat the process with the remaining people until only one person
   remains. Then free the last one person. The program should return the last freed  person.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: Brad
   console: Brad

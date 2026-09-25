@@ -19,8 +19,9 @@ runtime:
   language: python
   version: 3
 statement: You're give the age of different people in JSON format, find the name of the person
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: |-
     Traceback (most recent call last):

@@ -23,8 +23,9 @@ runtime:
 statement: Write a program that reads a series of temperatures and reports the days that are above 32
   degrees Fahrenheit. Assume that the temperature values are in Fahrenheit. Also assume that input values
   could have a decimal point.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '10'
   - '30.3'

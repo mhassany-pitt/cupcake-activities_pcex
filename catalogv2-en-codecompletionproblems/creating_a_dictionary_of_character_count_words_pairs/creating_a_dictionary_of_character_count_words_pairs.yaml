@@ -31,8 +31,9 @@ statement: |-
   i : ['is']
   m : ['my']
   s : ['score']
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - Python is my most favourite programming language in the entire world
   stdout: "Enter a string: \np : ['python', 'programming']\ni : ['is', 'in']\nm : ['my', 'most']\nf :\

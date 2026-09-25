@@ -27,8 +27,9 @@ statement: 'Construct a function that uses recursive binary search to find if a 
   of ordered integers, the key is searched by dividing the data list in half and only searching in the
   half that contains the key, and repeating the process until the key is found and the index of the key
   is returned. If the key is not found, -1 is returned.'
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: '-1'
   console: '-1'

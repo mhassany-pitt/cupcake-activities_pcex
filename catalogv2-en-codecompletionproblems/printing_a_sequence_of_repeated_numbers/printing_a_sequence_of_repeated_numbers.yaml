@@ -21,8 +21,9 @@ runtime:
   version: 3
 statement: Write a program that receives an integer N from the user and prints a sequence of space-separated
   numbers from 1 to N such that the N-th number in the sequence is repeated N times.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '5'
   stdout: "Enter the integer N: \n1\n2\n2\n3\n3\n3\n4\n4\n4\n4\n5\n5\n5\n5\n5"

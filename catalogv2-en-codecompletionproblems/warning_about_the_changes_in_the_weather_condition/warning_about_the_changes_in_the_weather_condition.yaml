@@ -27,8 +27,9 @@ statement: Write a program that receives the temperature and humidity for today 
   also warn the user about the changes in humidity. In particular, it should warn the user when today's
   humidity is more, less, or has not changed compared to yesterday's humidity. Note that the temperature
   and humidity values could have a decimal point.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '60.2'
   - '65.0'

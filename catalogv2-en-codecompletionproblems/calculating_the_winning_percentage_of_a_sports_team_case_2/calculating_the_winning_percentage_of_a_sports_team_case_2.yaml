@@ -25,8 +25,9 @@ statement: Write a program that receives from the user the number of games in a 
   of the games that a sports team won in the tournament, and calculates the winning percentage of that
   sports team. The program must ask the user for each of the two inputs until the user enters a valid
   number.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '-1'
   - '0'

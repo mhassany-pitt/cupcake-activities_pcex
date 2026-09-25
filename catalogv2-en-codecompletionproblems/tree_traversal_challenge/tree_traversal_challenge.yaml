@@ -29,8 +29,9 @@ statement: |-
   <b>Pre-order traversal</b> visits the nodes from the root node, the left and the right
   <b>Post-order traversal</b> visits the nodes from the left, the right and the root node.
   In this challenge, we construct an post-order traversal algorithm.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: '[4, 3, 10, 16, 14, 5]'
   console: '[4, 3, 10, 16, 14, 5]'

@@ -41,8 +41,9 @@ statement: |-
               China        1       1       0          2
              ...
   Column Total      4       4       4
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: |-
     Name  G  S  B All

@@ -23,8 +23,9 @@ runtime:
 statement: Write a program that determines whether a student fails the course based on the inputs that
   it receives from the instructor. The student fails the course if his/her score is not above the class
   average.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '60'
   - '70'

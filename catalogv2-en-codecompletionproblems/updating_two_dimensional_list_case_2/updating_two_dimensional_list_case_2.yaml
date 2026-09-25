@@ -23,8 +23,9 @@ runtime:
 statement: Write a program that initializes a 3x3 two-dimensional matrix that has the numbers 1 through
   9 for entries, updates the middle row to a list filled with 1s, then sets the top-right element of the
   matrix to be 10, and finally prints the matrix.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: '[[1, 2, 10], [1, 1, 1], [7, 8, 9]]'
   console: '[[1, 2, 10], [1, 1, 1], [7, 8, 9]]'

@@ -21,8 +21,9 @@ runtime:
   version: 3
 statement: Write a program that determines whether at least one of the three boolean variables is False
   based on the inputs that it receives from the user.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '0'
   - '0'

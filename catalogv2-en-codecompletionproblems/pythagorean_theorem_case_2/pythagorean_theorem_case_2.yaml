@@ -25,8 +25,9 @@ statement: Suppose that the user provides two input values for a right-angle tri
   is for the length of an adjacent side in the triangle and the second input is for the hypotenuse of
   that triangle. The program calculates the second adjacent side of the triangle using these two input
   values. Use the Pythagorean theorem (c^2 = a^2 + b^2) to find the length of the second adjacent side.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: 'Enter the length of side A:'
   console: 'Enter the length of side A:'

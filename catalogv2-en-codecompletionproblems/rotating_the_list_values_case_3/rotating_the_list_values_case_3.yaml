@@ -25,8 +25,9 @@ statement: Write a program that has a function that receives a list of values an
   to the right by one position so that the value that is currently at the end of the list is moved to
   the front, shifting the remaining values to the right. For example, if the list is [1, 2, 3, 4, 5, 6],
   the program will change it to [6, 1, 2, 3, 4, 5].
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: |-
     Original list: [3, 8, 9, 8, 7, 5]

@@ -21,8 +21,9 @@ runtime:
   version: 3
 statement: You're provide a JSON list of different books, find non-fiction books with rating greater than
   4.5
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: '[''Science 101'', ''History of Time'', ''Cooking Basics'']'
   console: '[''Science 101'', ''History of Time'', ''Cooking Basics'']'

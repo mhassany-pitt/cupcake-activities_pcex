@@ -23,8 +23,9 @@ runtime:
 statement: From a class of 200 students, you have a dataset of students, their section, grades for 10
   homeworks and grades. Group students who got highest points in 5 homeworks and who got a final grade
   greater than 80.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: |-
     Traceback (most recent call last):

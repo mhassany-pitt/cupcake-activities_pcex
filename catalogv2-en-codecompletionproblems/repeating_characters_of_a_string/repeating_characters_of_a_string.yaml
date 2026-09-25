@@ -23,8 +23,9 @@ runtime:
 statement: |-
   Write a program that has a function that receives a string and creates a new string that has every other character of the given string, starting with the first character, repeated two times.
   For example, the new string that will be formed from the string 'abcde' is 'aaccee'.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: HH  hhrr
   console: HH  hhrr

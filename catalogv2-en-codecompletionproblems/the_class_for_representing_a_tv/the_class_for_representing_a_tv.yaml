@@ -27,8 +27,9 @@ statement: Construct a class that represents a TV. The class should contain data
   through the getter and setter methods. The class should also include methods to change the state of
   the TV (turn on/off, change volume level). Assume that the volume level is an integer and ranges from
   1 to 7 (both inclusive).
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: |-
     tv1's volume level is 3

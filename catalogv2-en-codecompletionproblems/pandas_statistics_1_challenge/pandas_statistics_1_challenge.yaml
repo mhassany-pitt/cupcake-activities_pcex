@@ -21,8 +21,9 @@ runtime:
   version: 3
 statement: From a class of 200 students, you have a dataset of students, their section, and grades. Find
   students with grade == 'A' and print the top 10 names.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: |-
     Traceback (most recent call last):

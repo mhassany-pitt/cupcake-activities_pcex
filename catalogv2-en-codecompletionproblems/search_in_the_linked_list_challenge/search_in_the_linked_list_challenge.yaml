@@ -25,8 +25,9 @@ statement: When using a LinkedList, it is possible that you may want to search t
   if a specific value is in it. To do so, each node must be checked individually. Construct a search function
   within the LinkedList class that traverses through all nodes in the list and keeps track of all instances
   of the target value (if any) are in the LinkedList, returning the final count at the end of the search.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: There are 2 instances of 11 in the list
   console: There are 2 instances of 11 in the list

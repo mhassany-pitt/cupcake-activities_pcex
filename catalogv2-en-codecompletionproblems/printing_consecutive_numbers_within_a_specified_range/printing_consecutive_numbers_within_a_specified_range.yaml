@@ -19,8 +19,9 @@ runtime:
   language: python
   version: 3
 statement: Write a program that prints a sequence of numbers from 8 (inclusive) to 14 (inclusive).
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: |-
     8

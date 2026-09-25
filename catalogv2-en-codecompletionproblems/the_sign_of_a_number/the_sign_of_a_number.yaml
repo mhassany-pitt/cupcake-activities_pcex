@@ -19,8 +19,9 @@ runtime:
   language: python
   version: 3
 statement: Write a program that determines whether an integer is even or odd.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '8'
   stdout: "Enter an integer: \nThe integer is even."

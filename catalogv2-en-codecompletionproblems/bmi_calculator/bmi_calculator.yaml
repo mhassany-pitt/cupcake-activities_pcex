@@ -27,8 +27,9 @@ statement: "BMI is a measure of body fat based on height and weight that applies
   Obesity = BMI of 30 or greater.\nEnglish BMI Formula (Imperial) is: BMI = (Weight in Pounds / (Height\
   \ in inches x Height in inches)) x 703.\n BMI results are usually displayed as integers (values without\
   \ decimal points). Write a program to round the BMI result to the nearest integer."
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '163'
   - '63'

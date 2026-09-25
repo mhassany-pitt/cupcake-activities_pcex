@@ -25,8 +25,9 @@ statement: Write a program that receives from the user the number of games that 
   tied in a tournament of 12 games and calculates the winning percentage of the sports team, counting
   ties as half wins. The program must ask the user for each of the two inputs until the user enters a
   valid number.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '-1'
   - '13'

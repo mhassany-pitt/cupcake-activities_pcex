@@ -25,8 +25,9 @@ statement: Descending-order Selection sort operates by finding the maximum eleme
   it to the “beginning” of the array, with the “beginning” of the array incrementing forward after each
   element is placed in its proper position. Construct a function that performs selection sort on the given
   list, in descending order.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: '[300, 25, 20, 10, 0, -3]'
   console: '[300, 25, 20, 10, 0, -3]'

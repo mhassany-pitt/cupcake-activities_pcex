@@ -25,8 +25,9 @@ statement: Construct a class that represents a point in the Euclidean plane. The
   data that represents the point’s integer coordinates (x,y). The point's coordinates could be accessed
   or changed only through the getter and setter methods. The class should also include a method to calculate
   and return the point's distance from the origin (0,0).
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: |-
     p2 coordinates: (7, 2)

@@ -33,8 +33,9 @@ statement: |-
   D for scores ≥ 60
   F for scores < 60
   For example, if the user enters the grade D, the program prints "Score is in range [60-70)".
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - B
   stdout: "Enter a grade letter in uppercase: \nScore is in range [80-90)."

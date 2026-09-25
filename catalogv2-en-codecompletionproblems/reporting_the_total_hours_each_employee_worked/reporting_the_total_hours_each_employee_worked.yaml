@@ -31,8 +31,9 @@ statement: |-
   114 Simone 8 8 8
   ...
   Write a program that reads this file and calculates the total number of hours worked by each individual. Make sure that the program handles each specific exception that could occur.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - /Users/hours2.txt
   stdout: "Enter the full path of a file: \nTotal hours worked by Erica = 42.75\nError in the employee's\

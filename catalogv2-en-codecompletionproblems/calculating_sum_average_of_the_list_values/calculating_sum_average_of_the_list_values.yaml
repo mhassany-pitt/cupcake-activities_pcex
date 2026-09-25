@@ -23,8 +23,9 @@ runtime:
 statement: Write a program that has a function that receives a list and calculates the average of the
   values in that list. The program should handle lists with arbitrary number of values (including an empty
   list).
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: 'Average is: 8.5'
   console: 'Average is: 8.5'

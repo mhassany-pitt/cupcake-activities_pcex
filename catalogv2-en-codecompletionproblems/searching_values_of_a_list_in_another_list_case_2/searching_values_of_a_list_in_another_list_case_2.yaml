@@ -23,8 +23,9 @@ runtime:
 statement: |-
   Write a program that has a function that receives two lists and prints the total number of times the elements in the 2nd list appear in the 1st list. For example, if the 1st list is [1, 2, 3, 3, 4, 4, 5, 6] and the 2nd list is [3, 4, 5, 6, 7], then the total number of times that the elements in the 2nd list appear in the 1st list is 6.
   Note that we need to count matches for all values in the 2nd list (including duplicate values, if any).
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: Total number of times the elements in the 2nd list appear in the 1st list is 4
   console: Total number of times the elements in the 2nd list appear in the 1st list is 4

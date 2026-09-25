@@ -31,8 +31,9 @@ statement: |-
   ***
   **
   *
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '5'
   stdout: |-

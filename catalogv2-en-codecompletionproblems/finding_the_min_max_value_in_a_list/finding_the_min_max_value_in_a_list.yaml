@@ -19,8 +19,9 @@ runtime:
   language: python
   version: 3
 statement: Write a program that finds the minimum value in a list.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: 'Minimum value: 0'
   console: 'Minimum value: 0'

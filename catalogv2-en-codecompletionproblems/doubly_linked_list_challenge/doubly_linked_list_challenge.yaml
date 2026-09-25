@@ -25,8 +25,9 @@ statement: Create the necessary classes for a Doubly Linked List, containing the
   to add a new item to the beginning of the linked list, insert_at_end(data) to add a new item to the
   end of the linked list, delete_at_start() to delete the first item from the link, and an __str__ method
   to print out the doubly linked list. Test the doubly linked list after all classes and methods are created.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: '[Greyson, Riley, Mike]'
   console: '[Greyson, Riley, Mike]'

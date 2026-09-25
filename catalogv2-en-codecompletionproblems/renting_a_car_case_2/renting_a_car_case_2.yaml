@@ -23,8 +23,9 @@ runtime:
 statement: Write a program that determines whether a customer could rent a car based on the inputs that
   it receives from the car rental agent. Rental cars are available to licensed drivers of 21 years of
   age or over who have not had a car accident.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '21'
   - '1'

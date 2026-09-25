@@ -23,8 +23,9 @@ runtime:
 statement: |-
   In a BinaryTree, adding new nodes to the tree is an important capability to have.
   Construct a simple implementation of a BinaryTree consisting of an __init__ method and an insertRight method, which adds new nodes to the tree to the right of the root.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: 10  14  6  5
   console: 10  14  6  5

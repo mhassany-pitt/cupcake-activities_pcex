@@ -21,8 +21,9 @@ runtime:
   version: 3
 statement: Write a program with two classes, where each class has a comparison method. Test whether the
   value of the first class is greater than the value of the second class using the comparison method.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: |-
     A __gt__ called

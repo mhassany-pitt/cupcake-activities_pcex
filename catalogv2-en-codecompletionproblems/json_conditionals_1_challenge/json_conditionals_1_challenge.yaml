@@ -25,8 +25,9 @@ statement: A customer is looking for a restaurant that has at least 1 review and
   spicy food.  I should have at least tables with 2 seating and has a number of maximum allowed reservation
   exactly at 30. Write a python code when you're assumed to be given a dataset of restaurants in json
   assigned to a variable
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: '[{''name'': ''Taco Fiesta'', ''reviews'': 5, ''cuisine'': ''Mexican'', ''spicy_food'': True,
     ''seating'': [2, 4, 6], ''max_reservation'': 30}, {''name'': ''Salsa Heaven'', ''reviews'': 3, ''cuisine'':

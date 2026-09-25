@@ -23,8 +23,9 @@ runtime:
 statement: |-
   Write a program that checks whether a sequence of integers, entered one at a time, contains adjacent integers that are consecutive. The user enters -1 to indicate the end of the input.
   Note that integers which follow each other in order, without gaps, from smallest to largest are consecutive numbers. For example, 12, 13, 14 and 15 are consecutive numbers.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '12'
   - '9'

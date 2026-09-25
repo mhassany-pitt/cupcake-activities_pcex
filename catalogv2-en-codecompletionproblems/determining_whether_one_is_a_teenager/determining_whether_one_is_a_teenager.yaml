@@ -25,8 +25,9 @@ statement: Write a program that asks the user to enter a string that has the use
   by a colon, and prints whether the user is a teenager. Make sure that the program handles all possible
   exceptions. The program must ask the user for an input until the user enters a string that could be
   processed without any exception.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - Johnny15
   - Johnny:fiftheen

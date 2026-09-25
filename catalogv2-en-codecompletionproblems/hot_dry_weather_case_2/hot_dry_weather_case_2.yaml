@@ -21,8 +21,9 @@ runtime:
   version: 3
 statement: Write a program that determines whether it is either too hot or too dry (or both) based on
   the inputs that it receives from the user.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '0'
   - '1'

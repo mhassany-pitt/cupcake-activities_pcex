@@ -23,8 +23,9 @@ runtime:
 statement: 'Insertion sort works similarly to how one would sort a hand of cards: by choosing an element
   and searching through the rest of the array to determine its proper place. Construct a function that
   performs insertion sort in descending order on the given list.'
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: '[30, 25, 5, 2, 0, -20]'
   console: '[30, 25, 5, 2, 0, -20]'

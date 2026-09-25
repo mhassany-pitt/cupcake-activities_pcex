@@ -22,8 +22,9 @@ runtime:
   version: 3
 statement: Create the necessary classes for a Singly Linked List, containing the method add(item) to add
   a new item to the beginning of the linked list. Test the singly linked list after the classes are created.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: '[Position 0,Position 1]'
   console: '[Position 0,Position 1]'

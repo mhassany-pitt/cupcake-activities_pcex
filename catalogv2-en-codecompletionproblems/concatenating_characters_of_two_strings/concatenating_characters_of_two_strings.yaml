@@ -25,8 +25,9 @@ statement: |-
   Write a program that has a function that receives two strings and returns a string formed from the given strings separated by a space character such that the first two characters of the given strings are swapped.
   For example, the new string that will be formed from the strings 'abc' and 'xyz' is 'xyc abz'.
   Assume that both strings have at least two characters.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: Thllo Heere
   console: Thllo Heere

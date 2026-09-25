@@ -23,8 +23,9 @@ runtime:
 statement: |-
   Binary Search operates by dividing an array in half, and then determining whether or not the target value would be in the larger or smaller half. Then, this process repeats by dividing whichever half must contain the target in half again, over and over until the target is found.
   Construct a function that performs binary search on a given array and returns the index of the target value if it is found, and -1 if it is not.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: '-1'
   console: '-1'

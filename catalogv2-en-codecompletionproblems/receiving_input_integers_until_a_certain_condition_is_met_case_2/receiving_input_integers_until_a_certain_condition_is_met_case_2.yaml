@@ -21,8 +21,9 @@ runtime:
   version: 3
 statement: Write a program that receives an integer from the user, outputs that integer, and stops receiving
   integers when the user enters an integer that is not in the range of 30 to 90 both inclusive.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - '80'
   - '40'

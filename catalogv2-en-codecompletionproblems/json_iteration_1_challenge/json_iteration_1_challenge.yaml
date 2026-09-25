@@ -21,8 +21,9 @@ runtime:
   version: 3
 statement: Write the code that prints the names of all restaurants. You're provided with list of restaurants
   in json format
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: |-
     Taqueria

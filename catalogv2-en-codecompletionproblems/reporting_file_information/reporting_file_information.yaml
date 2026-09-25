@@ -27,8 +27,9 @@ statement: Write a program that receives the full path to an input file from the
   of the longest word on each line. Make sure that the program handles each specific exception that could
   occur. Also, the program must ask the user for a valid file path until the user enters a file path that
   could be accessed without any exception.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin:
   - /Users/input_stat_2.txt
   - /Users/input_stat.txt

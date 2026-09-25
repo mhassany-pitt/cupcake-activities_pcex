@@ -19,8 +19,9 @@ runtime:
   language: python
   version: 3
 statement: Write a program that reverses the digits of an integer mathematically.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: |-
     last digit: 4 , reverse: 4 , integer: 123

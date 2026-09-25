@@ -23,8 +23,9 @@ runtime:
 statement: Write a program that initializes a 2x4 two-dimensional matrix that has multiples of 10 from
   10 to 80 for entries, updates the last row to a list holding values 1,3,5,7, then sets the second element
   of the first row to be 8, and finally prints the matrix.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: '[[10, 8, 30, 40], [1, 3, 5, 7]]'
   console: '[[10, 8, 30, 40], [1, 3, 5, 7]]'

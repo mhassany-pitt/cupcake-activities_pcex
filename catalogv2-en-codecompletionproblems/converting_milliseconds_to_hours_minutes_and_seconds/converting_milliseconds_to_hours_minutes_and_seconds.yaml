@@ -19,8 +19,9 @@ runtime:
   language: python
   version: 3
 statement: Write a program that obtains hours, minutes, and seconds from an amount of time in milliseconds.
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: "Enter the milliseconds: \n16803000 milliseconds is 4 hours and 40 minutes and 3 seconds."
   console: "Enter the milliseconds: \n16803000 milliseconds is 4 hours and 40 minutes and 3 seconds."

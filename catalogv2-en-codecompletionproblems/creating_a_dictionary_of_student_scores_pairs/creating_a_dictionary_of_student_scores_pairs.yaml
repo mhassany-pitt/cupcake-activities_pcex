@@ -25,8 +25,9 @@ statement: "Assume we have a list of students and a list of their corresponding 
   \ that has two functions:\n- a function that receives these two lists and returns a dictionary that\
   \ maps each student to the scores of that student, and \n- a function that receives the dictionary created\
   \ by the above function and calculates the average score of each student"
-executions:
+testcases:
 - title: Sample Run
+  visible: true
   stdin: []
   stdout: |-
     Joe 9.5
