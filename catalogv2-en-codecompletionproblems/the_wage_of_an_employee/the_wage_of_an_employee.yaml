@@ -34,7 +34,6 @@ testcases:
   console: "Enter the number of hours that the employee has worked: \nEnter the number of days that the\
     \ employee has worked during weekends: \nWage: 580.0"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

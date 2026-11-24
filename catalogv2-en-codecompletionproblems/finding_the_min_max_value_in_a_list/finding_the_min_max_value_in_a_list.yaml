@@ -26,7 +26,6 @@ testcases:
   stdout: 'Minimum value: 0'
   console: 'Minimum value: 0'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

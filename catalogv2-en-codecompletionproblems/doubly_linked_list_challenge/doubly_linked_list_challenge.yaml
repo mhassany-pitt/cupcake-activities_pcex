@@ -32,7 +32,6 @@ testcases:
   stdout: '[Greyson, Riley, Mike]'
   console: '[Greyson, Riley, Mike]'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

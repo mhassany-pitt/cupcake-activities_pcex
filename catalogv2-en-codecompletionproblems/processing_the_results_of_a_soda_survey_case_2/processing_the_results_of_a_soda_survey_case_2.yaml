@@ -40,7 +40,6 @@ testcases:
     Soda # 3 : 4.20
     Soda # 4 : 1.90
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

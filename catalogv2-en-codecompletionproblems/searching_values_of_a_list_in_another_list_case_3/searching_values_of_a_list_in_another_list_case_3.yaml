@@ -32,7 +32,6 @@ testcases:
   console: 'The list that contains the number of times each element in the 2nd list appears in the 1st
     list: [0, 2, 2]'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

@@ -30,7 +30,6 @@ testcases:
     The Fahrenheit is: 89.6
     The Celsius is: 32
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

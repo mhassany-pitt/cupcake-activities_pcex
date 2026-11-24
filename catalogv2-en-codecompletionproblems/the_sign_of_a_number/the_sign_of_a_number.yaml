@@ -27,7 +27,6 @@ testcases:
   stdout: "Enter an integer: \nThe integer is even."
   console: "Enter an integer: \nThe integer is even."
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

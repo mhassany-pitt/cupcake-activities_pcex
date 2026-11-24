@@ -26,7 +26,6 @@ testcases:
   stdout: "Enter the milliseconds: \n16803000 milliseconds is 4 hours and 40 minutes and 3 seconds."
   console: "Enter the milliseconds: \n16803000 milliseconds is 4 hours and 40 minutes and 3 seconds."
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

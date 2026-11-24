@@ -51,7 +51,6 @@ testcases:
     **
     *
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

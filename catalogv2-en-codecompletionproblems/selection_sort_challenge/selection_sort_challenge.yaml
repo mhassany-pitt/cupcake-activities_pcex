@@ -32,7 +32,6 @@ testcases:
   stdout: '[300, 25, 20, 10, 0, -3]'
   console: '[300, 25, 20, 10, 0, -3]'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

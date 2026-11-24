@@ -29,7 +29,6 @@ testcases:
   stdout: "Enter the Fahrenheit value: \nFahrenheit Temperature: 59\nCelsius Equivalent: 15.0"
   console: "Enter the Fahrenheit value: \nFahrenheit Temperature: 59\nCelsius Equivalent: 15.0"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

@@ -32,7 +32,6 @@ testcases:
   stdout: 'Enter the length of side A:'
   console: 'Enter the length of side A:'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

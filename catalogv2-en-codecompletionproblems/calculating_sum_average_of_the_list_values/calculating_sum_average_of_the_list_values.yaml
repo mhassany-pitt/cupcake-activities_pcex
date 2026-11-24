@@ -30,7 +30,6 @@ testcases:
   stdout: 'Average is: 8.5'
   console: 'Average is: 8.5'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

@@ -47,7 +47,6 @@ testcases:
     Enter the name and age, separated by a colon:
     Johnny is a teenager.
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

@@ -29,7 +29,6 @@ testcases:
   stdout: '[Position 0,Position 1]'
   console: '[Position 0,Position 1]'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

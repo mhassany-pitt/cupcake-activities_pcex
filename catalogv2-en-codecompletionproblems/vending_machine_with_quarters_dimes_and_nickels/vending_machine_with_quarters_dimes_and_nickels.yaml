@@ -34,7 +34,6 @@ testcases:
   stdout: 'Enter bill value in dollars (1 = $1 bill, 5 = $5 bill, etc.):'
   console: 'Enter bill value in dollars (1 = $1 bill, 5 = $5 bill, etc.):'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

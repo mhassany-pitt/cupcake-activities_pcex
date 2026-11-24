@@ -40,7 +40,6 @@ testcases:
   console: "Enter the yesterday's temperature: \nEnter the today's temperature: \nEnter yesterday's humidity:\
     \ \nEnter today's humidity: \nIt is getting warmer but less humid!"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

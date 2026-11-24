@@ -28,7 +28,6 @@ testcases:
   stdout: '2'
   console: '2'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

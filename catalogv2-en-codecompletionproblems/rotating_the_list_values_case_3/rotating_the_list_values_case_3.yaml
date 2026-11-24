@@ -36,7 +36,6 @@ testcases:
     Original list: [3, 8, 9, 8, 7, 5]
     Rotated list: [5, 3, 8, 9, 8, 7]
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

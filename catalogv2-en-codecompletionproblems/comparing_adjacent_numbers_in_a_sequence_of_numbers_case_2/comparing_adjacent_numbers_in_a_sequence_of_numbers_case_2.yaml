@@ -43,7 +43,6 @@ testcases:
     \ \n6 and 7 are consecutive.\nEnter an integer: \nEnter an integer: \nEnter an integer: \nEnter an\
     \ integer:"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

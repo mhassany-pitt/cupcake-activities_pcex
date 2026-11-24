@@ -36,7 +36,6 @@ testcases:
     True
     False
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

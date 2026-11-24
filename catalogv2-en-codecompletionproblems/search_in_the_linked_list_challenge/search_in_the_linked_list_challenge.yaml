@@ -32,7 +32,6 @@ testcases:
   stdout: There are 2 instances of 11 in the list
   console: There are 2 instances of 11 in the list
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

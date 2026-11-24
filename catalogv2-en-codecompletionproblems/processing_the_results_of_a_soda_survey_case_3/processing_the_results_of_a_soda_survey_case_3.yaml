@@ -60,7 +60,6 @@ testcases:
     Respondent # 9 : 3.25
     Respondent # 10 : 3.75
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

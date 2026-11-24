@@ -36,7 +36,6 @@ testcases:
     last digit: 1 , reverse: 4321 , integer: 0
     The reversed integer is: 4321
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

@@ -30,7 +30,6 @@ testcases:
   stdout: '[[1, 2, 10], [1, 1, 1], [7, 8, 9]]'
   console: '[[1, 2, 10], [1, 1, 1], [7, 8, 9]]'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

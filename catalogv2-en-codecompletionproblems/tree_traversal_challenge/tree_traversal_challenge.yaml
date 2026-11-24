@@ -36,7 +36,6 @@ testcases:
   stdout: '[4, 3, 10, 16, 14, 5]'
   console: '[4, 3, 10, 16, 14, 5]'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

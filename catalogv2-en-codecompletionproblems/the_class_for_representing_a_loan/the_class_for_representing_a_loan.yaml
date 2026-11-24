@@ -35,7 +35,6 @@ testcases:
   console: "Enter the annual interest rate: \nEnter the number of years for the loan period: \nEnter the\
     \ loan amount: \nThe monthly payment for the loan is: 17.97 \nThe total payment for the loan is: 1078.12"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

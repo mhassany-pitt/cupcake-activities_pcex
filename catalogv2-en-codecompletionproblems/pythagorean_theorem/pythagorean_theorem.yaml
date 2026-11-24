@@ -40,7 +40,6 @@ testcases:
     Enter the length of the hypotenuse:
     Given that side A is 3.0 and the hypotenuse is 5.0 , side B is 4.0
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

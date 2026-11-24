@@ -41,7 +41,6 @@ testcases:
   console: "Enter a string: \np : ['python', 'programming']\ni : ['is', 'in']\nm : ['my', 'most']\nf :\
     \ ['favourite']\nl : ['language']\nt : ['the']\ne : ['entire']\nw : ['world']"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

@@ -42,7 +42,6 @@ testcases:
     True
     3.75
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

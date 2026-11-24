@@ -26,7 +26,6 @@ testcases:
   stdout: 10 + 20 = 30
   console: 10 + 20 = 30
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

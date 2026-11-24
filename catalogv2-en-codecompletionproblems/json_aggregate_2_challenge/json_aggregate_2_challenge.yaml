@@ -32,7 +32,6 @@ testcases:
       File "<string>", line 15, in <module>
     NameError: name 'people' is not defined
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

@@ -40,7 +40,6 @@ testcases:
                                         ^
     SyntaxError: invalid syntax
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

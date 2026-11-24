@@ -42,7 +42,6 @@ testcases:
     Enter the height in inches:
     The BMI rounded to the nearest integer is: 29
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

@@ -43,7 +43,6 @@ testcases:
     \ far is 9.54 , count = 4\nEnter a number: \nThe sum so far is 9.54 , count = 5\nEnter a number: \n\
     The average is: 1.908"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

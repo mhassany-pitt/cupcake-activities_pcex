@@ -36,7 +36,6 @@ testcases:
     last digit: 1 , sum: 10 , integer: 0
     The sum of the digits: 10
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

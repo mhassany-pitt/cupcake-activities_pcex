@@ -38,7 +38,6 @@ testcases:
     24 squared = 576
     25 squared = 625
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

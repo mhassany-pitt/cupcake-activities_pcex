@@ -46,7 +46,6 @@ testcases:
     \ a number: \n3.0 and 5.0 are in ascending order.\nEnter a number: \n5.0 and 6.0 are in ascending\
     \ order.\nEnter a number: \nEnter a number:"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

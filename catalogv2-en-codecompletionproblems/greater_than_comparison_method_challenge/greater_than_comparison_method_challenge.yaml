@@ -36,7 +36,6 @@ testcases:
     B __gt__ called
     True
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

@@ -38,7 +38,6 @@ testcases:
   console: "Enter bill value in dollars (1 = $1 bill, 5 = $5 bill, etc.): \nEnter item price in pennies:\
     \ \nYour change consists of:\n14 quarters\n1 dimes\n1 nickels"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

@@ -36,7 +36,6 @@ testcases:
     Enter 1 if it is too dry, otherwise enter 0:
     Yes! It is too hot but not too dry.
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

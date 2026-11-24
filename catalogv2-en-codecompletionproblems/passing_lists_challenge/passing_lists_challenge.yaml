@@ -28,7 +28,6 @@ testcases:
   stdout: 'The converted Fahrenheit temperature is: [77.0, 37.4, 104.0, 23.0]'
   console: 'The converted Fahrenheit temperature is: [77.0, 37.4, 104.0, 23.0]'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

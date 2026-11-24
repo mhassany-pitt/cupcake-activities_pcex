@@ -39,7 +39,6 @@ testcases:
     Enter 1 if the value of the third boolean variable (variable c) is True, otherwise enter 0:
     Yes! All the three boolean variables have the same value.
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

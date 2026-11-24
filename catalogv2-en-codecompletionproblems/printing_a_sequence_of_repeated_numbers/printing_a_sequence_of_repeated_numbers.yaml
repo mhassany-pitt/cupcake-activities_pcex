@@ -29,7 +29,6 @@ testcases:
   stdout: "Enter the integer N: \n1\n2\n2\n3\n3\n3\n4\n4\n4\n4\n5\n5\n5\n5\n5"
   console: "Enter the integer N: \n1\n2\n2\n3\n3\n3\n4\n4\n4\n4\n5\n5\n5\n5\n5"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

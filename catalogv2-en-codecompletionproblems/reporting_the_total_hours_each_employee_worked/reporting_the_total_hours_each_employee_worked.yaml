@@ -43,7 +43,6 @@ testcases:
     \ id.\nTotal hours worked by Erin = 55.75\nTotal hours worked by Simone = 24.0\nTotal hours worked\
     \ by Ryan = 31.75\nTotal hours worked by Kendall = 5.5"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

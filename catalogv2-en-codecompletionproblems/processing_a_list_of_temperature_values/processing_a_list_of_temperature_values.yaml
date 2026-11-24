@@ -47,7 +47,6 @@ testcases:
     \ the temperature: \nEnter the temperature: \nEnter the temperature: \nEnter the temperature: \nEnter\
     \ the temperature: \nDays above 32 degrees Fahrenheit: ['Day 2', 'Day 4', 'Day 6', 'Day 7']"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

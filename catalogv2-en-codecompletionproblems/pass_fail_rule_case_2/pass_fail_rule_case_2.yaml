@@ -38,7 +38,6 @@ testcases:
     Enter 1 if the student has cheated, otherwise enter 0:
     Yes! The student fails the course.
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

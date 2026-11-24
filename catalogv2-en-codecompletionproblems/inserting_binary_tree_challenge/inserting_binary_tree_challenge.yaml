@@ -30,7 +30,6 @@ testcases:
   stdout: 10  14  6  5
   console: 10  14  6  5
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

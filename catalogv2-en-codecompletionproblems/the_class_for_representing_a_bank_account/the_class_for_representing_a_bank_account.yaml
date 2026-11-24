@@ -38,7 +38,6 @@ testcases:
     69713      Angelica Adams    500.00
     93757       Edward Demsey    769.32
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

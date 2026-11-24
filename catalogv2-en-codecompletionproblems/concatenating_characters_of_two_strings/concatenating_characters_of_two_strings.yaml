@@ -32,7 +32,6 @@ testcases:
   stdout: Thllo Heere
   console: Thllo Heere
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

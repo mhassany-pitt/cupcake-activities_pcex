@@ -32,7 +32,6 @@ testcases:
   console: "Enter the first integer: \nEnter the second integer: \nEnter the third integer: \nMaximum\
     \ value: 69"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

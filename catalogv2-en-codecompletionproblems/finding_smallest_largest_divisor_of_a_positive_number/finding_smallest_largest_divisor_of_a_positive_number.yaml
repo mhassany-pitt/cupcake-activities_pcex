@@ -28,7 +28,6 @@ testcases:
   stdout: The largest divisor of 15 is 5
   console: The largest divisor of 15 is 5
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

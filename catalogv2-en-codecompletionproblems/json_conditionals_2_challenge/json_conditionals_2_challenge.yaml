@@ -28,7 +28,6 @@ testcases:
   stdout: '[''Science 101'', ''History of Time'', ''Cooking Basics'']'
   console: '[''Science 101'', ''History of Time'', ''Cooking Basics'']'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

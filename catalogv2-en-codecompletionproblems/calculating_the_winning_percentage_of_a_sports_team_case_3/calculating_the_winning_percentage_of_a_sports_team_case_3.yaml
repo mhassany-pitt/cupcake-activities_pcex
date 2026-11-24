@@ -44,7 +44,6 @@ testcases:
     \ won in the tournament: \nEnter the number of games that the sports team won in the tournament: \n\
     Enter the number of games tied: \nEnter the number of games tied: \nWinning percentage: 0.6666666666666666"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

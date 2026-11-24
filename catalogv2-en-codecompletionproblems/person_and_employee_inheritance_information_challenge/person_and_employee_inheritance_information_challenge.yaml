@@ -38,7 +38,6 @@ testcases:
     200000
     Intern
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

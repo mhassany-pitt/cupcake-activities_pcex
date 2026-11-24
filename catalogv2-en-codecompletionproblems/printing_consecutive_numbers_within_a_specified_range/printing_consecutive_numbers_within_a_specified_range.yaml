@@ -40,7 +40,6 @@ testcases:
     13
     14
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

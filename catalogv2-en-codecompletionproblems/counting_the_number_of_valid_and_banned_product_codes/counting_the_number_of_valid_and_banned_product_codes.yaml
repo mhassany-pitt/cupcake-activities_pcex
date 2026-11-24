@@ -42,7 +42,6 @@ testcases:
     \ code: \nEnter product code: \nEnter product code: \nImproper code length.\nEnter product code: \n\
     # of valid codes entered: 3\n# of banned codes entered: 1"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

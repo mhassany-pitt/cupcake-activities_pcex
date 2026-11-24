@@ -26,7 +26,6 @@ testcases:
   stdout: x * 2 = 4
   console: x * 2 = 4
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

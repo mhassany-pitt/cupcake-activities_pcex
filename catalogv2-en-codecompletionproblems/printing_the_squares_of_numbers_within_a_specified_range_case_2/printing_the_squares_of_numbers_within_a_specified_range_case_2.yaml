@@ -36,7 +36,6 @@ testcases:
     7 squared = 49
     9 squared = 81
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

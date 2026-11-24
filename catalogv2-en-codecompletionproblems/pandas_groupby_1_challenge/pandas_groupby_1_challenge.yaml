@@ -36,7 +36,6 @@ testcases:
       File "<string>", line 1, in <module>
     ModuleNotFoundError: No module named 'pandas'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

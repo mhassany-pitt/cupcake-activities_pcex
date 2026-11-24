@@ -36,7 +36,6 @@ testcases:
     p2 coordinates: (7, 2)
     Distance of p2 from origin = 7.280109889280518
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

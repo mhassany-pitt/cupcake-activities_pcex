@@ -30,7 +30,6 @@ testcases:
   stdout: '[30, 25, 5, 2, 0, -20]'
   console: '[30, 25, 5, 2, 0, -20]'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

@@ -66,7 +66,6 @@ testcases:
      USA  1  1  0  2
      All  4  4  4
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

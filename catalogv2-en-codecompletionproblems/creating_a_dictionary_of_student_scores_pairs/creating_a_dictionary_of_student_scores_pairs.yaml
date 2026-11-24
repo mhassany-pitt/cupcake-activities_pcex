@@ -42,7 +42,6 @@ testcases:
     Sue 16.5
     Sally 12.0
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

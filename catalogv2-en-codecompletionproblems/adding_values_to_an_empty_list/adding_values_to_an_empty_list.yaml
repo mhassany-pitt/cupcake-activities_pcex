@@ -52,7 +52,6 @@ testcases:
     Enter a value:
     ['Sam', 'Tom', 'Liz', 'Mary', 'Elena', 'Mira', 'Tim', 'Mark']
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

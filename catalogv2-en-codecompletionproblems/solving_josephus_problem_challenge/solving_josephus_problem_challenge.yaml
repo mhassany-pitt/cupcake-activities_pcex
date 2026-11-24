@@ -34,7 +34,6 @@ testcases:
   stdout: Brad
   console: Brad
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

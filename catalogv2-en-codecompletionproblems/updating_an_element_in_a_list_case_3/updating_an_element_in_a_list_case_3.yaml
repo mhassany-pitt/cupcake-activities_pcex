@@ -28,7 +28,6 @@ testcases:
   stdout: '[''a'', ''b'', ''c'', ''e'']'
   console: '[''a'', ''b'', ''c'', ''e'']'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

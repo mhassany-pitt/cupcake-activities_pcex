@@ -30,7 +30,6 @@ testcases:
   stdout: Total number of times the elements in the 2nd list appear in the 1st list is 4
   console: Total number of times the elements in the 2nd list appear in the 1st list is 4
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

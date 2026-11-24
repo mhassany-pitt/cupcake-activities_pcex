@@ -41,7 +41,6 @@ testcases:
   stdout: "Enter a grade letter in uppercase: \nScore is in range [80-90)."
   console: "Enter a grade letter in uppercase: \nScore is in range [80-90)."
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

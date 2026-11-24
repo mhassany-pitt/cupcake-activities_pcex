@@ -48,7 +48,6 @@ testcases:
     Enter an integer:
     End of input.
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

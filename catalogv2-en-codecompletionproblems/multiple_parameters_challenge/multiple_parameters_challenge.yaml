@@ -26,7 +26,6 @@ testcases:
   stdout: 'after payday and expenses, you will have:  565.0'
   console: 'after payday and expenses, you will have:  565.0'
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

@@ -45,7 +45,6 @@ testcases:
     Enter 1 if the phone has the random shutdown problem, otherwise enter 0:
     Yes! It is time to buy a new phone.
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

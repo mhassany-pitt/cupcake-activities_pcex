@@ -40,7 +40,6 @@ testcases:
     \ has 5 tokens (longest = 11)\nLine 2 has 8 tokens (longest = 6)\nLine 3 has 6 tokens (longest = 6)\n\
     Line 4 has 3 tokens (longest = 13)\nLongest line:the jaws that bite, the claws that catch,"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:

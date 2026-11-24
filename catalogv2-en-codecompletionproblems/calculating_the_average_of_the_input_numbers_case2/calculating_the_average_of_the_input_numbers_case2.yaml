@@ -47,7 +47,6 @@ testcases:
     \ = 2\nEnter an integer (0 to quit): \nThe sum of even numbers so far is 12 , count of even numbers\
     \ = 3\nEnter an integer (0 to quit): \nThe average is: 4.0"
   stderr: ''
-  status: pass
 elements:
 - type: blank
   location:
